@@ -1,5 +1,5 @@
 ---
-import LegalLayout from "../layouts/LegalLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 
 const tocItems = [
   { href: "#overview", label: "Overview" },
@@ -30,7 +30,7 @@ const tocItems = [
 ];
 ---
 
-<LegalLayout
+<ContentLayout
   title="Privacy Policy — Octi Flow"
   description="Privacy Policy for Octi Flow by EvaMariaDreams."
   canonical="https://evamariadreams.com/privacy.html"
@@ -99,8 +99,8 @@ const tocItems = [
   <section class="reveal" id="analytics-and-third-party-services">
     <h2>Analytics and third-party services</h2>
     <p>
-      Octi Flow does not use third-party analytics, advertising SDKs, or external
-      tracking services at this time.
+      Octi Flow does not use third-party analytics, advertising SDKs, or
+      external tracking services at this time.
     </p>
     <p>
       EvaMariaDreams does not sell personal information and does not share app
@@ -111,17 +111,17 @@ const tocItems = [
   <section class="reveal" id="health-data-and-integrations">
     <h2>Health data and integrations</h2>
     <p>
-      Octi Flow does not collect data from Apple Health or HealthKit and does not
-      use third-party health-data integrations at this time.
+      Octi Flow does not collect data from Apple Health or HealthKit and does
+      not use third-party health-data integrations at this time.
     </p>
   </section>
 
   <section class="reveal" id="support-communications">
     <h2>Support communications</h2>
     <p>
-      If you contact EvaMariaDreams by email, the information you provide in your
-      message, including your email address and any details you choose to share,
-      may be used to respond to your request and provide support.
+      If you contact EvaMariaDreams by email, the information you provide in
+      your message, including your email address and any details you choose to
+      share, may be used to respond to your request and provide support.
     </p>
   </section>
 
@@ -156,14 +156,15 @@ const tocItems = [
   <section class="reveal" id="contact">
     <h2>Contact</h2>
 
-    <div class="contact-card">
+    <div class="card card--brand contact-card">
       <p>
         For privacy-related questions, please contact EvaMariaDreams at{" "}
-        <a href="mailto:privacy@evamariadreams.com"
-          >privacy@evamariadreams.com</a
+        <a
+          class="text-link text-link--inverse"
+          href="mailto:privacy@evamariadreams.com">privacy@evamariadreams.com</a
         >
       </p>
     </div>
   </section>
   <span class="document-status">Last updated: May 24, 2026</span>
-</LegalLayout>
+</ContentLayout>

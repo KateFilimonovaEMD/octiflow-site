@@ -1,5 +1,5 @@
 ---
-import LegalLayout from "../layouts/LegalLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 
 const tocItems = [
   { href: "#acceptance-of-terms", label: "Acceptance of terms" },
@@ -27,7 +27,7 @@ const tocItems = [
 ];
 ---
 
-<LegalLayout
+<ContentLayout
   title="Terms of Use — Octi Flow"
   description="Terms of Use for Octi Flow by EvaMariaDreams."
   canonical="https://evamariadreams.com/terms.html"
@@ -40,17 +40,17 @@ const tocItems = [
     <h2>Acceptance of terms</h2>
     <p>
       By accessing or using the Octi Flow app or the EvaMariaDreams website, you
-      agree to these Terms of Use. If you do not agree, you should not use the app
-      or website.
+      agree to these Terms of Use. If you do not agree, you should not use the
+      app or website.
     </p>
   </section>
 
   <section class="reveal" id="use-of-the-app">
     <h2>Use of the app</h2>
     <p>
-      Octi Flow is intended for general wellness, habit support, and informational
-      purposes only. The app is not a medical service and does not provide medical
-      advice, diagnosis, or treatment.
+      Octi Flow is intended for general wellness, habit support, and
+      informational purposes only. The app is not a medical service and does not
+      provide medical advice, diagnosis, or treatment.
     </p>
   </section>
 
@@ -63,8 +63,8 @@ const tocItems = [
     </p>
     <p>
       If you have any medical condition, health concern, or question related to
-      hydration, nutrition, or physical well-being, you should consult a qualified
-      healthcare professional.
+      hydration, nutrition, or physical well-being, you should consult a
+      qualified healthcare professional.
     </p>
   </section>
 
@@ -72,9 +72,9 @@ const tocItems = [
     <h2>Public-information basis</h2>
     <p>
       Certain formulas, reference values, or informational calculations used in
-      the app may be derived from publicly available sources. EvaMariaDreams does
-      not guarantee that any estimate or recommendation is appropriate for every
-      individual user or situation.
+      the app may be derived from publicly available sources. EvaMariaDreams
+      does not guarantee that any estimate or recommendation is appropriate for
+      every individual user or situation.
     </p>
   </section>
 
@@ -101,16 +101,16 @@ const tocItems = [
     <h2>Permitted and prohibited conduct</h2>
     <ul>
       <li>
-        You may use the app only for lawful, personal, and non-commercial purposes
-        unless otherwise permitted.
+        You may use the app only for lawful, personal, and non-commercial
+        purposes unless otherwise permitted.
       </li>
       <li>
         You may not interfere with, misuse, reverse engineer, copy, scrape, or
         exploit the app except as allowed by applicable law.
       </li>
       <li>
-        You may not use the app in a way that disrupts or harms the app, website,
-        or other users.
+        You may not use the app in a way that disrupts or harms the app,
+        website, or other users.
       </li>
     </ul>
   </section>
@@ -137,18 +137,18 @@ const tocItems = [
   <section class="reveal" id="limitation-of-liability">
     <h2>Limitation of liability</h2>
     <p>
-      To the fullest extent permitted by law, EvaMariaDreams will not be liable for
-      indirect, incidental, special, consequential, or punitive damages, or for
-      decisions made based on the use of the app, its reminders, estimates, or
-      informational content.
+      To the fullest extent permitted by law, EvaMariaDreams will not be liable
+      for indirect, incidental, special, consequential, or punitive damages, or
+      for decisions made based on the use of the app, its reminders, estimates,
+      or informational content.
     </p>
   </section>
 
   <section class="reveal" id="termination">
     <h2>Termination</h2>
     <p>
-      We may suspend or terminate access to the app or website if these Terms are
-      violated or if necessary to protect the app, website, users, or legal
+      We may suspend or terminate access to the app or website if these Terms
+      are violated or if necessary to protect the app, website, users, or legal
       interests.
     </p>
   </section>
@@ -156,23 +156,24 @@ const tocItems = [
   <section class="reveal" id="changes-to-these-terms">
     <h2>Changes to these terms</h2>
     <p>
-      These Terms of Use may be updated from time to time. Continued use of the app
-      or website after changes become effective constitutes acceptance of the
-      revised Terms.
+      These Terms of Use may be updated from time to time. Continued use of the
+      app or website after changes become effective constitutes acceptance of
+      the revised Terms.
     </p>
   </section>
 
   <section class="reveal" id="contact">
     <h2>Contact</h2>
 
-    <div class="contact-card">
+    <div class="card card--brand contact-card">
       <p>
         Questions about these Terms of Use may be sent to{" "}
-        <a href="mailto:legal@evamariadreams.com"
-          >legal@evamariadreams.com</a
+        <a
+          class="text-link text-link--inverse"
+          href="mailto:legal@evamariadreams.com">legal@evamariadreams.com</a
         >
       </p>
     </div>
   </section>
   <span class="document-status">Last updated: May 24, 2026</span>
-</LegalLayout>
+</ContentLayout>

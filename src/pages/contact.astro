@@ -1,31 +1,43 @@
 ---
-import LegalLayout from "../layouts/LegalLayout.astro";
+import ContentLayout from "../layouts/ContentLayout.astro";
 
 const tocItems = [];
 ---
 
-<LegalLayout
-  title="Contact — Octi Flow"
-  description="Contact Octi Flow for business, press, founder, product support, and privacy inquiries."
-  canonical="/contact.html"
-  heroTitle="Contact us"
-  heroDescription="Questions, partnerships, media inquiries, or product support."
+<ContentLayout
+  title="Contact — EvaMariaDreams"
+  description="Contact EvaMariaDreams for business, press, founder, product support, and privacy inquiries."
+  canonical="https://evamariadreams.com/contact.html"
+  heroTitle="Contact EvaMariaDreams"
+  heroDescription="Questions, partnerships, media inquiries, or help with our products."
   tocLabel="Contact channels"
   {tocItems}
 >
-  <section class="contact-card contact-directory reveal" aria-label="Contact channels">
+  <section
+    class="card card--brand contact-directory reveal"
+    aria-label="Contact channels"
+  >
     <div class="contact-directory-item">
       <h2>Business</h2>
       <p>Partnerships, collaborations, and studio-related opportunities.</p>
-      <a href="mailto:business@evamariadreams.com">
+      <a
+        class="text-link text-link--inverse"
+        href="mailto:business@evamariadreams.com"
+      >
         business@evamariadreams.com
       </a>
     </div>
 
     <div class="contact-directory-item">
       <h2>Press</h2>
-      <p>Media requests, interviews, creator outreach, and press-related inquiries.</p>
-      <a href="mailto:press@evamariadreams.com">
+      <p>
+        Media requests, interviews, creator outreach, and press-related
+        inquiries.
+      </p>
+      <a
+        class="text-link text-link--inverse"
+        href="mailto:press@evamariadreams.com"
+      >
         press@evamariadreams.com
       </a>
     </div>
@@ -33,25 +45,33 @@ const tocItems = [];
     <div class="contact-directory-item">
       <h2>Founder</h2>
       <p>Direct founder-level contact for select conversations.</p>
-      <a href="mailto:founder@evamariadreams.com">
+      <a
+        class="text-link text-link--inverse"
+        href="mailto:founder@evamariadreams.com"
+      >
         founder@evamariadreams.com
       </a>
     </div>
 
     <div class="contact-directory-item">
       <h2>Product support</h2>
-      <p>For help with Octi Flow, purchases, refunds, subscriptions, or product-related questions.</p>
-      <a href="mailto:support@evamariadreams.com">
-        support@evamariadreams.com
+      <p>
+        For help with Octi Flow, purchases, refunds, subscriptions, or
+        product-related questions.
+      </p>
+      <a class="text-link text-link--inverse" href="/support.html">
+        Visit Octi Flow Support
       </a>
     </div>
 
     <div class="contact-directory-item">
       <h2>Privacy</h2>
-      <p>For privacy-related questions or requests regarding the Privacy Policy.</p>
-      <a href="mailto:privacy@evamariadreams.com">
-        privacy@evamariadreams.com
+      <p>
+        For privacy-related questions or requests regarding the Privacy Policy.
+      </p>
+      <a class="text-link text-link--inverse" href="/privacy.html#contact">
+        View privacy contact information
       </a>
     </div>
   </section>
-</LegalLayout>
+</ContentLayout>
