@@ -58,22 +58,24 @@ const {
         </div>
       </header>
 
-      <div class="container layout">
-        <aside class="toc" aria-label={tocLabel}>
-          <details class="toc-disclosure">
-            <summary>Jump to a section</summary>
+      <div class:list={["container", "layout", { "layout-single": tocItems.length === 0 }]}>
+        {
+          tocItems.length > 0 && (
+            <aside class="toc" aria-label={tocLabel}>
+              <details class="toc-disclosure">
+                <summary>Jump to a section</summary>
 
-            <div class="toc-menu">
-              {
-                tocItems.map((item) => (
-                  <a href={item.href}>{item.label}</a>
-                ))
-              }
-            </div>
-          </details>
-        </aside>
+                <div class="toc-menu">
+                  {tocItems.map((item) => (
+                    <a href={item.href}>{item.label}</a>
+                  ))}
+                </div>
+              </details>
+            </aside>
+          )
+        }
 
-        <article class="policy">
+        <article class:list={["policy", { "contact-page": tocItems.length === 0 }]}>
           <slot />
         </article>
       </div>
