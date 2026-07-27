@@ -557,10 +557,20 @@ footer {
 
 /* Contact page */
 
+.layout-single {
+  display: block;
+}
+
 .contact-page {
   max-width: 760px;
-  padding-top: var(--s3);
+  margin-inline: auto;
+  padding-top: 0;
   padding-bottom: var(--s6);
+}
+
+.policy.contact-page > .contact-directory {
+  padding: 0;
+  border-bottom: 0;
 }
 
 .contact-directory {
@@ -582,14 +592,17 @@ footer {
 
 .contact-directory-item h2 {
   margin: 0;
+  color: #fff;
 }
 
 .contact-directory-item p {
   margin: 8px 0 12px;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .contact-directory-item a {
   display: inline-block;
+  color: #fff;
 }
 
 @media (max-width: 820px) {
