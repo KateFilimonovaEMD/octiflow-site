@@ -659,7 +659,7 @@ footer {
 }
 
 .policy .support-eyebrow {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   width: fit-content;
   margin: 0 auto 22px;
