@@ -1,6 +1,6 @@
 (() => {
   const reduceMotion = window.matchMedia(
-    "(prefers-reduced-motion: reduce)"
+    "(prefers-reduced-motion: reduce)",
   ).matches;
 
   const revealItems = document.querySelectorAll(".reveal");
@@ -25,8 +25,8 @@
       },
       {
         threshold: 0.08,
-        rootMargin: "0px 0px -40px 0px"
-      }
+        rootMargin: "0px 0px -40px 0px",
+      },
     );
 
     revealItems.forEach((item) => {
@@ -60,7 +60,7 @@
             window.scrollY -
             navigationHeight -
             16,
-          behavior: reduceMotion ? "auto" : "smooth"
+          behavior: reduceMotion ? "auto" : "smooth",
         });
       };
 
