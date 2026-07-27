@@ -608,19 +608,22 @@ footer {
 /* Support page */
 
 .policy.contact-page > .support-grid {
-  padding: 0;
+  padding: 22px 0 0;
   border-bottom: 0;
 }
 
 .support-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--s3);
+  column-gap: var(--s3);
+  row-gap: calc(var(--s3) + 22px);
+  padding-top: 22px;
 }
 
 .support-card {
-  overflow: hidden;
-  padding: var(--s4);
+  position: relative;
+  overflow: visible;
+  padding: calc(var(--s4) + 12px) var(--s4) var(--s4);
   border-radius: 24px;
   background: linear-gradient(135deg, var(--deep), var(--blue));
   box-shadow: 0 22px 40px -17px rgba(7, 48, 128, 0.58);
@@ -659,26 +662,32 @@ footer {
 }
 
 .policy .support-eyebrow {
+  position: absolute;
+  top: 0;
+  left: 50%;
   display: flex;
   align-items: center;
   width: fit-content;
-  margin: 0 auto 22px;
-  padding: 9px 16px;
+  max-width: calc(100% - 32px);
+  margin: 0;
+  padding: 11px 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
   color: #fff;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 0.08em;
+  text-align: center;
   text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
 }
 
 .support-primary .support-eyebrow {
-  margin-inline: auto;
-  margin-bottom: 24px;
-  font-size: 0.95rem;
+  font-size: 1rem;
 }
 
 .support-button {
@@ -746,11 +755,16 @@ footer {
 
   .support-grid {
     grid-template-columns: 1fr;
+    row-gap: calc(var(--s3) + 18px);
+  }
+
+  .policy.contact-page > .support-grid {
+    padding-top: 20px;
   }
 
   .contact-directory-item,
   .support-card {
-    padding: var(--s3);
+    padding: calc(var(--s3) + 12px) var(--s3) var(--s3);
   }
 
   .support-primary h2,
@@ -759,9 +773,9 @@ footer {
   }
 
   .policy .support-eyebrow {
-    margin-bottom: 18px;
-    padding: 8px 14px;
-    font-size: 0.84rem;
+    max-width: calc(100% - 24px);
+    padding: 10px 16px;
+    font-size: 0.88rem;
   }
 }
 /* Octi Flow product page */
