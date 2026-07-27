@@ -1,0 +1,78 @@
+---
+import LegalLayout from "../layouts/LegalLayout.astro";
+
+const tocItems = [];
+---
+
+<LegalLayout
+  title="Support — Octi Flow"
+  description="Get support for Octi Flow, purchases, subscriptions, privacy questions, and app issues."
+  canonical="/support.html"
+  heroTitle="Need help?"
+  heroDescription="Get support for Octi Flow, purchases, subscriptions, or app issues."
+  tocLabel="Support information"
+  {tocItems}
+>
+  <section class="support-card reveal" aria-label="Octi Flow support">
+    <div class="support-primary">
+      <p class="support-eyebrow">Octi Flow support</p>
+      <h2>Tell us what happened</h2>
+      <p>
+        Email us and we’ll help you with the app, your account, or a technical
+        issue.
+      </p>
+
+      <a
+        class="support-button"
+        href="mailto:support@evamariadreams.com?subject=Octi%20Flow%20Support"
+      >
+        Email support
+      </a>
+
+      <a class="support-email" href="mailto:support@evamariadreams.com">
+        support@evamariadreams.com
+      </a>
+    </div>
+
+    <div class="support-section">
+      <h2>Help us resolve it faster</h2>
+      <p>Please include:</p>
+      <ul>
+        <li>a short description of the issue;</li>
+        <li>your iPhone or iPad model and iOS version;</li>
+        <li>the Octi Flow app version;</li>
+        <li>a screenshot, if it helps explain the problem.</li>
+      </ul>
+      <p class="support-note">
+        Never send passwords, full payment card details, or other sensitive
+        financial information.
+      </p>
+    </div>
+
+    <div class="support-section">
+      <h2>Purchases and subscriptions</h2>
+      <p>
+        Purchases, refunds, and subscription management are also subject to
+        Apple’s policies and support processes.
+      </p>
+      <div class="support-links">
+        <a href="https://apps.apple.com/account/subscriptions">
+          Manage subscriptions
+        </a>
+        <a href="https://reportaproblem.apple.com/">
+          Request a refund
+        </a>
+      </div>
+    </div>
+
+    <div class="support-section">
+      <h2>Privacy questions</h2>
+      <p>
+        For privacy-related questions or requests, email
+        <a href="mailto:privacy@evamariadreams.com">
+          privacy@evamariadreams.com
+        </a>.
+      </p>
+    </div>
+  </section>
+</LegalLayout>
