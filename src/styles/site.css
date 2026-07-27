@@ -607,25 +607,28 @@ footer {
 
 /* Support page */
 
-.policy.contact-page > .support-card {
+.policy.contact-page > .support-grid {
   padding: 0;
   border-bottom: 0;
 }
 
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--s3);
+}
+
 .support-card {
   overflow: hidden;
+  padding: var(--s4);
   border-radius: 24px;
   background: linear-gradient(135deg, var(--deep), var(--blue));
   box-shadow: 0 22px 40px -17px rgba(7, 48, 128, 0.58);
   color: #fff;
 }
 
-.support-primary,
-.support-section {
-  padding: var(--s4);
-}
-
 .support-primary {
+  grid-column: 1 / -1;
   text-align: center;
 }
 
@@ -646,6 +649,13 @@ footer {
   margin: 10px auto 0;
 }
 
+.support-primary-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 24px;
+}
+
 .support-eyebrow {
   margin: 0 0 12px;
   color: rgba(255, 255, 255, 0.72);
@@ -657,7 +667,7 @@ footer {
 
 .support-button {
   display: table;
-  margin: 24px auto 12px;
+  margin: 0 auto 12px;
   padding: 12px 22px;
   border-radius: 999px;
   background: #fff;
@@ -675,10 +685,6 @@ footer {
 .support-email {
   color: #fff;
   font-size: 0.9rem;
-}
-
-.support-section {
-  border-top: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .support-section p {
@@ -707,9 +713,14 @@ footer {
 }
 
 .support-links a,
-.support-section p a {
+.support-text-link {
   color: #fff;
   font-weight: 700;
+}
+
+.support-text-link {
+  display: inline-block;
+  margin-top: 14px;
 }
 
 @media (max-width: 820px) {
@@ -718,9 +729,12 @@ footer {
     padding-bottom: var(--s4);
   }
 
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+
   .contact-directory-item,
-  .support-primary,
-  .support-section {
+  .support-card {
     padding: var(--s3);
   }
 }
