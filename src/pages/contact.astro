@@ -1,13 +1,7 @@
 ---
 import LegalLayout from "../layouts/LegalLayout.astro";
 
-const tocItems = [
-  { href: "#business", label: "Business" },
-  { href: "#press", label: "Press" },
-  { href: "#founder", label: "Founder" },
-  { href: "#product-support", label: "Product support" },
-  { href: "#privacy", label: "Privacy" },
-];
+const tocItems = [];
 ---
 
 <LegalLayout
@@ -19,68 +13,42 @@ const tocItems = [
   tocLabel="Contact channels"
   {tocItems}
 >
-  <section class="reveal" id="business">
-    <h2>Business</h2>
-
-    <p>Partnerships, collaborations, and studio-related opportunities.</p>
-
-    <div class="contact-card">
+  <section class="contact-card contact-directory reveal" aria-label="Contact channels">
+    <div class="contact-directory-item">
+      <h2>Business</h2>
+      <p>Partnerships, collaborations, and studio-related opportunities.</p>
       <a href="mailto:business@evamariadreams.com">
         business@evamariadreams.com
       </a>
     </div>
-  </section>
 
-  <section class="reveal" id="press">
-    <h2>Press</h2>
-
-    <p>
-      Media requests, interviews, creator outreach, and press-related
-      inquiries.
-    </p>
-
-    <div class="contact-card">
+    <div class="contact-directory-item">
+      <h2>Press</h2>
+      <p>Media requests, interviews, creator outreach, and press-related inquiries.</p>
       <a href="mailto:press@evamariadreams.com">
         press@evamariadreams.com
       </a>
     </div>
-  </section>
 
-  <section class="reveal" id="founder">
-    <h2>Founder</h2>
-
-    <p>Direct founder-level contact for select conversations.</p>
-
-    <div class="contact-card">
+    <div class="contact-directory-item">
+      <h2>Founder</h2>
+      <p>Direct founder-level contact for select conversations.</p>
       <a href="mailto:founder@evamariadreams.com">
         founder@evamariadreams.com
       </a>
     </div>
-  </section>
 
-  <section class="reveal" id="product-support">
-    <h2>Product support</h2>
-
-    <p>
-      For help with Octi Flow, purchases, refunds, subscriptions, or
-      product-related questions.
-    </p>
-
-    <div class="contact-card">
+    <div class="contact-directory-item">
+      <h2>Product support</h2>
+      <p>For help with Octi Flow, purchases, refunds, subscriptions, or product-related questions.</p>
       <a href="mailto:support@evamariadreams.com">
         support@evamariadreams.com
       </a>
     </div>
-  </section>
 
-  <section class="reveal" id="privacy">
-    <h2>Privacy</h2>
-
-    <p>
-      For privacy-related questions or requests regarding the Privacy Policy.
-    </p>
-
-    <div class="contact-card">
+    <div class="contact-directory-item">
+      <h2>Privacy</h2>
+      <p>For privacy-related questions or requests regarding the Privacy Policy.</p>
       <a href="mailto:privacy@evamariadreams.com">
         privacy@evamariadreams.com
       </a>
