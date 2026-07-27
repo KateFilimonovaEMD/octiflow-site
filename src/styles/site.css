@@ -667,18 +667,20 @@ footer {
   left: 50%;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: fit-content;
+  min-height: 42px;
   max-width: calc(100% - 32px);
   margin: 0;
-  padding: 11px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.46);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(8px);
+  background: #4f82c6;
+  box-shadow: 0 7px 14px -8px rgba(7, 48, 128, 0.82);
   color: #fff;
   font-size: 0.95rem;
   font-weight: 800;
-  line-height: 1;
+  line-height: 1.2;
   letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
@@ -773,8 +775,9 @@ footer {
   }
 
   .policy .support-eyebrow {
+    min-height: 38px;
     max-width: calc(100% - 24px);
-    padding: 10px 16px;
+    padding: 8px 18px;
     font-size: 0.88rem;
   }
 }
