@@ -6,40 +6,43 @@ const tocItems = [];
 
 <LegalLayout
   title="Support — Octi Flow"
-  description="Get support for Octi Flow, purchases, subscriptions, privacy questions, and app issues."
+  description="Get help with Octi Flow, your account, purchases, subscriptions, privacy questions, and technical issues."
   canonical="/support.html"
   heroTitle="Need help?"
-  heroDescription="Get support for Octi Flow, purchases, subscriptions, or app issues."
+  heroDescription="Help with Octi Flow, your account, purchases, subscriptions, or technical issues."
   tocLabel="Support information"
   {tocItems}
 >
-  <section class="support-card reveal" aria-label="Octi Flow support">
-    <div class="support-primary">
+  <section class="support-grid reveal" aria-label="Octi Flow support">
+    <div class="support-card support-primary">
       <p class="support-eyebrow">Octi Flow support</p>
       <h2>Tell us what happened</h2>
       <p>
-        Email us and we’ll help you with the app, your account, or a technical
-        issue.
+        Email us and we’ll help with the app, your account, or a technical
+        issue on any supported platform.
       </p>
 
-      <a
-        class="support-button"
-        href="mailto:support@evamariadreams.com?subject=Octi%20Flow%20Support"
-      >
-        Email support
-      </a>
+      <div class="support-primary-actions">
+        <a
+          class="support-button"
+          href="mailto:support@evamariadreams.com?subject=Octi%20Flow%20Support"
+        >
+          Email support
+        </a>
 
-      <a class="support-email" href="mailto:support@evamariadreams.com">
-        support@evamariadreams.com
-      </a>
+        <a class="support-email" href="mailto:support@evamariadreams.com">
+          support@evamariadreams.com
+        </a>
+      </div>
     </div>
 
-    <div class="support-section">
+    <div class="support-card support-section">
+      <p class="support-eyebrow">Before you email</p>
       <h2>Help us resolve it faster</h2>
       <p>Please include:</p>
       <ul>
         <li>a short description of the issue;</li>
-        <li>your iPhone or iPad model and iOS version;</li>
+        <li>your device model and operating system version;</li>
         <li>the Octi Flow app version;</li>
         <li>a screenshot, if it helps explain the problem.</li>
       </ul>
@@ -49,30 +52,36 @@ const tocItems = [];
       </p>
     </div>
 
-    <div class="support-section">
+    <div class="support-card support-section">
+      <p class="support-eyebrow">Billing</p>
       <h2>Purchases and subscriptions</h2>
       <p>
-        Purchases, refunds, and subscription management are also subject to
-        Apple’s policies and support processes.
+        Manage a subscription or request a refund through the store where the
+        purchase was made. Store policies and eligibility rules apply.
       </p>
       <div class="support-links">
         <a href="https://apps.apple.com/account/subscriptions">
-          Manage subscriptions
+          App Store subscriptions
         </a>
         <a href="https://reportaproblem.apple.com/">
-          Request a refund
+          Request an App Store refund
         </a>
       </div>
     </div>
 
-    <div class="support-section">
+    <div class="support-card support-section support-privacy">
+      <p class="support-eyebrow">Your data</p>
       <h2>Privacy questions</h2>
       <p>
-        For privacy-related questions or requests, email
-        <a href="mailto:privacy@evamariadreams.com">
-          privacy@evamariadreams.com
-        </a>.
+        For questions or requests related to your privacy and personal data,
+        contact our privacy team.
       </p>
+      <a
+        class="support-text-link"
+        href="mailto:privacy@evamariadreams.com"
+      >
+        privacy@evamariadreams.com
+      </a>
     </div>
   </section>
 </LegalLayout>
