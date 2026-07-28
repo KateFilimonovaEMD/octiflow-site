@@ -613,18 +613,21 @@ nav {
   vertical-align: middle;
 }
 
-.studio-link {
+.app-store-link {
   display: inline-flex;
   align-items: center;
-  height: 46px;
+  border-radius: 8px;
 }
 
-.studio-logo {
+.app-store-link:focus-visible {
+  outline: 3px solid var(--color-on-brand);
+  outline-offset: 4px;
+}
+
+.app-store-badge {
   display: block;
-  width: auto;
-  height: 46px;
-  max-width: 150px;
-  object-fit: contain;
+  width: 135px;
+  height: 40px;
 }
 
 .nav-back {
@@ -701,7 +704,7 @@ nav {
   grid-template-columns: 250px minmax(0, 1fr);
   gap: var(--s6);
   padding-top: var(--s6);
-  padding-bottom: var(--s6);
+  padding-bottom: var(--s3);
 }
 
 /* Table of contents */
@@ -918,9 +921,9 @@ footer {
     height: 36px;
   }
 
-  .studio-logo {
+  .app-store-badge {
+    width: auto;
     height: 36px;
-    max-width: 118px;
   }
 
   .hero {
@@ -934,7 +937,7 @@ footer {
   .layout {
     display: block;
     padding-top: var(--s4);
-    padding-bottom: var(--s4);
+    padding-bottom: var(--s3);
   }
 
   .toc {
@@ -1083,7 +1086,7 @@ footer {
   max-width: 760px;
   margin-inline: auto;
   padding-top: 0;
-  padding-bottom: 0;
+  padding-bottom: var(--s6);
 }
 
 .policy.contact-page > .contact-directory {
@@ -1125,7 +1128,6 @@ footer {
 /* Support page */
 
 .policy.contact-page > .support-grid {
-  padding: 0;
   border-bottom: 0;
 }
 
@@ -1220,7 +1222,7 @@ footer {
 @media (max-width: 820px) {
   .contact-page {
     padding-top: var(--s2);
-    padding-bottom: 0;
+    padding-bottom: var(--s4);
   }
 
   .support-grid {
