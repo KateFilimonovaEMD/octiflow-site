@@ -616,7 +616,7 @@ nav {
 .app-store-link {
   display: inline-flex;
   align-items: center;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .app-store-link:focus-visible {
@@ -626,8 +626,8 @@ nav {
 
 .app-store-badge {
   display: block;
-  width: 135px;
-  height: 40px;
+  width: 162px;
+  height: 48px;
 }
 
 .nav-back {
@@ -923,7 +923,7 @@ footer {
 
   .app-store-badge {
     width: auto;
-    height: 36px;
+    height: 38px;
   }
 
   .hero {
