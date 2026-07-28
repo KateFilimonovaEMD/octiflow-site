@@ -12,7 +12,7 @@ export const sortPosts = (posts: BlogPost[]) =>
   );
 
 export const postUrl = (post: BlogPost | string) =>
-  `/blog/${typeof post === "string" ? post : post.id}`;
+  `/blog/${typeof post === "string" ? post : post.id}/`;
 
 export const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en", {
