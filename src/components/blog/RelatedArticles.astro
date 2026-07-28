@@ -1,0 +1,24 @@
+---
+import type { BlogPost } from "../../utils/blog";
+import ArticleCard from "./ArticleCard.astro";
+
+interface Props {
+  posts: BlogPost[];
+}
+
+const { posts } = Astro.props;
+---
+
+{
+  posts.length > 0 && (
+    <section class="related-articles" aria-labelledby="related-title">
+      <div class="section-heading">
+        <p class="section-eyebrow">Keep reading</p>
+        <h2 id="related-title">Related articles</h2>
+      </div>
+      <div class="article-grid article-grid--related">
+        {posts.map((post) => <ArticleCard {post} />)}
+      </div>
+    </section>
+  )
+}
