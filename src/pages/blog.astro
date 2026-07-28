@@ -1,0 +1,67 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ArticleCard from "../components/blog/ArticleCard.astro";
+import { isPublished, sortPosts } from "../utils/blog";
+
+const posts = sortPosts((await getCollection("blog")).filter(isPublished));
+const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+---
+
+<BaseLayout
+  title="Hydration Habits & Product Guides — EvaMariaDreams Blog"
+  description="Practical, evidence-aware guides to hydration habits, water tracking, reminders, and getting more from Octi Flow."
+  canonical="https://evamariadreams.com/blog.html"
+>
+  <main class="blog-index">
+    <header class="blog-hero">
+      <div class="container reveal">
+        <p class="section-eyebrow">EvaMariaDreams Blog</p>
+        <h1>Small habits. Better hydration.</h1>
+        <p>
+          Practical guides for building a sustainable water routine, using
+          reminders well, and making hydration tracking less demanding.
+        </p>
+      </div>
+    </header>
+
+    <div class="container blog-content">
+      {
+        featuredPost ? (
+          <>
+            <section aria-labelledby="featured-title">
+              <div class="section-heading">
+                <p class="section-eyebrow">Start here</p>
+                <h2 id="featured-title">Featured guide</h2>
+              </div>
+              <ArticleCard post={featuredPost} featured />
+            </section>
+
+            {remainingPosts.length > 0 && (
+              <section aria-labelledby="latest-title">
+                <div class="section-heading">
+                  <p class="section-eyebrow">Explore the blog</p>
+                  <h2 id="latest-title">Latest articles</h2>
+                </div>
+                <div class="article-grid">
+                  {remainingPosts.map((post) => <ArticleCard {post} />)}
+                </div>
+              </section>
+            )}
+          </>
+        ) : (
+          <section class="blog-empty reveal">
+            <p class="section-eyebrow">Coming soon</p>
+            <h2>Thoughtful hydration guides are on the way</h2>
+            <p>
+              We are preparing practical articles about daily water habits,
+              reminders, and hydration tracking.
+            </p>
+            <a class="button-link" href="/octi-flow.html">Explore Octi Flow</a>
+          </section>
+        )
+      }
+    </div>
+  </main>
+</BaseLayout>
