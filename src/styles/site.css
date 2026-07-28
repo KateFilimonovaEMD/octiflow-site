@@ -616,6 +616,7 @@ nav {
 .app-store-link {
   display: inline-flex;
   align-items: center;
+  margin-right: -9px;
   border-radius: 10px;
 }
 
@@ -924,6 +925,10 @@ footer {
   .app-store-badge {
     width: auto;
     height: 38px;
+  }
+
+  .app-store-link {
+    margin-right: -7px;
   }
 
   .hero {
