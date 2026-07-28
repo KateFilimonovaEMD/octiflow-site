@@ -1,0 +1,38 @@
+---
+import { getCollection, render } from "astro:content";
+import ArticleLayout from "../../layouts/ArticleLayout.astro";
+import { isPublished, sortPosts } from "../../utils/blog";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+  const publishedPosts = sortPosts(allPosts.filter(isPublished));
+
+  return publishedPosts.map((post) => {
+    const explicitlyRelated = post.data.related
+      .map((id) => publishedPosts.find((candidate) => candidate.id === id))
+      .filter((candidate): candidate is (typeof publishedPosts)[number] => Boolean(candidate));
+
+    const fallbackRelated = publishedPosts.filter(
+      (candidate) =>
+        candidate.id !== post.id &&
+        candidate.data.category === post.data.category &&
+        !explicitlyRelated.some((related) => related.id === candidate.id),
+    );
+
+    return {
+      params: { id: post.id },
+      props: {
+        post,
+        relatedPosts: [...explicitlyRelated, ...fallbackRelated].slice(0, 3),
+      },
+    };
+  });
+}
+
+const { post, relatedPosts } = Astro.props;
+const { Content, headings } = await render(post);
+---
+
+<ArticleLayout {post} {relatedPosts} {headings}>
+  <Content />
+</ArticleLayout>
