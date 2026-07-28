@@ -1,7 +1,5 @@
 ---
-import SiteFooter from "../components/SiteFooter.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import "../styles/site.css";
+import BaseLayout from "./BaseLayout.astro";
 
 interface TocItem {
   href: string;
@@ -29,27 +27,7 @@ const {
 } = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#073080" />
-    <meta name="robots" content="index,follow" />
-    <link rel="canonical" href={canonical} />
-
-    <title>{title}</title>
-    <meta name="description" content={description} />
-
-    <link
-      rel="icon"
-      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23015cc6'/%3E%3C/svg%3E"
-    />
-  </head>
-
-  <body>
-    <SiteHeader />
-
+<BaseLayout {title} {description} {canonical}>
     <main>
       <header class="hero">
         <div class="container reveal">
@@ -94,8 +72,4 @@ const {
         </article>
       </div>
     </main>
-
-    <SiteFooter />
-    <script src="../scripts/site.js"></script>
-  </body>
-</html>
+</BaseLayout>

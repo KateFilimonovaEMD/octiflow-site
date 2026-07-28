@@ -1,0 +1,127 @@
+---
+import type { BlogPost } from "../utils/blog";
+import BaseLayout from "./BaseLayout.astro";
+import ArticleCta from "../components/blog/ArticleCta.astro";
+import RelatedArticles from "../components/blog/RelatedArticles.astro";
+import { formatDate, postUrl, readingTime } from "../utils/blog";
+
+interface Props {
+  post: BlogPost;
+  relatedPosts: BlogPost[];
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { post, relatedPosts, headings } = Astro.props;
+const { data } = post;
+const canonical = new URL(postUrl(post), Astro.site).href;
+const modifiedDate = data.updatedDate ?? data.publishDate;
+const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: data.title,
+  description: data.description,
+  datePublished: data.publishDate.toISOString(),
+  dateModified: modifiedDate.toISOString(),
+  mainEntityOfPage: canonical,
+  author: {
+    "@type": "Organization",
+    name: data.author,
+    url: "https://evamariadreams.com/",
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "EvaMariaDreams",
+    url: "https://evamariadreams.com/",
+  },
+  ...(data.image && { image: new URL(data.image, Astro.site).href }),
+};
+---
+
+<BaseLayout
+  title={`${data.title} — EvaMariaDreams`}
+  description={data.description}
+  {canonical}
+  image={data.image}
+  imageAlt={data.imageAlt}
+  type="article"
+  publishedTime={data.publishDate}
+  modifiedTime={modifiedDate}
+  {structuredData}
+>
+  <main class="article-page">
+    <header class="article-hero">
+      <div class="container article-hero__inner reveal">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">EvaMariaDreams</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog.html">Blog</a>
+        </nav>
+        <p class="section-eyebrow">{data.category}</p>
+        <h1>{data.title}</h1>
+        <p class="article-deck">{data.description}</p>
+        <div class="article-byline">
+          <span>By {data.author}</span>
+          <span aria-hidden="true">·</span>
+          <time datetime={data.publishDate.toISOString()}>
+            {formatDate(data.publishDate)}
+          </time>
+          {
+            data.updatedDate && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>Updated {formatDate(data.updatedDate)}</span>
+              </>
+            )
+          }
+          <span aria-hidden="true">·</span>
+          <span>{readingTime(post.body)} min read</span>
+        </div>
+      </div>
+    </header>
+
+    {
+      data.image && (
+        <figure class="container article-cover reveal">
+          <img
+            src={data.image}
+            alt={data.imageAlt}
+            width="1600"
+            height="900"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      )
+    }
+
+    <div class="container article-layout">
+      {
+        tocHeadings.length > 1 && (
+          <aside class="article-toc" aria-label="On this page">
+            <details open>
+              <summary>On this page</summary>
+              <ol>
+                {tocHeadings.map((heading) => (
+                  <li class:list={{ "toc-depth-3": heading.depth === 3 }}>
+                    <a href={`#${heading.slug}`}>{heading.text}</a>
+                  </li>
+                ))}
+              </ol>
+            </details>
+          </aside>
+        )
+      }
+
+      <article class="article-prose reveal">
+        <slot />
+        <ArticleCta />
+      </article>
+    </div>
+
+    <div class="container">
+      <RelatedArticles posts={relatedPosts} />
+    </div>
+  </main>
+</BaseLayout>
