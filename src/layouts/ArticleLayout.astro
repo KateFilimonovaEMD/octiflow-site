@@ -38,7 +38,7 @@ const structuredData = {
   about: {
     "@type": "SoftwareApplication",
     name: "Octi Flow",
-    url: "https://evamariadreams.com/octi-flow.html",
+    url: "https://octiflow.app/",
     applicationCategory: "HealthApplication",
   },
   ...(data.image && { image: new URL(data.image, Astro.site).href }),
@@ -60,9 +60,9 @@ const structuredData = {
     <header class="article-hero">
       <div class="container article-hero__inner reveal">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="/octi-flow.html">Octi Flow</a>
+          <a href="/">Octi Flow</a>
           <span aria-hidden="true">/</span>
-          <a href="/blog.html">Blog</a>
+          <a href="/blog">Blog</a>
         </nav>
         <p class="section-eyebrow">{data.category}</p>
         <h1>{data.title}</h1>
