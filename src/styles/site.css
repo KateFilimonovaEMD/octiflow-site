@@ -705,7 +705,7 @@ nav {
   grid-template-columns: 250px minmax(0, 1fr);
   gap: var(--s6);
   padding-top: var(--s6);
-  padding-bottom: var(--s3);
+  padding-bottom: var(--s6);
 }
 
 /* Table of contents */
@@ -942,7 +942,7 @@ footer {
   .layout {
     display: block;
     padding-top: var(--s4);
-    padding-bottom: var(--s3);
+    padding-bottom: var(--s4);
   }
 
   .toc {
@@ -1091,7 +1091,7 @@ footer {
   max-width: 760px;
   margin-inline: auto;
   padding-top: 0;
-  padding-bottom: var(--s6);
+  padding-bottom: 0;
 }
 
 .policy.contact-page > .contact-directory {
@@ -1133,6 +1133,7 @@ footer {
 /* Support page */
 
 .policy.contact-page > .support-grid {
+  padding: 0;
   border-bottom: 0;
 }
 
@@ -1226,8 +1227,8 @@ footer {
 
 @media (max-width: 820px) {
   .contact-page {
-    padding-top: var(--s2);
-    padding-bottom: var(--s4);
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .support-grid {
