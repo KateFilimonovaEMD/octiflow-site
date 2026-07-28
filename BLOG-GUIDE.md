@@ -1,4 +1,6 @@
-# EvaMariaDreams blog
+# Octi Flow blog
+
+Articles promote Octi Flow. EvaMariaDreams remains the author and publisher.
 
 ## Publish an article
 
