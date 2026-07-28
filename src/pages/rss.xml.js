@@ -6,7 +6,7 @@ export async function GET(context) {
   const posts = sortPosts((await getCollection("blog")).filter(isPublished));
 
   return rss({
-    title: "EvaMariaDreams Blog",
+    title: "Octi Flow Blog",
     description:
       "Practical guides to hydration habits, water tracking, reminders, and Octi Flow.",
     site: context.site,
