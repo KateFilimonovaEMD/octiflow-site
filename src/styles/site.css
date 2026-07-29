@@ -722,6 +722,10 @@ body > nav {
   object-fit: contain;
 }
 
+.mobile-menu-icon {
+  display: none;
+}
+
 .studio-link {
   display: inline-flex;
   align-items: center;
@@ -1019,6 +1023,7 @@ footer {
   }
 
   .nav-inner {
+    position: relative;
     height: 62px;
   }
 
@@ -1028,13 +1033,36 @@ footer {
   }
 
   .app-store-link {
-    height: 50px;
-    margin-right: -7px;
+    position: absolute;
+    left: 50%;
+    height: 38px;
+    margin-right: 0;
+    transform: translateX(-50%);
   }
 
   .app-store-badge {
     width: auto;
-    height: 50px;
+    height: 38px;
+  }
+
+  .mobile-menu-icon {
+    display: inline-flex;
+    width: 28px;
+    height: 28px;
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    flex: none;
+  }
+
+  .mobile-menu-icon span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--color-on-brand);
   }
 
   .studio-logo {
