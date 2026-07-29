@@ -100,7 +100,11 @@
 .blog-hero {
   padding: clamp(72px, 11vw, 112px) 0 72px;
   background:
-    radial-gradient(circle at 84% 12%, rgb(93 183 255 / 16%), transparent 30%),
+    radial-gradient(
+      ellipse 420px 240px at 82% 18%,
+      rgb(93 183 255 / 16%),
+      transparent 100%
+    ),
     linear-gradient(180deg, var(--pale), #ffffff 78%);
   text-align: center;
 }
@@ -131,8 +135,62 @@
 
 .blog-content {
   display: grid;
-  gap: clamp(72px, 10vw, 128px);
-  padding-block: var(--s6);
+  gap: var(--s6);
+  padding-top: var(--s6);
+  padding-bottom: var(--s6);
+}
+
+.section-heading--blog {
+  margin-bottom: var(--s2);
+}
+
+.section-heading--blog .section-eyebrow {
+  margin-bottom: 0;
+}
+
+.blog-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.blog-pagination__page,
+.blog-pagination__arrow {
+  display: inline-grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgb(7 48 128 / 14%);
+  border-radius: 50%;
+  color: var(--color-brand-strong);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.blog-pagination__page {
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  color: var(--color-on-brand);
+}
+
+a.blog-pagination__arrow {
+  transition:
+    border-color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+a.blog-pagination__arrow:hover {
+  border-color: var(--color-border-brand);
+  background: var(--color-surface-hover);
+  transform: translateY(-1px);
+}
+
+.blog-pagination__arrow.is-disabled {
+  color: #9aa8b5;
+  cursor: default;
+  opacity: 0.55;
 }
 
 .article-grid {
@@ -641,6 +699,29 @@ nav {
   vertical-align: middle;
 }
 
+.app-store-link {
+  display: inline-flex;
+  height: 48px;
+  margin-right: -9px;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  border-radius: 8px;
+}
+
+.app-store-link:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.app-store-badge {
+  display: block;
+  width: 162px;
+  height: 48px;
+  max-width: none;
+  object-fit: contain;
+}
+
 .studio-link {
   display: inline-flex;
   align-items: center;
@@ -946,6 +1027,16 @@ footer {
     height: 36px;
   }
 
+  .app-store-link {
+    height: 38px;
+    margin-right: -7px;
+  }
+
+  .app-store-badge {
+    width: auto;
+    height: 38px;
+  }
+
   .studio-logo {
     height: 36px;
     max-width: 118px;
@@ -961,6 +1052,12 @@ footer {
 
   .layout {
     display: block;
+    padding-top: var(--s4);
+    padding-bottom: var(--s4);
+  }
+
+  .blog-content {
+    gap: var(--s4);
     padding-top: var(--s4);
     padding-bottom: var(--s4);
   }
