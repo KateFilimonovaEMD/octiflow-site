@@ -29,10 +29,9 @@ const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
       {
         featuredPost ? (
           <>
-            <section aria-labelledby="featured-title">
-              <div class="section-heading">
+            <section aria-label="Featured article">
+              <div class="section-heading section-heading--blog">
                 <p class="section-eyebrow">Octi Flow Blog</p>
-                <h2 id="featured-title">Featured guide</h2>
               </div>
               <ArticleCard post={featuredPost} featured />
             </section>
@@ -48,6 +47,24 @@ const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
                 </div>
               </section>
             )}
+
+            <nav class="blog-pagination" aria-label="Blog pages">
+              <span
+                class="blog-pagination__arrow is-disabled"
+                aria-disabled="true"
+                aria-label="Previous page"
+              >
+                ←
+              </span>
+              <span class="blog-pagination__page" aria-current="page">1</span>
+              <span
+                class="blog-pagination__arrow is-disabled"
+                aria-disabled="true"
+                aria-label="Next page"
+              >
+                →
+              </span>
+            </nav>
           </>
         ) : (
           <section class="blog-empty reveal">
