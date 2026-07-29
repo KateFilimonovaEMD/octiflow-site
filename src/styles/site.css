@@ -669,7 +669,7 @@ a:focus-visible {
 
 /* Header */
 
-nav {
+body > nav {
   position: sticky;
   top: 0;
   z-index: 20;
@@ -701,7 +701,7 @@ nav {
 
 .app-store-link {
   display: inline-flex;
-  height: 48px;
+  height: 60px;
   margin-right: -9px;
   align-items: center;
   justify-content: center;
@@ -716,8 +716,8 @@ nav {
 
 .app-store-badge {
   display: block;
-  width: 162px;
-  height: 48px;
+  width: 203px;
+  height: 60px;
   max-width: none;
   object-fit: contain;
 }
@@ -1028,13 +1028,13 @@ footer {
   }
 
   .app-store-link {
-    height: 38px;
+    height: 50px;
     margin-right: -7px;
   }
 
   .app-store-badge {
     width: auto;
-    height: 38px;
+    height: 50px;
   }
 
   .studio-logo {
