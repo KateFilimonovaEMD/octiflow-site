@@ -157,6 +157,7 @@
 
 .blog-pagination__page,
 .blog-pagination__arrow {
+  position: relative;
   display: inline-grid;
   width: 40px;
   height: 40px;
@@ -175,15 +176,19 @@
 }
 
 .blog-pagination__icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   overflow: visible;
   fill: none;
   stroke: currentColor;
-  stroke-width: 1.8;
+  stroke-width: 1.7;
   stroke-linecap: round;
   stroke-linejoin: round;
+  transform: translate(-50%, -50%);
 }
 
 a.blog-pagination__arrow {
@@ -1046,7 +1051,7 @@ footer {
 
   .app-store-link {
     position: absolute;
-    left: calc(50% - 4px);
+    left: calc(50% + 5px);
     height: 38px;
     margin-right: 0;
     transform: translateX(-50%);
