@@ -8,6 +8,8 @@ tags:
   - hydration
   - healthy habits
   - water reminders
+image: "/images/blog/Blog_01_Main.png"
+imageAlt: "A glass water bottle and a filled drinking glass with lemon and mint on a vivid blue background"
 featured: true
 draft: false
 related: []
