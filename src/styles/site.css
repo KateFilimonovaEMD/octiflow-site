@@ -135,6 +135,7 @@
 
 .blog-content {
   display: grid;
+  max-width: 960px;
   gap: var(--s6);
   padding-top: var(--s6);
   padding-bottom: var(--s6);
