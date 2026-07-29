@@ -1034,7 +1034,7 @@ footer {
 
   .app-store-link {
     position: absolute;
-    left: 50%;
+    left: calc(50% - 4px);
     height: 38px;
     margin-right: 0;
     transform: translateX(-50%);
