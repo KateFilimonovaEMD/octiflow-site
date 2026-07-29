@@ -54,7 +54,13 @@ const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
                 aria-disabled="true"
                 aria-label="Previous page"
               >
-                ←
+                <svg
+                  class="blog-pagination__icon"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M10.5 3.5 6 8l4.5 4.5" />
+                </svg>
               </span>
               <span class="blog-pagination__page" aria-current="page">1</span>
               <span
@@ -62,7 +68,13 @@ const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
                 aria-disabled="true"
                 aria-label="Next page"
               >
-                →
+                <svg
+                  class="blog-pagination__icon"
+                  viewBox="0 0 16 16"
+                  aria-hidden="true"
+                >
+                  <path d="M5.5 3.5 10 8l-4.5 4.5" />
+                </svg>
               </span>
             </nav>
           </>
