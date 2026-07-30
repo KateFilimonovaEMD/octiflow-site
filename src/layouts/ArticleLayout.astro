@@ -16,41 +16,79 @@ const { data } = post;
 const canonical = new URL(postUrl(post), Astro.site).href;
 const modifiedDate = data.updatedDate ?? data.publishDate;
 const tocHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const organizationId = "https://octiflow.app/#organization";
+const applicationId = "https://octiflow.app/#app";
+const articleImage = data.socialImage ?? data.image;
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  headline: data.title,
-  description: data.description,
-  datePublished: data.publishDate.toISOString(),
-  dateModified: modifiedDate.toISOString(),
-  mainEntityOfPage: canonical,
-  author: {
-    "@type": "Organization",
-    name: data.author,
-    url: "https://evamariadreams.com/",
+const structuredData = [
+  {
+    "@type": "BlogPosting",
+    "@id": `${canonical}#article`,
+    headline: data.title,
+    description: data.description,
+    datePublished: data.publishDate.toISOString(),
+    dateModified: modifiedDate.toISOString(),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonical,
+    },
+    isPartOf: {
+      "@id": "https://octiflow.app/blog/#blog",
+    },
+    author: {
+      "@id": organizationId,
+    },
+    publisher: {
+      "@id": organizationId,
+    },
+    about: {
+      "@id": applicationId,
+    },
+    ...(articleImage && {
+      image: {
+        "@type": "ImageObject",
+        url: new URL(articleImage, Astro.site).href,
+        width: data.socialImage ? 1200 : data.imageWidth,
+        height: data.socialImage ? 630 : data.imageHeight,
+        caption: data.imageAlt,
+      },
+    }),
   },
-  publisher: {
-    "@type": "Organization",
-    name: "EvaMariaDreams",
-    url: "https://evamariadreams.com/",
+  {
+    "@type": "BreadcrumbList",
+    "@id": `${canonical}#breadcrumb`,
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Octi Flow",
+        item: "https://octiflow.app/",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://octiflow.app/blog/",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: data.title,
+        item: canonical,
+      },
+    ],
   },
-  about: {
-    "@type": "SoftwareApplication",
-    name: "Octi Flow",
-    url: "https://octiflow.app/",
-    applicationCategory: "HealthApplication",
-  },
-  ...(data.image && { image: new URL(data.image, Astro.site).href }),
-};
+];
 ---
 
 <BaseLayout
-  title={`${data.title} — Octi Flow`}
+  title={data.seoTitle ?? `${data.title} — Octi Flow`}
   description={data.description}
   {canonical}
-  image={data.image}
+  image={data.socialImage ?? data.image}
   imageAlt={data.imageAlt}
+  imageWidth={data.socialImage ? 1200 : data.imageWidth}
+  imageHeight={data.socialImage ? 630 : data.imageHeight}
   type="article"
   publishedTime={data.publishDate}
   modifiedTime={modifiedDate}
@@ -68,7 +106,7 @@ const structuredData = {
         <h1>{data.title}</h1>
         <p class="article-deck">{data.description}</p>
         <div class="article-byline">
-          <span>By {data.author}</span>
+          <span>By <a href="/about/" rel="author">{data.author}</a></span>
           <span aria-hidden="true">·</span>
           <time datetime={data.publishDate.toISOString()}>
             {formatDate(data.publishDate)}
@@ -90,14 +128,19 @@ const structuredData = {
     {
       data.image && (
         <figure class="container article-cover reveal">
-          <img
-            src={data.image}
-            alt={data.imageAlt}
-            width="1600"
-            height="900"
-            loading="eager"
-            decoding="async"
-          />
+          <picture>
+            {data.imageAvif && <source srcset={data.imageAvif} type="image/avif" />}
+            {data.imageWebp && <source srcset={data.imageWebp} type="image/webp" />}
+            <img
+              src={data.image}
+              alt={data.imageAlt}
+              width={data.imageWidth ?? 1200}
+              height={data.imageHeight ?? 800}
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
         </figure>
       )
     }
@@ -120,8 +163,23 @@ const structuredData = {
         )
       }
 
-      <article class="article-prose reveal">
+      <article class="article-prose">
         <slot />
+
+        <aside class="article-author" aria-labelledby="article-author-title">
+          <p class="article-author__eyebrow">Written by</p>
+          <h2 id="article-author-title">{data.author}</h2>
+          <p>
+            EvaMariaDreams is the independent two-person studio behind Octi
+            Flow. We create thoughtful mobile apps and publish practical,
+            evidence-aware guides about the habits those products are designed
+            to support.
+          </p>
+          <a class="text-link" href="/about/" rel="author">
+            About the studio <span aria-hidden="true">→</span>
+          </a>
+        </aside>
+
         <ArticleCta />
       </article>
     </div>
