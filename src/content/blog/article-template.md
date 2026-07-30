@@ -1,5 +1,6 @@
 ---
 title: "Replace This with a Clear, Search-Focused Article Title"
+seoTitle: "Optional Shorter Search Title | Octi Flow"
 description: "Replace this with a useful 50–160 character summary that accurately answers the reader’s search intent."
 publishDate: 2026-08-10
 updatedDate: 2026-08-10
@@ -11,6 +12,13 @@ tags:
 featured: false
 draft: true
 related: []
+image: "/images/blog/replace-with-cover.png"
+imageAvif: "/images/blog/replace-with-cover.avif"
+imageWebp: "/images/blog/replace-with-cover.webp"
+imageAlt: "Replace with an honest description of the cover image"
+imageWidth: 1200
+imageHeight: 800
+socialImage: "/images/blog/replace-with-cover-og.jpg"
 ---
 
 > This is a private drafting template. It will not be built while `draft` is

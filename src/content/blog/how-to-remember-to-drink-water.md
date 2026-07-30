@@ -1,18 +1,25 @@
 ---
 title: "How to Remember to Drink Water: 8 Habits That Fit Your Day"
+seoTitle: "How to Remember to Drink Water: 8 Habits | Octi Flow"
 description: "Forget rigid water rules. Use eight practical, evidence-aware habits to make drinking water easier to remember throughout a normal day."
 publishDate: 2026-07-29
+updatedDate: 2026-07-30
 author: "EvaMariaDreams"
 category: "Hydration Habits"
 tags:
   - hydration
   - healthy habits
   - water reminders
-image: "/images/blog/Blog_01_Main.png"
-imageAlt: "A glass water bottle and a filled drinking glass with lemon and mint on a vivid blue background"
 featured: true
 draft: false
 related: []
+image: "/images/blog/Blog_01_Main.png"
+imageAvif: "/images/blog/Blog_01_Main.avif"
+imageWebp: "/images/blog/Blog_01_Main.webp"
+imageAlt: "A reusable water bottle and glass of water with lemon and mint on a blue background"
+imageWidth: 1264
+imageHeight: 843
+socialImage: "/images/blog/Blog_01_Main_OG.jpg"
 ---
 
 You probably do not forget that water exists. You forget it at the exact moment
@@ -136,6 +143,11 @@ works for everyone. You can read the study in the
 Treat a reminder as a chance to notice, not a command. If you are not thirsty,
 have just had a drink, or cannot stop what you are doing, dismiss it. A good
 system adapts to your day instead of making you serve the system.
+
+> **Put the reminder into practice:** [Octi Flow on the App
+> Store](https://apps.apple.com/app/octi-flow/id6783334530) lets you choose a
+> reminder window and track drinks without turning the routine into a rigid
+> schedule.
 
 ## 6. Record the drink while it is still in your hand
 
