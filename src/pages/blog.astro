@@ -7,12 +7,47 @@ import { isPublished, sortPosts } from "../utils/blog";
 const posts = sortPosts((await getCollection("blog")).filter(isPublished));
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
+const canonical = "https://octiflow.app/blog/";
+
+const structuredData = [
+  {
+    "@type": "Blog",
+    "@id": `${canonical}#blog`,
+    url: canonical,
+    name: "Octi Flow Blog",
+    description:
+      "Practical, evidence-aware guides to hydration habits, water tracking, reminders, and getting more from Octi Flow.",
+    publisher: {
+      "@id": "https://octiflow.app/#organization",
+    },
+    about: {
+      "@id": "https://octiflow.app/#app",
+    },
+    blogPost: posts.map((post) => ({
+      "@id": new URL(`/blog/${post.id}/#article`, Astro.site).href,
+    })),
+  },
+  {
+    "@type": "ItemList",
+    "@id": `${canonical}#articles`,
+    name: "Octi Flow hydration articles",
+    numberOfItems: posts.length,
+    itemListElement: posts.map((post, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: post.data.title,
+      url: new URL(`/blog/${post.id}/`, Astro.site).href,
+    })),
+  },
+];
 ---
 
 <BaseLayout
   title="Hydration Tips, Habits & Tracking Guides — Octi Flow"
   description="Practical, evidence-aware guides to hydration habits, water tracking, reminders, and getting more from Octi Flow."
-  canonical="https://octiflow.app/blog/"
+  {canonical}
+  imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
+  {structuredData}
 >
   <main class="blog-index">
     <header class="blog-hero">

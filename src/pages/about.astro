@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const canonical = "https://octiflow.app/about/";
+const structuredData = {
+  "@type": "AboutPage",
+  "@id": `${canonical}#webpage`,
+  url: canonical,
+  name: "About EvaMariaDreams",
+  description:
+    "Meet EvaMariaDreams, the independent two-person studio behind the Octi Flow hydration tracker app.",
+  about: {
+    "@id": "https://octiflow.app/#organization",
+  },
+};
+---
+
+<BaseLayout
+  title="About EvaMariaDreams — The Studio Behind Octi Flow"
+  description="Meet EvaMariaDreams, the independent two-person studio behind the Octi Flow hydration tracker app."
+  {canonical}
+  imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
+  {structuredData}
+>
+  <main class="about-page">
+    <header class="about-hero">
+      <div class="container about-hero__inner reveal">
+        <p class="section-eyebrow">Independent studio</p>
+        <h1>Thoughtful apps, made by a two-person team.</h1>
+        <p>
+          EvaMariaDreams creates mobile apps and games with a focus on clear
+          systems, expressive design, and experiences people want to return to.
+        </p>
+      </div>
+    </header>
+
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="product-kicker">The studio</p>
+          <h2>Small by design. Close to every detail.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            EvaMariaDreams is an independent studio founded by Katsiaryna
+            Filimonava and Eugene Filimonov. We combine Unity development,
+            product design, UI, animation, and visual production in one compact
+            team.
+          </p>
+          <p>
+            Working this way keeps product decisions close to the people who
+            build them. From the first interaction to the final animation, we
+            can shape the whole experience as one coherent product.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section about-section--soft">
+      <div class="container">
+        <div class="about-section__heading">
+          <p class="product-kicker">The people behind the studio</p>
+          <h2>Two disciplines, one product vision.</h2>
+        </div>
+
+        <div class="about-team">
+          <article class="about-person">
+            <span class="about-person__role">Co-founder · Unity development</span>
+            <h3>Katsiaryna Filimonava</h3>
+            <p>
+              Builds the app systems and interactions that make Octi Flow
+              reliable, responsive, and easy to use.
+            </p>
+          </article>
+
+          <article class="about-person">
+            <span class="about-person__role">Co-founder · Visual & product design</span>
+            <h3>Eugene Filimonov</h3>
+            <p>
+              Shapes the visual language, character, animation, and product
+              experience behind Octi Flow.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <div class="container about-grid">
+        <div>
+          <p class="product-kicker">Why Octi Flow</p>
+          <h2>A hydration tracker built around returning, not perfection.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            We created Octi Flow because healthy routines are rarely difficult
+            to understand; they are difficult to sustain during ordinary busy
+            days. Octi turns water tracking into a lighter, more encouraging
+            ritual through gentle reminders, visible progress, and an animated
+            companion.
+          </p>
+          <p>
+            Our blog follows the same principle. We publish practical,
+            evidence-aware guidance and clearly separate general wellness
+            information from medical advice.
+          </p>
+          <div class="about-actions">
+            <a class="product-button product-button-primary" href="/blog/">
+              Read the blog
+            </a>
+            <a class="product-button product-button-secondary" href="/contact/">
+              Contact EvaMariaDreams
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
