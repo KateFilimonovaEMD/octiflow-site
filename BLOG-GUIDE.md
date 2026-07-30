@@ -24,24 +24,29 @@ Do not rename a published file without creating a redirect from the old URL.
 ## Article fields
 
 - `title`: 10–70 characters.
+- `seoTitle`: optional shorter title for search and social previews.
 - `description`: 50–160 characters.
 - `publishDate`: first publication date.
 - `updatedDate`: only update after a meaningful revision.
 - `category`: one stable editorial topic.
 - `tags`: internal content labels; no tag pages are generated.
-- `image`: site-root URL such as `/assets/img/blog/article/cover.webp`.
+- `image`: PNG or JPEG fallback used by the article and cards.
+- `imageAvif` and `imageWebp`: lightweight modern versions of the same cover.
 - `imageAlt`: required whenever `image` is present.
+- `imageWidth` and `imageHeight`: the fallback image’s real pixel dimensions.
+- `socialImage`: dedicated 1200 × 630 Open Graph image.
 - `featured`: makes the article the main blog card.
 - `draft`: draft and future-dated posts are excluded from HTML, sitemap, and RSS.
 - `related`: filenames without `.md`, in deliberate display order.
 
 ## Images
 
-Prepare one social/cover image at 1600 × 900 or 1200 × 675. Put article images
-under:
+Prepare the editorial cover in its intended article ratio, then export AVIF and
+WebP variants. Prepare a separate 1200 × 630 JPEG or PNG for social previews.
+Put article images under:
 
 ```text
-public/assets/img/blog/<article-slug>/
+public/images/blog/
 ```
 
 Use descriptive lowercase filenames and write useful alt text. Decorative
