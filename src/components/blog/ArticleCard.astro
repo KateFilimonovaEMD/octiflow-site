@@ -14,17 +14,23 @@ const { post, featured = false } = Astro.props;
   {
     post.data.image ? (
       <a class="article-card__media" href={postUrl(post)} tabindex="-1" aria-hidden="true">
-        <img
-          src={post.data.image}
-          alt=""
-          width="1200"
-          height="675"
-          loading={featured ? "eager" : "lazy"}
-          decoding="async"
-        />
+        <picture>
+          {post.data.imageAvif && <source srcset={post.data.imageAvif} type="image/avif" />}
+          {post.data.imageWebp && <source srcset={post.data.imageWebp} type="image/webp" />}
+          <img
+            src={post.data.image}
+            alt=""
+            width={post.data.imageWidth ?? 1200}
+            height={post.data.imageHeight ?? 800}
+            loading={featured ? "eager" : "lazy"}
+            decoding="async"
+          />
+        </picture>
       </a>
     ) : (
-      <div class="article-card__media article-card__media--placeholder" aria-hidden="true"></div>
+      <div class="article-card__media article-card__media--placeholder" aria-hidden="true">
+        <span>Octi Flow</span>
+      </div>
     )
   }
 
