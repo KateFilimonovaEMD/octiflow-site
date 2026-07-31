@@ -102,6 +102,10 @@ const structuredDataGraph = {
     ...pageStructuredData.map(({ "@context": _context, ...node }) => node),
   ],
 };
+const structuredDataJson = JSON.stringify(structuredDataGraph).replace(
+  /</g,
+  "\\u003c",
+);
 ---
 
 <!doctype html>
@@ -140,14 +144,6 @@ const structuredDataGraph = {
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <noscript>
-      <style>
-        .reveal {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      </style>
-    </noscript>
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -157,7 +153,7 @@ const structuredDataGraph = {
     <script
       is:inline
       type="application/ld+json"
-      set:html={JSON.stringify(structuredDataGraph)}
+      set:html={structuredDataJson}
     />
   </head>
 

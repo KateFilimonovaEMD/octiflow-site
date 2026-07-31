@@ -5,8 +5,8 @@
         class="brand-logo"
         src="/assets/img/octi-flow-logo.png"
         alt="Octi Flow"
-        width="500"
-        height="216"
+        width="552"
+        height="218"
         decoding="async"
       />
     </a>
@@ -22,16 +22,32 @@
         class="app-store-badge"
         src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=270x80"
         alt="Download on the App Store"
-        width="162"
-        height="48"
+        width="120"
+        height="40"
         decoding="async"
       />
     </a>
 
-    <span class="mobile-menu-icon" aria-hidden="true">
+    <button
+      class="mobile-menu-toggle"
+      type="button"
+      aria-controls="mobile-navigation"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >
       <span></span>
       <span></span>
       <span></span>
-    </span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-navigation" hidden>
+    <div class="container mobile-menu__inner">
+      <a href="/">Home</a>
+      <a href="/blog/">Blog</a>
+      <a href="/about/">About</a>
+      <a href="/support/">Support</a>
+      <a href="/contact/">Contact</a>
+    </div>
   </div>
 </nav>

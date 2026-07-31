@@ -3,42 +3,60 @@
     "(prefers-reduced-motion: reduce)",
   ).matches;
 
-  const revealItems = document.querySelectorAll(".reveal");
+  const menuToggle = document.querySelector(".mobile-menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
 
-  const revealAll = () => {
-    revealItems.forEach((element) => {
-      element.classList.add("in-view");
-    });
+  const closeMobileMenu = ({ restoreFocus = false } = {}) => {
+    if (!menuToggle || !mobileMenu) {
+      return;
+    }
+
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open menu");
+    mobileMenu.hidden = true;
+
+    if (restoreFocus) {
+      menuToggle.focus();
+    }
   };
 
-  if (reduceMotion || !("IntersectionObserver" in window)) {
-    revealAll();
-  } else {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.01,
-        rootMargin: "0px 0px -24px 0px",
-      },
-    );
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const willOpen = menuToggle.getAttribute("aria-expanded") !== "true";
 
-    revealItems.forEach((item) => {
-      observer.observe(item);
+      menuToggle.setAttribute("aria-expanded", String(willOpen));
+      menuToggle.setAttribute("aria-label", willOpen ? "Close menu" : "Open menu");
+      mobileMenu.hidden = !willOpen;
     });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !mobileMenu.hidden) {
+        closeMobileMenu({ restoreFocus: true });
+      }
+    });
+
+    const desktopViewport = window.matchMedia("(min-width: 821px)");
+    const handleViewportChange = (event) => {
+      if (event.matches) {
+        closeMobileMenu();
+      }
+    };
+
+    if ("addEventListener" in desktopViewport) {
+      desktopViewport.addEventListener("change", handleViewportChange);
+    } else {
+      desktopViewport.addListener(handleViewportChange);
+    }
   }
 
   let scrollTimer;
 
   document.querySelectorAll('.toc a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
-      const target = document.querySelector(link.getAttribute("href"));
+      const fragment = link.getAttribute("href")?.slice(1);
+      const target = fragment
+        ? document.getElementById(decodeURIComponent(fragment))
+        : null;
 
       if (!target) {
         return;
@@ -46,7 +64,6 @@
 
       event.preventDefault();
       clearTimeout(scrollTimer);
-      revealAll();
 
       const scrollToTarget = () => {
         const navigation = document.querySelector("nav");

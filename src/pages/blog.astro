@@ -51,7 +51,7 @@ const structuredData = [
 >
   <main class="blog-index">
     <header class="blog-hero">
-      <div class="container reveal">
+      <div class="container">
         <h1>Small habits. Better hydration.</h1>
         <p>
           Practical guides for building a sustainable water routine, using
@@ -86,8 +86,7 @@ const structuredData = [
             <nav class="blog-pagination" aria-label="Blog pages">
               <span
                 class="blog-pagination__arrow is-disabled"
-                aria-disabled="true"
-                aria-label="Previous page"
+                aria-hidden="true"
               >
                 <svg
                   class="blog-pagination__icon"
@@ -100,8 +99,7 @@ const structuredData = [
               <span class="blog-pagination__page" aria-current="page">1</span>
               <span
                 class="blog-pagination__arrow is-disabled"
-                aria-disabled="true"
-                aria-label="Next page"
+                aria-hidden="true"
               >
                 <svg
                   class="blog-pagination__icon"
@@ -114,7 +112,7 @@ const structuredData = [
             </nav>
           </>
         ) : (
-          <section class="blog-empty reveal">
+          <section class="blog-empty">
             <p class="section-eyebrow">Coming soon</p>
             <h2>Thoughtful hydration guides are on the way</h2>
             <p>

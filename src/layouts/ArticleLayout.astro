@@ -96,7 +96,7 @@ const structuredData = [
 >
   <main class="article-page">
     <header class="article-hero">
-      <div class="container article-hero__inner reveal">
+      <div class="container article-hero__inner">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Octi Flow</a>
           <span aria-hidden="true">/</span>
@@ -127,7 +127,7 @@ const structuredData = [
 
     {
       data.image && (
-        <figure class="container article-cover reveal">
+        <figure class="container article-cover">
           <picture>
             {data.imageAvif && <source srcset={data.imageAvif} type="image/avif" />}
             {data.imageWebp && <source srcset={data.imageWebp} type="image/webp" />}

@@ -1,8 +1,9 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
+import { z } from "astro/zod";
 
 const blog = defineCollection({
-  loader: glob({ base: "./src/content/blog", pattern: "**/*.{md,mdx}" }),
+  loader: glob({ base: "./src/content/blog", pattern: "**/*.md" }),
   schema: z.object({
     title: z.string().min(10).max(70),
     seoTitle: z.string().min(10).max(70).optional(),
@@ -25,7 +26,7 @@ const blog = defineCollection({
   }).superRefine((data, context) => {
     if (data.image && !data.imageAlt) {
       context.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         path: ["imageAlt"],
         message: "imageAlt is required when image is provided.",
       });
@@ -33,7 +34,7 @@ const blog = defineCollection({
 
     if ((data.imageAvif || data.imageWebp || data.socialImage) && !data.image) {
       context.addIssue({
-        code: z.ZodIssueCode.custom,
+        code: "custom",
         path: ["image"],
         message: "image is required when optimized or social image variants are provided.",
       });
