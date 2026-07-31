@@ -560,11 +560,13 @@ a.blog-pagination__arrow:hover {
 }
 
 .article-cta__store-badges {
+  --store-badge-height: 60px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  min-height: 60px;
+  min-height: var(--store-badge-height);
 }
 
 .button-link {
@@ -794,6 +796,8 @@ body > nav {
 }
 
 .store-badges {
+  --store-badge-height: 60px;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -804,11 +808,10 @@ body > nav {
 
 .app-store-link {
   display: inline-flex;
-  height: 60px;
+  height: var(--store-badge-height);
   align-items: center;
   justify-content: center;
   flex: none;
-  border-radius: 8px;
 }
 
 .app-store-link:focus-visible {
@@ -818,7 +821,7 @@ body > nav {
 
 .app-store-badge {
   display: block;
-  height: 60px;
+  height: 100%;
   width: auto;
   max-width: none;
   object-fit: contain;
@@ -826,7 +829,7 @@ body > nav {
 
 .google-play-unavailable {
   display: inline-flex;
-  height: 60px;
+  height: var(--store-badge-height);
   width: auto;
   flex: none;
   align-items: center;
@@ -836,7 +839,7 @@ body > nav {
 .google-play-badge {
   display: block;
   width: auto;
-  height: 60px;
+  height: 100%;
   max-width: none;
   object-fit: contain;
   opacity: 0.52;
@@ -1103,6 +1106,8 @@ footer {
   }
 
   .store-badges {
+    --store-badge-height: 26px;
+
     grid-column: 2;
     gap: clamp(4px, 1vw, 8px);
     height: 38px;
@@ -1113,32 +1118,24 @@ footer {
 
   .app-store-link {
     width: auto;
-    height: clamp(22px, 6.5vw, 34px);
-  }
-
-  .app-store-badge {
-    width: auto;
-    height: 100%;
+    height: var(--store-badge-height);
   }
 
   .google-play-unavailable {
     width: auto;
-    height: clamp(22px, 6.5vw, 34px);
-  }
-
-  .google-play-badge {
-    width: auto;
-    height: 100%;
+    height: var(--store-badge-height);
   }
 
   .article-cta__store-badges {
+    --store-badge-height: 38px;
+
     flex-wrap: nowrap;
     gap: 8px;
   }
 
   .article-cta__store-badges .app-store-link,
   .article-cta__store-badges .google-play-unavailable {
-    height: clamp(30px, 9vw, 46px);
+    height: var(--store-badge-height);
   }
 
   .mobile-menu-toggle {
@@ -1286,6 +1283,24 @@ footer {
   .apple-footer-links {
     flex-wrap: wrap;
     margin-top: var(--s2);
+  }
+}
+
+@media (max-width: 360px) {
+  .store-badges {
+    --store-badge-height: 22px;
+
+    gap: 4px;
+  }
+
+  .article-cta__store-badges {
+    --store-badge-height: 30px;
+  }
+}
+
+@media (min-width: 380px) and (max-width: 820px) {
+  .article-cta__store-badges {
+    --store-badge-height: 40px;
   }
 }
 
