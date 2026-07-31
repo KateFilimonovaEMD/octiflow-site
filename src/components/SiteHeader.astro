@@ -1,3 +1,17 @@
+---
+const navigationItems = [
+  { href: "/", label: "Home" },
+  { href: "/blog/", label: "Blog" },
+  { href: "/about/", label: "About" },
+  { href: "/support/", label: "Support" },
+  { href: "/contact/", label: "Contact" },
+];
+
+const currentPath = Astro.url.pathname;
+const isCurrentPage = (href: string) =>
+  href === "/" ? currentPath === "/" : currentPath.startsWith(href);
+---
+
 <nav aria-label="Primary navigation">
   <div class="container nav-inner">
     <a class="brand" href="/" aria-label="Octi Flow home">
@@ -10,6 +24,20 @@
         decoding="async"
       />
     </a>
+
+    <div class="desktop-menu" aria-label="Desktop navigation">
+      {
+        navigationItems.map(({ href, label }) => (
+          <a
+            class="desktop-menu__link"
+            href={href}
+            aria-current={isCurrentPage(href) ? "page" : undefined}
+          >
+            {label}
+          </a>
+        ))
+      }
+    </div>
 
     <div class="store-badges" aria-label="Octi Flow app stores">
       <a
@@ -59,11 +87,13 @@
 
   <div class="mobile-menu" id="mobile-navigation" hidden>
     <div class="container mobile-menu__inner">
-      <a href="/">Home</a>
-      <a href="/blog/">Blog</a>
-      <a href="/about/">About</a>
-      <a href="/support/">Support</a>
-      <a href="/contact/">Contact</a>
+      {
+        navigationItems.map(({ href, label }) => (
+          <a href={href} aria-current={isCurrentPage(href) ? "page" : undefined}>
+            {label}
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
