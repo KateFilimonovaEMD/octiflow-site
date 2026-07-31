@@ -569,6 +569,21 @@ a.blog-pagination__arrow:hover {
   min-height: var(--store-badge-height);
 }
 
+/* Keep store artwork out of the generic article-image treatment. */
+.article-prose .article-cta__store-badges img {
+  width: auto;
+  height: 100%;
+  max-width: none;
+  margin: 0;
+  border-radius: 0;
+}
+
+.article-prose .article-cta__store-badges .app-store-link,
+.article-prose .article-cta__store-badges .google-play-unavailable {
+  line-height: 0;
+  text-decoration: none;
+}
+
 .button-link {
   display: inline-flex;
   min-height: 46px;
