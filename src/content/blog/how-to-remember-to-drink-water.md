@@ -10,9 +10,10 @@ tags:
   - hydration
   - healthy habits
   - water reminders
-featured: true
+featured: false
 draft: false
-related: []
+related:
+  - how-much-water-should-you-drink-in-hot-weather
 image: "/images/blog/Blog_01_Main.png"
 imageAvif: "/images/blog/Blog_01_Main.avif"
 imageWebp: "/images/blog/Blog_01_Main.webp"
