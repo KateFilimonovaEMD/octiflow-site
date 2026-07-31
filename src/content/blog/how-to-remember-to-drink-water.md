@@ -17,8 +17,8 @@ image: "/images/blog/Blog_01_Main.png"
 imageAvif: "/images/blog/Blog_01_Main.avif"
 imageWebp: "/images/blog/Blog_01_Main.webp"
 imageAlt: "A reusable water bottle and glass of water with lemon and mint on a blue background"
-imageWidth: 1264
-imageHeight: 843
+imageWidth: 1408
+imageHeight: 768
 socialImage: "/images/blog/Blog_01_Main_OG.jpg"
 ---
 
@@ -34,7 +34,7 @@ visible, and use reminders as prompts rather than alarms you must obey.
 Here are eight ways to build that system without turning hydration into another
 full-time job.
 
-## 1. Stop chasing a perfect number
+## Habit 1: Stop chasing a perfect number
 
 There is no single amount of plain water that is right for every adult on every
 day. Body size, diet, activity, temperature, pregnancy, breastfeeding, illness,
@@ -57,7 +57,7 @@ So choose a realistic starting target, observe how it fits your day, and adjust
 it when your circumstances change. A useful target should guide you, not make
 you feel as if you have failed at 9:07 a.m.
 
-## 2. Give water a reliable cue
+## Habit 2: Give water a reliable cue
 
 “I will drink more water” is a wish. “After I make my morning coffee, I will
 drink a glass of water” is a plan.
@@ -82,7 +82,7 @@ Pick two or three moments that already happen most days:
 Make the first version almost embarrassingly easy: a few comfortable sips are
 enough. You can increase the amount later. First, make the sequence dependable.
 
-## 3. Keep the drink where the decision happens
+## Habit 3: Keep the drink where the decision happens
 
 A bottle hidden in a bag is storage. A glass beside your keyboard is a prompt.
 
@@ -103,7 +103,7 @@ lime, cucumber, or berries may be easier to reach for. The
 also suggests unsweetened sparkling water or fruit-infused water as alternatives
 to sugary drinks.
 
-## 4. Make the next drink convenient, not heroic
+## Habit 4: Make the next drink convenient, not heroic
 
 One enormous glass at the end of the day does not repair a routine that was
 invisible for the previous ten hours. Design for the next drink instead.
@@ -120,7 +120,7 @@ once feels uncomfortable, do not build your plan around forcing it. Smaller,
 repeatable servings are more useful than an impressive target you keep
 avoiding.
 
-## 5. Use reminders that tell you what to do
+## Habit 5: Use reminders that tell you what to do
 
 A notification that says “Drink water!” every hour can become wallpaper.
 Better reminders arrive when they are useful and ask for a clear, small action.
@@ -149,7 +149,7 @@ system adapts to your day instead of making you serve the system.
 > reminder window and track drinks without turning the routine into a rigid
 > schedule.
 
-## 6. Record the drink while it is still in your hand
+## Habit 6: Record the drink while it is still in your hand
 
 Tracking is most useful when it reduces guesswork. It becomes useless when you
 have to reconstruct the day from memory at bedtime.
@@ -163,7 +163,7 @@ cylinder, and your goal is to see the shape of your routine: long gaps, times
 when drinking happens naturally, and days when conditions change. Consistent
 estimates are usually more actionable than occasional perfect measurements.
 
-## 7. Let colour and thirst provide context
+## Habit 7: Let colour and thirst provide context
 
 For most healthy adults, thirst is useful information. Urine colour can offer
 another rough check: the NHS advises aiming for clear, pale-yellow urine. Darker
@@ -179,7 +179,7 @@ The US National Library of Medicine provides a fuller overview through
 Do not use an app target to override what your body or clinician is telling
 you. The point of tracking is to add context, not to replace medical judgement.
 
-## 8. Change the plan when the day changes
+## Habit 8: Change the plan when the day changes
 
 Your usual routine is only a baseline. Hot weather, prolonged physical
 activity, fever, vomiting, diarrhoea, pregnancy, and breastfeeding can increase

@@ -1,5 +1,28 @@
 # Blog scaffold changes
 
+## Article layout and store badges — July 31, 2026
+
+- Replaced the article hero image and all optimized/social variants with the
+  final `Blog_01_Main` artwork.
+- Reduced the empty space above the article breadcrumbs.
+- Made the spacing above and below the hero image equal.
+- Unified the gaps between the article body, author card, CTA, and footer.
+- Replaced the article CTA text button with centered App Store and Google Play
+  badges.
+- Cropped the transparent padding from the Google Play artwork so both store
+  badges have the same visible height.
+
+## Mobile menu and Google Play badge — July 31, 2026
+
+- Fixed the mobile navigation CSS so removing the `hidden` attribute actually
+  displays the menu after the hamburger button is pressed.
+- Added the official Google Play badge beside the App Store badge as a
+  non-interactive, semi-transparent unavailable state.
+- Removed the separate `Coming soon` label to keep the header visually clean.
+- Kept both store badges in the same header row at every supported mobile
+  width, scaling them fluidly between 320 and 479 px so they do not overlap the
+  Octi Flow logo or menu button.
+
 ## Final layout and resilience audit — July 30, 2026
 
 - Verified every route at 320, 360, 390, 430, 768, 821, 921, 1024, and
