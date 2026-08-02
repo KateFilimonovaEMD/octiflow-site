@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const canonical = "https://octiflow.app/404.html";
+---
+
+<BaseLayout
+  title="Page Not Found — Octi Flow"
+  description="The requested page could not be found. Return to Octi Flow or explore the hydration blog."
+  {canonical}
+  robots="noindex,follow"
+  imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
+>
+  <main>
+    <header class="hero">
+      <div class="container">
+        <div class="section-eyebrow">Error 404</div>
+        <h1 class="page-title">This page has drifted away.</h1>
+        <p class="page-lead">
+          The page you’re looking for doesn’t exist or may have moved.
+        </p>
+        <div class="support-primary-actions">
+          <a class="product-button product-button-primary" href="/">
+            Back to home
+          </a>
+          <a class="product-button product-button-secondary" href="/blog/">
+            Explore the blog
+          </a>
+        </div>
+      </div>
+    </header>
+  </main>
+</BaseLayout>
