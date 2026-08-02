@@ -272,6 +272,11 @@ a.blog-pagination__arrow:hover {
   letter-spacing: -0.04em;
 }
 
+.article-card:not(.article-card--featured) .article-card__media {
+  min-height: 0;
+  aspect-ratio: 11 / 6;
+}
+
 .article-card__body {
   display: flex;
   flex-direction: column;
