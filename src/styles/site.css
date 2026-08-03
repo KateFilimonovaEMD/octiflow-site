@@ -2715,8 +2715,31 @@ footer {
 }
 
 .about-origin {
+  position: relative;
+  overflow: hidden;
   padding-top: clamp(56px, 6vw, 80px);
-  background: linear-gradient(180deg, #f4faff 0%, #f8fcff 68%, #fff 100%);
+  background:
+    radial-gradient(circle at 16% 8%, rgb(117 35 228 / 86%), transparent 34%),
+    radial-gradient(circle at 88% 90%, rgb(0 114 220 / 76%), transparent 38%),
+    linear-gradient(135deg, #291078, #073080 56%, #0056bd);
+  color: #fff;
+}
+
+.about-origin::before {
+  position: absolute;
+  top: -240px;
+  right: -120px;
+  width: 580px;
+  height: 580px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 90px rgb(255 255 255 / 2.5%);
+  content: "";
+}
+
+.about-origin > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .about-story-section h2,
@@ -2836,6 +2859,58 @@ footer {
   stroke-linecap: round;
   stroke-linejoin: round;
   transform: translate(-50%, -50%);
+}
+
+.about-origin .product-kicker,
+.about-origin__question,
+.about-evolution-card figcaption span {
+  color: #83d2ff;
+}
+
+.about-origin h2,
+.about-evolution-card figcaption strong {
+  color: #fff;
+}
+
+.about-origin__copy > p:not(.product-kicker):not(.about-origin__question) {
+  color: rgb(255 255 255 / 76%);
+}
+
+.about-evolution-card {
+  border-color: rgb(255 255 255 / 17%);
+  background: rgb(255 255 255 / 8%);
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / 7%),
+    0 28px 52px -34px rgb(0 0 0 / 72%);
+  backdrop-filter: blur(12px);
+}
+
+.about-evolution-card .about-media-placeholder {
+  border-bottom-color: rgb(255 255 255 / 17%);
+  background:
+    linear-gradient(rgb(255 255 255 / 7%), rgb(255 255 255 / 7%)),
+    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 18%) 1px, transparent 0);
+  color: #fff;
+}
+
+.about-evolution-card .about-media-placeholder::after {
+  background: linear-gradient(120deg, rgb(93 183 255 / 30%), rgb(130 62 230 / 22%));
+}
+
+.about-evolution-card .about-media-placeholder small {
+  color: rgb(255 255 255 / 67%);
+}
+
+.about-evolution-card .about-placeholder-icon {
+  border-color: rgb(131 210 255 / 66%);
+}
+
+.about-evolution-card .about-placeholder-icon::before {
+  background: rgb(131 210 255 / 56%);
+}
+
+.about-evolution-card .about-placeholder-icon::after {
+  background: linear-gradient(145deg, transparent 49%, rgb(131 210 255 / 46%) 50%);
 }
 
 .about-team-section {
