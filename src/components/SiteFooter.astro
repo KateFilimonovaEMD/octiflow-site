@@ -37,24 +37,43 @@ const socialProfiles = [
   <div class="container apple-footer">
     <nav class="footer-social" aria-label="EvaMariaDreams on social media">
       {
-        socialProfiles.map(({ name, href, path }) => (
-          <a
-            class="footer-social-link"
-            data-social={name.toLowerCase()}
-            href={href}
-            target="_blank"
-            rel="me noopener noreferrer"
-            aria-label={`EvaMariaDreams on ${name}`}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-              focusable="false"
+        socialProfiles.map(({ name, href, path }) => {
+          const socialName = name.toLowerCase();
+          const gradientId = `footer-social-gradient-${socialName}`;
+
+          return (
+            <a
+              class="footer-social-link"
+              data-social={socialName}
+              href={href}
+              target="_blank"
+              rel="me noopener noreferrer"
+              aria-label={`EvaMariaDreams on ${name}`}
             >
-              <path d={path} />
-            </svg>
-          </a>
-        ))
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <defs>
+                  <linearGradient
+                    id={gradientId}
+                    x1="2"
+                    y1="2"
+                    x2="22"
+                    y2="22"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0" stop-color="#073080" />
+                    <stop offset="0.58" stop-color="#015cc6" />
+                    <stop offset="1" stop-color="#5db7ff" />
+                  </linearGradient>
+                </defs>
+                <path d={path} fill={`url(#${gradientId})`} />
+              </svg>
+            </a>
+          );
+        })
       }
     </nav>
     <div class="apple-footer-legal">
