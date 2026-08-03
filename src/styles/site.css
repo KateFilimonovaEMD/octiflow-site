@@ -1134,6 +1134,57 @@ footer {
   padding-block: var(--s4);
 }
 
+.footer-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: var(--s3);
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer-social-link {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgb(7 48 128 / 12%);
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: 0 6px 18px rgb(7 48 128 / 8%);
+  color: var(--color-brand-strong);
+  transition:
+    transform var(--duration-fast) ease,
+    border-color var(--duration-fast) ease,
+    background-color var(--duration-fast) ease,
+    box-shadow var(--duration-fast) ease,
+    color var(--duration-fast) ease;
+}
+
+.footer-social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-brand);
+  background: var(--color-brand);
+  box-shadow: 0 10px 22px rgb(1 92 198 / 24%);
+  color: var(--color-on-brand);
+}
+
+.footer-social-link:active {
+  transform: scale(0.96);
+}
+
+.footer-social-link:focus-visible {
+  outline: 3px solid rgb(1 92 198 / 28%);
+  outline-offset: 3px;
+}
+
 .apple-footer-legal {
   display: flex;
   justify-content: space-between;
@@ -1356,6 +1407,16 @@ footer {
     display: block;
   }
 
+  .footer-social-link {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer-social-link svg {
+    width: 17px;
+    height: 17px;
+  }
+
   .apple-footer-links {
     flex-wrap: wrap;
     margin-top: var(--s2);
@@ -1363,6 +1424,15 @@ footer {
 }
 
 @media (max-width: 360px) {
+  .footer-social {
+    gap: 8px;
+  }
+
+  .footer-social-link {
+    width: 34px;
+    height: 34px;
+  }
+
   .store-badges {
     --store-badge-height: 22px;
 
