@@ -1164,9 +1164,35 @@ footer {
 }
 
 .footer-social-link svg {
+  display: block;
   width: 44px;
   height: 44px;
   fill: currentColor;
+  transform: translateY(var(--social-icon-y, 0)) scale(var(--social-icon-scale, 1));
+  transform-origin: center;
+  shape-rendering: geometricPrecision;
+}
+
+.footer-social-link[data-social="instagram"] {
+  --social-icon-scale: 0.98;
+}
+
+.footer-social-link[data-social="threads"] {
+  --social-icon-scale: 1.02;
+}
+
+.footer-social-link[data-social="facebook"],
+.footer-social-link[data-social="reddit"] {
+  --social-icon-scale: 1.05;
+}
+
+.footer-social-link[data-social="tiktok"] {
+  --social-icon-scale: 0.96;
+}
+
+.footer-social-link[data-social="youtube"] {
+  --social-icon-scale: 1.2;
+  --social-icon-y: 0.5px;
 }
 
 .footer-social-link:hover {
