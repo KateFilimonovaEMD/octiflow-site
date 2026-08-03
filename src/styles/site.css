@@ -2484,9 +2484,9 @@ footer {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr);
+  grid-template-columns: minmax(0, 1.02fr) minmax(400px, 0.98fr);
   align-items: center;
-  gap: clamp(56px, 8vw, 104px);
+  gap: clamp(44px, 6vw, 82px);
 }
 
 .about-live-status {
@@ -2542,7 +2542,7 @@ footer {
 .about-hero-visual {
   position: relative;
   display: grid;
-  min-height: 540px;
+  min-height: 580px;
   place-items: center;
 }
 
@@ -2555,13 +2555,13 @@ footer {
 }
 
 .about-hero-visual::before {
-  width: 460px;
+  width: 505px;
   max-width: 112%;
   aspect-ratio: 1;
 }
 
 .about-hero-visual::after {
-  width: 360px;
+  width: 400px;
   max-width: 90%;
   aspect-ratio: 1;
   border-color: rgb(102 41 227 / 12%);
@@ -2617,8 +2617,8 @@ footer {
 .about-hero-photo {
   z-index: 1;
   overflow: hidden;
-  width: min(350px, 82%);
-  aspect-ratio: 1045 / 1428;
+  width: min(385px, 84%);
+  aspect-ratio: 880 / 1203;
   border: 1px solid rgb(1 92 198 / 19%);
   border-radius: 34px;
   background: #dceaf4;
@@ -2670,8 +2670,8 @@ footer {
   position: absolute;
   z-index: 2;
   display: inline-flex;
-  width: 108px;
-  height: 44px;
+  width: 112px;
+  height: 46px;
   align-items: center;
   justify-content: center;
   padding: 0 12px;
