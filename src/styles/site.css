@@ -2664,7 +2664,12 @@ footer {
 .about-skill-tag {
   position: absolute;
   z-index: 2;
-  padding: 9px 14px;
+  display: inline-flex;
+  width: 108px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
   border: 1px solid rgb(255 255 255 / 80%);
   border-radius: var(--radius-pill);
   background: rgb(255 255 255 / 90%);
@@ -2672,6 +2677,8 @@ footer {
   color: var(--deep);
   font-size: 0.76rem;
   font-weight: 800;
+  line-height: 1;
+  text-align: center;
   backdrop-filter: blur(10px);
 }
 
@@ -2790,7 +2797,7 @@ footer {
   z-index: 2;
   top: 46%;
   left: 50%;
-  display: grid;
+  display: inline-grid;
   width: 42px;
   height: 42px;
   place-items: center;
@@ -2799,7 +2806,22 @@ footer {
   background: linear-gradient(135deg, var(--deep), var(--blue));
   box-shadow: 0 12px 22px -12px rgb(7 48 128 / 70%);
   color: #fff;
-  font-size: 1.15rem;
+  transform: translate(-50%, -50%);
+}
+
+.about-evolution-arrow__icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 17px;
+  height: 17px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transform: translate(-50%, -50%);
 }
 
@@ -3150,18 +3172,31 @@ footer {
 }
 
 .about-follow__text-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   color: #fff;
   font-size: 0.92rem;
   font-weight: 800;
+  line-height: 1.2;
 }
 
-.about-follow__text-link span {
-  display: inline-block;
-  margin-left: 6px;
+.about-follow__link-icon {
+  display: block;
+  width: 17px;
+  height: 17px;
+  overflow: visible;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
   transition: transform var(--duration-fast) ease;
 }
 
-.about-follow__text-link:hover span {
+.about-follow__text-link:hover .about-follow__link-icon {
   transform: translateX(4px);
 }
 
@@ -3259,8 +3294,22 @@ footer {
 }
 
 @media (max-width: 600px) {
+  .about-page {
+    --about-mobile-card-padding: 20px;
+    --about-mobile-section-space: 56px;
+  }
+
+  .about-story-hero {
+    padding: 48px 0 var(--about-mobile-section-space);
+  }
+
+  .about-story-section,
+  .about-build {
+    padding: var(--about-mobile-section-space) 0;
+  }
+
   .about-story-hero__grid {
-    gap: var(--s4);
+    gap: 36px;
   }
 
   .about-live-status {
@@ -3290,7 +3339,9 @@ footer {
   }
 
   .about-skill-tag {
-    padding: 7px 11px;
+    width: 96px;
+    height: 40px;
+    padding: 0 8px;
     font-size: 0.68rem;
   }
 
@@ -3312,7 +3363,7 @@ footer {
 
   .about-evolution {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 0;
   }
 
   .about-evolution-card--early,
@@ -3321,7 +3372,15 @@ footer {
   }
 
   .about-evolution-arrow {
-    top: 50%;
+    position: relative;
+    top: auto;
+    left: auto;
+    place-self: center;
+    margin: -10px 0;
+    transform: none;
+  }
+
+  .about-evolution-arrow__icon {
     transform: translate(-50%, -50%) rotate(90deg);
   }
 
@@ -3331,6 +3390,62 @@ footer {
 
   .about-media-placeholder--portrait {
     min-height: 270px;
+  }
+
+  .about-origin__grid {
+    gap: 36px;
+  }
+
+  .about-section-heading > p:last-child {
+    margin-top: var(--about-mobile-card-padding);
+  }
+
+  .about-team-grid,
+  .about-build-status,
+  .about-moments-grid {
+    gap: var(--about-mobile-card-padding);
+    margin-top: var(--s4);
+  }
+
+  .about-evolution-card figcaption,
+  .about-person-card__body,
+  .about-moment-card__body {
+    padding: var(--about-mobile-card-padding);
+  }
+
+  .about-person-card h3,
+  .about-moment-card h3 {
+    margin-top: 10px;
+  }
+
+  .about-build-status article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 12px;
+    padding: var(--about-mobile-card-padding);
+  }
+
+  .about-build-status__number,
+  .about-build-status__label {
+    align-self: center;
+  }
+
+  .about-build-status__label {
+    margin-top: 0;
+  }
+
+  .about-build-status h3,
+  .about-build-status article > p:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .about-build-status h3 {
+    margin-top: 16px;
+  }
+
+  .about-placeholder-format {
+    top: var(--about-mobile-card-padding);
+    left: var(--about-mobile-card-padding);
   }
 
   .about-moment-card {
@@ -3344,11 +3459,25 @@ footer {
   }
 
   .about-follow__card {
+    padding: 32px 24px;
     border-radius: 24px;
     text-align: center;
   }
 
+  .about-follow {
+    padding-bottom: var(--about-mobile-section-space);
+  }
+
+  .about-follow__actions {
+    gap: 14px;
+    margin-top: 28px;
+  }
+
   .about-follow__text-link {
     padding: 10px;
+  }
+
+  .about-follow__note {
+    margin-top: var(--about-mobile-card-padding);
   }
 }
