@@ -125,7 +125,15 @@ const structuredData = {
             </figcaption>
           </figure>
 
-          <span class="about-evolution-arrow" aria-hidden="true">→</span>
+          <span class="about-evolution-arrow" aria-hidden="true">
+            <svg
+              class="about-evolution-arrow__icon"
+              viewBox="0 0 16 16"
+              focusable="false"
+            >
+              <path d="M3 8h10M9 4l4 4-4 4" />
+            </svg>
+          </span>
 
           <figure class="about-evolution-card about-evolution-card--today">
             <div
@@ -369,7 +377,15 @@ const structuredData = {
               See the latest updates
             </a>
             <a class="about-follow__text-link" href="/contact/">
-              Talk to the team <span aria-hidden="true">→</span>
+              <span>Talk to the team</span>
+              <svg
+                class="about-follow__link-icon"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
             </a>
           </div>
           <p class="about-follow__note">
