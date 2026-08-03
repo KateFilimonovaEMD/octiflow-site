@@ -1136,10 +1136,10 @@ footer {
 
 .footer-social {
   display: grid;
-  grid-template-columns: repeat(6, 68px);
+  grid-template-columns: repeat(6, 72px);
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 18px;
   margin-bottom: var(--s3);
   padding-bottom: var(--s3);
   border-bottom: 1px solid var(--color-border);
@@ -1147,64 +1147,65 @@ footer {
 
 .footer-social-link {
   display: grid;
-  width: 68px;
-  height: 68px;
+  width: 72px;
+  height: 72px;
   place-items: center;
-  border: 1px solid rgb(7 48 128 / 12%);
-  border-radius: 50%;
-  background: var(--color-surface);
-  box-shadow: 0 6px 18px rgb(7 48 128 / 8%);
-  color: var(--color-brand-strong);
-  transition:
-    transform var(--duration-fast) ease,
-    border-color var(--duration-fast) ease,
-    background-color var(--duration-fast) ease,
-    box-shadow var(--duration-fast) ease,
-    color var(--duration-fast) ease;
+  border: 0;
+  background: none;
+  transition: transform var(--duration-fast) ease;
 }
 
 .footer-social-link svg {
   display: block;
-  width: 44px;
-  height: 44px;
-  fill: currentColor;
+  width: 52px;
+  height: 52px;
+  overflow: visible;
+  filter:
+    drop-shadow(0 4px 5px rgb(7 48 128 / 16%))
+    drop-shadow(0 0 10px rgb(93 183 255 / 10%));
   transform: translateY(var(--social-icon-y, 0)) scale(var(--social-icon-scale, 1));
   transform-origin: center;
   shape-rendering: geometricPrecision;
+  transition:
+    filter var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
 }
 
 .footer-social-link[data-social="instagram"] {
-  --social-icon-scale: 0.98;
+  --social-icon-scale: 0.96;
 }
 
 .footer-social-link[data-social="threads"] {
-  --social-icon-scale: 1.02;
+  --social-icon-scale: 1;
 }
 
 .footer-social-link[data-social="facebook"],
 .footer-social-link[data-social="reddit"] {
-  --social-icon-scale: 1.05;
+  --social-icon-scale: 1.03;
 }
 
 .footer-social-link[data-social="tiktok"] {
-  --social-icon-scale: 0.96;
+  --social-icon-scale: 0.94;
 }
 
 .footer-social-link[data-social="youtube"] {
-  --social-icon-scale: 1.2;
+  --social-icon-scale: 1.18;
   --social-icon-y: 0.5px;
 }
 
 .footer-social-link:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-brand);
-  background: var(--color-brand);
-  box-shadow: 0 10px 22px rgb(1 92 198 / 24%);
-  color: var(--color-on-brand);
+  transform: translateY(-3px) scale(1.06);
+}
+
+.footer-social-link:hover svg {
+  filter:
+    drop-shadow(0 8px 8px rgb(1 92 198 / 28%))
+    drop-shadow(0 0 14px rgb(93 183 255 / 22%));
+  transform: translateY(var(--social-icon-y, 0)) scale(var(--social-icon-scale, 1));
 }
 
 .footer-social-link:active {
-  transform: scale(0.96);
+  transform: scale(0.94);
 }
 
 .footer-social-link:focus-visible {
@@ -1435,19 +1436,19 @@ footer {
   }
 
   .footer-social {
-    grid-template-columns: repeat(3, 60px);
-    column-gap: 18px;
-    row-gap: 14px;
+    grid-template-columns: repeat(3, 68px);
+    column-gap: 24px;
+    row-gap: 18px;
   }
 
   .footer-social-link {
-    width: 60px;
-    height: 60px;
+    width: 68px;
+    height: 68px;
   }
 
   .footer-social-link svg {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
   }
 
   .apple-footer-links {
@@ -1458,19 +1459,19 @@ footer {
 
 @media (max-width: 360px) {
   .footer-social {
-    grid-template-columns: repeat(3, 56px);
-    column-gap: 16px;
-    row-gap: 12px;
+    grid-template-columns: repeat(3, 64px);
+    column-gap: 18px;
+    row-gap: 16px;
   }
 
   .footer-social-link {
-    width: 56px;
-    height: 56px;
+    width: 64px;
+    height: 64px;
   }
 
   .footer-social-link svg {
-    width: 37px;
-    height: 37px;
+    width: 46px;
+    height: 46px;
   }
 
   .store-badges {
