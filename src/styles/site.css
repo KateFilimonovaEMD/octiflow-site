@@ -2461,8 +2461,9 @@ footer {
 
 .about-story-hero {
   position: relative;
-  padding: clamp(72px, 9vw, 118px) 0 clamp(80px, 10vw, 128px);
+  padding: clamp(36px, 5vw, 64px) 0 clamp(72px, 8vw, 104px);
   background:
+    linear-gradient(180deg, transparent 62%, #fff 100%),
     radial-gradient(circle at 88% 22%, rgb(102 41 227 / 12%), transparent 28%),
     radial-gradient(circle at 68% 58%, rgb(93 183 255 / 24%), transparent 32%),
     linear-gradient(145deg, #eef7ff 0%, #ffffff 64%);
@@ -2613,21 +2614,25 @@ footer {
   line-height: 1.45;
 }
 
-.about-media-placeholder--hero {
+.about-hero-photo {
   z-index: 1;
+  overflow: hidden;
   width: min(350px, 82%);
-  min-height: 466px;
-  border-style: solid;
-  border-color: rgb(1 92 198 / 19%);
+  aspect-ratio: 1045 / 1428;
+  border: 1px solid rgb(1 92 198 / 19%);
   border-radius: 34px;
-  background:
-    linear-gradient(rgb(255 255 255 / 76%), rgb(255 255 255 / 76%)),
-    radial-gradient(circle at 1px 1px, rgb(1 92 198 / 22%) 1px, transparent 0);
-  background-size: auto, 20px 20px;
+  background: #dceaf4;
   box-shadow:
     0 35px 70px -36px rgb(7 48 128 / 65%),
     0 16px 34px -28px rgb(102 41 227 / 58%);
   transform: rotate(2.5deg);
+}
+
+.about-hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-placeholder-icon {
@@ -3300,7 +3305,7 @@ footer {
   }
 
   .about-story-hero {
-    padding: 48px 0 var(--about-mobile-section-space);
+    padding: 36px 0 var(--about-mobile-section-space);
   }
 
   .about-story-section,
@@ -3333,9 +3338,8 @@ footer {
     min-height: 450px;
   }
 
-  .about-media-placeholder--hero {
+  .about-hero-photo {
     width: min(300px, 78%);
-    min-height: 390px;
   }
 
   .about-skill-tag {
