@@ -2461,7 +2461,7 @@ footer {
 
 .about-story-hero {
   position: relative;
-  padding: clamp(36px, 5vw, 64px) 0 clamp(72px, 8vw, 104px);
+  padding: clamp(36px, 5vw, 64px) 0 clamp(44px, 5vw, 68px);
   background:
     linear-gradient(180deg, transparent 62%, #fff 100%),
     radial-gradient(circle at 88% 22%, rgb(102 41 227 / 12%), transparent 28%),
@@ -2675,16 +2675,19 @@ footer {
   align-items: center;
   justify-content: center;
   padding: 0 12px;
-  border: 1px solid rgb(255 255 255 / 80%);
+  border: 1px solid rgb(255 255 255 / 68%);
   border-radius: var(--radius-pill);
-  background: rgb(255 255 255 / 90%);
-  box-shadow: 0 16px 28px -18px rgb(7 48 128 / 58%);
+  background: rgb(255 255 255 / 64%);
+  box-shadow:
+    inset 0 1px rgb(255 255 255 / 38%),
+    0 14px 26px -18px rgb(7 48 128 / 50%);
   color: var(--deep);
   font-size: 0.76rem;
   font-weight: 800;
   line-height: 1;
   text-align: center;
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(14px) saturate(118%);
+  backdrop-filter: blur(14px) saturate(118%);
 }
 
 .about-skill-tag--code {
@@ -2709,6 +2712,11 @@ footer {
 
 .about-story-section {
   padding: clamp(80px, 9vw, 118px) 0;
+}
+
+.about-origin {
+  padding-top: clamp(56px, 6vw, 80px);
+  background: linear-gradient(180deg, #f4faff 0%, #f8fcff 68%, #fff 100%);
 }
 
 .about-story-section h2,
@@ -3305,12 +3313,16 @@ footer {
   }
 
   .about-story-hero {
-    padding: 36px 0 var(--about-mobile-section-space);
+    padding: 36px 0 40px;
   }
 
   .about-story-section,
   .about-build {
     padding: var(--about-mobile-section-space) 0;
+  }
+
+  .about-origin {
+    padding-top: 48px;
   }
 
   .about-story-hero__grid {
