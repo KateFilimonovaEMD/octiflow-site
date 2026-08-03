@@ -1135,10 +1135,11 @@ footer {
 }
 
 .footer-social {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 68px);
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 16px;
   margin-bottom: var(--s3);
   padding-bottom: var(--s3);
   border-bottom: 1px solid var(--color-border);
@@ -1146,8 +1147,8 @@ footer {
 
 .footer-social-link {
   display: grid;
-  width: 40px;
-  height: 40px;
+  width: 68px;
+  height: 68px;
   place-items: center;
   border: 1px solid rgb(7 48 128 / 12%);
   border-radius: 50%;
@@ -1163,8 +1164,8 @@ footer {
 }
 
 .footer-social-link svg {
-  width: 18px;
-  height: 18px;
+  width: 44px;
+  height: 44px;
   fill: currentColor;
 }
 
@@ -1407,14 +1408,20 @@ footer {
     display: block;
   }
 
+  .footer-social {
+    grid-template-columns: repeat(3, 60px);
+    column-gap: 18px;
+    row-gap: 14px;
+  }
+
   .footer-social-link {
-    width: 36px;
-    height: 36px;
+    width: 60px;
+    height: 60px;
   }
 
   .footer-social-link svg {
-    width: 17px;
-    height: 17px;
+    width: 40px;
+    height: 40px;
   }
 
   .apple-footer-links {
@@ -1425,12 +1432,19 @@ footer {
 
 @media (max-width: 360px) {
   .footer-social {
-    gap: 8px;
+    grid-template-columns: repeat(3, 56px);
+    column-gap: 16px;
+    row-gap: 12px;
   }
 
   .footer-social-link {
-    width: 34px;
-    height: 34px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .footer-social-link svg {
+    width: 37px;
+    height: 37px;
   }
 
   .store-badges {
