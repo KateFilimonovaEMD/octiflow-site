@@ -2546,25 +2546,14 @@ footer {
   place-items: center;
 }
 
-.about-hero-visual::before,
-.about-hero-visual::after {
-  position: absolute;
-  border: 1px solid rgb(1 92 198 / 15%);
-  border-radius: 50%;
-  content: "";
-}
-
 .about-hero-visual::before {
+  position: absolute;
   width: 505px;
   max-width: 112%;
   aspect-ratio: 1;
-}
-
-.about-hero-visual::after {
-  width: 400px;
-  max-width: 90%;
-  aspect-ratio: 1;
-  border-color: rgb(102 41 227 / 12%);
+  border: 1px solid rgb(1 92 198 / 15%);
+  border-radius: 50%;
+  content: "";
 }
 
 .about-media-placeholder {
@@ -2615,11 +2604,11 @@ footer {
 }
 
 .about-hero-photo {
+  position: relative;
   z-index: 1;
   overflow: hidden;
   width: min(385px, 84%);
   aspect-ratio: 880 / 1203;
-  border: 1px solid rgb(1 92 198 / 19%);
   border-radius: 34px;
   background: #dceaf4;
   box-shadow:
@@ -2629,9 +2618,11 @@ footer {
 }
 
 .about-hero-photo img {
+  position: absolute;
+  inset: -1px;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   object-fit: cover;
 }
 
@@ -2823,6 +2814,7 @@ footer {
 }
 
 .about-evolution-card figcaption strong {
+  min-height: 2.7em;
   color: var(--deep);
   font-size: 0.94rem;
   line-height: 1.35;
