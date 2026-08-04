@@ -2821,29 +2821,15 @@ footer {
 .about-evolution-card figcaption {
   position: absolute;
   z-index: 2;
-  right: 1.5px;
-  bottom: 1.5px;
-  left: 1.5px;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: grid;
-  min-height: 100px;
+  height: 16%;
   grid-template-rows: auto 1fr;
+  align-content: center;
   gap: 4px;
-  padding: 16px 20px 18px;
-  border: 0;
-  border-radius: 0 0 24px 24px;
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 68%),
-    rgb(27 32 116 / 58%)
-  );
-}
-
-.about-evolution-card--early figcaption {
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 88%),
-    rgb(27 32 116 / 84%)
-  );
+  padding: 4% 7%;
 }
 
 .about-evolution-card figcaption span {
@@ -3596,7 +3582,6 @@ footer {
     margin-top: var(--s4);
   }
 
-  .about-evolution-card figcaption,
   .about-person-card__body,
   .about-moment-card__body {
     padding: var(--about-mobile-card-padding);
