@@ -2794,7 +2794,7 @@ footer {
 
 .about-evolution-card__media {
   overflow: hidden;
-  aspect-ratio: 550 / 560;
+  aspect-ratio: 629 / 1281;
   border-bottom: 1px solid rgb(255 255 255 / 17%);
   background: rgb(255 255 255 / 7%);
 }
@@ -2808,8 +2808,18 @@ footer {
 
 .about-evolution-card figcaption {
   display: grid;
+  min-height: 98px;
+  grid-template-rows: auto 1fr;
   gap: 4px;
   padding: 18px 20px 20px;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+  background: linear-gradient(
+    135deg,
+    rgb(44 92 173 / 52%),
+    rgb(27 32 116 / 42%)
+  );
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  backdrop-filter: blur(16px) saturate(120%);
 }
 
 .about-evolution-card figcaption span {
