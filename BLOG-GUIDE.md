@@ -23,9 +23,9 @@ Do not rename a published file without creating a redirect from the old URL.
 
 ## Article fields
 
-- `title`: 10–70 characters.
+- `title`: 10-70 characters.
 - `seoTitle`: optional shorter title for search and social previews.
-- `description`: 50–160 characters.
+- `description`: 50-160 characters.
 - `publishDate`: first publication date.
 - `updatedDate`: only update after a meaningful revision.
 - `category`: one stable editorial topic.

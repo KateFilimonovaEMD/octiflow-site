@@ -63,7 +63,7 @@ you feel as if you have failed at 9:07 a.m.
 “I will drink more water” is a wish. “After I make my morning coffee, I will
 drink a glass of water” is a plan.
 
-This kind of **if–then plan** is known as an implementation intention: you link
+This kind of **if-then plan** is known as an implementation intention: you link
 an action to a specific situation. Research on habit formation suggests that
 repeating a simple behaviour in a consistent context can help the context
 become a cue for the behaviour. The useful part is not a magical number of
@@ -136,7 +136,7 @@ Try:
 
 A small mobile-health experiment found that reminders paired with
 implementation intentions improved daily health-goal success, although the
-study involved 64 adults and several behaviours—not hydration alone. It is
+study involved 64 adults and several behaviours, not hydration alone. It is
 useful evidence for reminders as cues, not proof that one notification schedule
 works for everyone. You can read the study in the
 [Journal of Medical Internet Research](https://pubmed.ncbi.nlm.nih.gov/29191800/).
@@ -169,7 +169,7 @@ estimates are usually more actionable than occasional perfect measurements.
 For most healthy adults, thirst is useful information. Urine colour can offer
 another rough check: the NHS advises aiming for clear, pale-yellow urine. Darker
 urine and urinating less than usual can be signs of dehydration, but colour is
-not a diagnosis—foods, supplements, and medicines can also change it.
+not a diagnosis. Foods, supplements, and medicines can also change it.
 
 Other possible signs of dehydration include thirst, a dry mouth, tiredness, and
 dizziness. Severe symptoms such as confusion, fainting, very little or no
@@ -194,7 +194,7 @@ formula.
 
 More is not always safer. Drinking excessive amounts of water can disturb the
 body’s fluid and electrolyte balance. People with kidney, heart, or liver
-conditions—or anyone who has been told to limit fluids—should follow
+conditions, or anyone who has been told to limit fluids, should follow
 individual medical advice rather than a generic hydration target.
 [MedlinePlus](https://medlineplus.gov/fluidandelectrolytebalance.html) lists
 both inadequate intake and drinking too much water among causes of fluid and

@@ -2596,11 +2596,6 @@ footer {
   z-index: 1;
 }
 
-.about-media-placeholder strong {
-  font-size: 1.16rem;
-  letter-spacing: -0.02em;
-}
-
 .about-media-placeholder small {
   max-width: 250px;
   color: rgb(7 48 128 / 67%);
@@ -2762,7 +2757,7 @@ footer {
 .about-origin__copy > p:not(.product-kicker):not(.about-origin__question) {
   max-width: 560px;
   margin-top: var(--s3);
-  color: var(--color-text-body);
+  color: rgb(255 255 255 / 76%);
   font-size: 1rem;
   line-height: 1.78;
 }
@@ -2796,10 +2791,6 @@ footer {
   border-radius: 0;
   background: transparent;
   box-shadow: none;
-}
-
-.about-evolution-card::after {
-  content: none;
 }
 
 .about-evolution-card--early {
@@ -2898,43 +2889,6 @@ footer {
 .about-origin h2,
 .about-evolution-card figcaption strong {
   color: #fff;
-}
-
-.about-origin__copy > p:not(.product-kicker):not(.about-origin__question) {
-  color: rgb(255 255 255 / 76%);
-}
-
-.about-evolution-card {
-  background: transparent;
-  box-shadow: none;
-}
-
-.about-evolution-card .about-media-placeholder {
-  border-bottom-color: rgb(255 255 255 / 17%);
-  background:
-    linear-gradient(rgb(255 255 255 / 7%), rgb(255 255 255 / 7%)),
-    radial-gradient(circle at 1px 1px, rgb(255 255 255 / 18%) 1px, transparent 0);
-  color: #fff;
-}
-
-.about-evolution-card .about-media-placeholder::after {
-  background: linear-gradient(120deg, rgb(93 183 255 / 30%), rgb(130 62 230 / 22%));
-}
-
-.about-evolution-card .about-media-placeholder small {
-  color: rgb(255 255 255 / 67%);
-}
-
-.about-evolution-card .about-placeholder-icon {
-  border-color: rgb(131 210 255 / 66%);
-}
-
-.about-evolution-card .about-placeholder-icon::before {
-  background: rgb(131 210 255 / 56%);
-}
-
-.about-evolution-card .about-placeholder-icon::after {
-  background: linear-gradient(145deg, transparent 49%, rgb(131 210 255 / 46%) 50%);
 }
 
 .about-team-section {

@@ -1,6 +1,6 @@
 # Blog scaffold changes
 
-## Article layout and store badges — July 31, 2026
+## Article layout and store badges - July 31, 2026
 
 - Replaced the article hero image and all optimized/social variants with the
   final `Blog_01_Main` artwork.
@@ -12,7 +12,7 @@
 - Cropped the transparent padding from the Google Play artwork so both store
   badges have the same visible height.
 
-## Mobile menu and Google Play badge — July 31, 2026
+## Mobile menu and Google Play badge - July 31, 2026
 
 - Fixed the mobile navigation CSS so removing the `hidden` attribute actually
   displays the menu after the hamburger button is pressed.
@@ -23,7 +23,7 @@
   width, scaling them fluidly between 320 and 479 px so they do not overlap the
   Octi Flow logo or menu button.
 
-## Final layout and resilience audit — July 30, 2026
+## Final layout and resilience audit - July 30, 2026
 
 - Verified every route at 320, 360, 390, 430, 768, 821, 921, 1024, and
   1440 px without horizontal overflow, hidden content, console errors, or
@@ -44,23 +44,23 @@
 - Rechecked HTML, CSS, JSON-LD, anchors, local assets, manifest, robots, sitemap,
   dependency integrity, and common client-side security hazards.
 
-## Article heading rhythm — July 30, 2026
+## Article heading rhythm - July 30, 2026
 
 - Replaced the uneven article `h2` spacing of 64 px above and 20 px below
-  with an equal responsive 40–42 px on both sides.
-- Made article `h3` spacing equal at a responsive 28–32 px on both sides.
+  with an equal responsive 40-42 px on both sides.
+- Made article `h3` spacing equal at a responsive 28-32 px on both sides.
 
-## Mobile article spacing — July 30, 2026
+## Mobile article spacing - July 30, 2026
 
 - Reduced only the article hero's mobile top padding from a fixed minimum of
-  72 px to a responsive 36–56 px, bringing the breadcrumbs closer to the
+  72 px to a responsive 36-56 px, bringing the breadcrumbs closer to the
   header without changing desktop spacing.
 
-## Header and security audit — July 30, 2026
+## Header and security audit - July 30, 2026
 
 - Rebuilt the mobile header as a three-column grid so the App Store badge is
   mathematically centered in the viewport from 320 px through 820 px.
-- Added a narrower 320–352 px header variant to prevent the centered badge from
+- Added a narrower 320-352 px header variant to prevent the centered badge from
   overlapping the logo.
 - Replaced the decorative hamburger icon with an accessible menu button and a
   working mobile navigation menu.

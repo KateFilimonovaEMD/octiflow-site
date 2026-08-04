@@ -1,7 +1,7 @@
 ---
 title: "Replace This with a Clear, Search-Focused Article Title"
 seoTitle: "Optional Shorter Search Title | Octi Flow"
-description: "Replace this with a useful 50–160 character summary that accurately answers the reader’s search intent."
+description: "Replace this with a useful 50-160 character summary that accurately answers the reader’s search intent."
 publishDate: 2026-08-10
 updatedDate: 2026-08-10
 author: "EvaMariaDreams"
