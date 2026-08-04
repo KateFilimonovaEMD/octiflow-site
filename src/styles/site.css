@@ -2954,6 +2954,9 @@ footer {
 }
 
 .about-person-card__body {
+  display: grid;
+  flex: 1;
+  grid-template-rows: auto auto minmax(0, 1fr) auto;
   padding: clamp(26px, 4vw, 38px);
 }
 
