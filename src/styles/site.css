@@ -2546,14 +2546,25 @@ footer {
   place-items: center;
 }
 
-.about-hero-visual::before {
+.about-hero-visual::before,
+.about-hero-visual::after {
   position: absolute;
-  width: 505px;
-  max-width: 112%;
-  aspect-ratio: 1;
   border: 1px solid rgb(1 92 198 / 15%);
   border-radius: 50%;
   content: "";
+}
+
+.about-hero-visual::before {
+  width: 505px;
+  max-width: 112%;
+  aspect-ratio: 1;
+}
+
+.about-hero-visual::after {
+  width: 400px;
+  max-width: 90%;
+  aspect-ratio: 1;
+  border-color: rgb(102 41 227 / 12%);
 }
 
 .about-media-placeholder {
@@ -2604,11 +2615,11 @@ footer {
 }
 
 .about-hero-photo {
-  position: relative;
   z-index: 1;
   overflow: hidden;
   width: min(385px, 84%);
   aspect-ratio: 880 / 1203;
+  border: 1px solid rgb(1 92 198 / 19%);
   border-radius: 34px;
   background: #dceaf4;
   box-shadow:
@@ -2618,11 +2629,9 @@ footer {
 }
 
 .about-hero-photo img {
-  position: absolute;
-  inset: -1px;
   display: block;
-  width: calc(100% + 2px);
-  height: calc(100% + 2px);
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -2745,9 +2754,9 @@ footer {
 
 .about-origin__grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.76fr) minmax(520px, 1.24fr);
+  grid-template-columns: minmax(0, 0.82fr) minmax(440px, 1.18fr);
   align-items: center;
-  gap: clamp(36px, 4vw, 58px);
+  gap: clamp(48px, 8vw, 112px);
 }
 
 .about-origin__copy > p:not(.product-kicker):not(.about-origin__question) {
@@ -2773,66 +2782,36 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  width: min(100%, 650px);
-  justify-self: end;
-  gap: 0;
-  isolation: isolate;
+  gap: 18px;
 }
 
 .about-evolution-card {
-  position: relative;
   overflow: hidden;
-  width: calc(100% + 14px);
-  border: 0;
+  border: 1px solid #dcebf1;
   border-radius: 24px;
-  background: transparent;
+  background: #fff;
   box-shadow: 0 24px 45px -34px rgb(7 48 128 / 55%);
 }
 
 .about-evolution-card--early {
-  z-index: 1;
-  justify-self: start;
   transform: rotate(-2deg) translateY(12px);
 }
 
 .about-evolution-card--today {
-  z-index: 2;
-  justify-self: end;
   transform: rotate(2deg) translateY(-12px);
 }
 
-.about-evolution-card__media {
-  overflow: hidden;
-  aspect-ratio: 609 / 1261;
-  background: rgb(255 255 255 / 7%);
-}
-
-.about-evolution-card__media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.about-evolution-card .about-media-placeholder {
+  min-height: 260px;
+  border: 0;
+  border-bottom: 1px dashed rgb(1 92 198 / 22%);
+  border-radius: 0;
 }
 
 .about-evolution-card figcaption {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: grid;
-  min-height: 92px;
-  grid-template-rows: auto 1fr;
   gap: 4px;
-  padding: 16px 20px 18px;
-  border: 0;
-  border-radius: 0 0 24px 24px;
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 68%),
-    rgb(27 32 116 / 58%)
-  );
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  backdrop-filter: blur(16px) saturate(120%);
+  padding: 18px 20px 20px;
 }
 
 .about-evolution-card figcaption span {
@@ -2844,7 +2823,6 @@ footer {
 }
 
 .about-evolution-card figcaption strong {
-  min-height: 2.7em;
   color: var(--deep);
   font-size: 0.94rem;
   line-height: 1.35;
@@ -2852,7 +2830,7 @@ footer {
 
 .about-evolution-arrow {
   position: absolute;
-  z-index: 3;
+  z-index: 2;
   top: 46%;
   left: 50%;
   display: inline-grid;
@@ -2899,9 +2877,12 @@ footer {
 }
 
 .about-evolution-card {
-  background: transparent;
+  border-color: rgb(255 255 255 / 17%);
+  background: rgb(255 255 255 / 8%);
   box-shadow:
+    inset 0 1px rgb(255 255 255 / 7%),
     0 28px 52px -34px rgb(0 0 0 / 72%);
+  backdrop-filter: blur(12px);
 }
 
 .about-evolution-card .about-media-placeholder {
@@ -2963,35 +2944,21 @@ footer {
 }
 
 .about-person-card {
-  display: flex;
   overflow: hidden;
-  min-width: 0;
-  flex-direction: column;
   border: 1px solid #dcebf1;
   border-radius: 28px;
   background: #fff;
   box-shadow: 0 24px 48px -38px rgb(7 48 128 / 58%);
 }
 
-.about-person-card__portrait {
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  margin: 0;
-  aspect-ratio: 866 / 586;
-  flex: none;
-  border-bottom: 1px solid #dcebf1;
-  background: #dbeef6;
-  line-height: 0;
-}
-
-.about-person-card__portrait img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 866 / 586;
-  object-fit: cover;
-  object-position: center;
+.about-media-placeholder--portrait {
+  min-height: 330px;
+  border: 0;
+  border-bottom: 1px dashed rgb(1 92 198 / 22%);
+  border-radius: 0;
+  background:
+    linear-gradient(rgb(255 255 255 / 48%), rgb(255 255 255 / 48%)),
+    linear-gradient(145deg, #e8f7fc, #dcecff 58%, #eee8ff);
 }
 
 .about-person-card__body {
@@ -3007,70 +2974,12 @@ footer {
   text-transform: uppercase;
 }
 
-.about-person-card__heading {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  margin-top: 14px;
-}
-
 .about-person-card h3 {
+  margin-top: 14px;
   color: var(--deep);
   font-size: clamp(1.55rem, 2.7vw, 2rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
-}
-
-.about-person-card__linkedin {
-  display: inline-grid;
-  flex: 0 0 48px;
-  width: 48px;
-  height: 48px;
-  min-width: 48px;
-  min-height: 48px;
-  max-width: 48px;
-  max-height: 48px;
-  place-items: center;
-  border: 0;
-  background: none;
-  line-height: 0;
-  transition: transform var(--duration-fast) ease;
-}
-
-.about-person-card__linkedin svg {
-  display: block;
-  flex: none;
-  width: 40px;
-  height: 40px;
-  max-width: 40px;
-  max-height: 40px;
-  overflow: visible;
-  filter:
-    drop-shadow(0 4px 5px rgb(7 48 128 / 16%))
-    drop-shadow(0 0 10px rgb(93 183 255 / 10%));
-  shape-rendering: geometricPrecision;
-  transition: filter var(--duration-fast) ease;
-}
-
-.about-person-card__linkedin:hover {
-  transform: translateY(-3px) scale(1.06);
-}
-
-.about-person-card__linkedin:hover svg {
-  filter:
-    drop-shadow(0 8px 8px rgb(1 92 198 / 28%))
-    drop-shadow(0 0 14px rgb(93 183 255 / 22%));
-}
-
-.about-person-card__linkedin:active {
-  transform: scale(0.94);
-}
-
-.about-person-card__linkedin:focus-visible {
-  border-radius: 10px;
-  outline: 3px solid rgb(1 92 198 / 28%);
-  outline-offset: 3px;
 }
 
 .about-person-card__body > p {
@@ -3413,10 +3322,6 @@ footer {
   .about-origin__copy {
     max-width: 720px;
   }
-
-  .about-evolution {
-    justify-self: center;
-  }
 }
 
 @media (max-width: 820px) {
@@ -3554,7 +3459,6 @@ footer {
 
   .about-evolution-card--early,
   .about-evolution-card--today {
-    width: 100%;
     transform: none;
   }
 
@@ -3569,6 +3473,14 @@ footer {
 
   .about-evolution-arrow__icon {
     transform: translate(-50%, -50%) rotate(90deg);
+  }
+
+  .about-evolution-card .about-media-placeholder {
+    min-height: 220px;
+  }
+
+  .about-media-placeholder--portrait {
+    min-height: 270px;
   }
 
   .about-origin__grid {
@@ -3592,11 +3504,8 @@ footer {
     padding: var(--about-mobile-card-padding);
   }
 
+  .about-person-card h3,
   .about-moment-card h3 {
-    margin-top: 10px;
-  }
-
-  .about-person-card__heading {
     margin-top: 10px;
   }
 
