@@ -2821,9 +2821,9 @@ footer {
 .about-evolution-card figcaption {
   position: absolute;
   z-index: 2;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  right: 1.5px;
+  bottom: 1.5px;
+  left: 1.5px;
   display: grid;
   min-height: 100px;
   grid-template-rows: auto 1fr;
