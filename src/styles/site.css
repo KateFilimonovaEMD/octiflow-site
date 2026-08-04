@@ -2792,11 +2792,18 @@ footer {
   transform: rotate(2deg) translateY(-12px);
 }
 
-.about-evolution-card .about-media-placeholder {
-  min-height: 260px;
-  border: 0;
-  border-bottom: 1px dashed rgb(1 92 198 / 22%);
-  border-radius: 0;
+.about-evolution-card__media {
+  overflow: hidden;
+  aspect-ratio: 550 / 560;
+  border-bottom: 1px solid rgb(255 255 255 / 17%);
+  background: rgb(255 255 255 / 7%);
+}
+
+.about-evolution-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-evolution-card figcaption {
@@ -3519,10 +3526,6 @@ footer {
 
   .about-evolution-arrow__icon {
     transform: translate(-50%, -50%) rotate(90deg);
-  }
-
-  .about-evolution-card .about-media-placeholder {
-    min-height: 220px;
   }
 
   .about-origin__grid {
