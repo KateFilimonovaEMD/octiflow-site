@@ -2991,33 +2991,41 @@ footer {
   width: 42px;
   height: 42px;
   place-items: center;
-  border-radius: 12px;
-  background: #eef7ff;
-  color: #0a66c2;
-  transition:
-    color 180ms ease,
-    background-color 180ms ease,
-    transform 180ms ease;
+  border: 0;
+  background: none;
+  transition: transform var(--duration-fast) ease;
 }
 
 .about-person-card__linkedin svg {
-  width: 23px;
-  height: 23px;
-  fill: currentColor;
+  display: block;
+  width: 30px;
+  height: 30px;
+  overflow: visible;
+  filter:
+    drop-shadow(0 4px 5px rgb(7 48 128 / 16%))
+    drop-shadow(0 0 10px rgb(93 183 255 / 10%));
+  shape-rendering: geometricPrecision;
+  transition: filter var(--duration-fast) ease;
 }
 
 .about-person-card__linkedin:hover {
-  background: #0a66c2;
-  color: #fff;
-  transform: translateY(-2px);
+  transform: translateY(-3px) scale(1.06);
+}
+
+.about-person-card__linkedin:hover svg {
+  filter:
+    drop-shadow(0 8px 8px rgb(1 92 198 / 28%))
+    drop-shadow(0 0 14px rgb(93 183 255 / 22%));
 }
 
 .about-person-card__linkedin:active {
-  transform: translateY(0);
+  transform: scale(0.94);
 }
 
 .about-person-card__linkedin:focus-visible {
-  border-radius: 12px;
+  border-radius: 10px;
+  outline: 3px solid rgb(1 92 198 / 28%);
+  outline-offset: 3px;
 }
 
 .about-person-card__body > p {
