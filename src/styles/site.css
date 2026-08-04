@@ -2818,11 +2818,11 @@ footer {
 
 .about-evolution-card figcaption {
   position: absolute;
-  right: -1px;
-  bottom: -1px;
-  left: -1px;
+  right: -3px;
+  bottom: -3px;
+  left: -3px;
   display: grid;
-  min-height: 92px;
+  min-height: 96px;
   grid-template-rows: auto 1fr;
   gap: 4px;
   padding: 16px 20px 18px;
