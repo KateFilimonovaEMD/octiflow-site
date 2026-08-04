@@ -2781,37 +2781,16 @@ footer {
 
 .about-evolution-card {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   width: calc(100% + 14px);
   border: 0;
-  border-radius: 24px;
+  border-radius: 0;
   background: transparent;
-  box-shadow: 0 24px 45px -34px rgb(7 48 128 / 55%);
-  isolation: isolate;
+  box-shadow: none;
 }
 
 .about-evolution-card::after {
-  position: absolute;
-  z-index: 1;
-  right: -6px;
-  bottom: -6px;
-  left: -6px;
-  height: 112px;
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 68%),
-    rgb(27 32 116 / 58%)
-  );
-  content: "";
-  pointer-events: none;
-}
-
-.about-evolution-card--early::after {
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 88%),
-    rgb(27 32 116 / 84%)
-  );
+  content: none;
 }
 
 .about-evolution-card--early {
@@ -2827,16 +2806,16 @@ footer {
 }
 
 .about-evolution-card__media {
-  overflow: hidden;
+  overflow: visible;
   aspect-ratio: 609 / 1261;
-  background: rgb(255 255 255 / 7%);
+  background: transparent;
+  line-height: 0;
 }
 
 .about-evolution-card__media img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 .about-evolution-card figcaption {
@@ -2851,8 +2830,20 @@ footer {
   gap: 4px;
   padding: 16px 20px 18px;
   border: 0;
-  border-radius: 0;
-  background: transparent;
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(
+    135deg,
+    rgb(44 92 173 / 68%),
+    rgb(27 32 116 / 58%)
+  );
+}
+
+.about-evolution-card--early figcaption {
+  background: linear-gradient(
+    135deg,
+    rgb(44 92 173 / 88%),
+    rgb(27 32 116 / 84%)
+  );
 }
 
 .about-evolution-card figcaption span {
@@ -2920,8 +2911,7 @@ footer {
 
 .about-evolution-card {
   background: transparent;
-  box-shadow:
-    0 28px 52px -34px rgb(0 0 0 / 72%);
+  box-shadow: none;
 }
 
 .about-evolution-card .about-media-placeholder {
