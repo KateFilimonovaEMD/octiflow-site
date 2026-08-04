@@ -2546,25 +2546,14 @@ footer {
   place-items: center;
 }
 
-.about-hero-visual::before,
-.about-hero-visual::after {
-  position: absolute;
-  border: 1px solid rgb(1 92 198 / 15%);
-  border-radius: 50%;
-  content: "";
-}
-
 .about-hero-visual::before {
+  position: absolute;
   width: 505px;
   max-width: 112%;
   aspect-ratio: 1;
-}
-
-.about-hero-visual::after {
-  width: 400px;
-  max-width: 90%;
-  aspect-ratio: 1;
-  border-color: rgb(102 41 227 / 12%);
+  border: 1px solid rgb(1 92 198 / 15%);
+  border-radius: 50%;
+  content: "";
 }
 
 .about-media-placeholder {
@@ -2615,11 +2604,11 @@ footer {
 }
 
 .about-hero-photo {
+  position: relative;
   z-index: 1;
   overflow: hidden;
   width: min(385px, 84%);
   aspect-ratio: 880 / 1203;
-  border: 1px solid rgb(1 92 198 / 19%);
   border-radius: 34px;
   background: #dceaf4;
   box-shadow:
@@ -2629,9 +2618,11 @@ footer {
 }
 
 .about-hero-photo img {
+  position: absolute;
+  inset: -1px;
   display: block;
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px);
   object-fit: cover;
 }
 
@@ -2782,14 +2773,15 @@ footer {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
-  gap: 18px;
+  gap: 30px;
 }
 
 .about-evolution-card {
+  position: relative;
   overflow: hidden;
-  border: 1px solid #dcebf1;
+  border: 0;
   border-radius: 24px;
-  background: #fff;
+  background: transparent;
   box-shadow: 0 24px 45px -34px rgb(7 48 128 / 55%);
 }
 
@@ -2801,17 +2793,38 @@ footer {
   transform: rotate(2deg) translateY(-12px);
 }
 
-.about-evolution-card .about-media-placeholder {
-  min-height: 260px;
-  border: 0;
-  border-bottom: 1px dashed rgb(1 92 198 / 22%);
-  border-radius: 0;
+.about-evolution-card__media {
+  overflow: hidden;
+  aspect-ratio: 629 / 1281;
+  background: rgb(255 255 255 / 7%);
+}
+
+.about-evolution-card__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-evolution-card figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: grid;
+  min-height: 92px;
+  grid-template-rows: auto 1fr;
   gap: 4px;
-  padding: 18px 20px 20px;
+  padding: 16px 20px 18px;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 0 0 24px 24px;
+  background: linear-gradient(
+    135deg,
+    rgb(44 92 173 / 68%),
+    rgb(27 32 116 / 58%)
+  );
+  -webkit-backdrop-filter: blur(16px) saturate(120%);
+  backdrop-filter: blur(16px) saturate(120%);
 }
 
 .about-evolution-card figcaption span {
@@ -2823,6 +2836,7 @@ footer {
 }
 
 .about-evolution-card figcaption strong {
+  min-height: 2.7em;
   color: var(--deep);
   font-size: 0.94rem;
   line-height: 1.35;
@@ -2877,12 +2891,9 @@ footer {
 }
 
 .about-evolution-card {
-  border-color: rgb(255 255 255 / 17%);
-  background: rgb(255 255 255 / 8%);
+  background: transparent;
   box-shadow:
-    inset 0 1px rgb(255 255 255 / 7%),
     0 28px 52px -34px rgb(0 0 0 / 72%);
-  backdrop-filter: blur(12px);
 }
 
 .about-evolution-card .about-media-placeholder {
@@ -2944,21 +2955,35 @@ footer {
 }
 
 .about-person-card {
+  display: flex;
   overflow: hidden;
+  min-width: 0;
+  flex-direction: column;
   border: 1px solid #dcebf1;
   border-radius: 28px;
   background: #fff;
   box-shadow: 0 24px 48px -38px rgb(7 48 128 / 58%);
 }
 
-.about-media-placeholder--portrait {
-  min-height: 330px;
-  border: 0;
-  border-bottom: 1px dashed rgb(1 92 198 / 22%);
-  border-radius: 0;
-  background:
-    linear-gradient(rgb(255 255 255 / 48%), rgb(255 255 255 / 48%)),
-    linear-gradient(145deg, #e8f7fc, #dcecff 58%, #eee8ff);
+.about-person-card__portrait {
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  aspect-ratio: 866 / 586;
+  flex: none;
+  border-bottom: 1px solid #dcebf1;
+  background: #dbeef6;
+  line-height: 0;
+}
+
+.about-person-card__portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 866 / 586;
+  object-fit: cover;
+  object-position: center;
 }
 
 .about-person-card__body {
@@ -2974,12 +2999,70 @@ footer {
   text-transform: uppercase;
 }
 
-.about-person-card h3 {
+.about-person-card__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
   margin-top: 14px;
+}
+
+.about-person-card h3 {
   color: var(--deep);
   font-size: clamp(1.55rem, 2.7vw, 2rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
+}
+
+.about-person-card__linkedin {
+  display: inline-grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  place-items: center;
+  border: 0;
+  background: none;
+  line-height: 0;
+  transition: transform var(--duration-fast) ease;
+}
+
+.about-person-card__linkedin svg {
+  display: block;
+  flex: none;
+  width: 30px;
+  height: 30px;
+  max-width: 30px;
+  max-height: 30px;
+  overflow: visible;
+  filter:
+    drop-shadow(0 4px 5px rgb(7 48 128 / 16%))
+    drop-shadow(0 0 10px rgb(93 183 255 / 10%));
+  shape-rendering: geometricPrecision;
+  transition: filter var(--duration-fast) ease;
+}
+
+.about-person-card__linkedin:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.about-person-card__linkedin:hover svg {
+  filter:
+    drop-shadow(0 8px 8px rgb(1 92 198 / 28%))
+    drop-shadow(0 0 14px rgb(93 183 255 / 22%));
+}
+
+.about-person-card__linkedin:active {
+  transform: scale(0.94);
+}
+
+.about-person-card__linkedin:focus-visible {
+  border-radius: 10px;
+  outline: 3px solid rgb(1 92 198 / 28%);
+  outline-offset: 3px;
 }
 
 .about-person-card__body > p {
@@ -3475,14 +3558,6 @@ footer {
     transform: translate(-50%, -50%) rotate(90deg);
   }
 
-  .about-evolution-card .about-media-placeholder {
-    min-height: 220px;
-  }
-
-  .about-media-placeholder--portrait {
-    min-height: 270px;
-  }
-
   .about-origin__grid {
     gap: 36px;
   }
@@ -3504,8 +3579,11 @@ footer {
     padding: var(--about-mobile-card-padding);
   }
 
-  .about-person-card h3,
   .about-moment-card h3 {
+    margin-top: 10px;
+  }
+
+  .about-person-card__heading {
     margin-top: 10px;
   }
 
