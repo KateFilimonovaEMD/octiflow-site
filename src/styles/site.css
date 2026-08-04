@@ -2699,15 +2699,15 @@ footer {
 }
 
 .about-skill-tag--animation {
-  bottom: 0;
-  left: 0;
-  transform: translate(-42%, 34%);
-}
-
-.about-skill-tag--ios {
   right: 0;
   bottom: 0;
   transform: translate(42%, 34%);
+}
+
+.about-skill-tag--ios {
+  bottom: 0;
+  left: 0;
+  transform: translate(-42%, 34%);
 }
 
 .about-story-section {
@@ -2835,7 +2835,7 @@ footer {
   left: 0;
   display: grid;
   height: 16%;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   align-content: center;
   gap: 4px;
   padding: 4% 7%;
@@ -3549,11 +3549,11 @@ footer {
   }
 
   .about-skill-tag--animation {
-    left: 0;
+    right: 0;
   }
 
   .about-skill-tag--ios {
-    right: 0;
+    left: 0;
   }
 
   .about-evolution {
