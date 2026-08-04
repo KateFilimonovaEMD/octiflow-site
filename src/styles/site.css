@@ -2787,8 +2787,31 @@ footer {
   border-radius: 24px;
   background: transparent;
   box-shadow: 0 24px 45px -34px rgb(7 48 128 / 55%);
-  clip-path: inset(0 round 24px);
   isolation: isolate;
+}
+
+.about-evolution-card::after {
+  position: absolute;
+  z-index: 1;
+  right: -6px;
+  bottom: -6px;
+  left: -6px;
+  height: 112px;
+  background: linear-gradient(
+    135deg,
+    rgb(44 92 173 / 68%),
+    rgb(27 32 116 / 58%)
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.about-evolution-card--early::after {
+  background: linear-gradient(
+    135deg,
+    rgb(44 92 173 / 88%),
+    rgb(27 32 116 / 84%)
+  );
 }
 
 .about-evolution-card--early {
@@ -2818,33 +2841,18 @@ footer {
 
 .about-evolution-card figcaption {
   position: absolute;
-  right: -3px;
-  bottom: -3px;
-  left: -3px;
+  z-index: 2;
+  right: 0;
+  bottom: 0;
+  left: 0;
   display: grid;
-  min-height: 96px;
+  min-height: 100px;
   grid-template-rows: auto 1fr;
   gap: 4px;
   padding: 16px 20px 18px;
   border: 0;
   border-radius: 0;
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 68%),
-    rgb(27 32 116 / 58%)
-  );
-  -webkit-backdrop-filter: blur(16px) saturate(120%);
-  backdrop-filter: blur(16px) saturate(120%);
-}
-
-.about-evolution-card--early figcaption {
-  background: linear-gradient(
-    135deg,
-    rgb(44 92 173 / 88%),
-    rgb(27 32 116 / 84%)
-  );
-  -webkit-backdrop-filter: blur(8px) saturate(110%);
-  backdrop-filter: blur(8px) saturate(110%);
+  background: transparent;
 }
 
 .about-evolution-card figcaption span {
