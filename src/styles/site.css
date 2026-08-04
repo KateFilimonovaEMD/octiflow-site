@@ -2943,14 +2943,18 @@ footer {
   box-shadow: 0 24px 48px -38px rgb(7 48 128 / 58%);
 }
 
-.about-media-placeholder--portrait {
-  min-height: 330px;
-  border: 0;
-  border-bottom: 1px dashed rgb(1 92 198 / 22%);
-  border-radius: 0;
-  background:
-    linear-gradient(rgb(255 255 255 / 48%), rgb(255 255 255 / 48%)),
-    linear-gradient(145deg, #e8f7fc, #dcecff 58%, #eee8ff);
+.about-person-card__portrait {
+  overflow: hidden;
+  aspect-ratio: 866 / 586;
+  border-bottom: 1px solid #dcebf1;
+  background: #dbeef6;
+}
+
+.about-person-card__portrait img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-person-card__body {
@@ -2966,12 +2970,54 @@ footer {
   text-transform: uppercase;
 }
 
-.about-person-card h3 {
+.about-person-card__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
   margin-top: 14px;
+}
+
+.about-person-card h3 {
   color: var(--deep);
   font-size: clamp(1.55rem, 2.7vw, 2rem);
   letter-spacing: -0.04em;
   line-height: 1.1;
+}
+
+.about-person-card__linkedin {
+  display: grid;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border-radius: 12px;
+  background: #eef7ff;
+  color: #0a66c2;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.about-person-card__linkedin svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.about-person-card__linkedin:hover {
+  background: #0a66c2;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.about-person-card__linkedin:active {
+  transform: translateY(0);
+}
+
+.about-person-card__linkedin:focus-visible {
+  border-radius: 12px;
 }
 
 .about-person-card__body > p {
@@ -3471,10 +3517,6 @@ footer {
     min-height: 220px;
   }
 
-  .about-media-placeholder--portrait {
-    min-height: 270px;
-  }
-
   .about-origin__grid {
     gap: 36px;
   }
@@ -3496,8 +3538,11 @@ footer {
     padding: var(--about-mobile-card-padding);
   }
 
-  .about-person-card h3,
   .about-moment-card h3 {
+    margin-top: 10px;
+  }
+
+  .about-person-card__heading {
     margin-top: 10px;
   }
 
