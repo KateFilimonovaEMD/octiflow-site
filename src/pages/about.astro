@@ -363,16 +363,23 @@ const structuredData = {
 
         <div class="about-moments-grid about-moments-grid--featured">
           <article class="about-moment-card">
-            <div
-              class="about-media-placeholder about-media-placeholder--moment"
-              role="img"
-              aria-label="Placeholder for a screen recording showing one-handed water logging in Octi Flow"
-            >
-              <span class="about-placeholder-format">Screen recording</span>
-              <div class="about-placeholder-icon" aria-hidden="true">
-                <span></span>
-              </div>
-              <small>One-handed water logging</small>
+            <div class="about-moment-media about-moment-media--video">
+              <video
+                class="about-moment-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+                poster="/images/about/one-handed-water-logging-poster.webp"
+                aria-label="One-handed water logging in Octi Flow: choosing a portion, adding water, updating progress, and seeing Octi react"
+              >
+                <source
+                  src="/videos/about/one-handed-water-logging.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support embedded video.
+              </video>
             </div>
             <div class="about-moment-card__body">
               <span>Interface design</span>
