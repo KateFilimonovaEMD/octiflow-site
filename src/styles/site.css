@@ -3190,8 +3190,8 @@ footer {
 
 .about-moments-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 3vw, 32px);
   margin-top: clamp(40px, 6vw, 64px);
 }
 
@@ -3212,7 +3212,7 @@ footer {
 }
 
 .about-media-placeholder--moment {
-  min-height: 250px;
+  min-height: 300px;
   border: 0;
   border-bottom: 1px dashed rgb(1 92 198 / 22%);
   border-radius: 0;
