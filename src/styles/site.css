@@ -4321,7 +4321,7 @@ footer {
   display: flex;
   min-height: 278px;
   flex-direction: column;
-  padding: 94px 32px 32px;
+  padding: 78px 32px 32px;
   border: 1px solid #d2e5ef;
   border-radius: 26px;
   background: #f7fbfe;
@@ -4335,8 +4335,8 @@ footer {
   top: 0;
   left: 50%;
   display: grid;
-  width: 126px;
-  height: 126px;
+  width: 64px;
+  height: 64px;
   place-items: center;
   border: 1px solid rgb(118 183 231 / 54%);
   border-radius: 50%;
@@ -4344,9 +4344,9 @@ footer {
     radial-gradient(circle at 32% 24%, rgb(255 255 255 / 98%) 0 17%, transparent 44%),
     linear-gradient(145deg, rgb(248 253 255 / 98%), rgb(222 243 255 / 95%));
   box-shadow:
-    0 24px 46px -24px rgb(50 49 173 / 64%),
-    0 10px 24px -18px rgb(0 140 255 / 72%),
-    0 0 0 10px rgb(255 255 255 / 72%),
+    0 18px 34px -20px rgb(50 49 173 / 64%),
+    0 8px 20px -16px rgb(0 140 255 / 72%),
+    0 0 0 7px rgb(255 255 255 / 72%),
     inset 0 1px 0 rgb(255 255 255 / 96%);
   transform: translate(-50%, -50%);
 }
@@ -4435,7 +4435,15 @@ footer {
   object-fit: cover;
 }
 
+.home-access-card__content {
+  display: grid;
+  grid-template-rows: auto minmax(3.65rem, auto) 1fr;
+  align-self: stretch;
+  align-content: center;
+}
+
 .home-access-card__label {
+  margin: 0;
   color: #86dcff;
   font-size: 0.74rem;
   font-weight: 850;
@@ -4444,7 +4452,8 @@ footer {
 }
 
 .home-access-card h3 {
-  margin-top: 10px;
+  align-self: start;
+  margin: 10px 0 0;
   color: #fff;
   font-size: 1.55rem;
   letter-spacing: -0.035em;
@@ -4453,7 +4462,9 @@ footer {
 
 .home-access-card ul {
   display: grid;
-  gap: 10px;
+  grid-template-rows: repeat(4, minmax(2.7rem, auto));
+  gap: 8px;
+  align-self: start;
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
@@ -4461,6 +4472,9 @@ footer {
 
 .home-access-card li {
   position: relative;
+  display: flex;
+  min-height: 2.7rem;
+  align-items: flex-start;
   padding-left: 22px;
   color: rgb(255 255 255 / 76%);
   font-size: 0.91rem;
@@ -4829,16 +4843,16 @@ footer {
 
   .home-progress__cards article {
     min-height: 228px;
-    padding: 82px 26px 26px;
+    padding: 70px 26px 26px;
   }
 
   .home-progress__icon {
-    width: 110px;
-    height: 110px;
+    width: 56px;
+    height: 56px;
     box-shadow:
-      0 20px 38px -22px rgb(50 49 173 / 60%),
-      0 8px 20px -16px rgb(0 140 255 / 70%),
-      0 0 0 8px rgb(255 255 255 / 72%),
+      0 16px 30px -20px rgb(50 49 173 / 60%),
+      0 7px 18px -15px rgb(0 140 255 / 70%),
+      0 0 0 6px rgb(255 255 255 / 72%),
       inset 0 1px 0 rgb(255 255 255 / 96%);
   }
 
@@ -4862,8 +4876,13 @@ footer {
     font-size: 1.28rem;
   }
 
+  .home-access-card__content {
+    grid-template-rows: auto minmax(3.1rem, auto) 1fr;
+  }
+
   .home-access-card ul {
     grid-column: 1 / -1;
+    grid-template-rows: none;
   }
 
   .home-team__card {
