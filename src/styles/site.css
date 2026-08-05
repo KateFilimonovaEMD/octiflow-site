@@ -3802,7 +3802,7 @@ footer {
 .home-hero__visual {
   position: relative;
   display: grid;
-  min-height: 650px;
+  min-height: 760px;
   place-items: center;
 }
 
@@ -3827,7 +3827,7 @@ footer {
 .home-device-card {
   position: relative;
   z-index: 2;
-  width: min(318px, 78%);
+  width: min(365px, 86%);
 }
 
 .home-hero-product-image {
@@ -3848,30 +3848,41 @@ footer {
 .home-floating-label {
   position: absolute;
   z-index: 4;
-  padding: 10px 14px;
+  display: inline-flex;
+  width: 152px;
+  min-height: 46px;
+  padding: 10px 16px;
+  align-items: center;
+  justify-content: center;
   border: 1px solid rgb(182 218 235 / 86%);
   border-radius: 999px;
-  background: rgb(255 255 255 / 90%);
+  background: rgb(255 255 255 / 92%);
   box-shadow: 0 16px 28px -20px rgb(7 48 128 / 52%);
   color: var(--deep);
-  font-size: 0.73rem;
+  font-size: 0.79rem;
   font-weight: 800;
+  line-height: 1.15;
+  text-align: center;
+  white-space: nowrap;
   backdrop-filter: blur(10px);
 }
 
 .home-floating-label--top {
-  top: 92px;
-  left: -10px;
+  top: 84px;
+  left: 50%;
+  transform: translateX(calc(-50% - 228px));
 }
 
 .home-floating-label--middle {
   top: 49%;
-  right: -28px;
+  left: 50%;
+  transform: translateX(calc(-50% + 228px));
 }
 
 .home-floating-label--bottom {
-  bottom: 90px;
-  left: -22px;
+  bottom: 84px;
+  left: 50%;
+  transform: translateX(calc(-50% - 228px));
 }
 
 .home-belief {
@@ -4415,8 +4426,17 @@ footer {
     gap: 44px;
   }
 
+  .home-device-card {
+    width: min(340px, 84%);
+  }
+
+  .home-floating-label--top,
+  .home-floating-label--bottom {
+    transform: translateX(calc(-50% - 212px));
+  }
+
   .home-floating-label--middle {
-    right: -8px;
+    transform: translateX(calc(-50% + 212px));
   }
 
   .home-belief__grid,
@@ -4477,12 +4497,21 @@ footer {
   }
 
   .home-hero__visual {
-    min-height: 590px;
+    min-height: 700px;
     margin-top: 12px;
   }
 
   .home-device-card {
-    width: min(310px, 70vw);
+    width: min(335px, 72vw);
+  }
+
+  .home-floating-label--top,
+  .home-floating-label--bottom {
+    transform: translateX(calc(-50% - 208px));
+  }
+
+  .home-floating-label--middle {
+    transform: translateX(calc(-50% + 208px));
   }
 
   .home-belief__features {
@@ -4592,11 +4621,11 @@ footer {
   }
 
   .home-hero__visual {
-    min-height: 520px;
+    min-height: 590px;
   }
 
   .home-device-card {
-    width: min(275px, 76vw);
+    width: min(300px, 80vw);
   }
 
   .home-floating-label {
