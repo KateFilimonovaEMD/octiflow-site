@@ -3212,7 +3212,8 @@ footer {
 }
 
 .about-media-placeholder--moment {
-  min-height: 440px;
+  aspect-ratio: 9 / 16;
+  min-height: 0;
   border: 0;
   border-bottom: 1px dashed rgb(1 92 198 / 22%);
   border-radius: 0;
@@ -3222,7 +3223,8 @@ footer {
   position: relative;
   display: grid;
   overflow: hidden;
-  min-height: 440px;
+  aspect-ratio: 9 / 16;
+  min-height: 0;
   place-items: center;
   border-bottom: 1px solid #dcebf1;
   background:
@@ -3244,8 +3246,8 @@ footer {
   z-index: 1;
   display: block;
   width: 100%;
-  height: 440px;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
 }
 
 .about-placeholder-format {
@@ -3462,19 +3464,15 @@ footer {
   }
 
   .about-media-placeholder--moment {
-    min-height: 280px;
+    min-height: 0;
     border-right: 1px dashed rgb(1 92 198 / 22%);
     border-bottom: 0;
   }
 
   .about-moment-media {
-    min-height: 420px;
+    min-height: 0;
     border-right: 1px solid rgb(1 92 198 / 16%);
     border-bottom: 0;
-  }
-
-  .about-moment-video {
-    height: 420px;
   }
 }
 
@@ -3640,19 +3638,15 @@ footer {
   }
 
   .about-media-placeholder--moment {
-    min-height: 230px;
+    min-height: 0;
     border-right: 0;
     border-bottom: 1px dashed rgb(1 92 198 / 22%);
   }
 
   .about-moment-media {
-    min-height: 460px;
+    min-height: 0;
     border-right: 0;
     border-bottom: 1px solid rgb(1 92 198 / 16%);
-  }
-
-  .about-moment-video {
-    height: 460px;
   }
 
   .about-follow__card {
