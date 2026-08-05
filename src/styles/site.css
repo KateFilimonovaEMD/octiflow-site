@@ -3899,7 +3899,7 @@ footer {
 
 .home-belief {
   position: relative;
-  padding: var(--home-section-space) 0;
+  padding: clamp(36px, 5vw, 64px) 0 clamp(44px, 5vw, 68px);
   background:
     radial-gradient(circle at 8% 22%, rgb(132 26 233 / 78%), transparent 34%),
     radial-gradient(circle at 88% 74%, rgb(0 158 255 / 40%), transparent 36%),
@@ -3934,15 +3934,20 @@ footer {
 
 .home-belief h2 {
   max-width: 620px;
-  font-size: clamp(2.55rem, 5vw, 4.45rem);
-  letter-spacing: -0.052em;
-  line-height: 1.03;
+  font-size: clamp(2.3rem, 4.5vw, 3.75rem);
+  letter-spacing: -0.05em;
+  line-height: 1.05;
+  text-wrap: balance;
 }
 
 .home-belief__copy {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.home-belief .home-kicker {
+  margin-bottom: var(--s2);
 }
 
 .home-belief__copy > p:last-child {
@@ -3963,10 +3968,10 @@ footer {
 .home-belief__features article {
   display: grid;
   min-height: 0;
-  grid-template-columns: 62px minmax(0, 1fr);
-  gap: 20px;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 24px;
   align-items: center;
-  padding: 22px 24px;
+  padding: 22px 28px;
   border: 1px solid rgb(255 255 255 / 16%);
   border-radius: 22px;
   background: rgb(255 255 255 / 9%);
@@ -3976,30 +3981,32 @@ footer {
 
 .home-belief__features article > span {
   display: grid;
-  width: 58px;
-  height: 58px;
+  width: 78px;
+  height: 78px;
   place-self: center;
   place-items: center;
   border: 1px solid rgb(126 216 255 / 52%);
   border-radius: 50%;
   background: rgb(255 255 255 / 4%);
   color: #9ae8ff;
-  font-size: 0.9rem;
+  font-size: 1.8rem;
   font-weight: 850;
+  letter-spacing: -0.04em;
   line-height: 1;
 }
 
 .home-belief__features h3 {
   color: #fff;
-  font-size: 1.14rem;
-  letter-spacing: -0.025em;
+  font-size: clamp(1.28rem, 1.7vw, 1.48rem);
+  letter-spacing: -0.03em;
+  line-height: 1.2;
 }
 
 .home-belief__features p {
-  margin-top: 5px;
-  color: rgb(255 255 255 / 68%);
-  font-size: 0.9rem;
-  line-height: 1.55;
+  margin-top: 7px;
+  color: rgb(255 255 255 / 74%);
+  font-size: 1rem;
+  line-height: 1.58;
 }
 
 .home-section {
@@ -4470,7 +4477,8 @@ footer {
     --home-section-space: 72px;
   }
 
-  .home-hero {
+  .home-hero,
+  .home-belief {
     padding: var(--s5) 0 var(--s6);
   }
 
@@ -4608,7 +4616,8 @@ footer {
     --home-section-space: 60px;
   }
 
-  .home-hero {
+  .home-hero,
+  .home-belief {
     padding: 36px 0 40px;
   }
 
@@ -4648,7 +4657,23 @@ footer {
   }
 
   .home-belief__features article {
-    padding: 18px;
+    grid-template-columns: 72px minmax(0, 1fr);
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .home-belief__features article > span {
+    width: 66px;
+    height: 66px;
+    font-size: 1.45rem;
+  }
+
+  .home-belief__features h3 {
+    font-size: 1.2rem;
+  }
+
+  .home-belief__features p {
+    font-size: 0.95rem;
   }
 
   .home-screen-pair {
