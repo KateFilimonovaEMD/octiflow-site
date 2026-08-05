@@ -234,9 +234,18 @@ const structuredData = {
           <article>
             <span class="home-progress__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" focusable="false">
-                <circle cx="16" cy="16" r="10"></circle>
-                <path d="M16 6a10 10 0 0 1 10 10"></path>
-                <path d="M16 10v6h6"></path>
+                <defs>
+                  <linearGradient id="progress-icon-daily" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#8b35ff"></stop>
+                    <stop offset="0.52" stop-color="#1676ff"></stop>
+                    <stop offset="1" stop-color="#00d7ff"></stop>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#progress-icon-daily)">
+                  <circle cx="16" cy="16" r="10"></circle>
+                  <path d="M16 6a10 10 0 0 1 10 10"></path>
+                  <path d="M16 10v6h6"></path>
+                </g>
               </svg>
             </span>
             <h3>Daily progress</h3>
@@ -246,8 +255,17 @@ const structuredData = {
           <article>
             <span class="home-progress__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" focusable="false">
-                <path d="M6 23l7-7 5 5 8-10"></path>
-                <path d="M20 11h6v6"></path>
+                <defs>
+                  <linearGradient id="progress-icon-streaks" x1="5" y1="26" x2="27" y2="6" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#8b35ff"></stop>
+                    <stop offset="0.52" stop-color="#1676ff"></stop>
+                    <stop offset="1" stop-color="#00d7ff"></stop>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#progress-icon-streaks)">
+                  <path d="M6 23l7-7 5 5 8-10"></path>
+                  <path d="M20 11h6v6"></path>
+                </g>
               </svg>
             </span>
             <h3>Streaks</h3>
@@ -257,7 +275,16 @@ const structuredData = {
           <article>
             <span class="home-progress__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" focusable="false">
-                <path d="m16 5 2.7 6.3L25 14l-6.3 2.7L16 23l-2.7-6.3L7 14l6.3-2.7L16 5Z"></path>
+                <defs>
+                  <linearGradient id="progress-icon-achievements" x1="6" y1="6" x2="26" y2="26" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#8b35ff"></stop>
+                    <stop offset="0.52" stop-color="#1676ff"></stop>
+                    <stop offset="1" stop-color="#00d7ff"></stop>
+                  </linearGradient>
+                </defs>
+                <g stroke="url(#progress-icon-achievements)">
+                  <path d="m16 5 2.7 6.3L25 14l-6.3 2.7L16 23l-2.7-6.3L7 14l6.3-2.7L16 5Z"></path>
+                </g>
               </svg>
             </span>
             <h3>Achievements</h3>
