@@ -32,13 +32,11 @@ const structuredData = {
     <section class="home-hero">
       <div class="container home-hero__grid">
         <div class="home-hero__copy">
-          <p class="home-kicker">Hydration tracker for iPhone</p>
-
           <h1>A hydration tracker you’ll actually want to come back to.</h1>
 
           <p class="home-hero__lead">
             Track water in one tap, get gentle reminders, build streaks, and
-            celebrate every small win with Octi — your animated hydration
+            celebrate every small win with Octi - your animated hydration
             companion.
           </p>
 
@@ -84,22 +82,16 @@ const structuredData = {
           <span class="home-hero__orbit home-hero__orbit--two" aria-hidden="true"></span>
 
           <div class="home-device-card">
-            <video
-              class="home-product-video"
-              autoplay
-              muted
-              loop
-              playsinline
-              preload="metadata"
-              poster="/images/about/one-handed-water-logging-poster.webp"
-              aria-label="One-handed water logging in Octi Flow, followed by progress and an Octi reaction"
-            >
-              <source
-                src="/videos/about/one-handed-water-logging.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support embedded video.
-            </video>
+            <img
+              class="home-hero-product-image"
+              src="/images/home/hero-one-tap-progress.webp"
+              alt="Octi Flow main screen showing hydration progress, Octi, and the one-tap add water button"
+              width="988"
+              height="2048"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
           </div>
 
           <span class="home-floating-label home-floating-label--top">One-tap logging</span>
@@ -399,21 +391,7 @@ const structuredData = {
   <script is:inline>
     (() => {
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-      const heroVideo = document.querySelector(".home-hero .home-product-video");
       const lazyVideos = document.querySelectorAll("[data-home-lazy-video]");
-
-      const syncHeroVideo = () => {
-        if (!(heroVideo instanceof HTMLVideoElement)) return;
-
-        if (reduceMotion.matches) {
-          heroVideo.pause();
-        } else {
-          heroVideo.play().catch(() => {});
-        }
-      };
-
-      syncHeroVideo();
-      reduceMotion.addEventListener?.("change", syncHeroVideo);
 
       if (reduceMotion.matches) {
         return;
