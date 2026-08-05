@@ -353,33 +353,33 @@ const structuredData = {
     <section class="about-story-section about-moments">
       <div class="container">
         <div class="about-section-heading">
-          <p class="product-kicker">From the workbench</p>
-          <h2>Small moments from building the app.</h2>
+          <p class="product-kicker">Behind the details</p>
+          <h2>A closer look at how Octi Flow is made.</h2>
           <p>
-            Real decisions, experiments, and lessons from a product made by two
-            people - not a polished corporate highlight reel.
+            Two small parts of the app that took a lot of testing, iteration,
+            and care.
           </p>
         </div>
 
-        <div class="about-moments-grid">
+        <div class="about-moments-grid about-moments-grid--featured">
           <article class="about-moment-card">
             <div
               class="about-media-placeholder about-media-placeholder--moment"
               role="img"
-              aria-label="Placeholder for a video or image showing the water portion redesign"
+              aria-label="Placeholder for a screen recording showing one-handed water logging in Octi Flow"
             >
-              <span class="about-placeholder-format">Video or GIF</span>
+              <span class="about-placeholder-format">Screen recording</span>
               <div class="about-placeholder-icon" aria-hidden="true">
                 <span></span>
               </div>
-              <small>Water portion redesign</small>
+              <small>One-handed water logging</small>
             </div>
             <div class="about-moment-card__body">
-              <span>Interface experiment</span>
-              <h3>Redesigning water portions</h3>
+              <span>Interface design</span>
+              <h3>Making water logging easier with one hand</h3>
               <p>
-                We tested several layouts before finding one that felt fast,
-                clear, and comfortable to use with one hand.
+                We tested several layouts before choosing controls that feel
+                quick, clear, and comfortable in daily use.
               </p>
             </div>
           </article>
@@ -388,42 +388,20 @@ const structuredData = {
             <div
               class="about-media-placeholder about-media-placeholder--moment"
               role="img"
-              aria-label="Placeholder for a video or image showing Octi animation work"
+              aria-label="Placeholder for a short video showing how an Octi reaction is animated"
             >
-              <span class="about-placeholder-format">Video or GIF</span>
+              <span class="about-placeholder-format">Short MP4</span>
               <div class="about-placeholder-icon" aria-hidden="true">
                 <span></span>
               </div>
-              <small>Octi animation process</small>
+              <small>Octi reaction process</small>
             </div>
             <div class="about-moment-card__body">
               <span>Character animation</span>
-              <h3>Giving Octi a little more life</h3>
+              <h3>How Octi reacts to your progress</h3>
               <p>
-                A reaction can last only a second, but its timing, expression,
-                and movement decide whether the companion feels believable.
-              </p>
-            </div>
-          </article>
-
-          <article class="about-moment-card">
-            <div
-              class="about-media-placeholder about-media-placeholder--moment"
-              role="img"
-              aria-label="Placeholder for an image showing Octi Flow development or testing"
-            >
-              <span class="about-placeholder-format">Photo or screen</span>
-              <div class="about-placeholder-icon" aria-hidden="true">
-                <span></span>
-              </div>
-              <small>Development moment</small>
-            </div>
-            <div class="about-moment-card__body">
-              <span>Indie development</span>
-              <h3>Shipping, listening, improving</h3>
-              <p>
-                Releasing the app was not the finish line. Feedback and daily
-                use keep reshaping what we simplify, polish, and build next.
+                Pose, timing, and expression turn a short animation into
+                feedback that feels encouraging and alive.
               </p>
             </div>
           </article>
@@ -468,4 +446,16 @@ const structuredData = {
       </div>
     </section>
   </main>
+
+  <style>
+    .about-moments-grid--featured {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: 820px) {
+      .about-moments-grid--featured {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </BaseLayout>
