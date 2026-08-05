@@ -3767,17 +3767,20 @@ footer {
 .home-hero h1 {
   max-width: 650px;
   color: var(--deep);
-  font-size: clamp(3.35rem, 6.4vw, 5.65rem);
-  letter-spacing: -0.058em;
-  line-height: 0.98;
+  font-size: clamp(2.35rem, 6vw, 4.4rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.14;
+  text-wrap: balance;
 }
 
 .home-hero__lead {
-  max-width: 610px;
-  margin-top: 24px;
-  color: var(--soft);
-  font-size: clamp(1.08rem, 1.7vw, 1.27rem);
-  line-height: 1.68;
+  max-width: 620px;
+  margin-top: var(--s3);
+  color: var(--color-text-muted);
+  font-size: 1.08rem;
+  line-height: 1.6;
+  text-wrap: balance;
 }
 
 .home-store-badges {
@@ -3819,9 +3822,10 @@ footer {
 }
 
 .home-hero__note {
-  margin-top: 17px;
+  margin-top: var(--s3);
   color: var(--soft);
   font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .home-hero__visual {
@@ -4780,11 +4784,11 @@ footer {
   }
 
   .home-hero h1 {
-    font-size: clamp(2.75rem, 13.4vw, 4rem);
+    font-size: clamp(2.35rem, 6vw, 4.4rem);
   }
 
   .home-hero__lead {
-    font-size: 1rem;
+    font-size: 1.08rem;
   }
 
   .home-store-badges {
