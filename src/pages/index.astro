@@ -190,21 +190,23 @@ const structuredData = {
           </p>
 
           <div class="home-inline-proof">
-            <span>Designed in Spine</span>
+            <span>Brought to life by us</span>
             <span aria-hidden="true">→</span>
-            <span>Alive in Octi Flow</span>
+            <span>Alive on your phone</span>
           </div>
         </div>
 
         <div class="home-process-video-card">
           <video
             class="home-product-video home-product-video--process"
+            autoplay
             muted
             loop
             playsinline
-            preload="metadata"
+            preload="auto"
+            disablepictureinpicture
             poster="/images/about/octi-reaction-process-poster.webp"
-            aria-label="The same Octi reaction shown in Spine animation software and inside the finished Octi Flow app"
+            aria-label="Octi being animated by our team and reacting inside the Octi Flow app"
             data-home-lazy-video
           >
             <source
@@ -383,19 +385,31 @@ const structuredData = {
 
   <script is:inline>
     (() => {
-      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
       const lazyVideos = document.querySelectorAll("[data-home-lazy-video]");
 
-      if (reduceMotion.matches) {
-        return;
-      }
+      const playVideo = (video) => {
+        if (!(video instanceof HTMLVideoElement)) return;
+
+        video.muted = true;
+        video.defaultMuted = true;
+
+        const playPromise = video.play();
+        if (playPromise instanceof Promise) {
+          playPromise.catch(() => {
+            video.addEventListener("canplay", () => video.play().catch(() => {}), {
+              once: true,
+            });
+          });
+        }
+      };
+
+      lazyVideos.forEach((video) => {
+        if (!(video instanceof HTMLVideoElement)) return;
+        video.addEventListener("loadeddata", () => playVideo(video), { once: true });
+      });
 
       if (!("IntersectionObserver" in window)) {
-        lazyVideos.forEach((video) => {
-          if (video instanceof HTMLVideoElement) {
-            video.play().catch(() => {});
-          }
-        });
+        lazyVideos.forEach(playVideo);
         return;
       }
 
@@ -405,13 +419,13 @@ const structuredData = {
             if (!(entry.target instanceof HTMLVideoElement)) return;
 
             if (entry.isIntersecting) {
-              entry.target.play().catch(() => {});
+              playVideo(entry.target);
             } else {
               entry.target.pause();
             }
           });
         },
-        { threshold: 0.35 },
+        { threshold: 0.15, rootMargin: "120px 0px" },
       );
 
       lazyVideos.forEach((video) => observer.observe(video));
