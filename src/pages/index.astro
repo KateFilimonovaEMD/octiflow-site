@@ -11,7 +11,7 @@ const structuredData = {
   url: canonical,
   name: "Octi Flow - Hydration Tracker & Water Reminder App",
   description:
-    "Build a more sustainable hydration habit with gentle reminders, simple water tracking, streaks, achievements, and an animated companion.",
+    "Build a more sustainable hydration habit with one-tap water logging, gentle reminders, streaks, achievements, and Octi, your animated hydration companion.",
   about: {
     "@id": "https://octiflow.app/#app",
   },
@@ -23,291 +23,427 @@ const structuredData = {
 
 <BaseLayout
   title="Octi Flow - Hydration Tracker & Water Reminder App"
-  description="Build a more sustainable hydration habit with gentle reminders, simple water tracking, streaks, achievements, and an animated companion."
+  description="Build a more sustainable hydration habit with one-tap water logging, gentle reminders, streaks, achievements, and Octi, your animated hydration companion."
   {canonical}
   imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
   {structuredData}
 >
-  <main>
-    <section class="product-hero">
-      <div class="container product-hero-grid">
-        <div class="product-hero-copy">
-          <p class="product-kicker">Meet Octi Flow</p>
+  <main class="home-page">
+    <section class="home-hero">
+      <div class="container home-hero__grid">
+        <div class="home-hero__copy">
+          <p class="home-kicker">Hydration tracker for iPhone</p>
 
-          <h1>A companion for your hydration habit.</h1>
+          <h1>A hydration tracker you’ll actually want to come back to.</h1>
 
-          <p class="product-lead">
-            Drinking water is simple. Remembering to do it every day is harder.
-            Octi Flow makes the routine feel more supportive, rewarding, and
-            easier to return to, one glass at a time.
+          <p class="home-hero__lead">
+            Track water in one tap, get gentle reminders, build streaks, and
+            celebrate every small win with Octi — your animated hydration
+            companion.
           </p>
 
-          <div class="product-actions">
+          <div class="home-store-badges" role="group" aria-label="Octi Flow app stores">
             <a
-              class="product-button product-button-primary"
+              class="home-app-store-link"
               href={appStoreUrl}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Download Octi Flow on the App Store"
             >
-              Download on the App Store
+              <img
+                src="/assets/img/app-store-badge.svg"
+                alt="Download on the App Store"
+                width="120"
+                height="40"
+                decoding="async"
+              />
             </a>
 
-            <a class="product-button product-button-secondary" href="#how-it-works">
-              See how it works
-            </a>
+            <span
+              class="home-google-play-unavailable"
+              role="img"
+              aria-label="Octi Flow is not yet available on Google Play"
+            >
+              <img
+                src="/assets/img/google-play-badge.png?v=20260731-2"
+                alt=""
+                width="564"
+                height="168"
+                decoding="async"
+              />
+            </span>
           </div>
 
-          <p class="product-note">
-            Free to download. Optional in-app purchases available. Designed for
-            general wellness, not medical advice.
+          <p class="home-hero__note">
+            Free to download. Core hydration features stay free.
           </p>
         </div>
 
-        <div class="product-hero-visual" aria-hidden="true">
-          <div class="flow-orbit flow-orbit-one"></div>
-          <div class="flow-orbit flow-orbit-two"></div>
+        <div class="home-hero__visual">
+          <span class="home-hero__orbit home-hero__orbit--one" aria-hidden="true"></span>
+          <span class="home-hero__orbit home-hero__orbit--two" aria-hidden="true"></span>
 
-          <div class="flow-phone">
-            <div class="flow-phone-speaker"></div>
+          <div class="home-device-card">
+            <video
+              class="home-product-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="/images/about/one-handed-water-logging-poster.webp"
+              aria-label="One-handed water logging in Octi Flow, followed by progress and an Octi reaction"
+            >
+              <source
+                src="/videos/about/one-handed-water-logging.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support embedded video.
+            </video>
+          </div>
 
-            <div class="flow-phone-screen">
-              <div class="flow-screen-top">
-                <span>Today</span>
-                <span>•••</span>
-              </div>
+          <span class="home-floating-label home-floating-label--top">One-tap logging</span>
+          <span class="home-floating-label home-floating-label--middle">Octi reacts</span>
+          <span class="home-floating-label home-floating-label--bottom">Gentle progress</span>
+        </div>
+      </div>
+    </section>
 
-              <div class="flow-drop">
-                <div class="flow-drop-inner"></div>
-              </div>
+    <section class="home-belief">
+      <div class="container home-belief__grid">
+        <div class="home-belief__copy">
+          <p class="home-kicker home-kicker--light">More than a water counter</p>
+          <h2>Tracking shows the numbers. Octi helps you keep the habit.</h2>
+          <p>
+            Octi Flow is designed around the part that matters after the first
+            day: making the routine feel calm, personal, and worth returning to.
+          </p>
+        </div>
 
-              <strong>A fresh start.</strong>
-
-              <span class="flow-screen-copy">
-                One glass at a time. Octi is with you.
-              </span>
-
-              <div class="flow-progress">
-                <span></span>
-              </div>
-
-              <div class="flow-screen-bottom">
-                <span>250 ml</span>
-                <span>2,500 ml goal</span>
-              </div>
+        <div class="home-belief__features">
+          <article>
+            <span>01</span>
+            <div>
+              <h3>One-tap tracking</h3>
+              <p>Log a drink without interrupting your day.</p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section product-belief">
-      <div class="container">
-        <div class="product-belief-copy">
-          <p class="product-kicker">More than tracking</p>
-
-          <h2>Tracking measures progress. Companionship helps sustain it.</h2>
-
-          <p>
-            Most hydration apps focus on numbers and generic reminders. Octi
-            Flow is designed around the part that matters after the first day:
-            helping you want to come back.
-          </p>
-        </div>
-
-        <div class="product-comparison">
-          <div class="product-comparison-card product-comparison-muted">
-            <span>Traditional trackers</span>
-            <strong>Log water.</strong>
-            <p>Numbers, generic reminders, and utility-first tracking.</p>
-          </div>
-
-          <div class="product-comparison-card">
-            <span>Octi Flow</span>
-            <strong>Build a habit with Octi.</strong>
-            <p>
-              Supportive messages, visible progress, positive rewards, and a
-              companion that grows with you.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="product-section product-section-soft" id="how-it-works">
-      <div class="container">
-        <div class="product-section-heading">
-          <p class="product-kicker">A habit you can return to</p>
-
-          <h2>Small actions, made more rewarding.</h2>
-
-          <p>
-            Octi Flow turns a simple daily goal into a more encouraging routine,
-            without making the experience feel demanding or complicated.
-          </p>
-        </div>
-
-        <div class="product-feature-grid">
-          <article class="product-feature-card">
-            <div class="product-feature-number">01</div>
-            <h3>Set your daily flow</h3>
-            <p>
-              Start with a clear daily hydration goal that gives your routine a
-              simple direction.
-            </p>
           </article>
 
-          <article class="product-feature-card">
-            <div class="product-feature-number">02</div>
-            <h3>Stay gently on track</h3>
-            <p>
-              Friendly reminders help bring the habit back to mind during busy
-              days, without adding pressure.
-            </p>
+          <article>
+            <span>02</span>
+            <div>
+              <h3>Gentle reminders</h3>
+              <p>Stay on track without pressure or notification overload.</p>
+            </div>
           </article>
 
-          <article class="product-feature-card">
-            <div class="product-feature-number">03</div>
-            <h3>See progress. Earn rewards.</h3>
-            <p>
-              Follow your progress, build streaks, unlock achievements, and
-              share the small wins with Octi.
-            </p>
+          <article>
+            <span>03</span>
+            <div>
+              <h3>Positive reinforcement</h3>
+              <p>Octi reacts and makes small wins feel meaningful.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="product-section">
-      <div class="container product-split">
-        <div>
-          <p class="product-kicker">Your daily companion</p>
-
-          <h2>Meet Octi.</h2>
-
+    <section class="home-section home-feature" id="features">
+      <div class="container home-feature__grid">
+        <div class="home-feature__copy">
+          <p class="home-kicker">Fast everyday tracking</p>
+          <h2>Log a drink in seconds.</h2>
           <p>
-            Octi is not just an icon in the corner. Your animated octopus
-            companion reacts to your progress, celebrates each step, and makes
-            the routine feel a little more personal.
+            Add your usual portion with one tap or choose another amount when
+            you need it. Octi Flow keeps everyday tracking simple and
+            interruption-free.
           </p>
 
-          <p>
-            The goal is not to make hydration feel like work. It is to make a
-            small healthy action feel worth coming back to.
-          </p>
+          <ul class="home-check-list">
+            <li>Change the portion without leaving the main screen.</li>
+            <li>See today’s progress update immediately.</li>
+            <li>Get a short, encouraging reaction from Octi.</li>
+          </ul>
         </div>
 
-        <div class="product-octi-card">
-          <span class="product-octi-bubble">
-            A fresh start.<br />
-            One glass at a time.
-          </span>
+        <div class="home-screen-pair" aria-label="Octi Flow portion selection and updated progress">
+          <figure class="home-screen-card home-screen-card--back">
+            <img
+              src="/images/home/one-tap-select.webp"
+              alt="Octi Flow portion selector with 100, 150, and 200 milliliter options"
+              width="720"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>Choose a portion</figcaption>
+          </figure>
 
-          <div class="product-octi-mark" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+          <figure class="home-screen-card home-screen-card--front">
+            <img
+              src="/images/home/one-tap-progress.webp"
+              alt="Octi Flow showing updated hydration progress and an encouraging Octi message"
+              width="720"
+              height="1280"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>See progress instantly</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-section--tint home-feature home-feature--reverse">
+      <div class="container home-feature__grid">
+        <div class="home-feature__copy">
+          <p class="home-kicker">A companion, not just a tracker</p>
+          <h2>A companion that reacts to your day.</h2>
+          <p>
+            Octi celebrates when you drink, responds to your progress, and
+            brings personality to a routine that usually feels mechanical.
+          </p>
+
+          <div class="home-inline-proof">
+            <span>Designed in Spine</span>
+            <span aria-hidden="true">→</span>
+            <span>Alive in Octi Flow</span>
           </div>
+        </div>
 
-          <strong>Octi is with you.</strong>
+        <div class="home-process-video-card">
+          <video
+            class="home-product-video home-product-video--process"
+            muted
+            loop
+            playsinline
+            preload="metadata"
+            poster="/images/about/octi-reaction-process-poster.webp"
+            aria-label="The same Octi reaction shown in Spine animation software and inside the finished Octi Flow app"
+            data-home-lazy-video
+          >
+            <source
+              src="/videos/about/octi-reaction-process.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support embedded video.
+          </video>
         </div>
       </div>
     </section>
 
-    <section class="product-section product-section-soft">
-      <div class="container product-split">
-        <div class="product-premium-card">
-          <span class="product-premium-label">Octi Premium</span>
-
-          <h3>Make Octi truly yours.</h3>
-
+    <section class="home-section home-progress">
+      <div class="container home-progress__grid">
+        <div class="home-progress__copy">
+          <p class="home-kicker">Progress without pressure</p>
+          <h2>See the habit taking shape.</h2>
           <p>
-            Unlock companion personalization, premium themes, accessories,
-            exclusive skins, and more achievements.
+            Follow daily progress, keep a streak going, and unlock achievements
+            as the routine becomes more consistent.
           </p>
         </div>
 
-        <div>
-          <p class="product-kicker">Free at the core</p>
+        <div class="home-progress__cards">
+          <article>
+            <span class="home-progress__icon" aria-hidden="true">◔</span>
+            <h3>Daily progress</h3>
+            <p>See how today’s hydration goal is moving at a glance.</p>
+          </article>
 
-          <h2>Healthy habits should not depend on a subscription.</h2>
+          <article>
+            <span class="home-progress__icon" aria-hidden="true">↗</span>
+            <h3>Streaks</h3>
+            <p>Notice the days when the routine starts to stick.</p>
+          </article>
 
-          <p>
-            The tools you need to build your daily hydration habit remain free:
-            unlimited tracking, smart reminders, streaks, and companion rewards.
-          </p>
-
-          <p>
-            Premium supports the growing Octi ecosystem while giving you more
-            ways to personalize the companion you build a connection with.
-          </p>
-
-          <a class="product-text-link" href="/terms/">
-            Read about Premium
-            <span aria-hidden="true">→</span>
-          </a>
+          <article>
+            <span class="home-progress__icon" aria-hidden="true">✦</span>
+            <h3>Achievements</h3>
+            <p>Mark meaningful milestones without turning them into pressure.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="product-section">
+    <section class="home-access">
       <div class="container">
-        <div class="product-section-heading">
-          <p class="product-kicker">Explore Octi Flow</p>
-
-          <h2>Guidance and clear information, whenever you need it.</h2>
-
-          <p>
-            Read practical hydration guides, learn about the independent studio
-            behind Octi Flow, or find product support and policies.
-          </p>
+        <div class="home-access__heading">
+          <p class="home-kicker home-kicker--light">Free at the core</p>
+          <h2>Everything needed for the habit is free. Premium makes Octi yours.</h2>
         </div>
 
-        <div class="product-links-grid">
-          <a class="product-link-card" href="/blog/">
-            <span class="product-link-label">Blog</span>
-            <strong>Read practical hydration guides</strong>
-            <span aria-hidden="true">→</span>
-          </a>
+        <div class="home-access__grid">
+          <article class="home-access-card">
+            <div class="home-access-card__portrait">
+              <img
+                src="/images/home/octi-free.webp"
+                alt="Orange Octi, the free companion in Octi Flow"
+                width="560"
+                height="560"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
 
-          <a class="product-link-card" href="/about/">
-            <span class="product-link-label">About</span>
-            <strong>Meet EvaMariaDreams</strong>
-            <span aria-hidden="true">→</span>
-          </a>
+            <div>
+              <p class="home-access-card__label">Free</p>
+              <h3>Build the hydration habit.</h3>
+              <ul>
+                <li>Unlimited water tracking</li>
+                <li>Reminders and daily progress</li>
+                <li>Streaks and core achievements</li>
+                <li>Octi’s basic reactions</li>
+              </ul>
+            </div>
+          </article>
 
-          <a class="product-link-card" href="/support/">
-            <span class="product-link-label">Support</span>
-            <strong>Get help with Octi Flow</strong>
-            <span aria-hidden="true">→</span>
-          </a>
+          <article class="home-access-card home-access-card--premium">
+            <div class="home-access-card__portrait">
+              <img
+                src="/images/home/octi-premium.webp"
+                alt="Purple Octi wearing a shark hat, an example of Premium personalization"
+                width="560"
+                height="560"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
 
-          <a class="product-link-card" href="/privacy/">
-            <span class="product-link-label">Privacy</span>
-            <strong>Read the Privacy Policy</strong>
-            <span aria-hidden="true">→</span>
+            <div>
+              <p class="home-access-card__label">Premium</p>
+              <h3>Make the companion yours.</h3>
+              <ul>
+                <li>Skins and accessories</li>
+                <li>Premium themes</li>
+                <li>Additional achievements</li>
+                <li>Expanded personalization</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-section home-team">
+      <div class="container home-team__card">
+        <div class="home-team__photo">
+          <img
+            src="/images/about/Team_Photo_01.webp"
+            alt="Kate and Eugene, the two-person team building Octi Flow in Barcelona"
+            width="1200"
+            height="800"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        <div class="home-team__copy">
+          <p class="home-kicker">Built independently in Barcelona</p>
+          <h2>Designed and built by a two-person studio.</h2>
+          <p>
+            We design, code, animate, test, and ship Octi Flow ourselves. The
+            details stay close to the people making them.
+          </p>
+          <a class="home-text-link" href="/about/">
+            Meet the team <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="product-cta">
-      <div class="container">
-        <div class="product-cta-card">
-          <div>
-            <p class="product-kicker">Start today</p>
-            <h2>Stay hydrated. Grow together with Octi.</h2>
-          </div>
+    <section class="home-cta">
+      <div class="container home-cta__card">
+        <div class="home-cta__copy">
+          <p class="home-kicker home-kicker--light">Ready to meet Octi?</p>
+          <h2>Start a hydration habit that feels easier to return to.</h2>
+          <p>Free to download on iPhone. Google Play is planned.</p>
+        </div>
 
+        <div class="home-store-badges home-store-badges--cta" role="group" aria-label="Octi Flow app stores">
           <a
-            class="product-button product-button-light"
+            class="home-app-store-link"
             href={appStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Download Octi Flow on the App Store"
           >
-            Download on the App Store
+            <img
+              src="/assets/img/app-store-badge.svg"
+              alt="Download on the App Store"
+              width="120"
+              height="40"
+              loading="lazy"
+              decoding="async"
+            />
           </a>
+
+          <span
+            class="home-google-play-unavailable"
+            role="img"
+            aria-label="Octi Flow is not yet available on Google Play"
+          >
+            <img
+              src="/assets/img/google-play-badge.png?v=20260731-2"
+              alt=""
+              width="564"
+              height="168"
+              loading="lazy"
+              decoding="async"
+            />
+          </span>
         </div>
       </div>
     </section>
   </main>
+
+  <script is:inline>
+    (() => {
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const heroVideo = document.querySelector(".home-hero .home-product-video");
+      const lazyVideos = document.querySelectorAll("[data-home-lazy-video]");
+
+      const syncHeroVideo = () => {
+        if (!(heroVideo instanceof HTMLVideoElement)) return;
+
+        if (reduceMotion.matches) {
+          heroVideo.pause();
+        } else {
+          heroVideo.play().catch(() => {});
+        }
+      };
+
+      syncHeroVideo();
+      reduceMotion.addEventListener?.("change", syncHeroVideo);
+
+      if (reduceMotion.matches) {
+        return;
+      }
+
+      if (!("IntersectionObserver" in window)) {
+        lazyVideos.forEach((video) => {
+          if (video instanceof HTMLVideoElement) {
+            video.play().catch(() => {});
+          }
+        });
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!(entry.target instanceof HTMLVideoElement)) return;
+
+            if (entry.isIntersecting) {
+              entry.target.play().catch(() => {});
+            } else {
+              entry.target.pause();
+            }
+          });
+        },
+        { threshold: 0.35 },
+      );
+
+      lazyVideos.forEach((video) => observer.observe(video));
+    })();
+  </script>
 </BaseLayout>
