@@ -3727,6 +3727,18 @@ footer {
     linear-gradient(180deg, #eff9ff 0%, #fff 88%);
 }
 
+.home-hero::after {
+  position: absolute;
+  right: -150px;
+  bottom: -210px;
+  width: 430px;
+  height: 430px;
+  border: 1px solid rgb(1 92 198 / 10%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
 .home-hero__grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(380px, 0.92fr);
@@ -3899,12 +3911,26 @@ footer {
 
 .home-belief {
   position: relative;
+  overflow: hidden;
   padding: clamp(36px, 5vw, 64px) 0 clamp(44px, 5vw, 68px);
   background:
     radial-gradient(circle at 8% 22%, rgb(132 26 233 / 78%), transparent 34%),
     radial-gradient(circle at 88% 74%, rgb(0 158 255 / 40%), transparent 36%),
     linear-gradient(135deg, #23117e 0%, #073080 52%, #005cc6 100%);
   color: #fff;
+}
+
+.home-belief::before {
+  position: absolute;
+  top: -240px;
+  right: -120px;
+  width: 580px;
+  height: 580px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  box-shadow: 0 0 0 90px rgb(255 255 255 / 2.5%);
+  content: "";
+  pointer-events: none;
 }
 
 .home-belief::after {
