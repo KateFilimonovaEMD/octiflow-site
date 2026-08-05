@@ -3858,8 +3858,7 @@ footer {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .home-floating-label {
@@ -4130,36 +4129,21 @@ footer {
 .home-screen-card {
   position: absolute;
   width: min(285px, 57%);
-  overflow: hidden;
-  border: 7px solid #0a2f78;
-  border-radius: 36px;
-  background: #0a2f78;
-  box-shadow: 0 28px 52px -28px rgb(7 48 128 / 72%);
+  overflow: visible;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .home-screen-card img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 9 / 16;
-  object-fit: cover;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 22px rgb(7 48 128 / 34%));
 }
 
-.home-screen-card figcaption {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  left: 14px;
-  padding: 10px 12px;
-  border: 1px solid rgb(255 255 255 / 30%);
-  border-radius: 999px;
-  background: rgb(5 42 111 / 76%);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 800;
-  text-align: center;
-  backdrop-filter: blur(8px);
-}
 
 .home-screen-card--back {
   top: 18px;
@@ -4708,17 +4692,8 @@ footer {
 
   .home-screen-card {
     width: min(225px, 58%);
-    border-width: 5px;
-    border-radius: 28px;
   }
 
-  .home-screen-card figcaption {
-    right: 9px;
-    bottom: 9px;
-    left: 9px;
-    padding: 8px;
-    font-size: 0.64rem;
-  }
 
   .home-process-video-card {
     width: min(300px, 78vw);
