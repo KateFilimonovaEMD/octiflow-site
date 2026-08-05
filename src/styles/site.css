@@ -4038,6 +4038,10 @@ footer {
   padding: var(--home-section-space) 0;
 }
 
+#features {
+  padding: clamp(36px, 5vw, 64px) 0 clamp(44px, 5vw, 68px);
+}
+
 .home-section--tint {
   background:
     radial-gradient(circle at 18% 50%, rgb(117 35 228 / 8%), transparent 30%),
@@ -4488,7 +4492,8 @@ footer {
   }
 
   .home-hero,
-  .home-belief {
+  .home-belief,
+  #features {
     padding: var(--s5) 0 var(--s6);
   }
 
@@ -4627,7 +4632,8 @@ footer {
   }
 
   .home-hero,
-  .home-belief {
+  .home-belief,
+  #features {
     padding: 36px 0 40px;
   }
 
