@@ -2456,6 +2456,8 @@ footer {
 /* About */
 
 .about-page {
+  --about-section-space: clamp(64px, 6vw, 80px);
+
   overflow: hidden;
 }
 
@@ -2535,8 +2537,18 @@ footer {
 .about-story-actions {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 12px;
   margin-top: var(--s4);
+}
+
+.about-story-app-store {
+  --store-badge-height: 48px;
+}
+
+.about-story-app-store:focus-visible {
+  border-radius: 8px;
+  outline-color: rgb(1 92 198 / 42%);
 }
 
 .about-hero-visual {
@@ -2706,13 +2718,13 @@ footer {
 }
 
 .about-story-section {
-  padding: clamp(80px, 9vw, 118px) 0;
+  padding: var(--about-section-space) 0;
 }
 
 .about-origin {
   position: relative;
   overflow: hidden;
-  padding-block: clamp(64px, 6vw, 80px);
+  padding-block: var(--about-section-space);
   background:
     radial-gradient(circle at 16% 8%, rgb(117 35 228 / 86%), transparent 34%),
     radial-gradient(circle at 88% 90%, rgb(0 114 220 / 76%), transparent 38%),
@@ -3060,7 +3072,7 @@ footer {
 .about-build {
   position: relative;
   overflow: hidden;
-  padding: clamp(82px, 10vw, 126px) 0;
+  padding: var(--about-section-space) 0;
   background:
     radial-gradient(circle at 16% 8%, rgb(117 35 228 / 86%), transparent 34%),
     radial-gradient(circle at 88% 90%, rgb(0 114 220 / 76%), transparent 38%),
@@ -3292,7 +3304,7 @@ footer {
 }
 
 .about-follow {
-  padding: 0 0 clamp(48px, 7vw, 80px);
+  padding: 0 0 var(--about-section-space);
   background: #fff;
 }
 
@@ -3514,6 +3526,10 @@ footer {
   .about-story-actions .product-button,
   .about-follow__actions .product-button {
     width: 100%;
+  }
+
+  .about-story-app-store {
+    justify-self: center;
   }
 
   .about-hero-visual {
