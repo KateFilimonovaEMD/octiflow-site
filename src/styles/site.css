@@ -4316,40 +4316,53 @@ footer {
 }
 
 .home-progress__cards article {
+  display: flex;
   min-height: 250px;
-  padding: 30px;
-  border: 1px solid #d9eaf1;
+  flex-direction: column;
+  padding: 32px;
+  border: 1px solid #d2e5ef;
   border-radius: 26px;
-  background:
-    radial-gradient(circle at 100% 0%, rgb(0 153 255 / 11%), transparent 35%),
-    #fff;
-  box-shadow: 0 22px 42px -34px rgb(7 48 128 / 58%);
+  background: #f7fbfe;
+  box-shadow:
+    0 22px 42px -34px rgb(7 48 128 / 50%),
+    inset 0 1px 0 rgb(255 255 255 / 90%);
 }
 
 .home-progress__icon {
   display: grid;
-  width: 54px;
-  height: 54px;
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
   place-items: center;
-  border-radius: 18px;
-  background: linear-gradient(145deg, #ecf9ff, #d9ecff);
+  border: 1px solid #c8e2f2;
+  border-radius: 22px;
+  background: #e5f4ff;
   color: var(--blue);
-  font-size: 1.55rem;
-  font-weight: 850;
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 86%);
+}
+
+.home-progress__icon svg {
+  width: 36px;
+  height: 36px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .home-progress__cards h3 {
-  margin-top: 34px;
+  margin-top: 30px;
   color: var(--deep);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   letter-spacing: -0.035em;
 }
 
 .home-progress__cards p {
   margin-top: 10px;
   color: var(--soft);
-  font-size: 0.93rem;
-  line-height: 1.65;
+  font-size: 1rem;
+  line-height: 1.62;
 }
 
 .home-access {
@@ -4670,11 +4683,7 @@ footer {
 
   .home-progress__cards article {
     min-height: 0;
-    text-align: center;
-  }
-
-  .home-progress__icon {
-    margin-inline: auto;
+    text-align: left;
   }
 
   .home-access__grid {
@@ -4801,7 +4810,23 @@ footer {
   }
 
   .home-progress__cards article {
-    padding: 24px;
+    padding: 26px;
+  }
+
+  .home-progress__icon {
+    width: 66px;
+    height: 66px;
+    flex-basis: 66px;
+    border-radius: 20px;
+  }
+
+  .home-progress__icon svg {
+    width: 33px;
+    height: 33px;
+  }
+
+  .home-progress__cards h3 {
+    margin-top: 24px;
   }
 
   .home-access-card {
