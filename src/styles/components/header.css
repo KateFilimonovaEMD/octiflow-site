@@ -31,7 +31,7 @@ body > nav {
 }
 
 .store-badges {
-  --store-badge-height: clamp(38px, 5vw, 60px);
+  --store-badge-height: clamp(42px, 5.4vw, 64px);
 
   height: 68px;
   margin-right: 0;
@@ -51,7 +51,7 @@ body > nav {
   position: relative;
   padding: 10px 0;
   color: rgba(255, 255, 255, 0.82);
-  font-size: clamp(0.78rem, 1.15vw, 0.92rem);
+  font-size: clamp(0.84rem, 1.2vw, 1rem);
   font-weight: 700;
   line-height: 1;
   transition: color var(--duration-fast) ease;
