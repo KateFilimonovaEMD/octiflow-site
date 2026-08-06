@@ -64,7 +64,7 @@
   /* Leading and tracking */
   --leading-display: 0.96;
   --leading-section: 1.05;
-  --leading-heading-tight: 1.06;
+  --leading-heading-tight: 1.1;
   --leading-heading-page: 1.14;
   --leading-eyebrow: 1.2;
   --leading-body: 1.6;
@@ -72,7 +72,7 @@
   --leading-body-loose: 1.68;
   --tracking-display: -0.06em;
   --tracking-section: -0.05em;
-  --tracking-heading: -0.045em;
+  --tracking-heading: -0.03em;
   --tracking-eyebrow: 0.08em;
   --tracking-eyebrow-wide: 0.09em;
 
