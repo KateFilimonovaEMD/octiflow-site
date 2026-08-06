@@ -2527,7 +2527,7 @@ footer {
 }
 
 .about-story-lead {
-  max-width: 620px;
+  max-width: 570px;
   margin-top: var(--s3);
   color: var(--soft);
   font-size: clamp(1.06rem, 1.8vw, 1.24rem);
@@ -3754,18 +3754,19 @@ footer {
 
 .home-hero__grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(380px, 0.92fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(360px, 0.82fr);
   align-items: center;
-  gap: clamp(36px, 6vw, 84px);
+  gap: clamp(40px, 4vw, 56px);
 }
 
 .home-hero__copy {
   position: relative;
   z-index: 3;
+  max-width: 610px;
 }
 
 .home-hero h1 {
-  max-width: 650px;
+  max-width: 610px;
   color: var(--deep);
   font-size: clamp(2.35rem, 6vw, 4.4rem);
   font-weight: 800;
@@ -3775,7 +3776,7 @@ footer {
 }
 
 .home-hero__lead {
-  max-width: 620px;
+  max-width: 570px;
   margin-top: var(--s3);
   color: var(--color-text-muted);
   font-size: 1.08rem;
