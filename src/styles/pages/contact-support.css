@@ -55,22 +55,9 @@
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 12% 10%, rgb(102 41 227 / 10%), transparent 28%),
-    radial-gradient(circle at 88% 28%, rgb(93 183 255 / 18%), transparent 32%),
-    linear-gradient(145deg, #eef7ff 0%, #ffffff 42%, #ffffff 100%);
-}
-
-.contact-layout::after {
-  position: absolute;
-  top: 230px;
-  right: -190px;
-  width: 520px;
-  height: 520px;
-  border: 1px solid rgb(1 92 198 / 9%);
-  border-radius: 50%;
-  box-shadow: 0 0 0 90px rgb(1 92 198 / 2.5%);
-  content: "";
-  pointer-events: none;
+    radial-gradient(circle at 12% 10%, rgb(102 41 227 / 14%), transparent 30%),
+    radial-gradient(circle at 88% 28%, rgb(93 183 255 / 24%), transparent 34%),
+    linear-gradient(145deg, #eaf4ff 0%, #ffffff 44%, #ffffff 100%);
 }
 
 .contact-layout > .hero {
@@ -258,10 +245,6 @@
     gap: var(--s3);
   }
 
-  .contact-layout::after {
-    top: 280px;
-    right: -300px;
-  }
 
   .contact-layout .page-lead {
     font-size: 1.06rem;
