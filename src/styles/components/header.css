@@ -1,0 +1,139 @@
+/* Header */
+
+body > nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(90deg, var(--deep), var(--blue));
+  box-shadow: 0 10px 24px -8px rgba(7, 48, 128, 0.62);
+}
+
+.nav-inner {
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  height: 46px;
+}
+
+.brand-logo {
+  display: block;
+  width: 110px;
+  height: 47px;
+  max-width: 100%;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.store-badges {
+  --store-badge-height: clamp(38px, 5vw, 60px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  height: 68px;
+  margin-right: 0;
+}
+
+.desktop-menu {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(12px, 1.6vw, 24px);
+  padding-inline: clamp(12px, 2vw, 28px);
+  white-space: nowrap;
+}
+
+.desktop-menu__link {
+  position: relative;
+  padding: 10px 0;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(0.78rem, 1.15vw, 0.92rem);
+  font-weight: 700;
+  line-height: 1;
+  transition: color var(--duration-fast) ease;
+}
+
+.desktop-menu__link::after {
+  position: absolute;
+  right: 0;
+  bottom: 3px;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  content: "";
+  opacity: 0;
+  transform: scaleX(0.55);
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.desktop-menu__link:hover,
+.desktop-menu__link[aria-current="page"] {
+  color: var(--color-on-brand);
+}
+
+.desktop-menu__link[aria-current="page"]::after {
+  opacity: 0.9;
+  transform: scaleX(1);
+}
+
+.desktop-menu__link:focus-visible {
+  border-radius: 4px;
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.app-store-link {
+  display: inline-flex;
+  height: var(--store-badge-height);
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.app-store-link:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 3px;
+}
+
+.app-store-badge {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+.google-play-unavailable {
+  display: inline-flex;
+  height: var(--store-badge-height);
+  width: auto;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.google-play-badge {
+  display: block;
+  width: auto;
+  height: 100%;
+  max-width: none;
+  object-fit: contain;
+  opacity: 0.52;
+}
+
+.mobile-menu-toggle,
+.mobile-menu {
+  display: none;
+}
+

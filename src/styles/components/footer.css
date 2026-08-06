@@ -1,0 +1,116 @@
+/* Footer */
+
+footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface-muted);
+}
+
+.apple-footer {
+  padding-block: var(--s4);
+}
+
+.footer-social-heading {
+  margin-bottom: 10px;
+  color: var(--deep);
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: -0.015em;
+  text-align: center;
+}
+
+.footer-social {
+  display: grid;
+  grid-template-columns: repeat(6, 72px);
+  align-items: center;
+  justify-content: center;
+  gap: 44px;
+  margin-bottom: var(--s3);
+  padding-bottom: var(--s3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer-social-link {
+  display: grid;
+  width: 72px;
+  height: 72px;
+  place-items: center;
+  border: 0;
+  background: none;
+  transition: transform var(--duration-fast) ease;
+}
+
+.footer-social-link svg {
+  display: block;
+  width: 52px;
+  height: 52px;
+  overflow: visible;
+  filter:
+    drop-shadow(0 4px 5px rgb(7 48 128 / 16%))
+    drop-shadow(0 0 10px rgb(93 183 255 / 10%));
+  transform: translateY(var(--social-icon-y, 0)) scale(var(--social-icon-scale, 1));
+  transform-origin: center;
+  shape-rendering: geometricPrecision;
+  transition:
+    filter var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.footer-social-link[data-social="instagram"] {
+  --social-icon-scale: 0.96;
+}
+
+.footer-social-link[data-social="threads"] {
+  --social-icon-scale: 1;
+}
+
+.footer-social-link[data-social="facebook"],
+.footer-social-link[data-social="reddit"] {
+  --social-icon-scale: 1.03;
+}
+
+.footer-social-link[data-social="tiktok"] {
+  --social-icon-scale: 0.94;
+}
+
+.footer-social-link[data-social="youtube"] {
+  --social-icon-scale: 1.18;
+  --social-icon-y: 0.5px;
+}
+
+.footer-social-link:hover {
+  transform: translateY(-3px) scale(1.06);
+}
+
+.footer-social-link:hover svg {
+  filter:
+    drop-shadow(0 8px 8px rgb(1 92 198 / 28%))
+    drop-shadow(0 0 14px rgb(93 183 255 / 22%));
+  transform: translateY(var(--social-icon-y, 0)) scale(var(--social-icon-scale, 1));
+}
+
+.footer-social-link:active {
+  transform: scale(0.94);
+}
+
+.footer-social-link:focus-visible {
+  outline: 3px solid rgb(1 92 198 / 28%);
+  outline-offset: 3px;
+}
+
+.apple-footer-legal {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--s3);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+}
+
+.apple-footer-links {
+  display: flex;
+  gap: var(--s2);
+}
+
+.footer-link:hover {
+  color: var(--color-brand-strong);
+}
+

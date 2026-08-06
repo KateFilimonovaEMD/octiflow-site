@@ -1,0 +1,49 @@
+/* Octi Flow shared design system */
+
+:root {
+  /* Brand palette */
+  --deep: #073080;
+  --blue: #015cc6;
+  --pale: #eaf6fb;
+  --ink: #19212b;
+  --soft: #657080;
+  --line: #b9dce8;
+  --white: #fff;
+
+  /* Semantic colors */
+  --color-text: var(--ink);
+  --color-text-body: #475b6b;
+  --color-text-muted: var(--soft);
+  --color-link: var(--blue);
+  --color-brand-strong: var(--deep);
+  --color-brand: var(--blue);
+  --color-on-brand: var(--white);
+  --color-on-brand-muted: rgba(255, 255, 255, 0.92);
+  --color-surface: var(--white);
+  --color-surface-muted: #f8fbfc;
+  --color-surface-hover: #f1f9fc;
+  --color-border: #e7eef2;
+  --color-border-brand: var(--line);
+
+  /* Type scale */
+  --text-sm: 0.875rem;
+  --heading-section: 1.35rem;
+  --heading-card: 1.5rem;
+
+  /* Shape, depth and motion */
+  --radius-sm: 8px;
+  --radius-panel: 14px;
+  --radius-card: 24px;
+  --radius-pill: 999px;
+  --shadow-card-brand: 0 22px 40px -17px rgba(7, 48, 128, 0.58);
+  --duration-fast: 0.18s;
+  --duration-base: 0.2s;
+
+  --s1: 8px;
+  --s2: 16px;
+  --s3: 24px;
+  --s4: 32px;
+  --s5: 48px;
+  --s6: 64px;
+}
+

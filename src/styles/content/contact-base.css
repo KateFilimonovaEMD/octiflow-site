@@ -1,0 +1,15 @@
+/* Contact */
+
+.contact-card {
+  display: flex;
+  justify-content: center;
+  padding: var(--s4);
+  text-align: center;
+}
+
+.contact-card p {
+  margin-inline: auto;
+  color: var(--color-on-brand-muted);
+  font-size: 0.92rem;
+}
+
