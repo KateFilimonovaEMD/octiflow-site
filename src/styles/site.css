@@ -2,6 +2,7 @@
 @import "./core/tokens.css";
 @import "./content/blog.css";
 @import "./core/foundation.css";
+@import "./components/ui.css";
 @import "./components/header.css";
 @import "./components/store-badges.css";
 @import "./content/content-layout.css";

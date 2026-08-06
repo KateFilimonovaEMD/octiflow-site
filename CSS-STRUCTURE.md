@@ -1,21 +1,32 @@
 # CSS structure
 
-The original `src/styles/site.css` has been split into smaller files. Shared component families are then consolidated one at a time while preserving their existing visual variants.
+`src/styles/site.css` is the only stylesheet imported by the layout. It loads the files below in cascade order.
 
-`site.css` is the only stylesheet imported by `BaseLayout.astro`. It imports the files below in the same order in which their rules appeared in the original stylesheet.
+- `core/tokens.css` - colors, type scale, spacing, radii, shadows and motion tokens.
+- `content/blog.css` - blog listing, article layout and article content.
+- `core/foundation.css` - reset, document defaults, focus treatment and container.
+- `components/ui.css` - shared eyebrows, buttons, text links, action links, cards and type roles.
+- `components/header.css` - desktop and mobile header.
+- `components/store-badges.css` - App Store and Google Play badge primitives.
+- `content/content-layout.css` - legal and support page shell.
+- `content/contact-base.css` - shared contact blocks.
+- `components/footer.css` - footer and social links.
+- `core/responsive.css` - shared responsive rules.
+- `pages/contact-support.css` - contact and support pages.
+- `pages/product.css` - small compatibility hooks still used by About and 404.
+- `pages/about.css` - About page.
+- `pages/home.css` - homepage.
 
-- `core/tokens.css` - design tokens and CSS variables
-- `content/blog.css` - blog listing, article cards, article pages, and article responsive rules
-- `core/foundation.css` - reset, document defaults, links, shared primitives, and containers
-- `components/header.css` - desktop header, navigation, and mobile menu base rules
-- `components/store-badges.css` - shared App Store and Google Play badge component rules
-- `content/content-layout.css` - generic hero, legal/document layout, table of contents, and policy content
-- `content/contact-base.css` - base contact card rules
-- `components/footer.css` - footer and social links
-- `core/responsive.css` - shared responsive, fallback, and reduced-motion rules
-- `pages/contact-support.css` - contact and support page-specific layout
-- `pages/product.css` - legacy product-page rules still referenced by the current markup
-- `pages/about.css` - About page
-- `pages/home.css` - homepage
+## Shared UI classes
 
-Do not reorder these imports until visual regression testing is available. Page-specific files may still contain similar patterns; consolidating them is a separate, later step and should be done one component family at a time.
+Use these before creating a page-specific copy:
+
+- `eyebrow` with page-specific variables or `eyebrow--light`.
+- `button` with `button--primary`, `button--secondary`, `button--light`, `button--inverse`, and `button--large`.
+- `text-link` and `text-link--inverse` for underlined inline links.
+- `action-link` and `action-link--inverse` for directional links.
+- `card`, `card--brand`, `page-title`, `page-lead`, and `card-title`.
+
+Page-specific classes should keep only layout, spacing, color overrides, or unique component geometry.
+
+Run `npm run audit:styles` after structural CSS changes. It does not run during the production build and does not delete anything automatically.

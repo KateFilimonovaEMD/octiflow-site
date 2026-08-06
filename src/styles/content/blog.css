@@ -1,13 +1,13 @@
 /* Blog */
 
 .section-eyebrow {
-  margin: 0 0 var(--s3);
-  color: var(--color-brand);
-  font-size: var(--text-eyebrow);
-  font-weight: var(--font-weight-extrabold);
-  letter-spacing: var(--tracking-eyebrow);
-  line-height: var(--leading-eyebrow);
-  text-transform: uppercase;
+  --eyebrow-color: var(--color-brand);
+  --eyebrow-size: var(--text-eyebrow);
+  --eyebrow-weight: var(--font-weight-extrabold);
+  --eyebrow-tracking: var(--tracking-eyebrow);
+  --eyebrow-leading: var(--leading-eyebrow);
+
+  margin-bottom: var(--s3);
 }
 
 .section-heading {
@@ -470,12 +470,12 @@ a.blog-pagination__arrow:hover {
 }
 
 .article-author__eyebrow {
-  margin: 0 0 10px;
-  color: var(--color-brand);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  --eyebrow-color: var(--color-brand);
+  --eyebrow-size: 13px;
+  --eyebrow-weight: 800;
+  --eyebrow-tracking: 0.08em;
+
+  margin-bottom: 10px;
 }
 
 .article-author h2 {
@@ -499,11 +499,12 @@ a.blog-pagination__arrow:hover {
 }
 
 .article-cta__eyebrow {
-  margin: 0 0 12px;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  --eyebrow-color: currentColor;
+  --eyebrow-size: 13px;
+  --eyebrow-weight: 800;
+  --eyebrow-tracking: 0.08em;
+
+  margin-bottom: 12px;
 }
 
 .article-cta h2 {
@@ -522,25 +523,11 @@ a.blog-pagination__arrow:hover {
 }
 
 .button-link {
-  display: inline-flex;
-  min-height: 46px;
-  align-items: center;
-  justify-content: center;
-  padding: 12px 20px;
-  border-radius: var(--radius-pill);
-  background: var(--color-on-brand);
-  color: var(--color-brand-strong);
-  font-size: 15px;
-  font-weight: 800;
-  line-height: 1.2;
-  transition:
-    transform var(--duration-base) ease,
-    box-shadow var(--duration-base) ease;
-}
-
-.button-link:hover {
-  box-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.5);
-  transform: translateY(-1px);
+  --button-min-height: 46px;
+  --button-padding: 12px 20px;
+  --button-font-size: 15px;
+  --button-hover-lift: -1px;
+  --button-hover-shadow: 0 12px 24px -14px rgba(0, 0, 0, 0.5);
 }
 
 .related-articles {

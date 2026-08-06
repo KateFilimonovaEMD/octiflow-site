@@ -1,0 +1,151 @@
+/* Shared UI primitives */
+
+/* Editorial labels */
+
+.eyebrow {
+  color: var(--eyebrow-color, var(--color-brand));
+  font-family: inherit;
+  font-size: var(--eyebrow-size, var(--text-eyebrow-compact));
+  font-weight: var(--eyebrow-weight, var(--font-weight-extrabold));
+  letter-spacing: var(--eyebrow-tracking, var(--tracking-eyebrow));
+  line-height: var(--eyebrow-leading, inherit);
+  text-transform: uppercase;
+}
+
+.eyebrow--light {
+  --eyebrow-color: #83d2ff;
+}
+
+/* Inline text links */
+
+.text-link {
+  color: var(--color-link);
+  font-weight: var(--font-weight-bold);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  transition:
+    color var(--duration-fast) ease,
+    text-decoration-thickness var(--duration-fast) ease,
+    opacity var(--duration-fast) ease;
+}
+
+.text-link:hover {
+  color: var(--color-brand-strong);
+  text-decoration-thickness: 2px;
+}
+
+.text-link--inverse {
+  color: var(--color-on-brand);
+  text-decoration-color: rgba(255, 255, 255, 0.72);
+}
+
+.text-link--inverse:hover {
+  color: var(--color-on-brand);
+  text-decoration-color: currentColor;
+}
+
+/* Buttons */
+
+.button {
+  display: inline-flex;
+  min-height: var(--button-min-height, 44px);
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding, 12px 22px);
+  border: var(--button-border, 0 solid currentColor);
+  border-radius: var(--button-radius, var(--radius-pill));
+  background: var(--button-background, transparent);
+  box-shadow: var(--button-shadow, none);
+  color: var(--button-color, inherit);
+  font-size: var(--button-font-size, inherit);
+  font-weight: var(--button-weight, var(--font-weight-extrabold));
+  line-height: var(--button-leading, 1.2);
+  text-align: center;
+  transition:
+    transform var(--duration-base) ease,
+    box-shadow var(--duration-base) ease,
+    background var(--duration-base) ease,
+    border-color var(--duration-base) ease;
+}
+
+.button:hover {
+  box-shadow: var(--button-hover-shadow, var(--button-shadow, none));
+  transform: translateY(var(--button-hover-lift, -2px));
+}
+
+.button--large {
+  --button-min-height: 48px;
+  --button-padding: 0 22px;
+  --button-border: 1px solid transparent;
+  --button-font-size: 0.94rem;
+}
+
+.button--primary {
+  --button-background: linear-gradient(135deg, var(--deep), var(--blue));
+  --button-shadow: 0 14px 24px -12px rgba(7, 48, 128, 0.65);
+  --button-color: var(--color-on-brand);
+}
+
+.button--secondary {
+  --button-border: 1px solid #b8d8e5;
+  --button-background: rgba(255, 255, 255, 0.74);
+  --button-color: var(--deep);
+}
+
+.button--light,
+.button--inverse {
+  --button-background: var(--color-on-brand);
+  --button-color: var(--color-brand-strong);
+}
+
+/* Directional and utility links */
+
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: var(--action-link-justify, normal);
+  gap: var(--action-link-gap, 10px);
+  color: var(--action-link-color, var(--color-link));
+  font-size: var(--action-link-size, 0.94rem);
+  font-weight: var(--action-link-weight, var(--font-weight-extrabold));
+  line-height: var(--action-link-leading, inherit);
+  transition: color var(--duration-fast) ease;
+}
+
+.action-link:hover {
+  color: var(--action-link-hover-color, var(--color-brand-strong));
+}
+
+.action-link--inverse {
+  --action-link-color: var(--color-on-brand);
+  --action-link-hover-color: var(--color-on-brand);
+}
+
+/* Shared cards and type roles */
+
+.card {
+  border-radius: var(--radius-card);
+}
+
+.card--brand {
+  background: linear-gradient(
+    135deg,
+    var(--color-brand-strong),
+    var(--color-brand)
+  );
+  box-shadow: var(--shadow-card-brand);
+  color: var(--color-on-brand);
+}
+
+.page-title {
+  font-size: var(--text-page-title);
+}
+
+.page-lead {
+  font-size: var(--text-body-large);
+}
+
+.card-title {
+  font-size: var(--heading-card);
+}

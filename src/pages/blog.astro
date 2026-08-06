@@ -66,7 +66,7 @@ const structuredData = [
           <>
             <section aria-label="Featured article">
               <div class="section-heading section-heading--blog">
-                <p class="section-eyebrow">Octi Flow Blog</p>
+                <p class="eyebrow section-eyebrow">Octi Flow Blog</p>
               </div>
               <ArticleCard post={featuredPost} featured />
             </section>
@@ -74,7 +74,7 @@ const structuredData = [
             {remainingPosts.length > 0 && (
               <section aria-labelledby="latest-title">
                 <div class="section-heading">
-                  <p class="section-eyebrow">Explore the blog</p>
+                  <p class="eyebrow section-eyebrow">Explore the blog</p>
                   <h2 id="latest-title">Latest articles</h2>
                 </div>
                 <div class="article-grid">
@@ -113,13 +113,13 @@ const structuredData = [
           </>
         ) : (
           <section class="blog-empty">
-            <p class="section-eyebrow">Coming soon</p>
+            <p class="eyebrow section-eyebrow">Coming soon</p>
             <h2>Thoughtful hydration guides are on the way</h2>
             <p>
               We are preparing practical articles about daily water habits,
               reminders, and hydration tracking.
             </p>
-            <a class="button-link" href="/">Explore Octi Flow</a>
+            <a class="button button--inverse button-link" href="/">Explore Octi Flow</a>
           </section>
         )
       }

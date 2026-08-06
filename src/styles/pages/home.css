@@ -25,14 +25,11 @@
 }
 
 .home-kicker {
-  margin: 0;
-  color: var(--blue);
-  font-family: inherit;
-  font-size: var(--home-kicker-size);
-  font-weight: var(--font-weight-heavy);
-  letter-spacing: var(--tracking-eyebrow-wide);
-  line-height: 1.25;
-  text-transform: uppercase;
+  --eyebrow-color: var(--blue);
+  --eyebrow-size: var(--home-kicker-size);
+  --eyebrow-weight: var(--font-weight-heavy);
+  --eyebrow-tracking: var(--tracking-eyebrow-wide);
+  --eyebrow-leading: 1.25;
 }
 
 .home-kicker + h2 {
@@ -40,7 +37,7 @@
 }
 
 .home-kicker--light {
-  color: #7ed8ff;
+  --eyebrow-color: #7ed8ff;
 }
 
 .home-hero,
@@ -407,38 +404,8 @@
   color: var(--soft);
 }
 
-.home-check-list {
-  display: grid;
-  gap: 12px;
-  margin: 28px 0 0;
-  padding: 0;
-  list-style: none;
-}
 
-.home-check-list li {
-  position: relative;
-  padding-left: 30px;
-  color: var(--deep);
-  font-size: 0.95rem;
-  font-weight: 700;
-  line-height: 1.5;
-}
 
-.home-check-list li::before {
-  position: absolute;
-  top: 0.2em;
-  left: 0;
-  display: grid;
-  width: 20px;
-  height: 20px;
-  place-items: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #00a8ff, #6d2de2);
-  color: #fff;
-  content: "✓";
-  font-size: 0.68rem;
-  font-weight: 900;
-}
 
 .home-screen-pair {
   position: relative;
@@ -798,17 +765,13 @@
 }
 
 .home-text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 28px;
-  color: var(--blue);
-  font-size: 0.94rem;
-  font-weight: 850;
-}
+  --action-link-gap: 10px;
+  --action-link-color: var(--blue);
+  --action-link-hover-color: var(--deep);
+  --action-link-size: 0.94rem;
+  --action-link-weight: 850;
 
-.home-text-link:hover {
-  color: var(--deep);
+  margin-top: 28px;
 }
 
 .home-cta {
@@ -939,12 +902,6 @@
   .home-screen-pair,
   .home-process-video-card {
     order: 2;
-  }
-
-  .home-check-list {
-    width: min(520px, 100%);
-    margin-inline: auto;
-    text-align: left;
   }
 
   .home-screen-pair {

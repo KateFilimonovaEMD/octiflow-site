@@ -156,12 +156,10 @@
 }
 
 .support-button {
-  margin: 0 auto 12px;
-}
+  --button-hover-lift: -1px;
+  --button-hover-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 
-.support-button:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+  margin: 0 auto 12px;
 }
 
 .support-section p {
