@@ -1,3 +1,16 @@
+# Final stylesheet cleanup - August 6, 2026
+
+- Removed the unused experimental `design-system.css` and its obsolete reports.
+- Removed the last `product-*` compatibility classes and stylesheet.
+- Moved the narrow shared header fallback into `core/responsive.css`.
+- Consolidated the About gradient sections and their repeated decoration rules.
+- Replaced duplicate centered SVG rules with `icon-stroke-centered`.
+- Removed redundant and undefined class names from Astro markup.
+- Removed the redundant inline About stylesheet.
+- Removed unused design tokens without changing computed styles.
+- Corrected the intrinsic dimensions of the shared team photo on the homepage.
+- Rebuilt `audit:styles` so it follows recursive imports and verifies the current architecture accurately.
+
 # Blog scaffold changes
 
 ## Article layout and store badges - July 31, 2026

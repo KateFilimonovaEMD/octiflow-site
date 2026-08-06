@@ -62,10 +62,7 @@
   padding-bottom: 0;
 }
 
-.policy.contact-page > .contact-directory {
-  padding: 0;
-  border-bottom: 0;
-}
+.policy.contact-page > .contact-directory,
 
 .contact-directory {
   display: flex;
@@ -103,10 +100,6 @@
 
 /* Support page */
 
-.policy.contact-page > .support-grid {
-  padding: 0;
-  border-bottom: 0;
-}
 
 .support-grid {
   display: grid;

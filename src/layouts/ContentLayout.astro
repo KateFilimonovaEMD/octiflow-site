@@ -51,7 +51,7 @@ const {
 
                 <div class="toc-menu">
                   {tocItems.map((item) => (
-                    <a class="nav-link toc-link" href={item.href}>
+                    <a class="nav-link" href={item.href}>
                       {item.label}
                     </a>
                   ))}
@@ -64,7 +64,6 @@ const {
         <article
           class:list={[
             "policy",
-            "content-page",
             { "contact-page": tocItems.length === 0 },
           ]}
         >

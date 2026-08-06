@@ -16,6 +16,15 @@
   --eyebrow-color: #83d2ff;
 }
 
+.eyebrow--section {
+  --eyebrow-size: 0.78rem;
+  --eyebrow-weight: var(--font-weight-extrabold);
+  --eyebrow-tracking: var(--tracking-eyebrow);
+  --eyebrow-leading: var(--leading-eyebrow);
+
+  margin-bottom: var(--s2);
+}
+
 /* Inline text links */
 
 .text-link {
@@ -79,6 +88,7 @@
   --button-padding: 0 22px;
   --button-border: 1px solid transparent;
   --button-font-size: 0.94rem;
+  --button-leading: inherit;
 }
 
 .button--primary {
@@ -148,4 +158,22 @@
 
 .card-title {
   font-size: var(--heading-card);
+}
+
+/* Shared centered line icon */
+
+.icon-stroke-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 17px;
+  height: 17px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transform: translate(-50%, -50%);
 }

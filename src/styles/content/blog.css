@@ -128,22 +128,6 @@
   color: var(--color-on-brand);
 }
 
-.blog-pagination__icon {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  display: block;
-  width: 17px;
-  height: 17px;
-  overflow: visible;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  transform: translate(-50%, -50%);
-}
-
 a.blog-pagination__arrow {
   transition:
     border-color var(--duration-fast) ease,
@@ -252,11 +236,6 @@ a.blog-pagination__arrow:hover {
   font-size: clamp(25px, 3vw, 38px);
   letter-spacing: -0.035em;
   line-height: 1.08;
-}
-
-.article-card h2 a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .article-card h2 a:hover {
