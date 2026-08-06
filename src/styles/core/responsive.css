@@ -39,26 +39,11 @@
     min-width: 0;
   }
 
-  .app-store-link {
-    width: auto;
-    height: var(--store-badge-height);
-  }
-
-  .google-play-unavailable {
-    width: auto;
-    height: var(--store-badge-height);
-  }
-
   .article-cta__store-badges {
     --store-badge-height: 38px;
 
     flex-wrap: nowrap;
     gap: 8px;
-  }
-
-  .article-cta__store-badges .app-store-link,
-  .article-cta__store-badges .google-play-unavailable {
-    height: var(--store-badge-height);
   }
 
   .mobile-menu-toggle {

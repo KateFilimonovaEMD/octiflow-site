@@ -97,41 +97,14 @@
 }
 
 .home-store-badges {
-  --home-badge-height: 56px;
+  --store-badge-height: 56px;
+  --store-focus-color: var(--blue);
+  --store-focus-offset: 4px;
+  --store-focus-radius: 8px;
+  --store-google-opacity: 0.5;
 
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
   margin-top: var(--home-action-gap);
-}
-
-.home-app-store-link,
-.home-google-play-unavailable {
-  display: inline-flex;
-  height: var(--home-badge-height);
-  flex: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.home-app-store-link img,
-.home-google-play-unavailable img {
-  display: block;
-  width: auto;
-  max-width: none;
-  height: 100%;
-  object-fit: contain;
-}
-
-.home-app-store-link:focus-visible {
-  border-radius: 8px;
-  outline: 3px solid var(--blue);
-  outline-offset: 4px;
-}
-
-.home-google-play-unavailable img {
-  opacity: 0.5;
 }
 
 .home-hero__note {
@@ -870,14 +843,11 @@
 }
 
 .home-store-badges--cta {
-  --home-badge-height: 54px;
+  --store-badge-height: 54px;
+  --store-focus-color: #fff;
 
   flex: none;
   margin-top: 0;
-}
-
-.home-cta .home-app-store-link:focus-visible {
-  outline-color: #fff;
 }
 
 @media (max-width: 960px) {
@@ -1046,7 +1016,7 @@
   }
 
   .home-store-badges {
-    --home-badge-height: 44px;
+    --store-badge-height: 44px;
 
     gap: 9px;
   }
@@ -1180,7 +1150,7 @@
   }
 
   .home-store-badges--cta {
-    --home-badge-height: 42px;
+    --store-badge-height: 42px;
   }
 }
 

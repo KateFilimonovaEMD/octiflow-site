@@ -33,10 +33,6 @@ body > nav {
 .store-badges {
   --store-badge-height: clamp(38px, 5vw, 60px);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
   height: 68px;
   margin-right: 0;
 }
@@ -91,45 +87,6 @@ body > nav {
   border-radius: 4px;
   outline: 3px solid rgba(255, 255, 255, 0.9);
   outline-offset: 3px;
-}
-
-.app-store-link {
-  display: inline-flex;
-  height: var(--store-badge-height);
-  align-items: center;
-  justify-content: center;
-  flex: none;
-}
-
-.app-store-link:focus-visible {
-  outline: 3px solid rgba(255, 255, 255, 0.9);
-  outline-offset: 3px;
-}
-
-.app-store-badge {
-  display: block;
-  height: 100%;
-  width: auto;
-  max-width: none;
-  object-fit: contain;
-}
-
-.google-play-unavailable {
-  display: inline-flex;
-  height: var(--store-badge-height);
-  width: auto;
-  flex: none;
-  align-items: center;
-  justify-content: center;
-}
-
-.google-play-badge {
-  display: block;
-  width: auto;
-  height: 100%;
-  max-width: none;
-  object-fit: contain;
-  opacity: 0.52;
 }
 
 .mobile-menu-toggle,

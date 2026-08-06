@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import StoreBadges from "../components/StoreBadges.astro";
 
 const canonical = "https://octiflow.app/";
-const appStoreUrl =
-  "https://apps.apple.com/app/octi-flow/id6783334530";
-
 const structuredData = {
   "@type": "WebPage",
   "@id": `${canonical}#webpage`,
@@ -40,37 +38,7 @@ const structuredData = {
             companion.
           </p>
 
-          <div class="home-store-badges" role="group" aria-label="Octi Flow app stores">
-            <a
-              class="home-app-store-link"
-              href={appStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download Octi Flow on the App Store"
-            >
-              <img
-                src="/assets/img/app-store-badge.svg"
-                alt="Download on the App Store"
-                width="120"
-                height="40"
-                decoding="async"
-              />
-            </a>
-
-            <span
-              class="home-google-play-unavailable"
-              role="img"
-              aria-label="Octi Flow is not yet available on Google Play"
-            >
-              <img
-                src="/assets/img/google-play-badge.png?v=20260731-2"
-                alt=""
-                width="564"
-                height="168"
-                decoding="async"
-              />
-            </span>
-          </div>
+          <StoreBadges variant="home" />
 
           <p class="home-hero__note">
             Free to download. Core hydration features stay free.
@@ -388,39 +356,7 @@ const structuredData = {
           <p>Free to download on iPhone. Google Play is planned.</p>
         </div>
 
-        <div class="home-store-badges home-store-badges--cta" role="group" aria-label="Octi Flow app stores">
-          <a
-            class="home-app-store-link"
-            href={appStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download Octi Flow on the App Store"
-          >
-            <img
-              src="/assets/img/app-store-badge.svg"
-              alt="Download on the App Store"
-              width="120"
-              height="40"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-          <span
-            class="home-google-play-unavailable"
-            role="img"
-            aria-label="Octi Flow is not yet available on Google Play"
-          >
-            <img
-              src="/assets/img/google-play-badge.png?v=20260731-2"
-              alt=""
-              width="564"
-              height="168"
-              loading="lazy"
-              decoding="async"
-            />
-          </span>
-        </div>
+        <StoreBadges variant="home-cta" loading="lazy" />
       </div>
     </section>
   </main>

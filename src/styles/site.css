@@ -3,6 +3,7 @@
 @import "./content/blog.css";
 @import "./core/foundation.css";
 @import "./components/header.css";
+@import "./components/store-badges.css";
 @import "./content/content-layout.css";
 @import "./content/contact-base.css";
 @import "./components/footer.css";
