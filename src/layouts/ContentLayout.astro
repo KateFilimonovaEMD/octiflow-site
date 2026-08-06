@@ -14,6 +14,7 @@ interface Props {
   heroDescription: string;
   tocLabel: string;
   tocItems: TocItem[];
+  mainClass?: string;
 }
 
 const {
@@ -24,11 +25,12 @@ const {
   heroDescription,
   tocLabel,
   tocItems,
+  mainClass = "",
 } = Astro.props;
 ---
 
 <BaseLayout {title} {description} {canonical}>
-    <main>
+    <main class={mainClass || undefined}>
       <header class="hero">
         <div class="container">
           <h1 class="page-title">{heroTitle}</h1>
