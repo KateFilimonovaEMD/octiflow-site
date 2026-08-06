@@ -1,13 +1,47 @@
----
-import StoreBadges from "../StoreBadges.astro";
----
-
-<aside class="article-cta heading-group" aria-labelledby="article-cta-title">
-  <p class="eyebrow eyebrow--light">Build a better hydration habit</p>
-  <h2 class="content-title" id="article-cta-title">Make daily water tracking feel lighter</h2>
-  <p class="section-lead">
+<aside class="article-cta" aria-labelledby="article-cta-title">
+  <p class="article-cta__eyebrow">Build a better hydration habit</p>
+  <h2 id="article-cta-title">Make daily water tracking feel lighter</h2>
+  <p>
     Octi Flow turns hydration reminders and progress tracking into a simple,
     encouraging daily routine.
   </p>
-  <StoreBadges variant="article" lazy />
+  <div
+    class="article-cta__store-badges"
+    role="group"
+    aria-label="Octi Flow app stores"
+  >
+    <a
+      class="app-store-link"
+      href="https://apps.apple.com/app/octi-flow/id6783334530"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Download Octi Flow on the App Store"
+    >
+      <img
+        class="app-store-badge"
+        src="/assets/img/app-store-badge.svg"
+        alt="Download on the App Store"
+        width="120"
+        height="40"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+
+    <span
+      class="google-play-unavailable"
+      role="img"
+      aria-label="Octi Flow is not yet available on Google Play"
+    >
+      <img
+        class="google-play-badge"
+        src="/assets/img/google-play-badge.png?v=20260731-2"
+        alt=""
+        width="564"
+        height="168"
+        loading="lazy"
+        decoding="async"
+      />
+    </span>
+  </div>
 </aside>

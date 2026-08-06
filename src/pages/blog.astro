@@ -51,33 +51,33 @@ const structuredData = [
 >
   <main class="blog-index">
     <header class="blog-hero">
-      <div class="container heading-group heading-group--center">
-        <h1 class="page-title">Small habits. Better hydration.</h1>
-        <p class="page-lead">
+      <div class="container">
+        <h1>Small habits. Better hydration.</h1>
+        <p>
           Practical guides for building a sustainable water routine, using
           reminders well, and making hydration tracking less demanding.
         </p>
       </div>
     </header>
 
-    <div class="container blog-content content-stack">
+    <div class="container blog-content">
       {
         featuredPost ? (
           <>
             <section aria-label="Featured article">
-              <div class="section-heading section-heading--compact heading-group">
-                <p class="eyebrow">Octi Flow Blog</p>
+              <div class="section-heading section-heading--blog">
+                <p class="section-eyebrow">Octi Flow Blog</p>
               </div>
               <ArticleCard post={featuredPost} featured />
             </section>
 
             {remainingPosts.length > 0 && (
               <section aria-labelledby="latest-title">
-                <div class="section-heading heading-group">
-                  <p class="eyebrow">Explore the blog</p>
-                  <h2 class="content-title" id="latest-title">Latest articles</h2>
+                <div class="section-heading">
+                  <p class="section-eyebrow">Explore the blog</p>
+                  <h2 id="latest-title">Latest articles</h2>
                 </div>
-                <div class="article-grid card-grid card-grid--2">
+                <div class="article-grid">
                   {remainingPosts.map((post) => <ArticleCard {post} />)}
                 </div>
               </section>
@@ -89,7 +89,7 @@ const structuredData = [
                 aria-hidden="true"
               >
                 <svg
-                  class="blog-pagination__icon icon-stroke icon-center icon-size-sm"
+                  class="blog-pagination__icon"
                   viewBox="0 0 16 16"
                   aria-hidden="true"
                 >
@@ -102,7 +102,7 @@ const structuredData = [
                 aria-hidden="true"
               >
                 <svg
-                  class="blog-pagination__icon icon-stroke icon-center icon-size-sm"
+                  class="blog-pagination__icon"
                   viewBox="0 0 16 16"
                   aria-hidden="true"
                 >
@@ -112,14 +112,14 @@ const structuredData = [
             </nav>
           </>
         ) : (
-          <section class="blog-empty heading-group">
-            <p class="eyebrow">Coming soon</p>
-            <h2 class="content-title">Thoughtful hydration guides are on the way</h2>
-            <p class="section-lead">
+          <section class="blog-empty">
+            <p class="section-eyebrow">Coming soon</p>
+            <h2>Thoughtful hydration guides are on the way</h2>
+            <p>
               We are preparing practical articles about daily water habits,
               reminders, and hydration tracking.
             </p>
-            <a class="button button--inverse" href="/">Explore Octi Flow</a>
+            <a class="button-link" href="/">Explore Octi Flow</a>
           </section>
         )
       }

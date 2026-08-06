@@ -96,16 +96,16 @@ const structuredData = [
 >
   <main class="article-page">
     <header class="article-hero">
-      <div class="container article-hero__inner heading-group">
-        <nav class="breadcrumbs meta-copy" aria-label="Breadcrumb">
+      <div class="container article-hero__inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href="/">Octi Flow</a>
           <span aria-hidden="true">/</span>
           <a href="/blog/">Blog</a>
         </nav>
-        <p class="eyebrow">{data.category}</p>
-        <h1 class="article-title">{data.title}</h1>
-        <p class="article-deck article-lead">{data.description}</p>
-        <div class="article-byline meta-copy meta-copy--strong">
+        <p class="section-eyebrow">{data.category}</p>
+        <h1>{data.title}</h1>
+        <p class="article-deck">{data.description}</p>
+        <div class="article-byline">
           <span>By <a href="/about/" rel="author">{data.author}</a></span>
           <span aria-hidden="true">·</span>
           <time datetime={data.publishDate.toISOString()}>
@@ -166,10 +166,10 @@ const structuredData = [
       <article class="article-prose">
         <slot />
 
-        <aside class="article-author heading-group" aria-labelledby="article-author-title">
-          <p class="eyebrow">Written by</p>
-          <h2 class="content-title" id="article-author-title">{data.author}</h2>
-          <p class="section-lead">
+        <aside class="article-author" aria-labelledby="article-author-title">
+          <p class="article-author__eyebrow">Written by</p>
+          <h2 id="article-author-title">{data.author}</h2>
+          <p>
             EvaMariaDreams is the independent two-person studio behind Octi
             Flow. We create thoughtful mobile apps and publish practical,
             evidence-aware guides about the habits those products are designed
