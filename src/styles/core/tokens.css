@@ -46,8 +46,6 @@
   --text-page-title: clamp(2.35rem, 6vw, 4.4rem);
   --text-section-title: clamp(2.3rem, 4.5vw, 3.75rem);
   --text-section-title-compact: clamp(1.9rem, 4vw, 3rem);
-  --text-editorial-title: clamp(44px, 7vw, 88px);
-  --text-editorial-deck: clamp(19px, 2.3vw, 26px);
   --text-about-lead: clamp(1.06rem, 1.8vw, 1.24rem);
   --text-card-title: 1.5rem;
   --text-body-large: 1.08rem;
