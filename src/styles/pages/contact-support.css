@@ -76,11 +76,7 @@
 .contact-layout > .hero {
   position: relative;
   z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgb(238 247 255 / 82%),
-    rgb(255 255 255 / 76%) 82%
-  );
+  background: transparent;
 }
 
 .contact-layout > .hero .container,
