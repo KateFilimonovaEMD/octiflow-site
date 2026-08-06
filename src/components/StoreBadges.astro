@@ -1,0 +1,64 @@
+---
+interface Props {
+  class?: string;
+  variant?: "default" | "header" | "article" | "cta";
+  lazy?: boolean;
+  showGooglePlay?: boolean;
+}
+
+const {
+  class: className,
+  variant = "default",
+  lazy = false,
+  showGooglePlay = true,
+} = Astro.props;
+
+const appStoreUrl = "https://apps.apple.com/app/octi-flow/id6783334530";
+const loading = lazy ? "lazy" : undefined;
+---
+
+<div
+  class:list={[
+    "store-badges",
+    variant !== "default" && `store-badges--${variant}`,
+    className,
+  ]}
+  role="group"
+  aria-label="Octi Flow app stores"
+>
+  <a
+    class="store-badge store-badge--app-store"
+    href={appStoreUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Download Octi Flow on the App Store"
+  >
+    <img
+      src="/assets/img/app-store-badge.svg"
+      alt="Download on the App Store"
+      width="120"
+      height="40"
+      {loading}
+      decoding="async"
+    />
+  </a>
+
+  {
+    showGooglePlay && (
+      <span
+        class="store-badge store-badge--google-play store-badge--unavailable"
+        role="img"
+        aria-label="Octi Flow is not yet available on Google Play"
+      >
+        <img
+          src="/assets/img/google-play-badge.png?v=20260731-2"
+          alt=""
+          width="564"
+          height="168"
+          {loading}
+          decoding="async"
+        />
+      </span>
+    )
+  }
+</div>

@@ -20,3 +20,12 @@ Consult these guides before working on related tasks:
 - [Adding or managing content](https://docs.astro.build/en/guides/content-collections/)
 - [Adding styles or using Tailwind](https://docs.astro.build/en/guides/styling/)
 - [Supporting multiple languages](https://docs.astro.build/en/guides/internationalization/)
+
+## CSS architecture
+
+Before adding or changing site styles, read `STYLE-SYSTEM.md` and run `npm run audit:styles`. Shared typography, spacing, buttons, badges, grids, media resets, and card-copy rules belong in `design-system.css`; `site.css` is reserved for component-specific layout and visuals.
+
+
+### Shared style primitives
+
+Use `.section-heading`, `.action-stack`, `.decorative-orb-section`, `.store-badges--responsive-center`, and the other primitives documented in `STYLE-SYSTEM.md` before adding a page-specific equivalent. `npm run audit:styles` must pass before committing.

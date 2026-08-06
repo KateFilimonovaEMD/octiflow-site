@@ -14,10 +14,11 @@ const { post, featured = false } = Astro.props;
   {
     post.data.image ? (
       <a class="article-card__media" href={postUrl(post)} tabindex="-1" aria-hidden="true">
-        <picture>
+        <picture class="media-fill">
           {post.data.imageAvif && <source srcset={post.data.imageAvif} type="image/avif" />}
           {post.data.imageWebp && <source srcset={post.data.imageWebp} type="image/webp" />}
           <img
+            class="media-cover"
             src={post.data.image}
             alt=""
             width={post.data.imageWidth ?? 1200}
@@ -35,7 +36,7 @@ const { post, featured = false } = Astro.props;
   }
 
   <div class="article-card__body">
-    <div class="article-meta">
+    <div class="article-meta meta-copy meta-copy--strong">
       <span>{post.data.category}</span>
       <span aria-hidden="true">·</span>
       <time datetime={post.data.publishDate.toISOString()}>
@@ -44,10 +45,10 @@ const { post, featured = false } = Astro.props;
       <span aria-hidden="true">·</span>
       <span>{readingTime(post.body)} min read</span>
     </div>
-    <h2>
+    <h2 class="article-card-title">
       <a href={postUrl(post)}>{post.data.title}</a>
     </h2>
-    <p>{post.data.description}</p>
+    <p class="card-copy">{post.data.description}</p>
     <a class="text-link article-card__link" href={postUrl(post)}>
       Read article <span aria-hidden="true">→</span>
     </a>

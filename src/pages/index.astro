@@ -1,10 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import StoreBadges from "../components/StoreBadges.astro";
 
 const canonical = "https://octiflow.app/";
-const appStoreUrl =
-  "https://apps.apple.com/app/octi-flow/id6783334530";
-
 const structuredData = {
   "@type": "WebPage",
   "@id": `${canonical}#webpage`,
@@ -29,62 +27,32 @@ const structuredData = {
   {structuredData}
 >
   <main class="home-page">
-    <section class="home-hero">
+    <section class="home-hero decorative-orb-section section-block">
       <div class="container home-hero__grid">
-        <div class="home-hero__copy">
-          <h1>A hydration tracker you’ll actually want to come back to.</h1>
+        <div class="home-hero__copy heading-group">
+          <h1 class="page-title">A hydration tracker you’ll actually want to come back to.</h1>
 
-          <p class="home-hero__lead">
+          <p class="home-hero__lead page-lead">
             Track water in one tap, get gentle reminders, build streaks, and
             celebrate every small win with Octi - your animated hydration
             companion.
           </p>
 
-          <div class="home-store-badges" role="group" aria-label="Octi Flow app stores">
-            <a
-              class="home-app-store-link"
-              href={appStoreUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Download Octi Flow on the App Store"
-            >
-              <img
-                src="/assets/img/app-store-badge.svg"
-                alt="Download on the App Store"
-                width="120"
-                height="40"
-                decoding="async"
-              />
-            </a>
+          <StoreBadges class="store-badges--responsive-center" />
 
-            <span
-              class="home-google-play-unavailable"
-              role="img"
-              aria-label="Octi Flow is not yet available on Google Play"
-            >
-              <img
-                src="/assets/img/google-play-badge.png?v=20260731-2"
-                alt=""
-                width="564"
-                height="168"
-                decoding="async"
-              />
-            </span>
-          </div>
-
-          <p class="home-hero__note">
+          <p class="home-hero__note fine-print">
             Free to download. Core hydration features stay free.
           </p>
         </div>
 
-        <div class="home-hero__visual">
+        <div class="home-hero__visual visual-stage">
           <span class="home-hero__orbit home-hero__orbit--one" aria-hidden="true"></span>
           <span class="home-hero__orbit home-hero__orbit--two" aria-hidden="true"></span>
 
           <div class="home-device-stage">
             <div class="home-device-card">
               <img
-                class="home-hero-product-image"
+                class="home-hero-product-image media-fluid"
                 src="/images/home/hero-one-tap-progress.webp"
                 alt="Octi Flow main screen showing hydration progress, Octi, and the one-tap add water button"
                 width="988"
@@ -103,12 +71,12 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="home-belief">
+    <section class="home-belief gradient-section gradient-section--blue-violet gradient-section--orbital gradient-section--dotted section-block">
       <div class="container home-belief__grid">
-        <div class="home-belief__copy">
-          <p class="home-kicker home-kicker--light">More than a water counter</p>
-          <h2>Tracking shows the numbers. Octi helps you keep the habit.</h2>
-          <p>
+        <div class="home-belief__copy heading-group">
+          <p class="eyebrow eyebrow--light">More than a water counter</p>
+          <h2 class="section-title">Tracking shows the numbers. Octi helps you keep the habit.</h2>
+          <p class="section-lead">
             Octi Flow is designed around the part that matters after the first
             day: making the routine feel calm, personal, and worth returning to.
           </p>
@@ -116,46 +84,47 @@ const structuredData = {
 
         <div class="home-belief__features">
           <article>
-            <span>01</span>
+            <span class="step-index step-index--large">01</span>
             <div>
-              <h3>One-tap tracking</h3>
-              <p>Log a drink without interrupting your day.</p>
+              <h3 class="card-title">One-tap tracking</h3>
+              <p class="card-copy">Log a drink without interrupting your day.</p>
             </div>
           </article>
 
           <article>
-            <span>02</span>
+            <span class="step-index step-index--large">02</span>
             <div>
-              <h3>Gentle reminders</h3>
-              <p>Stay on track without pressure or notification overload.</p>
+              <h3 class="card-title">Gentle reminders</h3>
+              <p class="card-copy">Stay on track without pressure or notification overload.</p>
             </div>
           </article>
 
           <article>
-            <span>03</span>
+            <span class="step-index step-index--large">03</span>
             <div>
-              <h3>Positive reinforcement</h3>
-              <p>Octi reacts and makes small wins feel meaningful.</p>
+              <h3 class="card-title">Positive reinforcement</h3>
+              <p class="card-copy">Octi reacts and makes small wins feel meaningful.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="home-section home-feature" id="features">
+    <section class="home-feature section-block" id="features">
       <div class="container home-feature__grid">
-        <div class="home-feature__copy">
-          <p class="home-kicker">Quick water tracking</p>
-          <h2>Log water in one tap.</h2>
-          <p>
+        <div class="home-feature__copy heading-group">
+          <p class="eyebrow">Quick water tracking</p>
+          <h2 class="section-title">Log water in one tap.</h2>
+          <p class="section-lead">
             Choose your usual amount or select a different portion. Your
             progress updates instantly, and Octi reacts.
           </p>
         </div>
 
         <div class="home-screen-pair" aria-label="Octi Flow portion selection and updated progress">
-          <figure class="home-screen-card home-screen-card--back">
+          <figure class="home-screen-card home-screen-card--back figure-plain">
             <img
+              class="media-fluid"
               src="/images/home/one-tap-select.webp"
               alt="Octi Flow portion selector with 100, 150, and 200 milliliter options"
               width="720"
@@ -165,8 +134,9 @@ const structuredData = {
             />
           </figure>
 
-          <figure class="home-screen-card home-screen-card--front">
+          <figure class="home-screen-card home-screen-card--front figure-plain">
             <img
+              class="media-fluid"
               src="/images/home/one-tap-progress.webp"
               alt="Octi Flow showing updated hydration progress and an encouraging Octi message"
               width="720"
@@ -179,12 +149,12 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="home-section home-section--tint home-feature home-feature--reverse">
+    <section class="home-section--tint home-feature home-feature--reverse gradient-section gradient-section--blue-violet gradient-section--orbital gradient-section--dotted section-block">
       <div class="container home-feature__grid">
-        <div class="home-feature__copy">
-          <p class="home-kicker">A companion, not just a tracker</p>
-          <h2>A companion that reacts to your day.</h2>
-          <p>
+        <div class="home-feature__copy heading-group">
+          <p class="eyebrow eyebrow--light">A companion, not just a tracker</p>
+          <h2 class="section-title">A companion that reacts to your day.</h2>
+          <p class="section-lead">
             Octi celebrates when you drink, responds to your progress, and
             brings personality to a routine that usually feels mechanical.
           </p>
@@ -198,7 +168,7 @@ const structuredData = {
 
         <div class="home-process-video-card">
           <video
-            class="home-product-video home-product-video--process"
+            class="home-product-video home-product-video--process media-fluid"
             autoplay
             muted
             loop
@@ -219,18 +189,18 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="home-section home-progress">
+    <section class="home-progress section-block">
       <div class="container home-progress__grid">
-        <div class="home-progress__copy">
-          <p class="home-kicker">Progress without pressure</p>
-          <h2>See the habit taking shape.</h2>
-          <p>
+        <div class="home-progress__copy heading-group">
+          <p class="eyebrow">Progress without pressure</p>
+          <h2 class="section-title">See the habit taking shape.</h2>
+          <p class="section-lead">
             Follow daily progress, keep a streak going, and unlock achievements
             as the routine becomes more consistent.
           </p>
         </div>
 
-        <div class="home-progress__cards">
+        <div class="home-progress__cards card-grid card-grid--3">
           <article>
             <span class="home-progress__icon" aria-hidden="true">
               <svg viewBox="0 0 32 32" focusable="false">
@@ -248,8 +218,8 @@ const structuredData = {
                 </g>
               </svg>
             </span>
-            <h3>Daily progress</h3>
-            <p>See how today’s hydration goal is moving at a glance.</p>
+            <h3 class="card-title">Daily progress</h3>
+            <p class="card-copy">See how today’s hydration goal is moving at a glance.</p>
           </article>
 
           <article>
@@ -268,8 +238,8 @@ const structuredData = {
                 </g>
               </svg>
             </span>
-            <h3>Streaks</h3>
-            <p>Notice the days when the routine starts to stick.</p>
+            <h3 class="card-title">Streaks</h3>
+            <p class="card-copy">Notice the days when the routine starts to stick.</p>
           </article>
 
           <article>
@@ -287,24 +257,25 @@ const structuredData = {
                 </g>
               </svg>
             </span>
-            <h3>Achievements</h3>
-            <p>Mark meaningful milestones without turning them into pressure.</p>
+            <h3 class="card-title">Achievements</h3>
+            <p class="card-copy">Mark meaningful milestones without turning them into pressure.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="home-access">
+    <section class="home-access gradient-section section-block">
       <div class="container">
-        <div class="home-access__heading">
-          <p class="home-kicker home-kicker--light">Free at the core</p>
-          <h2>Everything needed for the habit is free. Premium makes Octi yours.</h2>
+        <div class="home-access__heading heading-group">
+          <p class="eyebrow eyebrow--light">Free at the core</p>
+          <h2 class="section-title">Everything needed for the habit is free. Premium makes Octi yours.</h2>
         </div>
 
-        <div class="home-access__grid">
+        <div class="home-access__grid card-grid card-grid--2 card-grid--stack-tablet">
           <article class="home-access-card">
             <div class="home-access-card__portrait">
               <img
+                class="media-fluid"
                 src="/images/home/octi-free.webp"
                 alt="Orange Octi, the free companion in Octi Flow"
                 width="560"
@@ -315,8 +286,8 @@ const structuredData = {
             </div>
 
             <div class="home-access-card__content">
-              <p class="home-access-card__label">Free</p>
-              <h3>Build the hydration habit.</h3>
+              <p class="home-access-card__label meta-label">Free</p>
+              <h3 class="card-title">Build the hydration habit.</h3>
               <ul>
                 <li>Unlimited water tracking</li>
                 <li>Reminders and daily progress</li>
@@ -329,6 +300,7 @@ const structuredData = {
           <article class="home-access-card home-access-card--premium">
             <div class="home-access-card__portrait">
               <img
+                class="media-fluid"
                 src="/images/home/octi-premium.webp"
                 alt="Purple Octi wearing a yellow bow, an example of Premium personalization"
                 width="560"
@@ -339,8 +311,8 @@ const structuredData = {
             </div>
 
             <div class="home-access-card__content">
-              <p class="home-access-card__label">Premium</p>
-              <h3>Make the companion yours.</h3>
+              <p class="home-access-card__label meta-label">Premium</p>
+              <h3 class="card-title">Make the companion yours.</h3>
               <ul>
                 <li>Skins and accessories</li>
                 <li>Premium themes</li>
@@ -353,11 +325,12 @@ const structuredData = {
       </div>
     </section>
 
-    <section class="home-section home-team">
+    <section class="home-team section-block">
       <div class="container home-team__card">
         <div class="home-team__photo">
           <img
-            src="/images/about/Team_Photo_01.webp"
+            class="media-fluid"
+                src="/images/about/Team_Photo_01.webp"
             alt="Kate and Eugene, the two-person team building Octi Flow in Barcelona"
             width="1200"
             height="800"
@@ -366,61 +339,29 @@ const structuredData = {
           />
         </div>
 
-        <div class="home-team__copy">
-          <p class="home-kicker">Built independently in Barcelona</p>
-          <h2>Designed and built by a two-person studio.</h2>
-          <p>
+        <div class="home-team__copy heading-group">
+          <p class="eyebrow">Built independently in Barcelona</p>
+          <h2 class="section-title">Designed and built by a two-person studio.</h2>
+          <p class="section-lead">
             We design, code, animate, test, and ship Octi Flow ourselves. The
             details stay close to the people making them.
           </p>
-          <a class="home-text-link" href="/about/">
+          <a class="home-text-link arrow-link" href="/about/">
             Meet the team <span aria-hidden="true">→</span>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="home-cta">
+    <section class="home-cta section-block--bottom">
       <div class="container home-cta__card">
-        <div class="home-cta__copy">
-          <p class="home-kicker home-kicker--light">Ready to meet Octi?</p>
-          <h2>Start a hydration habit that feels easier to return to.</h2>
-          <p>Free to download on iPhone. Google Play is planned.</p>
+        <div class="home-cta__copy heading-group">
+          <p class="eyebrow eyebrow--light">Ready to meet Octi?</p>
+          <h2 class="section-title">Start a hydration habit that feels easier to return to.</h2>
+          <p class="section-lead">Free to download on iPhone. Google Play is planned.</p>
         </div>
 
-        <div class="home-store-badges home-store-badges--cta" role="group" aria-label="Octi Flow app stores">
-          <a
-            class="home-app-store-link"
-            href={appStoreUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download Octi Flow on the App Store"
-          >
-            <img
-              src="/assets/img/app-store-badge.svg"
-              alt="Download on the App Store"
-              width="120"
-              height="40"
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-
-          <span
-            class="home-google-play-unavailable"
-            role="img"
-            aria-label="Octi Flow is not yet available on Google Play"
-          >
-            <img
-              src="/assets/img/google-play-badge.png?v=20260731-2"
-              alt=""
-              width="564"
-              height="168"
-              loading="lazy"
-              decoding="async"
-            />
-          </span>
-        </div>
+        <StoreBadges class="store-badges--responsive-center" variant="cta" lazy />
       </div>
     </section>
   </main>

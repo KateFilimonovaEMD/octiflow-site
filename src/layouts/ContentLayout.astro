@@ -30,8 +30,8 @@ const {
 <BaseLayout {title} {description} {canonical}>
     <main>
       <header class="hero">
-        <div class="container">
-          <h1 class="page-title">{heroTitle}</h1>
+        <div class="container heading-group">
+          <h1 class="page-title page-title--gradient">{heroTitle}</h1>
           <p class="page-lead">{heroDescription}</p>
         </div>
       </header>
@@ -40,6 +40,7 @@ const {
         class:list={[
           "container",
           "layout",
+          "content-stack",
           { "layout-single": tocItems.length === 0 },
         ]}
       >

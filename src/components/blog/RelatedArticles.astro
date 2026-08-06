@@ -12,11 +12,11 @@ const { posts } = Astro.props;
 {
   posts.length > 0 && (
     <section class="related-articles" aria-labelledby="related-title">
-      <div class="section-heading">
-        <p class="section-eyebrow">Keep reading</p>
-        <h2 id="related-title">Related articles</h2>
+      <div class="section-heading heading-group">
+        <p class="eyebrow">Keep reading</p>
+        <h2 class="content-title" id="related-title">Related articles</h2>
       </div>
-      <div class="article-grid article-grid--related">
+      <div class="article-grid article-grid--related card-grid card-grid--2">
         {posts.map((post) => <ArticleCard {post} />)}
       </div>
     </section>
