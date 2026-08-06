@@ -34,9 +34,16 @@
   text-wrap: balance;
 }
 
-/* Keep technical pages aligned when their titles use different line counts. */
-.technical-page > .hero h1 {
+/* Keep all technical and legal page heroes on one shared vertical rhythm. */
+.technical-page > .hero h1,
+.legal-page > .hero h1 {
   min-height: 2.4em;
+}
+
+.technical-page > .hero p,
+.legal-page > .hero p {
+  min-height: 4.1rem;
+  line-height: var(--leading-body-relaxed);
 }
 
 /* Card-based technical pages do not use policy-section separators. */
@@ -210,7 +217,7 @@
 }
 
 .legal-page > .hero {
-  padding: clamp(72px, 8vw, 104px) 0 60px;
+  padding: clamp(72px, 11vw, 128px) 0 72px;
   background: transparent;
 }
 
@@ -228,7 +235,7 @@
 .legal-page > .layout {
   grid-template-columns: 260px minmax(0, 1fr);
   gap: 56px;
-  padding-top: 56px;
+  padding-top: var(--s6);
   padding-bottom: 72px;
 }
 
@@ -293,7 +300,7 @@
 
 @media (max-width: 820px) {
   .legal-page > .hero {
-    padding: 48px 0 44px;
+    padding: var(--s5) 0;
   }
 
   .legal-page > .hero h1 {
