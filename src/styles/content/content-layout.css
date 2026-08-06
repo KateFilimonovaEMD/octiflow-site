@@ -34,6 +34,11 @@
   text-wrap: balance;
 }
 
+/* Keep technical pages aligned when their titles use different line counts. */
+.technical-page > .hero h1 {
+  min-height: 2.2em;
+}
+
 /* Main layout */
 
 .layout {

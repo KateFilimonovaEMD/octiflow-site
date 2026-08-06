@@ -30,7 +30,12 @@ const {
 ---
 
 <BaseLayout {title} {description} {canonical}>
-    <main class={mainClass || undefined}>
+    <main
+      class:list={[
+        mainClass,
+        { "technical-page": tocItems.length === 0 },
+      ]}
+    >
       <header class="hero">
         <div class="container">
           <h1 class="page-title">{heroTitle}</h1>
