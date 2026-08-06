@@ -91,8 +91,8 @@
 
 .policy.contact-page > .contact-directory,
 .contact-directory {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-auto-rows: minmax(0, 1fr);
   gap: 0;
   padding: 0;
   overflow: hidden;
@@ -107,7 +107,10 @@
 }
 
 .contact-directory-item {
+  display: flex;
   min-width: 0;
+  flex-direction: column;
+  justify-content: center;
   padding: clamp(30px, 3vw, 38px) clamp(28px, 3.5vw, 40px);
 }
 
@@ -248,6 +251,12 @@
 
   .contact-layout .page-lead {
     font-size: 1.06rem;
+  }
+
+  .policy.contact-page > .contact-directory,
+  .contact-directory {
+    display: flex;
+    flex-direction: column;
   }
 
   .contact-directory-item {
