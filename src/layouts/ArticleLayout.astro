@@ -94,7 +94,7 @@ const structuredData = [
   modifiedTime={modifiedDate}
   {structuredData}
 >
-  <main class="article-page">
+  <main class="article-page blog-page-surface">
     <header class="article-hero">
       <div class="container article-hero__inner">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
@@ -103,7 +103,7 @@ const structuredData = [
           <a href="/blog/">Blog</a>
         </nav>
         <p class="eyebrow section-eyebrow">{data.category}</p>
-        <h1>{data.title}</h1>
+        <h1 class="blog-gradient-title">{data.title}</h1>
         <p class="article-deck">{data.description}</p>
         <div class="article-byline">
           <span>By <a href="/about/" rel="author">{data.author}</a></span>
