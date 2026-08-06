@@ -36,7 +36,17 @@
 
 /* Keep technical pages aligned when their titles use different line counts. */
 .technical-page > .hero h1 {
-  min-height: 2.2em;
+  min-height: 2.4em;
+}
+
+/* Card-based technical pages do not use policy-section separators. */
+.technical-page .policy > section {
+  padding-block: 0;
+  border-bottom: 0;
+}
+
+.technical-page > .layout {
+  padding-bottom: var(--s5);
 }
 
 /* Main layout */
