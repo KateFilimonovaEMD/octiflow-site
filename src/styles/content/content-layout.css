@@ -21,9 +21,9 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  font-weight: 800;
-  line-height: 1.14;
-  letter-spacing: -0.045em;
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--leading-heading-page);
+  letter-spacing: var(--tracking-heading);
   text-wrap: balance;
 }
 

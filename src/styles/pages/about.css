@@ -65,9 +65,9 @@
 .about-story-hero h1 {
   max-width: 670px;
   color: var(--deep);
-  font-size: clamp(3.35rem, 6.3vw, 5.65rem);
-  letter-spacing: -0.06em;
-  line-height: 0.96;
+  font-size: var(--text-display-title);
+  letter-spacing: var(--tracking-display);
+  line-height: var(--leading-display);
   text-wrap: balance;
 }
 
@@ -75,8 +75,8 @@
   max-width: 570px;
   margin-top: var(--s3);
   color: var(--soft);
-  font-size: clamp(1.06rem, 1.8vw, 1.24rem);
-  line-height: 1.68;
+  font-size: var(--text-about-lead);
+  line-height: var(--leading-body-loose);
 }
 
 .about-story-actions {
@@ -298,9 +298,9 @@
 .about-build h2,
 .about-follow h2 {
   color: var(--deep);
-  font-size: clamp(2.3rem, 4.5vw, 3.75rem);
-  letter-spacing: -0.05em;
-  line-height: 1.05;
+  font-size: var(--text-section-title);
+  letter-spacing: var(--tracking-section);
+  line-height: var(--leading-section);
   text-wrap: balance;
 }
 

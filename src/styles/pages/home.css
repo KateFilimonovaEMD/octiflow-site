@@ -2,18 +2,18 @@
 
 .home-page {
   --home-section-space: clamp(64px, 6vw, 80px);
-  --home-kicker-size: 0.76rem;
-  --home-kicker-heading-gap: 16px;
-  --home-heading-copy-gap: 28px;
-  --home-action-gap: 32px;
-  --home-note-gap: 20px;
-  --home-hero-heading-size: clamp(2.35rem, 6vw, 4.4rem);
-  --home-section-heading-size: clamp(2.3rem, 4.5vw, 3.75rem);
-  --home-heading-weight: 800;
-  --home-heading-letter-spacing: -0.045em;
-  --home-heading-line-height: 1.06;
-  --home-body-size: 1.08rem;
-  --home-body-line-height: 1.65;
+  --home-kicker-size: var(--text-eyebrow-compact);
+  --home-kicker-heading-gap: var(--space-eyebrow-title);
+  --home-heading-copy-gap: var(--space-title-copy);
+  --home-action-gap: var(--space-actions);
+  --home-note-gap: var(--space-note);
+  --home-hero-heading-size: var(--text-page-title);
+  --home-section-heading-size: var(--text-section-title);
+  --home-heading-weight: var(--font-weight-extrabold);
+  --home-heading-letter-spacing: var(--tracking-heading);
+  --home-heading-line-height: var(--leading-heading-tight);
+  --home-body-size: var(--text-body-large);
+  --home-body-line-height: var(--leading-body-relaxed);
   overflow: hidden;
 }
 
@@ -29,8 +29,8 @@
   color: var(--blue);
   font-family: inherit;
   font-size: var(--home-kicker-size);
-  font-weight: 850;
-  letter-spacing: 0.09em;
+  font-weight: var(--font-weight-heavy);
+  letter-spacing: var(--tracking-eyebrow-wide);
   line-height: 1.25;
   text-transform: uppercase;
 }
@@ -1038,11 +1038,11 @@
     --home-section-space: 56px;
     --home-hero-heading-size: clamp(2.5rem, 11vw, 3.35rem);
     --home-section-heading-size: clamp(2.25rem, 10vw, 3.25rem);
-    --home-heading-copy-gap: 24px;
-    --home-action-gap: 28px;
-    --home-note-gap: 16px;
-    --home-body-size: 1rem;
-    --home-body-line-height: 1.68;
+    --home-heading-copy-gap: var(--space-title-copy-mobile);
+    --home-action-gap: var(--space-actions-mobile);
+    --home-note-gap: var(--space-note-mobile);
+    --home-body-size: var(--text-body);
+    --home-body-line-height: var(--leading-body-loose);
   }
 
   .home-store-badges {

@@ -3,10 +3,10 @@
 .section-eyebrow {
   margin: 0 0 var(--s3);
   color: var(--color-brand);
-  font-size: var(--text-sm);
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
+  font-size: var(--text-eyebrow);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-eyebrow);
+  line-height: var(--leading-eyebrow);
   text-transform: uppercase;
 }
 
@@ -17,7 +17,7 @@
 .section-heading h2 {
   margin: 0;
   color: var(--color-brand-strong);
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-size: var(--text-section-title-compact);
   line-height: 1.1;
 }
 
@@ -36,7 +36,7 @@
   max-width: 980px;
   margin: 0;
   color: var(--color-brand-strong);
-  font-size: clamp(44px, 7vw, 88px);
+  font-size: var(--text-editorial-title);
   letter-spacing: -0.055em;
   line-height: 0.98;
 }
@@ -45,7 +45,7 @@
   max-width: 760px;
   margin: 28px 0 0;
   color: var(--color-text);
-  font-size: clamp(19px, 2.3vw, 26px);
+  font-size: var(--text-editorial-deck);
   line-height: 1.5;
 }
 
@@ -69,10 +69,10 @@
   max-width: 760px;
   margin-inline: auto;
   color: var(--color-brand-strong);
-  font-size: clamp(2.35rem, 6vw, 4.4rem);
-  font-weight: 800;
-  letter-spacing: -0.045em;
-  line-height: 1.14;
+  font-size: var(--text-page-title);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--leading-heading-page);
   text-wrap: balance;
 }
 
@@ -80,8 +80,8 @@
   max-width: 620px;
   margin: var(--s3) auto 0;
   color: var(--color-text-muted);
-  font-size: 1.08rem;
-  line-height: 1.6;
+  font-size: var(--text-body-large);
+  line-height: var(--leading-body);
   text-wrap: balance;
 }
 
@@ -288,7 +288,7 @@ a.blog-pagination__arrow:hover {
 
 .blog-empty h2 {
   margin: 0;
-  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-size: var(--text-section-title-compact);
 }
 
 .blog-empty > p:not(.section-eyebrow) {

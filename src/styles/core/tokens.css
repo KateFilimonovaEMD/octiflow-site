@@ -25,10 +25,61 @@
   --color-border: #e7eef2;
   --color-border-brand: var(--line);
 
+  /* Font family */
+  --font-family-sans:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  /* Font weights */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 650;
+  --font-weight-bold: 700;
+  --font-weight-strong: 750;
+  --font-weight-extrabold: 800;
+  --font-weight-heavy: 850;
+  --font-weight-black: 900;
+
   /* Type scale */
-  --text-sm: 0.875rem;
+  --text-display-title: clamp(3.35rem, 6.3vw, 5.65rem);
+  --text-page-title: clamp(2.35rem, 6vw, 4.4rem);
+  --text-section-title: clamp(2.3rem, 4.5vw, 3.75rem);
+  --text-section-title-compact: clamp(1.9rem, 4vw, 3rem);
+  --text-editorial-title: clamp(44px, 7vw, 88px);
+  --text-editorial-deck: clamp(19px, 2.3vw, 26px);
+  --text-about-lead: clamp(1.06rem, 1.8vw, 1.24rem);
+  --text-card-title: 1.5rem;
+  --text-body-large: 1.08rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-caption: 0.84rem;
+  --text-eyebrow: 0.875rem;
+  --text-eyebrow-compact: 0.76rem;
+
+  /* Leading and tracking */
+  --leading-display: 0.96;
+  --leading-section: 1.05;
+  --leading-heading-tight: 1.06;
+  --leading-heading-page: 1.14;
+  --leading-eyebrow: 1.2;
+  --leading-body: 1.6;
+  --leading-body-relaxed: 1.65;
+  --leading-body-loose: 1.68;
+  --tracking-display: -0.06em;
+  --tracking-section: -0.05em;
+  --tracking-heading: -0.045em;
+  --tracking-eyebrow: 0.08em;
+  --tracking-eyebrow-wide: 0.09em;
+
+  /* Compatibility aliases used by existing components */
+  --text-sm: var(--text-small);
   --heading-section: 1.35rem;
-  --heading-card: 1.5rem;
+  --heading-card: var(--text-card-title);
 
   /* Shape, depth and motion */
   --radius-sm: 8px;
@@ -39,11 +90,20 @@
   --duration-fast: 0.18s;
   --duration-base: 0.2s;
 
+  /* Spacing scale */
   --s1: 8px;
   --s2: 16px;
   --s3: 24px;
   --s4: 32px;
   --s5: 48px;
   --s6: 64px;
-}
 
+  /* Shared content rhythm */
+  --space-eyebrow-title: var(--s2);
+  --space-title-copy: 28px;
+  --space-title-copy-mobile: var(--s3);
+  --space-actions: var(--s4);
+  --space-actions-mobile: 28px;
+  --space-note: 20px;
+  --space-note-mobile: var(--s2);
+}
