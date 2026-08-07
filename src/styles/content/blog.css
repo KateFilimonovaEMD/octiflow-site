@@ -509,12 +509,6 @@ a.blog-pagination__arrow:hover {
   margin: 18px 0 30px;
 }
 
-.article-cta__store-badges {
-  --store-badge-height: 72px;
-
-  min-height: var(--store-badge-height);
-}
-
 .button-link {
   --button-min-height: 46px;
   --button-padding: 12px 20px;
