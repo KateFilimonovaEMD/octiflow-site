@@ -243,6 +243,10 @@
   margin-top: 0;
 }
 
+.legal-page .toc-disclosure {
+  background: rgba(255, 255, 255, 0.16);
+}
+
 .legal-page .toc-disclosure summary {
   min-height: 46px;
   font-size: 0.9rem;
