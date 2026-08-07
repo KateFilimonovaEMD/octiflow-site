@@ -54,7 +54,7 @@
   --text-eyebrow-compact: 0.76rem;
 
   /* Leading and tracking */
-  --leading-display: 0.96;
+  --leading-display: 0.98;
   --leading-section: 1.05;
   --leading-heading-tight: 1.1;
   --leading-heading-page: 1.14;
@@ -62,8 +62,8 @@
   --leading-body: 1.6;
   --leading-body-relaxed: 1.65;
   --leading-body-loose: 1.68;
-  --tracking-display: -0.06em;
-  --tracking-section: -0.05em;
+  --tracking-display: -0.025em;
+  --tracking-section: -0.024em;
   --tracking-heading: -0.012em;
   --tracking-eyebrow: 0.08em;
   --tracking-eyebrow-wide: 0.09em;

@@ -163,7 +163,7 @@ const structuredData = {
           <article class="about-person-card">
             <figure class="about-person-card__portrait">
               <img
-                src="/images/about/Kate_Personal_01.png"
+                src="/images/about/Kate_Personal_01.webp"
                 alt="Portrait of Kate Filimonova"
                 width="866"
                 height="586"
@@ -226,7 +226,7 @@ const structuredData = {
           <article class="about-person-card">
             <figure class="about-person-card__portrait">
               <img
-                src="/images/about/Eugene_Personal_01.png"
+                src="/images/about/Eugene_Personal_01.webp"
                 alt="Portrait of Eugene Filimonov"
                 width="866"
                 height="586"
@@ -357,11 +357,11 @@ const structuredData = {
             <div class="about-moment-media about-moment-media--video">
               <video
                 class="about-moment-video"
-                autoplay
+                data-about-video
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
                 poster="/images/about/one-handed-water-logging-poster.webp"
                 aria-label="One-handed water logging in Octi Flow: choosing a portion, adding water, updating progress, and seeing Octi react"
               >
@@ -386,11 +386,11 @@ const structuredData = {
             <div class="about-moment-media about-moment-media--video">
               <video
                 class="about-moment-video"
-                autoplay
+                data-about-video
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
                 poster="/images/about/octi-reaction-process-poster.webp"
                 aria-label="Octi reaction shown in Spine animation software and in the finished Octi Flow app"
               >
@@ -451,5 +451,81 @@ const structuredData = {
       </div>
     </section>
   </main>
+
+  <script is:inline>
+    (() => {
+      const videos = document.querySelectorAll("[data-about-video]");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+      const playVideo = (video) => {
+        if (!(video instanceof HTMLVideoElement) || reduceMotion.matches) return;
+
+        video.muted = true;
+        video.defaultMuted = true;
+        video.play().catch(() => {});
+      };
+
+      const pauseVideos = () => {
+        videos.forEach((video) => {
+          if (video instanceof HTMLVideoElement) video.pause();
+        });
+      };
+
+      if (reduceMotion.matches) {
+        pauseVideos();
+        return;
+      }
+
+      if (!("IntersectionObserver" in window)) {
+        videos.forEach(playVideo);
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!(entry.target instanceof HTMLVideoElement)) return;
+
+            if (entry.isIntersecting && document.visibilityState === "visible") {
+              playVideo(entry.target);
+            } else {
+              entry.target.pause();
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "160px 0px" },
+      );
+
+      videos.forEach((video) => observer.observe(video));
+
+      const isNearViewport = (video) => {
+        const rect = video.getBoundingClientRect();
+        return rect.bottom >= -160 && rect.top <= window.innerHeight + 160;
+      };
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState !== "visible") {
+          pauseVideos();
+          return;
+        }
+
+        videos.forEach((video) => {
+          if (video instanceof HTMLVideoElement && isNearViewport(video)) {
+            playVideo(video);
+          }
+        });
+      });
+
+      const handleMotionPreference = (event) => {
+        if (event.matches) pauseVideos();
+      };
+
+      if ("addEventListener" in reduceMotion) {
+        reduceMotion.addEventListener("change", handleMotionPreference);
+      } else {
+        reduceMotion.addListener(handleMotionPreference);
+      }
+    })();
+  </script>
 
 </BaseLayout>
