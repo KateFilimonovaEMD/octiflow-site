@@ -385,9 +385,36 @@
 }
 
 .about-team-section {
+  position: relative;
+  overflow: hidden;
   background:
     radial-gradient(circle at 14% 26%, rgb(93 183 255 / 14%), transparent 24%),
     linear-gradient(180deg, #f8fcfe, #eaf6fb);
+}
+
+.about-team-section::before,
+.about-team-section::after,
+.about-moments::before,
+.about-moments::after {
+  position: absolute;
+  border: 1px solid rgb(1 92 198 / 10%);
+  border-radius: 50%;
+  content: "";
+}
+
+.about-team-section::before {
+  top: -210px;
+  right: -155px;
+  width: 500px;
+  height: 500px;
+  box-shadow: 0 0 0 86px rgb(93 183 255 / 4%);
+}
+
+.about-team-section::after {
+  bottom: -235px;
+  left: -170px;
+  width: 400px;
+  height: 400px;
 }
 
 .about-section-heading {
@@ -648,7 +675,30 @@
 }
 
 .about-moments {
+  position: relative;
+  overflow: hidden;
   background: #fff;
+}
+
+.about-moments::before {
+  top: -180px;
+  left: -150px;
+  width: 440px;
+  height: 440px;
+  box-shadow: 0 0 0 72px rgb(93 183 255 / 3.5%);
+}
+
+.about-moments::after {
+  right: -190px;
+  bottom: -250px;
+  width: 520px;
+  height: 520px;
+}
+
+.about-team-section > .container,
+.about-moments > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .about-moments .about-section-heading > p:last-child {
