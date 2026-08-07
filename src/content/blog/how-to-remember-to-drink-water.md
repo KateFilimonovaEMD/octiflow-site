@@ -17,7 +17,7 @@ related:
 image: "/images/blog/Blog_01_Main.png"
 imageAvif: "/images/blog/Blog_01_Main.avif"
 imageWebp: "/images/blog/Blog_01_Main.webp"
-imageAlt: "A reusable water bottle and glass of water with lemon and mint on a blue background"
+imageAlt: "Water being poured into a clear glass outdoors"
 imageWidth: 1408
 imageHeight: 768
 socialImage: "/images/blog/Blog_01_Main_OG.jpg"

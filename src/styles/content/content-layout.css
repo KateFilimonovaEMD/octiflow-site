@@ -207,6 +207,58 @@
 }
 
 
+/* Legal document status and contact */
+
+.policy > .document-status {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 8px;
+  margin: var(--s2) 0 0 auto;
+  padding: 9px 14px;
+  border: 1px solid #dce7ed;
+  border-radius: var(--radius-pill);
+  background: #fff;
+  box-shadow: 0 8px 16px -12px rgba(7, 48, 128, 0.45);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.policy > .document-status::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+.policy > #contact {
+  padding: var(--s3) 0 var(--s2);
+  border-bottom: 0;
+}
+
+.policy > #contact h2 {
+  margin: 0 0 16px;
+}
+
+.policy > #contact .contact-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+}
+
+.policy > #contact .contact-card p {
+  width: 100%;
+  margin: 0;
+  text-align: center;
+}
+
+
 /* Legal pages */
 
 .legal-page {

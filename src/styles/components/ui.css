@@ -25,6 +25,16 @@
   margin-bottom: var(--s2);
 }
 
+.section-eyebrow {
+  --eyebrow-color: var(--color-brand);
+  --eyebrow-size: var(--text-eyebrow);
+  --eyebrow-weight: var(--font-weight-extrabold);
+  --eyebrow-tracking: var(--tracking-eyebrow);
+  --eyebrow-leading: var(--leading-eyebrow);
+
+  margin-bottom: var(--s3);
+}
+
 /* Inline text links */
 
 .text-link {
@@ -107,6 +117,17 @@
 .button--inverse {
   --button-background: var(--color-on-brand);
   --button-color: var(--color-brand-strong);
+}
+
+/* Shared page actions */
+
+.page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 28px;
 }
 
 /* Directional and utility links */

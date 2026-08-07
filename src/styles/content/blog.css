@@ -1,15 +1,5 @@
 /* Blog */
 
-.section-eyebrow {
-  --eyebrow-color: var(--color-brand);
-  --eyebrow-size: var(--text-eyebrow);
-  --eyebrow-weight: var(--font-weight-extrabold);
-  --eyebrow-tracking: var(--tracking-eyebrow);
-  --eyebrow-leading: var(--leading-eyebrow);
-
-  margin-bottom: var(--s3);
-}
-
 .section-heading {
   margin-bottom: clamp(24px, 4vw, 40px);
 }

@@ -16,7 +16,7 @@ related:
 image: "/images/blog/Blog_02_Main.png"
 imageAvif: "/images/blog/Blog_02_Main.avif"
 imageWebp: "/images/blog/Blog_02_Main.webp"
-imageAlt: "A woman drinking water during a run on a sunny coastal path"
+imageAlt: "A hand holding a glass of water outdoors in warm sunlight"
 imageWidth: 1408
 imageHeight: 768
 socialImage: "/images/blog/Blog_02_Main_OG.jpg"
