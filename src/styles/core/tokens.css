@@ -39,7 +39,6 @@
   /* Font weights */
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
-  --font-weight-heavy: 850;
 
   /* Type scale */
   --text-display-title: clamp(3.35rem, 6.3vw, 5.65rem);

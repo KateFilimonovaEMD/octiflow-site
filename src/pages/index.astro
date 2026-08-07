@@ -171,11 +171,10 @@ const structuredData = {
             muted
             loop
             playsinline
-            preload="auto"
+            preload="metadata"
             disablepictureinpicture
             poster="/images/about/octi-reaction-process-poster.webp"
             aria-label="Octi being animated by our team and reacting inside the Octi Flow app"
-            data-home-lazy-video
           >
             <source
               src="/videos/about/octi-reaction-process.mp4"
@@ -353,7 +352,7 @@ const structuredData = {
         <div class="home-cta__copy">
           <p class="eyebrow eyebrow--light home-kicker home-kicker--light">Ready to meet Octi?</p>
           <h2>Start a hydration habit that feels easier to return to.</h2>
-          <p>Free to download on iPhone. Google Play is planned.</p>
+          <p>Free to download on iPhone.</p>
         </div>
 
         <StoreBadges variant="home-cta" loading="lazy" />
@@ -361,52 +360,4 @@ const structuredData = {
     </section>
   </main>
 
-  <script is:inline>
-    (() => {
-      const lazyVideos = document.querySelectorAll("[data-home-lazy-video]");
-
-      const playVideo = (video) => {
-        if (!(video instanceof HTMLVideoElement)) return;
-
-        video.muted = true;
-        video.defaultMuted = true;
-
-        const playPromise = video.play();
-        if (playPromise instanceof Promise) {
-          playPromise.catch(() => {
-            video.addEventListener("canplay", () => video.play().catch(() => {}), {
-              once: true,
-            });
-          });
-        }
-      };
-
-      lazyVideos.forEach((video) => {
-        if (!(video instanceof HTMLVideoElement)) return;
-        video.addEventListener("loadeddata", () => playVideo(video), { once: true });
-      });
-
-      if (!("IntersectionObserver" in window)) {
-        lazyVideos.forEach(playVideo);
-        return;
-      }
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (!(entry.target instanceof HTMLVideoElement)) return;
-
-            if (entry.isIntersecting) {
-              playVideo(entry.target);
-            } else {
-              entry.target.pause();
-            }
-          });
-        },
-        { threshold: 0.15, rootMargin: "120px 0px" },
-      );
-
-      lazyVideos.forEach((video) => observer.observe(video));
-    })();
-  </script>
 </BaseLayout>
