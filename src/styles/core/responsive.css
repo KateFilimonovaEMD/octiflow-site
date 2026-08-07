@@ -40,7 +40,7 @@
   }
 
   .article-cta__store-badges {
-    --store-badge-height: 38px;
+    --store-badge-height: 46px;
 
     flex-wrap: nowrap;
     gap: 8px;
@@ -232,7 +232,7 @@
   }
 
   .article-cta__store-badges {
-    --store-badge-height: 30px;
+    --store-badge-height: 34px;
   }
 }
 
@@ -249,7 +249,7 @@
 
 @media (min-width: 380px) and (max-width: 820px) {
   .article-cta__store-badges {
-    --store-badge-height: 40px;
+    --store-badge-height: 48px;
   }
 }
 
