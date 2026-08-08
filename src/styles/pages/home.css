@@ -746,14 +746,14 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
-  margin-top: clamp(88px, 7vw, 104px);
+  margin-top: clamp(96px, 7vw, 112px);
 }
 
 .home-access-card {
   position: relative;
   display: block;
   min-height: 370px;
-  padding: 88px clamp(28px, 4vw, 42px) clamp(30px, 4vw, 38px);
+  padding: 96px clamp(28px, 4vw, 42px) clamp(30px, 4vw, 38px);
   border: 1px solid rgb(255 255 255 / 17%);
   border-radius: 30px;
   background: rgb(255 255 255 / 9%);
@@ -770,7 +770,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  width: 128px;
+  width: 144px;
   overflow: hidden;
   border: 0;
   border-radius: 50%;
@@ -1225,11 +1225,11 @@
   }
 
   .home-access__grid {
-    margin-top: 78px;
+    margin-top: 86px;
   }
 
   .home-access-card {
-    padding: 72px 22px 26px;
+    padding: 78px 22px 26px;
     border-radius: 24px;
   }
 
@@ -1239,7 +1239,7 @@
   }
 
   .home-access-card__portrait {
-    width: 104px;
+    width: 116px;
   }
 
   .home-access-card__content {
