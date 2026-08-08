@@ -887,16 +887,35 @@
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: 50% 12%;
 }
 
 .home-text-link {
-  --action-link-gap: 10px;
+  --action-link-gap: 8px;
   --action-link-color: var(--blue);
   --action-link-hover-color: var(--deep);
   --action-link-size: 1rem;
   --action-link-weight: 700;
 
   margin-top: 28px;
+}
+
+.home-text-link__icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+  overflow: visible;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform var(--duration-fast) ease;
+}
+
+.home-text-link:hover .home-text-link__icon {
+  transform: translateX(4px);
 }
 
 .home-cta {
@@ -919,37 +938,46 @@
 }
 
 .home-cta__card {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: clamp(38px, 6vw, 68px);
+  display: grid;
+  justify-items: center;
+  gap: 0;
+  padding: clamp(44px, 6vw, 72px);
   border-radius: 34px;
   background:
     radial-gradient(circle at 90% 18%, rgb(119 37 226 / 76%), transparent 35%),
     linear-gradient(135deg, #073080, #005cc6);
   box-shadow: 0 34px 64px -40px rgb(7 48 128 / 82%);
   color: #fff;
+  text-align: center;
 }
 
 .home-cta__copy {
-  max-width: 670px;
+  width: min(760px, 100%);
+  margin-inline: auto;
+  text-align: center;
 }
 
 .home-cta h2 {
-  max-width: 670px;
-}
-
-.home-cta__copy > p:last-child {
-  color: rgb(255 255 255 / 72%);
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .home-store-badges--cta {
-  --store-badge-height: 54px;
+  --store-badge-height: 72px;
+  --store-badge-gap: 18px;
   --store-focus-color: #fff;
 
-  flex: none;
-  margin-top: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 36px;
+}
+
+.home-cta__note {
+  margin-top: 22px;
+  color: rgb(255 255 255 / 74%);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  text-align: center;
 }
 
 
@@ -1098,22 +1126,11 @@
   }
 
   .home-team__card {
-    width: min(680px, calc(100% - 48px));
     padding: 26px;
   }
 
   .home-team__photo {
     width: 100%;
-  }
-
-  .home-cta__card {
-    display: grid;
-    justify-items: center;
-    text-align: center;
-  }
-
-  .home-store-badges--cta {
-    justify-content: center;
   }
 }
 
@@ -1252,7 +1269,6 @@
   }
 
   .home-team__card {
-    width: calc(100% - 32px);
     padding: 18px;
     border-radius: 24px;
   }
@@ -1266,13 +1282,19 @@
   }
 
   .home-cta__card {
-    gap: 30px;
-    padding: 34px 22px;
+    padding: 38px 22px;
     border-radius: 26px;
   }
 
   .home-store-badges--cta {
-    --store-badge-height: 42px;
+    --store-badge-height: 48px;
+    --store-badge-gap: 10px;
+    margin-top: 30px;
+  }
+
+  .home-cta__note {
+    margin-top: 18px;
+    font-size: 0.9rem;
   }
 }
 

@@ -328,41 +328,53 @@ const structuredData = {
     </section>
 
     <section class="home-section home-team">
-      <div class="container home-team__card">
-        <div class="home-team__photo">
-          <img
-            src="/images/about/Team_Photo_01.webp"
-            alt="Kate and Eugene, the two-person team building Octi Flow in Barcelona"
-            width="880"
-            height="1203"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+      <div class="container">
+        <div class="home-team__card">
+          <div class="home-team__photo">
+            <img
+              src="/images/about/Team_Photo_01.webp"
+              alt="Kate and Eugene, the two-person team building Octi Flow in Barcelona"
+              width="880"
+              height="1203"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
 
-        <div class="home-team__copy">
-          <p class="eyebrow home-kicker">Built independently in Barcelona</p>
-          <h2>Designed and built by a two-person studio.</h2>
-          <p>
-            We design, code, animate, test, and ship Octi Flow ourselves. The
-            details stay close to the people making them.
-          </p>
-          <a class="action-link home-text-link" href="/about/">
-            Meet the team <span aria-hidden="true">→</span>
-          </a>
+          <div class="home-team__copy">
+            <p class="eyebrow home-kicker">Built independently in Barcelona</p>
+            <h2>Designed and built by a two-person studio.</h2>
+            <p>
+              We design, code, animate, test, and ship Octi Flow ourselves. The
+              details stay close to the people making them.
+            </p>
+            <a class="action-link home-text-link" href="/about/">
+              <span>Meet the team</span>
+              <svg
+                class="home-text-link__icon"
+                viewBox="0 0 16 16"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path d="M3 8h10M9 4l4 4-4 4" />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="home-cta">
-      <div class="container home-cta__card">
-        <div class="home-cta__copy">
-          <p class="eyebrow eyebrow--light home-kicker home-kicker--light">Ready to meet Octi?</p>
-          <h2>Start a hydration habit that feels easier to return to.</h2>
-          <p>Free to download on iPhone.</p>
-        </div>
+      <div class="container">
+        <div class="home-cta__card">
+          <div class="home-cta__copy">
+            <p class="eyebrow eyebrow--light home-kicker home-kicker--light">Ready to meet Octi?</p>
+            <h2>Start a hydration habit that feels easier to return to.</h2>
+          </div>
 
-        <StoreBadges variant="home-cta" loading="lazy" />
+          <StoreBadges variant="home-cta" loading="lazy" />
+          <p class="home-cta__note">Free to download on iPhone.</p>
+        </div>
       </div>
     </section>
   </main>
