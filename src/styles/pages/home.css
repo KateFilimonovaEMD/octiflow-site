@@ -923,6 +923,20 @@
   margin-top: 0;
 }
 
+@media (min-width: 821px) {
+  .home-hero__copy {
+    transform: translateY(-36px);
+  }
+
+  .home-store-badges {
+    margin-top: clamp(52px, 5vw, 68px);
+  }
+
+  .home-hero__note {
+    margin-top: 28px;
+  }
+}
+
 @supports not (background-clip: text) {
   .home-hero h1 {
     background: none;
