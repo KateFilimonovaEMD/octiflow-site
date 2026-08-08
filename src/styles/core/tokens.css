@@ -89,7 +89,7 @@
 
   /* Shared content rhythm */
   --space-eyebrow-title: var(--s2);
-  --space-title-copy: 28px;
+  --space-title-copy: 32px;
   --space-title-copy-mobile: var(--s3);
   --space-actions: var(--s4);
   --space-actions-mobile: 28px;
