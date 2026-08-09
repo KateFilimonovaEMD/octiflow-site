@@ -7,5 +7,9 @@ export default defineConfig({
   build: {
     format: "directory",
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => new URL(page).pathname !== "/404/",
+    }),
+  ],
 });
