@@ -88,7 +88,9 @@
 
 .home-hero__actions {
   display: grid;
-  justify-items: start;
+  width: fit-content;
+  max-width: 100%;
+  justify-items: center;
   gap: 30px;
   margin-top: 12px;
 }
@@ -1026,6 +1028,7 @@
     justify-items: center;
     gap: var(--home-note-gap);
     margin-top: var(--home-action-gap);
+    margin-inline: auto;
   }
 
   .home-hero__grid,
