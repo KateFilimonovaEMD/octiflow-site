@@ -973,7 +973,7 @@
 }
 
 .home-cta__note {
-  margin-top: 22px;
+  margin-top: 30px;
   color: rgb(255 255 255 / 74%);
   font-size: 0.95rem;
   line-height: 1.5;
@@ -1116,6 +1116,7 @@
   .home-access__grid {
     grid-template-columns: 1fr;
     width: min(680px, 100%);
+    gap: 96px;
     margin-inline: auto;
     margin-top: 88px;
   }
@@ -1242,6 +1243,7 @@
   }
 
   .home-access__grid {
+    gap: 82px;
     margin-top: 86px;
   }
 
@@ -1293,7 +1295,7 @@
   }
 
   .home-cta__note {
-    margin-top: 18px;
+    margin-top: 24px;
     font-size: 0.9rem;
   }
 }
