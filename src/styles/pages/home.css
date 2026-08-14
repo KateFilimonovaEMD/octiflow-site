@@ -1319,19 +1319,42 @@
   }
 }
 
-/* iOS/iPadOS WebKit: avoid filter/drop-shadow artefacts while keeping a soft device shadow. */
+/* iOS/iPadOS WebKit: Safari can artefact on filter: drop-shadow().
+   Draw the shadow on a separate layer aligned to the actual opaque phone body.
+   The source WebP files have a few transparent edge pixels, so shadowing the
+   <img> box directly can leave a thin light halo between the phone and shadow. */
 @supports (-webkit-touch-callout: none) {
-  .home-hero-product-image {
+  .home-hero-product-image,
+  .home-screen-card img {
+    position: relative;
+    z-index: 1;
     -webkit-filter: none;
     filter: none;
-    border-radius: 8.9% / 4.35%;
+    box-shadow: none;
+  }
+
+  .home-device-card,
+  .home-screen-card {
+    isolation: isolate;
+  }
+
+  .home-device-card::before,
+  .home-screen-card::before {
+    position: absolute;
+    z-index: 0;
+    content: "";
+    pointer-events: none;
+  }
+
+  .home-device-card::before {
+    inset: 0.3% 0.4% 0.2%;
+    border-radius: 10.2% / 4.9%;
     box-shadow: 0 24px 30px -18px rgb(7 48 128 / 38%);
   }
 
-  .home-screen-card img {
-    -webkit-filter: none;
-    filter: none;
-    border-radius: 8.3% / 4.05%;
+  .home-screen-card::before {
+    inset: 0.3% 0.45%;
+    border-radius: 11.1% / 5.4%;
     box-shadow: 0 20px 24px -16px rgb(7 48 128 / 42%);
   }
 }
