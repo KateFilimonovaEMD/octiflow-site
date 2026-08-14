@@ -170,14 +170,13 @@
 .home-device-card {
   position: relative;
   width: 100%;
-  border-radius: 7% / 3.4%;
-  box-shadow: 0 34px 48px -28px rgb(7 48 128 / 50%);
 }
 
 .home-hero-product-image {
   display: block;
   width: 100%;
   height: auto;
+  filter: drop-shadow(0 34px 34px rgb(7 48 128 / 34%));
 }
 
 .home-product-video {
@@ -470,9 +469,9 @@
   width: min(285px, 57%);
   overflow: visible;
   border: 0;
-  border-radius: 9% / 4.35%;
+  border-radius: 0;
   background: transparent;
-  box-shadow: 0 24px 36px -20px rgb(7 48 128 / 48%);
+  box-shadow: none;
 }
 
 .home-screen-card img {
@@ -480,7 +479,7 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  vertical-align: middle;
+  filter: drop-shadow(0 24px 22px rgb(7 48 128 / 34%));
 }
 
 
@@ -1317,5 +1316,14 @@
 @media (prefers-reduced-motion: reduce) {
   .home-process-video-card::before {
     animation: none;
+  }
+}
+
+/* iOS/iPadOS WebKit: avoid GPU artefacts from drop-shadow on large transformed WebP images. */
+@supports (-webkit-touch-callout: none) {
+  .home-hero-product-image,
+  .home-screen-card img {
+    -webkit-filter: none;
+    filter: none;
   }
 }
