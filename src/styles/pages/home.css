@@ -1454,75 +1454,74 @@
   }
 }
 
-/* Scroll reveals are enabled only after JS is ready.
-   Default is a cheap opacity transition. */
-.home-page.motion-enabled .home-reveal {
-  opacity: 0;
-  transition: opacity 360ms ease-out;
-}
-
-.home-page.motion-enabled .home-reveal.is-visible {
-  opacity: 1;
-}
-
-/* Text blocks get only a very small vertical travel. */
-.home-page.motion-enabled .home-belief__copy.home-reveal,
-.home-page.motion-enabled #features .home-feature__copy.home-reveal,
-.home-page.motion-enabled .home-section--tint .home-feature__copy.home-reveal,
-.home-page.motion-enabled .home-progress__copy.home-reveal,
-.home-page.motion-enabled .home-access__heading.home-reveal {
-  transform: translate3d(0, 12px, 0);
-  transition:
-    opacity 360ms ease-out,
-    transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.home-page.motion-enabled .home-belief__copy.home-reveal.is-visible,
-.home-page.motion-enabled #features .home-feature__copy.home-reveal.is-visible,
-.home-page.motion-enabled .home-section--tint .home-feature__copy.home-reveal.is-visible,
-.home-page.motion-enabled .home-progress__copy.home-reveal.is-visible,
-.home-page.motion-enabled .home-access__heading.home-reveal.is-visible {
-  transform: translate3d(0, 0, 0);
-}
-
-/* Short stagger. Animations finish quickly instead of overlapping scrolling. */
-.home-page.motion-enabled .home-belief__features article:nth-child(2).home-reveal,
-.home-page.motion-enabled .home-progress__cards article:nth-child(2).home-reveal,
-.home-page.motion-enabled .home-access-card:nth-child(2).home-reveal {
-  transition-delay: 40ms;
-}
-
-.home-page.motion-enabled .home-belief__features article:nth-child(3).home-reveal,
-.home-page.motion-enabled .home-progress__cards article:nth-child(3).home-reveal {
-  transition-delay: 80ms;
-}
-
-/* Tiny desktop-only hover response. */
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .home-page.motion-enabled .home-belief__features article.home-reveal.is-visible,
-  .home-page.motion-enabled .home-progress__cards article.home-reveal.is-visible,
-  .home-page.motion-enabled .home-access-card.home-reveal.is-visible {
-    transition:
-      opacity 360ms ease-out,
-      transform 180ms ease;
+/* Scroll reveals are MOBILE/TABLET ONLY.
+   Desktop content stays fully painted and completely static while scrolling. */
+@media (max-width: 820px) {
+  .home-page.motion-enabled .home-reveal {
+    opacity: 0;
+    transition: opacity 360ms ease-out;
   }
 
-  .home-page.motion-enabled .home-belief__features article.home-reveal.is-visible:hover,
-  .home-page.motion-enabled .home-progress__cards article.home-reveal.is-visible:hover,
-  .home-page.motion-enabled .home-access-card.home-reveal.is-visible:hover {
-    transform: translate3d(0, -3px, 0);
+  .home-page.motion-enabled .home-reveal.is-visible {
+    opacity: 1;
+  }
+
+  .home-page.motion-enabled .home-belief__copy.home-reveal,
+  .home-page.motion-enabled #features .home-feature__copy.home-reveal,
+  .home-page.motion-enabled .home-section--tint .home-feature__copy.home-reveal,
+  .home-page.motion-enabled .home-progress__copy.home-reveal,
+  .home-page.motion-enabled .home-access__heading.home-reveal {
+    transform: translate3d(0, 12px, 0);
+    transition:
+      opacity 360ms ease-out,
+      transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .home-page.motion-enabled .home-belief__copy.home-reveal.is-visible,
+  .home-page.motion-enabled #features .home-feature__copy.home-reveal.is-visible,
+  .home-page.motion-enabled .home-section--tint .home-feature__copy.home-reveal.is-visible,
+  .home-page.motion-enabled .home-progress__copy.home-reveal.is-visible,
+  .home-page.motion-enabled .home-access__heading.home-reveal.is-visible {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .home-page.motion-enabled .home-belief__features article:nth-child(2).home-reveal,
+  .home-page.motion-enabled .home-progress__cards article:nth-child(2).home-reveal,
+  .home-page.motion-enabled .home-access-card:nth-child(2).home-reveal {
+    transition-delay: 40ms;
+  }
+
+  .home-page.motion-enabled .home-belief__features article:nth-child(3).home-reveal,
+  .home-page.motion-enabled .home-progress__cards article:nth-child(3).home-reveal {
+    transition-delay: 80ms;
+  }
+}
+
+/* Desktop: no scroll-triggered animation at all.
+   Only tiny pointer interactions after the page has finished loading. */
+@media (min-width: 821px) and (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .home-belief__features article,
+  .home-progress__cards article,
+  .home-access-card {
+    transition: transform 160ms ease;
+  }
+
+  .home-belief__features article:hover,
+  .home-progress__cards article:hover,
+  .home-access-card:hover {
+    transform: translate3d(0, -2px, 0);
   }
 
   .home-progress__icon {
-    transition: transform 180ms ease;
+    transition: transform 160ms ease;
   }
 
   .home-progress__cards article:hover .home-progress__icon {
-    transform: translate(-50%, -50%) scale(1.025);
+    transform: translate(-50%, -50%) scale(1.02);
   }
 
   .home-store-badges .store-link--apple {
-    transition: transform 180ms ease;
+    transition: transform 160ms ease;
   }
 
   .home-store-badges .store-link--apple:hover {
@@ -1530,7 +1529,8 @@
   }
 }
 
-/* Reduced motion: fade only, no travel, scale or looping. */
+/* Reduced motion: one-time hero fade only.
+   Mobile/tablet scroll reveals also become fade-only. */
 @media (prefers-reduced-motion: reduce) {
   .home-hero h1 {
     animation: home-fade-in 360ms ease 30ms both;
@@ -1551,7 +1551,9 @@
   .home-floating-label {
     animation: none;
   }
+}
 
+@media (max-width: 820px) and (prefers-reduced-motion: reduce) {
   .home-page.motion-enabled.motion-reduced .home-reveal,
   .home-page.motion-enabled.motion-reduced .home-belief__copy.home-reveal,
   .home-page.motion-enabled.motion-reduced #features .home-feature__copy.home-reveal,
