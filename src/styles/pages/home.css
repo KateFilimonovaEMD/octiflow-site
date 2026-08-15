@@ -1615,11 +1615,35 @@
   }
 }
 
+@keyframes home-fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .home-hero h1,
-  .home-hero__lead,
-  .home-hero__actions,
-  .home-hero__visual,
+  /* Respect reduced-motion by removing all travel, scaling and looping,
+     while still keeping short fade entrances so the page does not feel dead. */
+  .home-hero h1 {
+    animation: home-fade-in 520ms ease 40ms both;
+  }
+
+  .home-hero__lead {
+    animation: home-fade-in 520ms ease 120ms both;
+  }
+
+  .home-hero__actions {
+    animation: home-fade-in 520ms ease 200ms both;
+  }
+
+  .home-hero__visual {
+    animation: home-fade-in 620ms ease 120ms both;
+  }
+
   .home-device-stage,
   .home-floating-label,
   .home-hero__orbit--one,
@@ -1627,10 +1651,30 @@
     animation: none;
   }
 
-  .home-page.motion-enabled .home-reveal,
-  .home-page.motion-enabled .home-reveal.is-visible {
+  .home-page.motion-enabled.motion-reduced .home-reveal {
+    opacity: 0;
+    transform: none;
+    transition: opacity 520ms ease;
+  }
+
+  .home-page.motion-enabled.motion-reduced .home-reveal.is-visible {
     opacity: 1;
     transform: none;
-    transition: none;
+  }
+
+  .home-page.motion-enabled.motion-reduced
+    .home-belief__features article:nth-child(2).home-reveal,
+  .home-page.motion-enabled.motion-reduced
+    .home-progress__cards article:nth-child(2).home-reveal,
+  .home-page.motion-enabled.motion-reduced
+    .home-access-card:nth-child(2).home-reveal {
+    transition-delay: 70ms;
+  }
+
+  .home-page.motion-enabled.motion-reduced
+    .home-belief__features article:nth-child(3).home-reveal,
+  .home-page.motion-enabled.motion-reduced
+    .home-progress__cards article:nth-child(3).home-reveal {
+    transition-delay: 140ms;
   }
 }
