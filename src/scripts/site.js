@@ -55,7 +55,7 @@
   // JavaScript is only responsible for one-time scroll reveals.
   const homePage = document.querySelector(".home-page");
 
-  if (homePage && !reduceMotion) {
+  if (homePage) {
     const revealSelectors = [
       ".home-belief__copy",
       ".home-belief__features article",
@@ -76,6 +76,9 @@
     );
 
     homePage.classList.add("motion-enabled");
+    if (reduceMotion) {
+      homePage.classList.add("motion-reduced");
+    }
     revealItems.forEach((element) => element.classList.add("home-reveal"));
 
     const showAll = () => {
