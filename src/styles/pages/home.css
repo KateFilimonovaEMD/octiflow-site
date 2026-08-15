@@ -513,11 +513,6 @@
   background: conic-gradient(from 180deg, transparent, rgb(97 216 255 / 42%), transparent 40%);
   content: "";
   animation: home-video-glow 10s linear infinite;
-  animation-play-state: paused;
-}
-
-.home-process-video-card.is-video-active::before {
-  animation-play-state: running;
 }
 
 .home-product-video--process {
