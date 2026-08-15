@@ -60,15 +60,11 @@
       ".home-belief__copy",
       ".home-belief__features article",
       "#features .home-feature__copy",
-      "#features .home-screen-pair",
       ".home-section--tint .home-feature__copy",
-      ".home-section--tint .home-process-video-card",
       ".home-progress__copy",
       ".home-progress__cards article",
       ".home-access__heading",
       ".home-access-card",
-      ".home-team__card",
-      ".home-cta__card",
     ];
 
     const revealItems = revealSelectors.flatMap((selector) =>
@@ -98,8 +94,8 @@
           });
         },
         {
-          threshold: 0.14,
-          rootMargin: "0px 0px -6% 0px",
+          threshold: 0.06,
+          rootMargin: "0px 0px -1% 0px",
         },
       );
 
