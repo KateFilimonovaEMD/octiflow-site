@@ -50,61 +50,37 @@
   }
 
 
-  // Homepage motion: safe progressive enhancement.
-  // Elements are visible by default; motion classes are added only after JS runs.
+  // Homepage motion.
+  // Hero motion is CSS-only so it remains visible without IntersectionObserver.
+  // JavaScript is only responsible for one-time scroll reveals.
   const homePage = document.querySelector(".home-page");
 
   if (homePage && !reduceMotion) {
-    const markReveal = (element, { scale = false } = {}) => {
-      if (!element) {
-        return;
-      }
-
-      element.classList.add("home-motion-reveal");
-      if (scale) {
-        element.classList.add("home-motion-reveal--scale");
-      }
-    };
-
-    const heroItems = [
-      homePage.querySelector(".home-hero h1"),
-      homePage.querySelector(".home-hero__lead"),
-      homePage.querySelector(".home-hero__actions"),
-      homePage.querySelector(".home-hero__visual"),
+    const revealSelectors = [
+      ".home-belief__copy",
+      ".home-belief__features article",
+      "#features .home-feature__copy",
+      "#features .home-screen-pair",
+      ".home-section--tint .home-feature__copy",
+      ".home-section--tint .home-process-video-card",
+      ".home-progress__copy",
+      ".home-progress__cards article",
+      ".home-access__heading",
+      ".home-access-card",
+      ".home-team__card",
+      ".home-cta__card",
     ];
 
-    heroItems.forEach((element) => markReveal(element));
+    const revealItems = revealSelectors.flatMap((selector) =>
+      [...homePage.querySelectorAll(selector)],
+    );
 
-    const heroLabels = [...homePage.querySelectorAll(".home-floating-label")];
-    heroLabels.forEach((label) => label.classList.add("home-motion-label"));
+    homePage.classList.add("motion-enabled");
+    revealItems.forEach((element) => element.classList.add("home-reveal"));
 
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        heroItems.forEach((element) => element?.classList.add("is-visible"));
-        heroLabels.forEach((label) => label.classList.add("is-visible"));
-      });
-    });
-
-    const revealItems = [];
-    const addReveal = (selector, { scale = false } = {}) => {
-      homePage.querySelectorAll(selector).forEach((element) => {
-        markReveal(element, { scale });
-        revealItems.push(element);
-      });
+    const showAll = () => {
+      revealItems.forEach((element) => element.classList.add("is-visible"));
     };
-
-    addReveal(".home-belief__copy");
-    addReveal(".home-belief__features article");
-    addReveal("#features .home-feature__copy");
-    addReveal("#features .home-screen-pair");
-    addReveal(".home-section--tint .home-feature__copy");
-    addReveal(".home-section--tint .home-process-video-card", { scale: true });
-    addReveal(".home-progress__copy");
-    addReveal(".home-progress__cards article");
-    addReveal(".home-access__heading");
-    addReveal(".home-access-card");
-    addReveal(".home-team__card", { scale: true });
-    addReveal(".home-cta__card", { scale: true });
 
     if ("IntersectionObserver" in window) {
       const revealObserver = new IntersectionObserver(
@@ -119,15 +95,18 @@
           });
         },
         {
-          threshold: 0.12,
-          rootMargin: "0px 0px -8% 0px",
+          threshold: 0.14,
+          rootMargin: "0px 0px -6% 0px",
         },
       );
 
-      revealItems.forEach((element) => revealObserver.observe(element));
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          revealItems.forEach((element) => revealObserver.observe(element));
+        });
+      });
     } else {
-      // Older browsers keep full functionality and simply skip scroll-triggered motion.
-      revealItems.forEach((element) => element.classList.add("is-visible"));
+      showAll();
     }
   }
 
