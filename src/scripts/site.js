@@ -54,8 +54,9 @@
   // Hero motion is CSS-only so it remains visible without IntersectionObserver.
   // JavaScript is only responsible for one-time scroll reveals.
   const homePage = document.querySelector(".home-page");
+  const compactViewport = window.matchMedia("(max-width: 820px)");
 
-  if (homePage) {
+  if (homePage && compactViewport.matches) {
     const revealSelectors = [
       ".home-belief__copy",
       ".home-belief__features article",
