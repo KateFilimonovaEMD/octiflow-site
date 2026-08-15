@@ -1,0 +1,165 @@
+/* Homepage motion layer.
+   Progressive enhancement only: content is visible without JavaScript.
+   Motion is limited to opacity and transform for broad browser safety. */
+
+.home-motion-reveal {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  transition:
+    opacity 520ms ease,
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-motion-reveal--scale {
+  transform: translate3d(0, 10px, 0) scale(0.992);
+}
+
+.home-motion-reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+.home-motion-label {
+  opacity: 0;
+  transition: opacity 420ms ease;
+}
+
+.home-motion-label.is-visible {
+  opacity: 1;
+}
+
+/* Hero entrance timing. */
+.home-hero h1.home-motion-reveal {
+  transition-delay: 20ms;
+}
+
+.home-hero__lead.home-motion-reveal {
+  transition-delay: 100ms;
+}
+
+.home-hero__actions.home-motion-reveal,
+.home-hero__visual.home-motion-reveal {
+  transition-delay: 180ms;
+}
+
+.home-floating-label--top.home-motion-label {
+  transition-delay: 270ms;
+}
+
+.home-floating-label--middle.home-motion-label {
+  transition-delay: 350ms;
+}
+
+.home-floating-label--bottom.home-motion-label {
+  transition-delay: 430ms;
+}
+
+/* Scroll reveal stagger. */
+.home-belief__features article:nth-child(2).home-motion-reveal,
+.home-progress__cards article:nth-child(2).home-motion-reveal,
+.home-access-card:nth-child(2).home-motion-reveal {
+  transition-delay: 80ms;
+}
+
+.home-belief__features article:nth-child(3).home-motion-reveal,
+.home-progress__cards article:nth-child(3).home-motion-reveal {
+  transition-delay: 160ms;
+}
+
+#features .home-screen-pair.home-motion-reveal,
+.home-section--tint .home-process-video-card.home-motion-reveal {
+  transition-delay: 90ms;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Decorative rings only change opacity, avoiding filter/shadow animation. */
+  .home-hero__orbit--one {
+    animation: home-orbit-breathe 8s ease-in-out infinite;
+  }
+
+  .home-hero__orbit--two {
+    animation: home-orbit-breathe-soft 10.5s ease-in-out -2.2s infinite;
+  }
+}
+
+@keyframes home-orbit-breathe {
+  0%,
+  100% {
+    opacity: 0.56;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes home-orbit-breathe-soft {
+  0%,
+  100% {
+    opacity: 0.48;
+  }
+
+  50% {
+    opacity: 0.9;
+  }
+}
+
+/* Pointer-only micro-interactions. Touch devices do not receive hover motion. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .home-belief__features article,
+  .home-progress__cards article,
+  .home-access-card,
+  .home-store-badges .store-link--apple {
+    transition-property: opacity, transform, border-color;
+    transition-duration: 420ms, 220ms, 220ms;
+    transition-timing-function: ease;
+  }
+
+  .home-belief__features article:hover,
+  .home-progress__cards article:hover,
+  .home-access-card:hover {
+    transform: translate3d(0, -4px, 0);
+  }
+
+  .home-belief__features article:hover {
+    border-color: rgb(126 216 255 / 34%);
+  }
+
+  .home-progress__cards article:hover {
+    border-color: #b9dbea;
+  }
+
+  .home-access-card:hover {
+    border-color: rgb(255 255 255 / 28%);
+  }
+
+  .home-progress__icon {
+    transition: transform 220ms ease;
+  }
+
+  .home-progress__cards article:hover .home-progress__icon {
+    transform: translate(-50%, -50%) scale(1.035);
+  }
+
+  .home-store-badges .store-link--apple:hover {
+    transform: translate3d(0, -2px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-motion-reveal,
+  .home-motion-reveal--scale,
+  .home-motion-label,
+  .home-motion-reveal.is-visible,
+  .home-motion-label.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
+
+  .home-hero__orbit--one,
+  .home-hero__orbit--two {
+    animation: none;
+  }
+}
