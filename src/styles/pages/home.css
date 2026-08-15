@@ -1358,3 +1358,279 @@
     box-shadow: 0 20px 24px -16px rgb(7 48 128 / 42%);
   }
 }
+
+/* ==========================================================================
+   Homepage motion v2
+   Hero entrance is CSS-only. Scroll reveals use opacity + transform only.
+   No filter, blur, drop-shadow or box-shadow animation.
+   ========================================================================== */
+
+@keyframes home-hero-copy-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes home-hero-visual-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0) scale(0.965);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes home-device-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -9px, 0);
+  }
+}
+
+@keyframes home-label-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes home-label-in-middle {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translate3d(0, 14px, 0) scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes home-label-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes home-label-drift-middle {
+  0%,
+  100% {
+    transform: translateY(-50%) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translateY(-50%) translate3d(0, -5px, 0);
+  }
+}
+
+@keyframes home-orbit-pulse-one {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.985);
+  }
+
+  50% {
+    opacity: 0.92;
+    transform: scale(1.025);
+  }
+}
+
+@keyframes home-orbit-pulse-two {
+  0%,
+  100% {
+    opacity: 0.48;
+    transform: rotate(22deg) scaleY(0.78) scale(0.985);
+  }
+
+  50% {
+    opacity: 0.86;
+    transform: rotate(22deg) scaleY(0.78) scale(1.025);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .home-hero h1 {
+    animation: home-hero-copy-in 720ms cubic-bezier(0.22, 1, 0.36, 1) 60ms both;
+  }
+
+  .home-hero__lead {
+    animation: home-hero-copy-in 720ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+  }
+
+  .home-hero__actions {
+    animation: home-hero-copy-in 720ms cubic-bezier(0.22, 1, 0.36, 1) 260ms both;
+  }
+
+  .home-hero__visual {
+    animation: home-hero-visual-in 880ms cubic-bezier(0.22, 1, 0.36, 1) 150ms both;
+  }
+
+  .home-device-stage {
+    animation: home-device-float 5.6s ease-in-out 1.25s infinite;
+    will-change: transform;
+  }
+
+  .home-floating-label--top {
+    animation:
+      home-label-in 600ms cubic-bezier(0.22, 1, 0.36, 1) 520ms both,
+      home-label-drift 4.9s ease-in-out 1.5s infinite;
+  }
+
+  .home-floating-label--middle {
+    animation:
+      home-label-in-middle 600ms cubic-bezier(0.22, 1, 0.36, 1) 650ms both,
+      home-label-drift-middle 5.4s ease-in-out 1.65s infinite;
+  }
+
+  .home-floating-label--bottom {
+    animation:
+      home-label-in 600ms cubic-bezier(0.22, 1, 0.36, 1) 780ms both,
+      home-label-drift 5.1s ease-in-out 1.8s infinite reverse;
+  }
+
+  .home-hero__orbit--one {
+    animation: home-orbit-pulse-one 7.2s ease-in-out 900ms infinite;
+  }
+
+  .home-hero__orbit--two {
+    animation: home-orbit-pulse-two 8.8s ease-in-out 400ms infinite;
+  }
+}
+
+.home-page.motion-enabled .home-reveal {
+  opacity: 0;
+  transform: translate3d(0, 34px, 0);
+  transition:
+    opacity 680ms ease,
+    transform 760ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.home-page.motion-enabled .home-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+@media (min-width: 821px) {
+  .home-page.motion-enabled #features .home-feature__copy.home-reveal {
+    transform: translate3d(-28px, 16px, 0);
+  }
+
+  .home-page.motion-enabled #features .home-screen-pair.home-reveal {
+    transform: translate3d(28px, 16px, 0) scale(0.975);
+  }
+
+  .home-page.motion-enabled .home-section--tint .home-feature__copy.home-reveal {
+    transform: translate3d(28px, 16px, 0);
+  }
+
+  .home-page.motion-enabled .home-section--tint .home-process-video-card.home-reveal {
+    transform: translate3d(-28px, 16px, 0) scale(0.975);
+  }
+
+  .home-page.motion-enabled #features .home-feature__copy.home-reveal.is-visible,
+  .home-page.motion-enabled #features .home-screen-pair.home-reveal.is-visible,
+  .home-page.motion-enabled .home-section--tint .home-feature__copy.home-reveal.is-visible,
+  .home-page.motion-enabled .home-section--tint .home-process-video-card.home-reveal.is-visible {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.home-page.motion-enabled .home-belief__features article:nth-child(2).home-reveal,
+.home-page.motion-enabled .home-progress__cards article:nth-child(2).home-reveal,
+.home-page.motion-enabled .home-access-card:nth-child(2).home-reveal {
+  transition-delay: 90ms;
+}
+
+.home-page.motion-enabled .home-belief__features article:nth-child(3).home-reveal,
+.home-page.motion-enabled .home-progress__cards article:nth-child(3).home-reveal {
+  transition-delay: 180ms;
+}
+
+.home-page.motion-enabled #features .home-screen-pair.home-reveal,
+.home-page.motion-enabled .home-section--tint .home-process-video-card.home-reveal {
+  transition-delay: 100ms;
+}
+
+.home-page.motion-enabled .home-team__card.home-reveal,
+.home-page.motion-enabled .home-cta__card.home-reveal {
+  transform: translate3d(0, 26px, 0) scale(0.982);
+}
+
+.home-page.motion-enabled .home-team__card.home-reveal.is-visible,
+.home-page.motion-enabled .home-cta__card.home-reveal.is-visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .home-page.motion-enabled .home-belief__features article.home-reveal.is-visible:hover,
+  .home-page.motion-enabled .home-progress__cards article.home-reveal.is-visible:hover,
+  .home-page.motion-enabled .home-access-card.home-reveal.is-visible:hover {
+    transform: translate3d(0, -6px, 0);
+  }
+
+  .home-belief__features article,
+  .home-progress__cards article,
+  .home-access-card {
+    transition-property: opacity, transform, border-color;
+  }
+
+  .home-progress__icon {
+    transition: transform 220ms ease;
+  }
+
+  .home-progress__cards article:hover .home-progress__icon {
+    transform: translate(-50%, -50%) scale(1.045);
+  }
+
+  .home-store-badges .store-link--apple {
+    transition: transform 200ms ease;
+  }
+
+  .home-store-badges .store-link--apple:hover {
+    transform: translate3d(0, -3px, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero h1,
+  .home-hero__lead,
+  .home-hero__actions,
+  .home-hero__visual,
+  .home-device-stage,
+  .home-floating-label,
+  .home-hero__orbit--one,
+  .home-hero__orbit--two {
+    animation: none;
+  }
+
+  .home-page.motion-enabled .home-reveal,
+  .home-page.motion-enabled .home-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
