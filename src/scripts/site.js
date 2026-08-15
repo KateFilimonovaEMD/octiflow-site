@@ -50,65 +50,6 @@
   }
 
 
-  // Homepage motion.
-  // Hero motion is CSS-only so it remains visible without IntersectionObserver.
-  // JavaScript is only responsible for one-time scroll reveals.
-  const homePage = document.querySelector(".home-page");
-  const compactViewport = window.matchMedia("(max-width: 820px)");
-
-  if (homePage && compactViewport.matches) {
-    const revealSelectors = [
-      ".home-belief__copy",
-      ".home-belief__features article",
-      "#features .home-feature__copy",
-      ".home-section--tint .home-feature__copy",
-      ".home-progress__copy",
-      ".home-progress__cards article",
-      ".home-access__heading",
-      ".home-access-card",
-    ];
-
-    const revealItems = revealSelectors.flatMap((selector) =>
-      [...homePage.querySelectorAll(selector)],
-    );
-
-    homePage.classList.add("motion-enabled");
-    if (reduceMotion) {
-      homePage.classList.add("motion-reduced");
-    }
-    revealItems.forEach((element) => element.classList.add("home-reveal"));
-
-    const showAll = () => {
-      revealItems.forEach((element) => element.classList.add("is-visible"));
-    };
-
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) {
-              return;
-            }
-
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          });
-        },
-        {
-          threshold: 0.06,
-          rootMargin: "0px 0px -1% 0px",
-        },
-      );
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          revealItems.forEach((element) => revealObserver.observe(element));
-        });
-      });
-    } else {
-      showAll();
-    }
-  }
 
   let scrollTimer;
 
