@@ -216,7 +216,7 @@ of water in your diet.
 
 2. [NHS: Water, Drinks and Hydration](https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/)
 
-3. [US Food and Drug Administration: Spilling the Beans — How Much Caffeine Is Too Much?](https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much)
+3. [US Food and Drug Administration: Spilling the Beans: How Much Caffeine Is Too Much?](https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much)
 
 4. [Killer et al.: No Evidence of Dehydration With Moderate Daily Coffee Intake](https://pubmed.ncbi.nlm.nih.gov/24416202/)
 
