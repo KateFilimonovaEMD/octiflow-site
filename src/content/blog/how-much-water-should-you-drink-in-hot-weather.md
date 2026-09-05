@@ -13,6 +13,7 @@ featured: true
 draft: false
 related:
   - how-to-remember-to-drink-water
+  - what-counts-toward-daily-water-intake
 image: "/images/blog/Blog_02_Main.png"
 imageAvif: "/images/blog/Blog_02_Main.avif"
 imageWebp: "/images/blog/Blog_02_Main.webp"

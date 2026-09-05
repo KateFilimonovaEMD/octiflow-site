@@ -14,6 +14,7 @@ featured: false
 draft: false
 related:
   - how-much-water-should-you-drink-in-hot-weather
+  - what-counts-toward-daily-water-intake
 image: "/images/blog/Blog_01_Main.png"
 imageAvif: "/images/blog/Blog_01_Main.avif"
 imageWebp: "/images/blog/Blog_01_Main.webp"
