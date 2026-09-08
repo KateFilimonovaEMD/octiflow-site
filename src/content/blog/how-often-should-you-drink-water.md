@@ -15,6 +15,14 @@ related:
   - how-to-remember-to-drink-water
   - what-counts-toward-daily-water-intake
   - how-much-water-should-you-drink-in-hot-weather
+image: "/images/blog/daily-hydration-rhythm.png"
+imageAvif: "/images/blog/daily-hydration-rhythm.avif"
+imageWebp: "/images/blog/daily-hydration-rhythm.webp"
+imageAlt: "A glass of water beside a clock, breakfast and notebook on a sunlit table"
+imageWidth: 1408
+imageHeight: 768
+socialImage: "/images/blog/daily-hydration-rhythm-og.jpg"
+
 ---
 
 Search for the best time to drink water and you will quickly find schedules built around the clock.
