@@ -14,6 +14,14 @@ draft: false
 related:
   - how-to-remember-to-drink-water
   - how-much-water-should-you-drink-in-hot-weather
+image: "/images/blog/daily-water-intake-sources.png"
+imageAvif: "/images/blog/daily-water-intake-sources.avif"
+imageWebp: "/images/blog/daily-water-intake-sources.webp"
+imageAlt: "A glass of water with coffee, tea, sparkling water, fruit and cucumber on a sunlit table"
+imageWidth: 1408
+imageHeight: 768
+socialImage: "/images/blog/daily-water-intake-sources-og.jpg"
+
 ---
 
 Plain water is not the only thing that contributes to hydration. **Tea, coffee,
