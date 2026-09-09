@@ -16,6 +16,14 @@ related:
   - how-much-water-should-you-drink-a-day
   - how-much-water-should-you-drink-in-hot-weather
   - how-to-stay-hydrated-when-sick
+image: "/images/blog/signs-of-dehydration.png"
+imageAvif: "/images/blog/signs-of-dehydration.avif"
+imageWebp: "/images/blog/signs-of-dehydration.webp"
+imageAlt: "A glass of water, reusable bottle, urine color guide, mirror and hydration checklist on a sunlit bathroom counter"
+imageWidth: 1408
+imageHeight: 768
+socialImage: "/images/blog/signs-of-dehydration-og.jpg"
+
 ---
 
 A headache after a busy afternoon. A dry mouth. Darker urine than usual. Feeling unusually tired.
