@@ -16,6 +16,14 @@ related:
   - how-often-should-you-drink-water
   - what-counts-toward-daily-water-intake
   - how-much-water-should-you-drink-in-hot-weather
+image: "/images/blog/sick-day-hydration.png"
+imageAvif: "/images/blog/sick-day-hydration.avif"
+imageWebp: "/images/blog/sick-day-hydration.webp"
+imageAlt: "A glass of water with a warm drink, thermometer, tissues and rehydration sachet on a sunlit bedside table"
+imageWidth: 1408
+imageHeight: 768
+socialImage: "/images/blog/sick-day-hydration-og.jpg"
+
 ---
 
 When you are sick, hydration stops being a simple question of whether you reached your usual daily target.
