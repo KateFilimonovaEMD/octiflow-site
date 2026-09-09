@@ -16,6 +16,14 @@ related:
   - what-counts-toward-daily-water-intake
   - how-often-should-you-drink-water
   - how-much-water-should-you-drink-in-hot-weather
+image: "/images/blog/daily-water-intake-guide.png"
+imageAvif: "/images/blog/daily-water-intake-guide.avif"
+imageWebp: "/images/blog/daily-water-intake-guide.webp"
+imageAlt: "A measured water bottle with matching glasses, tea, fruit and a daily hydration planner on a sunlit table"
+imageWidth: 1408
+imageHeight: 768
+socialImage: "/images/blog/daily-water-intake-guide-og.jpg"
+
 ---
 
 Search for how much water you should drink a day and you will quickly run into a strange problem: reputable sources give different answers.
