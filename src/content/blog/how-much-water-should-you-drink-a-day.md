@@ -10,7 +10,7 @@ tags:
   - daily water intake
   - water goal
   - water tracker
-featured: false
+featured: true
 draft: false
 related:
   - what-counts-toward-daily-water-intake

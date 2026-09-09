@@ -9,7 +9,7 @@ tags:
   - hydration
   - hot weather
   - electrolytes
-featured: true
+featured: false
 draft: false
 related:
   - how-to-remember-to-drink-water

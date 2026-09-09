@@ -77,39 +77,93 @@ const structuredData = [
                   <p class="eyebrow section-eyebrow">Explore the blog</p>
                   <h2 id="latest-title">Latest articles</h2>
                 </div>
-                <div class="article-grid">
-                  {remainingPosts.map((post) => <ArticleCard {post} />)}
+
+                <div
+                  class="article-grid"
+                  id="blog-article-grid"
+                  data-article-grid
+                >
+                  {remainingPosts.map((post) => (
+                    <div class="article-grid__item" data-article-item>
+                      <ArticleCard {post} />
+                    </div>
+                  ))}
                 </div>
+
+                {remainingPosts.length > 4 && (
+                  <div class="blog-load-more">
+                    <button
+                      class="blog-load-more__button"
+                      type="button"
+                      aria-controls="blog-article-grid"
+                      data-load-more
+                      hidden
+                    >
+                      <span>Load more articles</span>
+                      <svg
+                        class="icon-stroke-centered"
+                        viewBox="0 0 16 16"
+                        aria-hidden="true"
+                      >
+                        <path d="M4 6l4 4 4-4" />
+                      </svg>
+                    </button>
+                  </div>
+                )}
               </section>
             )}
 
-            <nav class="blog-pagination" aria-label="Blog pages">
-              <span
-                class="blog-pagination__arrow is-disabled"
-                aria-hidden="true"
-              >
-                <svg
-                  class="icon-stroke-centered"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path d="M13 8H3m4-4L3 8l4 4" />
-                </svg>
-              </span>
-              <span class="blog-pagination__page" aria-current="page">1</span>
-              <span
-                class="blog-pagination__arrow is-disabled"
-                aria-hidden="true"
-              >
-                <svg
-                  class="icon-stroke-centered"
-                  viewBox="0 0 16 16"
-                  aria-hidden="true"
-                >
-                  <path d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </span>
-            </nav>
+            <script is:inline>
+              (() => {
+                const grid = document.querySelector("[data-article-grid]");
+                const button = document.querySelector("[data-load-more]");
+
+                if (!grid || !button) return;
+
+                const items = Array.from(
+                  grid.querySelectorAll("[data-article-item]"),
+                );
+                const initialCount = 4;
+                const step = 2;
+                let visibleCount = Math.min(initialCount, items.length);
+
+                const update = (animateNewItems = false) => {
+                  items.forEach((item, index) => {
+                    const shouldShow = index < visibleCount;
+                    const wasHidden = item.hidden;
+
+                    item.hidden = !shouldShow;
+
+                    if (animateNewItems && shouldShow && wasHidden) {
+                      item.classList.remove("is-revealed");
+                      requestAnimationFrame(() => {
+                        item.classList.add("is-revealed");
+                      });
+                    }
+                  });
+
+                  const remaining = items.length - visibleCount;
+                  button.hidden = remaining <= 0;
+
+                  if (remaining > 0) {
+                    button.setAttribute(
+                      "aria-label",
+                      `Load ${Math.min(step, remaining)} more articles`,
+                    );
+                  }
+                };
+
+                update();
+
+                button.addEventListener("click", () => {
+                  visibleCount = Math.min(
+                    visibleCount + step,
+                    items.length,
+                  );
+                  update(true);
+                });
+              })();
+            </script>
           </>
         ) : (
           <section class="blog-empty">
