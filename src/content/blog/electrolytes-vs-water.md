@@ -16,6 +16,13 @@ related:
   - how-much-water-should-you-drink-in-hot-weather
   - how-to-stay-hydrated-when-sick
   - how-much-water-should-you-drink-a-day
+image: "/images/blog/electrolytes-vs-water.png"
+imageAvif: "/images/blog/electrolytes-vs-water.avif"
+imageWebp: "/images/blog/electrolytes-vs-water.webp"
+imageAlt: "Plain water on one side and an electrolyte workout drink with tablets, towel and gym gear on the other"
+imageWidth: 1408
+imageHeight: 768
+socialImage: "/images/blog/electrolytes-vs-water-og.jpg"
 ---
 
 Electrolyte drinks are everywhere. Powders, tablets and brightly coloured bottles promise better hydration after exercise, heat, travel or simply a busy day.
