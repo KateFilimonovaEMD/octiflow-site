@@ -30,13 +30,7 @@ Search for how much water you should drink a day and you will quickly run into a
 
 The European Food Safety Authority, or EFSA, gives adequate daily **total water intake** values of about 2.0 litres for adult women and 2.5 litres for adult men. In the United States, the National Academies uses higher figures, about 2.7 litres for women and 3.7 litres for men. The NHS gives a much simpler everyday guide of 6 to 8 cups or glasses of fluid a day. [EFSA](https://www.efsa.europa.eu/en/efsajournal/pub/1459), [National Academies](https://nap.nationalacademies.org/read/10925/chapter/2), and the [NHS](https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/) all frame these numbers as guidance, not as an exact prescription for every person.
 
-So which number is right?
-
-More than one of them can be useful, because they are not all describing exactly the same thing.
-
-The most important distinction is this:
-
-**Your total water intake is not the same thing as the amount of plain water you need to pour into a glass.**
+So which number is right? More than one can be useful, because they are not all describing exactly the same thing. The most important distinction is that **your total water intake is not the same thing as the amount of plain water you need to pour into a glass.**
 
 ## The quick answer
 
@@ -90,19 +84,13 @@ For most people, plain water is still the simplest everyday choice. It hydrates 
 
 ## What about the eight glasses a day rule?
 
-Eight glasses is easy to remember.
-
-That is probably its biggest strength.
-
-It is not a universal biological requirement.
+Eight glasses is easy to remember, which is probably its biggest strength. It is not a universal biological requirement.
 
 The NHS currently recommends aiming for around 6 to 8 cups or glasses of fluid a day as a general guide. Mayo Clinic describes eight glasses as a reasonable and memorable goal for some people while also stressing that fluid needs vary. [NHS](https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/), [Mayo Clinic](https://www.mayoclinic.org/healthy-lifestyle/nutrition-and-healthy-eating/in-depth/water/art-20044256)
 
 There is no need to treat the eighth glass as a finish line.
 
-If you are comfortably hydrated with somewhat less on a quiet, cool day, that does not automatically mean something is wrong. If you spend hours exercising outside in hot weather, eight glasses may be nowhere near enough.
-
-Context matters more than the slogan.
+If you are comfortably hydrated with somewhat less on a quiet, cool day, that does not automatically mean something is wrong. If you spend hours exercising outside in hot weather, eight glasses may be nowhere near enough. Context matters more than the slogan.
 
 ## Should men and women drink different amounts?
 
@@ -120,9 +108,7 @@ This is one reason a water tracker should not present sex alone as if it can cal
 
 ## How much water should you drink based on your weight?
 
-Weight-based water calculators are everywhere online.
-
-You enter your body weight, multiply it by a number, and receive an apparently precise answer such as 2,415 ml per day.
+Weight-based water calculators are everywhere online. You enter your body weight, multiply it by a number, and receive an apparently precise answer such as 2,415 ml per day.
 
 The precision looks scientific. The problem is that body weight does not tell the whole story.
 
@@ -151,14 +137,14 @@ The NHS advises that people may need more fluid when they are pregnant or breast
 | Hot or humid weather | More water may be lost through sweating |
 | Exercise | Sweat losses rise with duration and intensity |
 | Fever | Illness can increase fluid losses |
-| Vomiting or diarrhea | Water and electrolytes can be lost |
+| Vomiting or diarrhoea | Water and electrolytes can be lost |
 | Pregnancy | Fluid needs increase |
 | Breastfeeding | Additional fluid is needed to support milk production |
 | Some medical conditions or medicines | Fluid requirements may need individual medical guidance |
 
 For hot weather, see **[How Much Water Should You Drink in Hot Weather?](/blog/how-much-water-should-you-drink-in-hot-weather/)**
 
-For vomiting, diarrhea and oral rehydration solution, see **[How to Stay Hydrated When You're Sick](/blog/how-to-stay-hydrated-when-sick/)**
+For vomiting, diarrhoea and oral rehydration solution, see **[How to Stay Hydrated When You're Sick](/blog/how-to-stay-hydrated-when-sick/)**
 
 Pregnancy is another situation where general adult figures are not enough. The American College of Obstetricians and Gynecologists advises drinking 8 to 12 cups of water per day during pregnancy. [ACOG](https://www.acog.org/womens-health/experts-and-stories/ask-acog/how-much-water-should-i-drink-during-pregnancy)
 
@@ -170,9 +156,7 @@ For most healthy adults, thirst is useful. The National Academies notes that nor
 
 The NHS also suggests aiming for urine that is a clear, pale yellow colour. [NHS](https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/)
 
-None of these signs gives you an exact litre requirement.
-
-They are clues.
+None of these signs gives you an exact litre requirement. They are clues, not precise measurements.
 
 If you are regularly very thirsty, producing dark urine, urinating much less than usual or feeling dizzy, dehydration may be part of the picture. Persistent or unusual symptoms deserve more attention than simply increasing a number in an app. [NHS](https://www.nhs.uk/conditions/dehydration/)
 
@@ -190,15 +174,11 @@ We cover this in more detail in **[How Often Should You Drink Water?](/blog/how-
 
 ## Can you drink too much water?
 
-Yes.
-
-It is uncommon in healthy adults during normal daily life, but drinking excessive amounts of water can become dangerous.
+Yes, although it is uncommon in healthy adults during normal daily life. Drinking excessive amounts of water can become dangerous.
 
 If water intake overwhelms the body's ability to remove the excess, sodium in the blood can become too diluted. This condition is called hyponatremia and can be life-threatening. Mayo Clinic notes that excessive water intake is one possible cause, with particular concern in situations such as endurance exercise. [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/hyponatremia/symptoms-causes/syc-20373711)
 
-This is another reason daily hydration should not become a competition.
-
-More is not automatically better.
+This is another reason daily hydration should not become a competition: more is not automatically better.
 
 If your tracker says 900 ml remains at 10:30 p.m., you do not receive a health bonus for forcing all 900 ml down before bed.
 
@@ -216,13 +196,7 @@ If you log tea, coffee and milk, those drinks are already contributing to the nu
 
 If you use **[Octi Flow](https://octiflow.app/)**, it makes more sense to treat the daily goal as a practical target for building and observing your drinking routine, not as a medical measurement of the water inside your body.
 
-A useful target should help answer:
-
-**Am I drinking consistently enough for my normal routine?**
-
-It should not pretend to answer:
-
-**What is my exact physiological water requirement today?**
+A useful target should help answer **"Am I drinking consistently enough for my normal routine?"** It should not pretend to answer **"What is my exact physiological water requirement today?"**
 
 No consumer hydration app can know that from a profile form alone.
 

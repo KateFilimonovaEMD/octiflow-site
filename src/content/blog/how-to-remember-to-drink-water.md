@@ -1,7 +1,7 @@
 ---
 title: "How to Remember to Drink Water: 8 Habits That Fit Your Day"
 seoTitle: "How to Remember to Drink Water: 8 Habits | Octi Flow"
-description: "Forget rigid water rules. Use eight practical, evidence-aware habits to make drinking water easier to remember throughout a normal day."
+description: "Forget rigid water rules. Use eight practical habits to make drinking water easier to remember throughout a normal day."
 publishDate: 2026-07-29
 updatedDate: 2026-07-30
 author: "EvaMariaDreams"

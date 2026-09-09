@@ -55,7 +55,7 @@
 
   let scrollTimer;
 
-  document.querySelectorAll('.toc a[href^="#"]').forEach((link) => {
+  document.querySelectorAll('.article-toc a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (event) => {
       const fragment = link.getAttribute("href")?.slice(1);
       const target = fragment

@@ -33,13 +33,7 @@ The neatness is appealing. The problem is that healthy bodies do not run on one 
 
 Major hydration guidance does not prescribe a fixed interval for healthy adults. The [NHS](https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/) recommends drinking regularly throughout the day. The US National Academies explains that, in ordinary conditions, thirst and normal drinking with meals are important parts of maintaining water balance. Needs also change with activity, temperature, diet, age, health and individual physiology.
 
-So the useful question is not, "How many minutes should pass between drinks?"
-
-It is this:
-
-**How can I spread fluids through my day without forgetting for hours or forcing water when I do not need it?**
-
-That has a much more practical answer.
+A more useful question is: **How can I spread fluids through my day without forgetting for hours or forcing water when I do not need it?** That has a much more practical answer than counting the minutes between drinks.
 
 ## There is no perfect drinking interval
 
@@ -89,9 +83,7 @@ For someone who tends to forget later, morning can still be a useful habit ancho
 
 Meals already divide the day into natural opportunities to drink.
 
-The National Academies notes that beverages consumed with meals are part of normal everyday water intake. You do not need a prescribed amount before, during or after each meal, but breakfast, lunch and dinner can provide reliable reference points.
-
-Then look at what happens between them.
+The National Academies notes that beverages consumed with meals are part of normal everyday water intake. You do not need a prescribed amount before, during or after each meal, but breakfast, lunch and dinner can provide reliable reference points. Then look at what happens between them.
 
 Maybe breakfast and lunch are fine, but the entire afternoon disappears into work. Maybe you drink enough at home but almost nothing while travelling. Maybe weekdays are difficult and weekends are not.
 
@@ -101,9 +93,7 @@ That information is more useful than knowing that somebody on the internet recom
 
 For many people, hydration is not an all-day problem. It is a two-hour, three-hour or four-hour problem hidden inside the day.
 
-Imagine this routine:
-
-You have coffee and water with breakfast. You drink with lunch. You have something with dinner. But between lunch and the end of work, you repeatedly forget to drink anything.
+Imagine this routine: you have coffee and water with breakfast, drink with lunch and have something with dinner, but between lunch and the end of work you repeatedly forget to drink anything.
 
 Adding reminders from morning until bedtime would solve a problem you do not have.
 
@@ -186,9 +176,7 @@ A tracker should help you notice the pattern, not pressure you into correcting a
 
 ## Can you drink too much water at once?
 
-Yes, although serious water intoxication is uncommon in healthy adults going about normal daily life.
-
-More water is not automatically safer.
+Yes, although serious water intoxication is uncommon in healthy adults going about normal daily life. More water is not automatically safer.
 
 Drinking excessive amounts can dilute sodium in the blood and contribute to hyponatremia, which can become dangerous. [Mayo Clinic](https://www.mayoclinic.org/diseases-conditions/hyponatremia/symptoms-causes/syc-20373711) lists drinking too much water as one possible cause because the kidneys may be unable to excrete the excess quickly enough.
 
@@ -248,9 +236,7 @@ That is a rhythm, not a prescription. On another day, the pattern may be differe
 
 ## When thirst and a normal routine may not be enough
 
-General advice about drinking through the day is intended for healthy adults in ordinary circumstances.
-
-Some people need a different approach.
+General advice about drinking through the day is intended for healthy adults in ordinary circumstances, and some people need a different approach.
 
 Older adults may experience reduced thirst. Vomiting, diarrhoea and fever can cause substantial fluid loss. Heavy exercise and hot environments raise fluid needs. Some medicines and medical conditions affect fluid balance.
 
@@ -276,9 +262,7 @@ Octi Flow is designed around that idea. The target and reminders are there to ma
 
 ## A simple experiment for tomorrow
 
-Do not start by setting eight alarms.
-
-Try this instead:
+Do not start by setting eight alarms. Try this instead:
 
 1. Drink normally in the morning.
 2. Notice the moments when you already reach for a drink without thinking.
