@@ -13,7 +13,8 @@ tags:
 featured: false
 draft: false
 related:
-  - how-much-water-should-you-drink-in-hot-weather
+  - how-long-to-build-a-habit
+  - how-often-should-you-drink-water
   - what-counts-toward-daily-water-intake
 image: "/images/blog/Blog_01_Main.png"
 imageAvif: "/images/blog/Blog_01_Main.avif"

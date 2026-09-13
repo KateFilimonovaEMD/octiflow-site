@@ -13,8 +13,8 @@ tags:
 featured: false
 draft: false
 related:
+  - dehydration-headache
   - how-much-water-should-you-drink-a-day
-  - how-much-water-should-you-drink-in-hot-weather
   - how-to-stay-hydrated-when-sick
 image: "/images/blog/signs-of-dehydration.png"
 imageAvif: "/images/blog/signs-of-dehydration.avif"

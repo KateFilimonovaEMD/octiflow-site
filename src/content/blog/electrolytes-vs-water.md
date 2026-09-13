@@ -13,9 +13,9 @@ tags:
 featured: false
 draft: false
 related:
+  - water-before-during-after-exercise
   - how-much-water-should-you-drink-in-hot-weather
   - how-to-stay-hydrated-when-sick
-  - how-much-water-should-you-drink-a-day
 image: "/images/blog/electrolytes-vs-water.png"
 imageAvif: "/images/blog/electrolytes-vs-water.avif"
 imageWebp: "/images/blog/electrolytes-vs-water.webp"

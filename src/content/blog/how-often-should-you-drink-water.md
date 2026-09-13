@@ -12,9 +12,9 @@ tags:
 featured: false
 draft: false
 related:
+  - drinking-water-before-bed
   - how-to-remember-to-drink-water
   - what-counts-toward-daily-water-intake
-  - how-much-water-should-you-drink-in-hot-weather
 image: "/images/blog/daily-hydration-rhythm.png"
 imageAvif: "/images/blog/daily-hydration-rhythm.avif"
 imageWebp: "/images/blog/daily-hydration-rhythm.webp"
