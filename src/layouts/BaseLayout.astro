@@ -15,6 +15,8 @@ interface Props {
   robots?: string;
   publishedTime?: Date;
   modifiedTime?: Date;
+  articleSection?: string;
+  articleTags?: string[];
   structuredData?:
     | Record<string, unknown>
     | Record<string, unknown>[];
@@ -32,6 +34,8 @@ const {
   robots = "index,follow",
   publishedTime,
   modifiedTime,
+  articleSection,
+  articleTags = [],
   structuredData,
 } = Astro.props;
 
@@ -62,6 +66,12 @@ const structuredDataGraph = {
       "@id": organizationId,
       name: "EvaMariaDreams",
       url: "https://evamariadreams.com/",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://octiflow.app/icon-512.png",
+        width: 512,
+        height: 512,
+      },
       sameAs: [
         "https://www.instagram.com/evamariadreams/",
         "https://www.threads.com/@evamariadreams",
@@ -141,6 +151,8 @@ const structuredDataJson = JSON.stringify(structuredDataGraph).replace(
     {imageAlt && <meta property="og:image:alt" content={imageAlt} />}
     {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()} />}
     {modifiedTime && <meta property="article:modified_time" content={modifiedTime.toISOString()} />}
+    {type === "article" && articleSection && <meta property="article:section" content={articleSection} />}
+    {type === "article" && articleTags.map((tag) => <meta property="article:tag" content={tag} />)}
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />

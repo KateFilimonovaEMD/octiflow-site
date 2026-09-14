@@ -3,6 +3,7 @@ title: "How Much Water Should You Drink a Day? A Practical Guide"
 seoTitle: "How Much Water Should You Drink a Day? Daily Water Intake Guide"
 description: "How much water do you really need each day? Compare EFSA, NHS and US guidance, see what counts toward intake, and choose a practical hydration target."
 publishDate: 2026-09-09
+updatedDate: 2026-09-13
 author: "EvaMariaDreams"
 category: "Hydration Basics"
 tags:
@@ -180,9 +181,9 @@ If water intake overwhelms the body's ability to remove the excess, sodium in th
 
 This is another reason daily hydration should not become a competition: more is not automatically better.
 
-If your tracker says 900 ml remains at 10:30 p.m., you do not receive a health bonus for forcing all 900 ml down before bed.
+An app target is a record of a drinking pattern, not an instruction to consume a large remaining volume rapidly at the end of the day. If late drinking is contributing to repeated nighttime urination, timing can matter; our guide to [drinking water before bed](/blog/drinking-water-before-bed/) explains the evidence and its limits.
 
-A daily goal is there to help you understand a pattern, not to override your body.
+A daily goal should be treated as a behavioural tracking tool, not a medical prescription.
 
 ## So what target should you put in a water-tracking app?
 
@@ -211,9 +212,9 @@ Rather than searching endlessly for one perfect number, use official guidance as
 5. Adjust your routine when heat, exercise or illness changes the situation.
 6. Do not treat the number as a medical prescription.
 
-If the target constantly makes you drink when you are not thirsty simply to finish the number, reconsider it.
+If you are repeatedly drinking solely to complete the number despite not being thirsty, reconsider what the target represents.
 
-If you routinely finish the day extremely thirsty despite hitting it, the number may not reflect your circumstances.
+If you routinely finish the day very thirsty despite hitting the target, the logged number alone is not enough to explain your hydration status or fluid needs.
 
 And if you have been given specific fluid instructions because of kidney disease, heart disease or another medical condition, those instructions take priority over any general recommendation or app target.
 

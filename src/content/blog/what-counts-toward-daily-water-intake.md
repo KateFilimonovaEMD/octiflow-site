@@ -3,6 +3,7 @@ title: "What Counts Toward Your Daily Water Intake?"
 seoTitle: "What Counts Toward Daily Water Intake? | Octi Flow"
 description: "Water is not the only source of hydration. Learn how coffee, tea, milk, sparkling water and food contribute to your daily fluid intake."
 publishDate: 2026-09-05
+updatedDate: 2026-09-13
 author: "EvaMariaDreams"
 category: "Hydration Basics"
 tags:
@@ -14,6 +15,7 @@ draft: false
 related:
   - how-to-remember-to-drink-water
   - how-much-water-should-you-drink-in-hot-weather
+  - drinking-water-and-skin
 image: "/images/blog/daily-water-intake-sources.png"
 imageAvif: "/images/blog/daily-water-intake-sources.avif"
 imageWebp: "/images/blog/daily-water-intake-sources.webp"
@@ -107,8 +109,11 @@ of sugar or calories. Hydration is only one property of a drink.
 
 ## What about sparkling water?
 
-Plain sparkling water counts in the same way as still water. Carbonation does
-not prevent your body from using the water.
+Plain sparkling water can contribute to daily fluid intake. The NHS suggests
+sparkling water as an option for people who do not like still water, and the CDC
+lists sparkling water and seltzer among low- or no-calorie drink choices.
+[NHS](https://www.nhs.uk/live-well/eat-well/food-guidelines-and-food-labels/water-drinks-nutrition/)
+[CDC](https://www.cdc.gov/healthy-weight-growth/water-healthy-drinks/index.html)
 
 The label still matters. Some flavoured products contain added sugar,
 sweeteners, sodium, caffeine, or acids. That does not automatically make them
@@ -175,8 +180,8 @@ This is the simplest option. Your tracker shows whether you are keeping a
 regular water routine, while other drinks and food remain part of the wider
 context.
 
-The number will not represent total water intake, but it can still reveal long
-gaps and help you build a dependable habit.
+The number will not represent total water intake, but it can show long gaps in
+the water entries you recorded.
 
 ### Track the drinks you deliberately use for hydration
 
@@ -184,16 +189,16 @@ You might count water, unsweetened tea, and similar everyday drinks while
 leaving out occasional beverages. This produces a broader estimate without
 requiring you to record everything.
 
-Define the rule once and use it consistently. Changing the rule each day makes
-weekly comparisons much less useful.
+If you want to compare your own logs over time, using the same definition each
+day makes those records easier to interpret.
 
 ### Track all drinks
 
 This gives the fullest beverage total, but it also creates more work and still
 does not measure water from food, sweat loss, or individual medical needs.
 
-More data is not automatically better. If detailed logging makes you abandon
-the habit, the simpler method is more useful.
+More detailed logging is not automatically more informative if the extra
+entries are not relevant to what you are trying to observe.
 
 Whichever method you choose, do not subtract a cup of coffee as if it created a
 hydration debt. Record what is useful, keep the definition consistent, and
@@ -227,6 +232,8 @@ of water in your diet.
 3. [US Food and Drug Administration: Spilling the Beans: How Much Caffeine Is Too Much?](https://www.fda.gov/consumers/consumer-updates/spilling-beans-how-much-caffeine-too-much)
 
 4. [Killer et al.: No Evidence of Dehydration With Moderate Daily Coffee Intake](https://pubmed.ncbi.nlm.nih.gov/24416202/)
+
+5. [CDC: About Water and Healthier Drinks](https://www.cdc.gov/healthy-weight-growth/water-healthy-drinks/index.html)
 
 *This article provides general information and is not a substitute for
 individual medical advice. Follow guidance from a healthcare professional if

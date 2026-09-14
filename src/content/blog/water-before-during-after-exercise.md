@@ -4,7 +4,7 @@ seoTitle: "How Much Water to Drink Before, During and After Exercise"
 description: "Exercise hydration depends on sweat loss, duration, heat and intensity. Learn what major sports-medicine guidance supports before, during and after exercise."
 publishDate: 2026-09-13
 author: "EvaMariaDreams"
-category: "Hydration & Exercise"
+category: "Exercise & Environment"
 tags:
   - exercise
   - workout hydration

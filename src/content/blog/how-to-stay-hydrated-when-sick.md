@@ -4,7 +4,7 @@ seoTitle: "How to Stay Hydrated When Sick | Fever, Vomiting & Diarrhoea"
 description: "Learn how to replace fluids during fever, vomiting and diarrhoea, when oral rehydration solution helps, and which warning signs need medical care."
 publishDate: 2026-09-08
 author: "EvaMariaDreams"
-category: "Illness & Hydration"
+category: "Health & Safety"
 tags:
   - hydration
   - dehydration

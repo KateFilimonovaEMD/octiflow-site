@@ -2,12 +2,24 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import ArticleCard from "../components/blog/ArticleCard.astro";
-import { isPublished, sortPosts } from "../utils/blog";
+import {
+  BLOG_TOPICS,
+  isPublished,
+  sortPosts,
+  topicSlug,
+} from "../utils/blog";
 
 const posts = sortPosts((await getCollection("blog")).filter(isPublished));
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 const canonical = "https://octiflow.app/blog/";
+
+const topicCounts = Object.fromEntries(
+  BLOG_TOPICS.map((topic) => [
+    topic,
+    posts.filter((post) => post.data.category === topic).length,
+  ]),
+);
 
 const structuredData = [
   {
@@ -16,12 +28,10 @@ const structuredData = [
     url: canonical,
     name: "Octi Flow Blog",
     description:
-      "Practical guides to hydration habits, water tracking, reminders, and getting more from Octi Flow.",
+      "Evidence-based guides to hydration, exercise, sleep, everyday health and habit building from Octi Flow.",
+    inLanguage: "en",
     publisher: {
       "@id": "https://octiflow.app/#organization",
-    },
-    about: {
-      "@id": "https://octiflow.app/#app",
     },
     blogPost: posts.map((post) => ({
       "@id": new URL(`/blog/${post.id}/#article`, Astro.site).href,
@@ -30,7 +40,7 @@ const structuredData = [
   {
     "@type": "ItemList",
     "@id": `${canonical}#articles`,
-    name: "Octi Flow hydration articles",
+    name: "Octi Flow hydration, health and habit guides",
     numberOfItems: posts.length,
     itemListElement: posts.map((post, index) => ({
       "@type": "ListItem",
@@ -43,8 +53,8 @@ const structuredData = [
 ---
 
 <BaseLayout
-  title="Hydration Tips, Habits & Tracking Guides - Octi Flow"
-  description="Practical guides to hydration habits, water tracking, reminders, and getting more from Octi Flow."
+  title="Hydration, Health & Habit Guides | Octi Flow"
+  description="Evidence-based guides to hydration, exercise, sleep, everyday health and habit building, with careful sourcing and practical context."
   {canonical}
   imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
   {structuredData}
@@ -52,10 +62,11 @@ const structuredData = [
   <main class="blog-page-surface">
     <header class="blog-hero">
       <div class="container">
-        <h1 class="blog-gradient-title">Small habits. Better hydration.</h1>
+        <p class="eyebrow section-eyebrow">Evidence-based guides</p>
+        <h1 class="blog-gradient-title">Hydration, health and habits, explained clearly.</h1>
         <p>
-          Practical guides for building a sustainable water routine, using
-          reminders well, and making hydration tracking less demanding.
+          Practical guides built from medical guidance and peer-reviewed research,
+          with the limits of the evidence stated plainly.
         </p>
       </div>
     </header>
@@ -64,108 +75,147 @@ const structuredData = [
       {
         featuredPost ? (
           <>
-            <section aria-label="Featured article">
+            <section
+              aria-labelledby="start-here-title"
+              data-featured-section
+              data-topic={topicSlug(featuredPost.data.category)}
+            >
               <div class="section-heading section-heading--blog">
-                <p class="eyebrow section-eyebrow">Octi Flow Blog</p>
+                <p class="eyebrow section-eyebrow">Start here</p>
+                <h2 id="start-here-title" class="visually-hidden">Start here</h2>
               </div>
               <ArticleCard post={featuredPost} featured />
             </section>
 
-            {remainingPosts.length > 0 && (
-              <section aria-labelledby="latest-title">
-                <div class="section-heading">
-                  <p class="eyebrow section-eyebrow">Explore the blog</p>
-                  <h2 id="latest-title">Latest articles</h2>
+            <section class="blog-browser" aria-labelledby="browse-title">
+              <div class="section-heading blog-browser__heading">
+                <div>
+                  <p class="eyebrow section-eyebrow">Browse the library</p>
+                  <h2 id="browse-title">Explore by topic</h2>
                 </div>
+                <p class="blog-filter-status" data-filter-status aria-live="polite">
+                  {posts.length} articles
+                </p>
+              </div>
 
-                <div
-                  class="article-grid"
-                  id="blog-article-grid"
-                  data-article-grid
+              <div
+                class="blog-topic-filters"
+                data-blog-filters
+                aria-label="Filter articles by topic"
+                hidden
+              >
+                <button
+                  class="blog-topic-filter is-active"
+                  type="button"
+                  data-topic-filter="all"
+                  aria-pressed="true"
                 >
-                  {remainingPosts.map((post) => (
-                    <div class="article-grid__item" data-article-item>
-                      <ArticleCard {post} />
-                    </div>
-                  ))}
-                </div>
+                  <span>All</span>
+                  <span class="blog-topic-filter__count">{posts.length}</span>
+                </button>
+                {BLOG_TOPICS.map((topic) => (
+                  <button
+                    id={topicSlug(topic)}
+                    class="blog-topic-filter"
+                    type="button"
+                    data-topic-filter={topicSlug(topic)}
+                    aria-pressed="false"
+                  >
+                    <span>{topic}</span>
+                    <span class="blog-topic-filter__count">{topicCounts[topic]}</span>
+                  </button>
+                ))}
+              </div>
 
-                {remainingPosts.length > 4 && (
-                  <div class="blog-load-more">
-                    <button
-                      class="blog-load-more__button"
-                      type="button"
-                      aria-controls="blog-article-grid"
-                      data-load-more
-                      hidden
-                    >
-                      <span>Load more articles</span>
-                      <svg
-                        viewBox="0 0 16 16"
-                        aria-hidden="true"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      >
-                        <path d="M4 6l4 4 4-4" />
-                      </svg>
-                    </button>
+              <div class="article-grid" id="blog-article-grid" data-article-grid>
+                {remainingPosts.map((post) => (
+                  <div
+                    class="article-grid__item"
+                    data-article-item
+                    data-topic={topicSlug(post.data.category)}
+                  >
+                    <ArticleCard {post} />
                   </div>
-                )}
-              </section>
-            )}
+                ))}
+              </div>
+
+              <p class="blog-no-results" data-no-results hidden>
+                No articles are available in this topic yet.
+              </p>
+            </section>
 
             <script is:inline>
               (() => {
-                const grid = document.querySelector("[data-article-grid]");
-                const button = document.querySelector("[data-load-more]");
-
-                if (!grid || !button) return;
-
-                const items = Array.from(
-                  grid.querySelectorAll("[data-article-item]"),
+                const filters = document.querySelector("[data-blog-filters]");
+                const buttons = Array.from(
+                  document.querySelectorAll("[data-topic-filter]"),
                 );
-                const initialCount = 4;
-                const step = 2;
-                let visibleCount = Math.min(initialCount, items.length);
+                const items = Array.from(
+                  document.querySelectorAll("[data-article-item]"),
+                );
+                const featured = document.querySelector("[data-featured-section]");
+                const status = document.querySelector("[data-filter-status]");
+                const empty = document.querySelector("[data-no-results]");
 
-                const update = (animateNewItems = false) => {
-                  items.forEach((item, index) => {
-                    const shouldShow = index < visibleCount;
-                    const wasHidden = item.hidden;
+                if (!filters || buttons.length === 0) return;
+                filters.hidden = false;
 
-                    item.hidden = !shouldShow;
+                const validTopics = new Set(
+                  buttons.map((button) => button.dataset.topicFilter),
+                );
 
-                    if (animateNewItems && shouldShow && wasHidden) {
-                      item.classList.remove("is-revealed");
-                      requestAnimationFrame(() => {
-                        item.classList.add("is-revealed");
-                      });
-                    }
+                const applyFilter = (requestedTopic, updateUrl = false) => {
+                  const topic = validTopics.has(requestedTopic)
+                    ? requestedTopic
+                    : "all";
+
+                  let visibleCount = 0;
+
+                  if (featured) {
+                    const showFeatured =
+                      topic === "all" || featured.dataset.topic === topic;
+                    featured.hidden = !showFeatured;
+                    if (showFeatured) visibleCount += 1;
+                  }
+
+                  items.forEach((item) => {
+                    const show = topic === "all" || item.dataset.topic === topic;
+                    item.hidden = !show;
+                    if (show) visibleCount += 1;
                   });
 
-                  const remaining = items.length - visibleCount;
-                  button.hidden = remaining <= 0;
+                  buttons.forEach((button) => {
+                    const active = button.dataset.topicFilter === topic;
+                    button.classList.toggle("is-active", active);
+                    button.setAttribute("aria-pressed", String(active));
+                  });
 
-                  if (remaining > 0) {
-                    button.setAttribute(
-                      "aria-label",
-                      `Load ${Math.min(step, remaining)} more articles`,
-                    );
+                  if (status) {
+                    status.textContent = `${visibleCount} ${visibleCount === 1 ? "article" : "articles"}`;
+                  }
+                  if (empty) empty.hidden = visibleCount !== 0;
+
+                  if (updateUrl) {
+                    const url = new URL(window.location.href);
+                    url.hash = topic === "all" ? "" : topic;
+                    history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
                   }
                 };
 
-                update();
+                const topicFromHash = () =>
+                  window.location.hash ? window.location.hash.slice(1) : "all";
 
-                button.addEventListener("click", () => {
-                  visibleCount = Math.min(
-                    visibleCount + step,
-                    items.length,
-                  );
-                  update(true);
+                buttons.forEach((button) => {
+                  button.addEventListener("click", () => {
+                    applyFilter(button.dataset.topicFilter || "all", true);
+                  });
                 });
+
+                window.addEventListener("hashchange", () => {
+                  applyFilter(topicFromHash());
+                });
+
+                applyFilter(topicFromHash());
               })();
             </script>
           </>
@@ -174,8 +224,8 @@ const structuredData = [
             <p class="eyebrow section-eyebrow">Coming soon</p>
             <h2>Thoughtful hydration guides are on the way</h2>
             <p>
-              We are preparing practical articles about daily water habits,
-              reminders, and hydration tracking.
+              We are preparing practical articles about hydration, health and
+              everyday habits.
             </p>
             <a class="button button--inverse button-link" href="/">Explore Octi Flow</a>
           </section>

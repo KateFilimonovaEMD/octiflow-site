@@ -9,7 +9,7 @@ Articles promote Octi Flow. EvaMariaDreams remains the author and publisher.
    `how-to-remember-to-drink-water.md`.
 3. Replace the template text and frontmatter.
 4. Keep `draft: true` while editing.
-5. Run `npm run check` and `npm run build`.
+5. Run `npm run audit:styles`, `npm run audit:blog`, `npm run check`, and `npm run build`.
 6. Change to `draft: false` only when the article is ready.
 
 The filename becomes the public URL:
@@ -28,7 +28,7 @@ Do not rename a published file without creating a redirect from the old URL.
 - `description`: 50-160 characters.
 - `publishDate`: first publication date.
 - `updatedDate`: only update after a meaningful revision.
-- `category`: one stable editorial topic.
+- `category`: one of the five stable editorial topics listed below.
 - `tags`: internal content labels; no tag pages are generated.
 - `image`: PNG or JPEG fallback used by the article and cards.
 - `imageAvif` and `imageWebp`: lightweight modern versions of the same cover.
@@ -38,6 +38,18 @@ Do not rename a published file without creating a redirect from the old URL.
 - `featured`: makes the article the main blog card.
 - `draft`: draft and future-dated posts are excluded from HTML, sitemap, and RSS.
 - `related`: filenames without `.md`, in deliberate display order.
+
+## Editorial topics
+
+Use only these categories. Do not create a new category for a single article.
+
+- `Hydration Basics`: daily intake, what counts as fluid, core hydration concepts.
+- `Habits & Tracking`: reminders, behaviour change, tracking and routines.
+- `Health & Safety`: dehydration signs, illness, symptoms and safety guidance.
+- `Exercise & Environment`: exercise, sweat, electrolytes, heat and outdoor conditions.
+- `Sleep & Wellness`: sleep and broader wellness topics where hydration is relevant.
+
+Tags are internal labels for related-article matching. Keep them specific and reusable; do not create public tag pages just to target keywords.
 
 ## Images
 
@@ -56,11 +68,16 @@ images should use empty alt text in custom MDX components.
 
 - Answer the search intent early.
 - Prefer a narrow useful article over a broad generic one.
-- Cite primary, authoritative sources for health or numeric claims.
-- Avoid diagnosis, treatment advice, and guarantees.
+- Cite primary or authoritative sources for health and numeric claims. Prefer current public-health or professional guidance, systematic reviews, meta-analyses and peer-reviewed research.
+- Do not turn associations, small studies or uncertain evidence into causal claims or guarantees.
+- State important limitations when evidence is weak, mixed or population-specific.
+- Avoid diagnosis and personalised treatment advice.
 - Add internal links only when they help the reader.
 - Use one H1 (the template creates it); start article headings at H2.
-- Do not publish unedited AI output.
+- Do not use em dashes or en dashes as punctuation. Use ordinary punctuation instead.
+- Do not publish unedited AI output or text whose factual claims have not been checked against the cited sources.
+- Set `updatedDate` only after a meaningful content revision, not to create artificial freshness.
+- Do not use `Medically reviewed` unless a named, qualified clinician actually reviewed that article.
 
 ## Routes generated
 

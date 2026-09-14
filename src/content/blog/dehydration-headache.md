@@ -4,7 +4,7 @@ seoTitle: "Can Dehydration Cause Headaches? Evidence Review"
 description: "Dehydration can contribute to headache, but the evidence is limited. See what studies show, what they do not prove, and when headache needs medical care."
 publishDate: 2026-09-13
 author: "EvaMariaDreams"
-category: "Hydration & Health"
+category: "Health & Safety"
 tags:
   - dehydration
   - headache
@@ -20,7 +20,7 @@ related:
 
 A headache can appear on a day when you have barely had anything to drink. That does not mean dehydration is always the cause, and it does not mean a glass of water is a reliable treatment for every headache.
 
-The best available evidence is more cautious. A 2021 clinical review in *Current Pain and Headache Reports* concluded that dehydration can cause headache and can also worsen some existing headache disorders, but the mechanisms are not fully understood and the research base is limited. The review also notes that the International Classification of Headache Disorders does not define a separate, specific "dehydration headache" diagnosis. [Arca and Halker Singh, 2021](https://pubmed.ncbi.nlm.nih.gov/34268642/)
+Published clinical evidence is more cautious. A 2021 clinical review in *Current Pain and Headache Reports* concluded that dehydration can cause headache and can also worsen some existing headache disorders, but the mechanisms are not fully understood and the research base is limited. The review also notes that the International Classification of Headache Disorders does not define a separate, specific "dehydration headache" diagnosis. [Arca and Halker Singh, 2021](https://pubmed.ncbi.nlm.nih.gov/34268642/)
 
 A randomized trial provides another useful piece of evidence. People with recurrent headaches who were advised to drink an additional 1.5 litres of water per day reported better migraine-specific quality of life and more subjective improvement than the control group. However, the extra water did **not** produce a relevant reduction in the number of days with at least moderate headache. [Spigt et al., 2012](https://pubmed.ncbi.nlm.nih.gov/22113647/)
 
@@ -133,7 +133,7 @@ For several days, note:
 - any other symptoms;
 - whether drinking normally changed how you felt.
 
-This does not diagnose the cause of a headache. It simply gives you a clearer record than memory alone.
+This does not diagnose the cause of a headache. It only creates a contemporaneous record of the factors you chose to log.
 
 If you discover that you routinely go many hours without drinking, **[How Often Should You Drink Water?](/blog/how-often-should-you-drink-water/)** and **[How to Remember to Drink Water](/blog/how-to-remember-to-drink-water/)** explain how to build a more consistent routine without turning hydration into a rigid clock-based rule.
 

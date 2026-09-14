@@ -12,12 +12,34 @@ export async function getStaticPaths() {
       .map((id) => publishedPosts.find((candidate) => candidate.id === id))
       .filter((candidate): candidate is (typeof publishedPosts)[number] => Boolean(candidate));
 
-    const fallbackRelated = publishedPosts.filter(
-      (candidate) =>
-        candidate.id !== post.id &&
-        candidate.data.category === post.data.category &&
-        !explicitlyRelated.some((related) => related.id === candidate.id),
-    );
+    const explicitIds = new Set(explicitlyRelated.map((candidate) => candidate.id));
+    const postTags = new Set(post.data.tags.map((tag) => tag.toLowerCase()));
+
+    const fallbackRelated = publishedPosts
+      .filter(
+        (candidate) =>
+          candidate.id !== post.id &&
+          !explicitIds.has(candidate.id),
+      )
+      .map((candidate) => {
+        const sharedTags = candidate.data.tags.reduce(
+          (count, tag) => count + (postTags.has(tag.toLowerCase()) ? 1 : 0),
+          0,
+        );
+        const sameCategory = candidate.data.category === post.data.category;
+
+        return {
+          candidate,
+          score: (sameCategory ? 4 : 0) + sharedTags,
+        };
+      })
+      .filter(({ score }) => score > 0)
+      .sort(
+        (a, b) =>
+          b.score - a.score ||
+          b.candidate.data.publishDate.getTime() - a.candidate.data.publishDate.getTime(),
+      )
+      .map(({ candidate }) => candidate);
 
     return {
       params: { id: post.id },

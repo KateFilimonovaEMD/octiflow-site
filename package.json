@@ -10,7 +10,8 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "audit:styles": "node scripts/audit-styles.mjs"
+    "audit:styles": "node scripts/audit-styles.mjs",
+    "audit:blog": "node scripts/audit-blog.mjs"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.0",

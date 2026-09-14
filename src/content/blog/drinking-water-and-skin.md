@@ -4,7 +4,7 @@ seoTitle: "Does Drinking Water Improve Skin? What Studies Show"
 description: "Extra water may slightly increase skin hydration in some people, but the evidence is limited. See what studies show about dry skin and moisturizers."
 publishDate: 2026-09-13
 author: "EvaMariaDreams"
-category: "Hydration & Skin"
+category: "Sleep & Wellness"
 tags:
   - skin hydration
   - dry skin

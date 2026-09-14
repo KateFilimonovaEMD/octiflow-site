@@ -8,7 +8,7 @@ export async function GET(context) {
   return rss({
     title: "Octi Flow Blog",
     description:
-      "Practical guides to hydration habits, water tracking, reminders, and Octi Flow.",
+      "Evidence-based guides to hydration, exercise, sleep, everyday health and habit building from Octi Flow.",
     site: context.site,
     items: posts.map((post) => ({
       title: post.data.title,

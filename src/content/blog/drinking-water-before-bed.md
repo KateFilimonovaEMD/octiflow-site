@@ -4,7 +4,7 @@ seoTitle: "Drinking Water Before Bed: Hydration and Nocturia"
 description: "Drinking water before bed is not automatically good or bad. Learn how evening fluids relate to nocturia, sleep disruption and daily hydration."
 publishDate: 2026-09-13
 author: "EvaMariaDreams"
-category: "Hydration & Sleep"
+category: "Sleep & Wellness"
 tags:
   - water before bed
   - nocturia

@@ -3,8 +3,9 @@ title: "Electrolytes vs Water: When Do You Actually Need Electrolytes?"
 seoTitle: "Electrolytes vs Water: When Do You Need Electrolytes?"
 description: "Do you really need electrolyte drinks? Learn when water is enough, when electrolytes can help, and how sports drinks differ from oral rehydration solution."
 publishDate: 2026-09-09
+updatedDate: 2026-09-13
 author: "EvaMariaDreams"
-category: "Hydration & Electrolytes"
+category: "Exercise & Environment"
 tags:
   - electrolytes
   - hydration
@@ -73,7 +74,7 @@ These are broad categories, not strict cut-offs. Sweat losses vary widely betwee
 
 Usually, you do not need a special electrolyte drink simply because electrolytes are important.
 
-MedlinePlus notes that we obtain electrolytes from food and fluids. CDC/NIOSH guidance for people working in heat goes further: in general, regular meals and adequate water are sufficient to maintain water and electrolyte balance. [CDC/NIOSH](https://www.cdc.gov/niosh/mining/UserFiles/works/products/training/keepingcool/NIOSHMiningFactSheets.pdf)
+MedlinePlus notes that we obtain electrolytes from food and fluids. Current CDC/NIOSH heat guidance recommends water for moderate work in heat lasting less than two hours and balanced-electrolyte sports drinks when sweating continues for several hours. [CDC/NIOSH](https://www.cdc.gov/niosh/heat-stress/recommendations/)
 
 That is a useful distinction. An electrolyte drink can solve a real problem, but the problem is not "I drank plain water today".
 
@@ -200,19 +201,11 @@ No.
 
 A muscle cramp is not an electrolyte test.
 
-Cramps can occur for different reasons, so it is too simplistic to interpret every cramp as proof of sodium or magnesium deficiency.
+Exercise-associated muscle cramps have a multifactorial and still incompletely understood cause. A 2016 review concluded that the available evidence points more strongly toward neuromuscular overload and fatigue than toward dehydration or electrolyte deficit as the primary explanation. [Nelson and Churilla, 2016](https://pubmed.ncbi.nlm.nih.gov/27159592/)
 
-If cramps repeatedly occur during long periods of heavy sweating, fluid and electrolyte loss may be one part of the situation. But taking an electrolyte supplement every time a muscle cramps is not a reliable way to diagnose the cause.
+That means a cramp does not diagnose sodium or magnesium deficiency. Fluid and electrolyte losses can still matter in the wider exercise context, but taking an electrolyte supplement every time a muscle cramps is not a reliable way to identify the cause.
 
 When a true electrolyte imbalance is suspected medically, an electrolyte panel is a blood test used to measure the body's main electrolytes. [MedlinePlus](https://medlineplus.gov/lab-tests/electrolyte-panel/)
-
-## What about electrolyte drinks after alcohol?
-
-An electrolyte drink does not cancel the effects of alcohol or make heavy drinking safe.
-
-If you can eat and drink normally, ordinary food and fluids provide water and electrolytes. If vomiting is substantial or you cannot keep fluids down, the problem is no longer a routine "hangover hydration" question and should be treated as ongoing fluid loss.
-
-The same principle applies here as elsewhere in this article: the useful choice depends on what has actually been lost and what you are able to replace.
 
 ## A practical decision guide
 
@@ -271,10 +264,10 @@ If there is no clear reason to replace additional salts, plain water may already
 1. [MedlinePlus: Fluid and Electrolyte Balance](https://medlineplus.gov/fluidandelectrolytebalance.html)
 2. [MedlinePlus: Electrolyte Panel](https://medlineplus.gov/lab-tests/electrolyte-panel/)
 3. [CDC/NIOSH: Workplace Recommendations for Heat Stress](https://www.cdc.gov/niosh/heat-stress/recommendations/)
-4. [CDC/NIOSH: Heat Stress Hydration](https://www.cdc.gov/niosh/mining/UserFiles/works/products/training/keepingcool/NIOSHMiningFactSheets.pdf)
-5. [National Athletic Trainers' Association: Fluid Replacement for the Physically Active](https://pmc.ncbi.nlm.nih.gov/articles/PMC5634236/)
-6. [World Health Organization: Diarrhoeal Disease](https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease)
-7. [World Health Organization: Oral Rehydration Salts](https://www.who.int/publications/i/item/WHO-FCH-CAH-06.1)
-8. [NIH Office of Dietary Supplements: Potassium](https://ods.od.nih.gov/factsheets/Potassium-Consumer/)
+4. [National Athletic Trainers' Association: Fluid Replacement for the Physically Active](https://pmc.ncbi.nlm.nih.gov/articles/PMC5634236/)
+5. [World Health Organization: Diarrhoeal Disease](https://www.who.int/news-room/fact-sheets/detail/diarrhoeal-disease)
+6. [World Health Organization: Oral Rehydration Salts](https://www.who.int/publications/i/item/WHO-FCH-CAH-06.1)
+7. [NIH Office of Dietary Supplements: Potassium](https://ods.od.nih.gov/factsheets/Potassium-Consumer/)
+8. [Nelson NR, Churilla JR. A narrative review of exercise-associated muscle cramps. Muscle & Nerve. 2016.](https://pubmed.ncbi.nlm.nih.gov/27159592/)
 
 *This article provides general information for healthy adults and is not a substitute for individual medical advice. If you have kidney disease, heart disease, another condition affecting fluid or electrolyte balance, or take medicines that affect sodium or potassium, follow the advice of your healthcare professional.*

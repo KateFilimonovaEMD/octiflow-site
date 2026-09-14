@@ -1,6 +1,12 @@
 ---
 import type { BlogPost } from "../../utils/blog";
-import { formatDate, postUrl, readingTime } from "../../utils/blog";
+import {
+  formatDate,
+  postUrl,
+  readingTime,
+  topicSlug,
+  topicUrl,
+} from "../../utils/blog";
 
 interface Props {
   post: BlogPost;
@@ -8,12 +14,24 @@ interface Props {
 }
 
 const { post, featured = false } = Astro.props;
+const categorySlug = topicSlug(post.data.category);
 ---
 
-<article class:list={["article-card", { "article-card--featured": featured }]}>
+<article
+  class:list={[
+    "article-card",
+    { "article-card--featured": featured },
+  ]}
+  data-topic={categorySlug}
+>
   {
     post.data.image ? (
-      <a class="article-card__media" href={postUrl(post)} tabindex="-1" aria-hidden="true">
+      <a
+        class="article-card__media"
+        href={postUrl(post)}
+        tabindex="-1"
+        aria-hidden="true"
+      >
         <picture>
           {post.data.imageAvif && <source srcset={post.data.imageAvif} type="image/avif" />}
           {post.data.imageWebp && <source srcset={post.data.imageWebp} type="image/webp" />}
@@ -28,15 +46,25 @@ const { post, featured = false } = Astro.props;
         </picture>
       </a>
     ) : (
-      <div class="article-card__media article-card__media--placeholder" aria-hidden="true">
-        <span>Octi Flow</span>
-      </div>
+      <a
+        class="article-card__media article-card__media--placeholder"
+        href={postUrl(post)}
+        tabindex="-1"
+        aria-hidden="true"
+      >
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <path d="M32 5C25 17 15 28 15 40a17 17 0 0 0 34 0C49 28 39 17 32 5Z" />
+        </svg>
+        <span>{post.data.category}</span>
+      </a>
     )
   }
 
   <div class="article-card__body">
     <div class="article-meta">
-      <span>{post.data.category}</span>
+      <a class="article-meta__topic" href={topicUrl(post.data.category)}>
+        {post.data.category}
+      </a>
       <span aria-hidden="true">·</span>
       <time datetime={post.data.publishDate.toISOString()}>
         {formatDate(post.data.publishDate)}

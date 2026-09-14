@@ -1,0 +1,123 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const canonical = "https://octiflow.app/editorial-standards/";
+const structuredData = {
+  "@type": "WebPage",
+  "@id": `${canonical}#webpage`,
+  url: canonical,
+  name: "Editorial Standards | Octi Flow",
+  description:
+    "How EvaMariaDreams researches, writes, sources and updates health and hydration articles for the Octi Flow blog.",
+  inLanguage: "en",
+  isPartOf: {
+    "@id": "https://octiflow.app/blog/#blog",
+  },
+  publisher: {
+    "@id": "https://octiflow.app/#organization",
+  },
+};
+---
+
+<BaseLayout
+  title="Editorial Standards | Octi Flow"
+  description="How EvaMariaDreams researches, writes, sources and updates health and hydration articles for the Octi Flow blog."
+  {canonical}
+  {structuredData}
+>
+  <main class="article-page blog-page-surface">
+    <header class="article-hero">
+      <div class="container article-hero__inner">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Octi Flow</a>
+          <span aria-hidden="true">/</span>
+          <a href="/blog/">Blog</a>
+        </nav>
+        <p class="eyebrow section-eyebrow">How we work</p>
+        <h1 class="blog-gradient-title">Editorial standards</h1>
+        <p class="article-deck">
+          How we research, source, write and update health and hydration articles
+          on the Octi Flow blog.
+        </p>
+      </div>
+    </header>
+
+    <div class="container editorial-standards-page__content">
+      <article class="article-prose">
+        <p>
+          Octi Flow is made by EvaMariaDreams, an independent two-person software
+          studio. We are not a medical organisation, and our articles are not a
+          substitute for personal medical care. When we publish health-related
+          information, our job is to represent the evidence accurately and make
+          its limits clear.
+        </p>
+
+        <h2>Our source hierarchy</h2>
+        <p>For health and hydration claims, we prefer sources in this order:</p>
+        <ol>
+          <li>Current guidance from public health agencies and professional medical organisations.</li>
+          <li>Systematic reviews, meta-analyses and consensus statements.</li>
+          <li>Peer-reviewed clinical trials and observational studies when they answer a narrower question.</li>
+          <li>High-quality patient information from established medical institutions when it helps explain practical context.</li>
+        </ol>
+        <p>
+          Sources commonly used on this site include the NHS, WHO, CDC, EFSA,
+          National Academies, NIH and NIDDK, PubMed-indexed research, and relevant
+          professional societies. We do not use marketing pages, anonymous health
+          blogs or social media posts as evidence for medical claims.
+        </p>
+
+        <h2>How we handle uncertainty</h2>
+        <p>
+          A plausible idea is not presented as a proven fact. If evidence is weak,
+          mixed, indirect or based on a small study, we say so. Results from one
+          study are not automatically turned into a general recommendation.
+          Population guidance is not presented as an exact prescription for every
+          individual.
+        </p>
+        <p>
+          We also distinguish total water intake from plain drinking water, general
+          daily hydration from exercise or illness, and advice for healthy adults
+          from guidance intended for a clinical condition or higher-risk group.
+        </p>
+
+        <h2>Numbers need context</h2>
+        <p>
+          Hydration numbers can be misleading when their original context is lost.
+          Whenever practical, we identify whether a figure refers to total water,
+          beverages only, a particular population, exercise, occupational heat
+          exposure, or treatment of a medical condition.
+        </p>
+
+        <h2>Medical review and authorship</h2>
+        <p>
+          Articles are written and edited by EvaMariaDreams. We do not label an
+          article as medically reviewed unless a qualified healthcare professional
+          has actually reviewed that specific article. At present, the blog does
+          not make that claim.
+        </p>
+
+        <h2>Corrections and updates</h2>
+        <p>
+          Health guidance and research can change. When a substantive article is
+          revised, we may show an updated date. If a cited source is superseded or
+          a claim is no longer supported, we aim to correct or remove it rather
+          than preserve outdated wording for consistency.
+        </p>
+
+        <h2>What the blog is for</h2>
+        <p>
+          The blog is educational. It can explain general evidence, help readers
+          understand common hydration concepts, and show where an app such as Octi
+          Flow fits into habit tracking. It cannot diagnose dehydration, determine
+          an individual's medical fluid requirement, or replace advice from a
+          clinician who knows that person's health history.
+        </p>
+
+        <p class="editorial-standards-page__reviewed">
+          Last reviewed: September 13, 2026.
+        </p>
+      </article>
+    </div>
+  </main>
+</BaseLayout>

@@ -5,7 +5,7 @@ description: "Replace this with a useful 50-160 character summary that accuratel
 publishDate: 2026-08-10
 updatedDate: 2026-08-10
 author: "EvaMariaDreams"
-category: "Hydration Habits"
+category: "Hydration Basics"
 tags:
   - hydration
   - healthy habits
