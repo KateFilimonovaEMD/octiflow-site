@@ -65,8 +65,8 @@ const structuredData = [
         <p class="eyebrow section-eyebrow">Evidence-based guides</p>
         <h1 class="blog-gradient-title">Hydration, health and habits, explained clearly.</h1>
         <p>
-          Practical guides built from medical guidance and peer-reviewed research,
-          with the limits of the evidence stated plainly.
+          Practical, carefully sourced guides for everyday hydration, health,
+          exercise, sleep and better habits.
         </p>
       </div>
     </header>
@@ -89,12 +89,10 @@ const structuredData = [
 
             <section class="blog-browser" aria-labelledby="browse-title">
               <div class="section-heading blog-browser__heading">
-                <div>
-                  <p class="eyebrow section-eyebrow">Browse the library</p>
-                  <h2 id="browse-title">Explore by topic</h2>
-                </div>
-                <p class="blog-filter-status" data-filter-status aria-live="polite">
-                  {posts.length} articles
+                <p class="eyebrow section-eyebrow">{posts.length} guides across 5 topics</p>
+                <h2 id="browse-title">Browse the library</h2>
+                <p class="blog-browser__intro">
+                  Pick a topic or browse everything. Each guide links directly to its sources.
                 </p>
               </div>
 
@@ -110,7 +108,7 @@ const structuredData = [
                   data-topic-filter="all"
                   aria-pressed="true"
                 >
-                  <span>All</span>
+                  <span class="blog-topic-filter__label">All topics</span>
                   <span class="blog-topic-filter__count">{posts.length}</span>
                 </button>
                 {BLOG_TOPICS.map((topic) => (
@@ -121,11 +119,15 @@ const structuredData = [
                     data-topic-filter={topicSlug(topic)}
                     aria-pressed="false"
                   >
-                    <span>{topic}</span>
+                    <span class="blog-topic-filter__label">{topic}</span>
                     <span class="blog-topic-filter__count">{topicCounts[topic]}</span>
                   </button>
                 ))}
               </div>
+
+              <p class="visually-hidden" data-filter-status aria-live="polite">
+                {posts.length} articles
+              </p>
 
               <div class="article-grid" id="blog-article-grid" data-article-grid>
                 {remainingPosts.map((post) => (
@@ -154,6 +156,7 @@ const structuredData = [
                   document.querySelectorAll("[data-article-item]"),
                 );
                 const featured = document.querySelector("[data-featured-section]");
+                const grid = document.querySelector("[data-article-grid]");
                 const status = document.querySelector("[data-filter-status]");
                 const empty = document.querySelector("[data-no-results]");
 
@@ -192,6 +195,10 @@ const structuredData = [
 
                   if (status) {
                     status.textContent = `${visibleCount} ${visibleCount === 1 ? "article" : "articles"}`;
+                  }
+                  if (grid) {
+                    const visibleGridItems = items.filter((item) => !item.hidden).length;
+                    grid.dataset.visibleCount = String(visibleGridItems);
                   }
                   if (empty) empty.hidden = visibleCount !== 0;
 
