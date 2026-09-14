@@ -72,11 +72,6 @@ const structuredData = [
             Practical guides on daily intake, dehydration, exercise, sleep and habits.
             Sources are linked in every article, with important limits stated clearly.
           </p>
-          <div class="blog-editorial-hero__trust" aria-label="About the Octi Flow blog">
-            <span>{posts.length} guides</span>
-            <span>{BLOG_TOPICS.length} topics</span>
-            <a href="/editorial-standards/">Editorial standards</a>
-          </div>
         </div>
 
         {
@@ -195,8 +190,8 @@ const structuredData = [
         const description = document.querySelector("[data-library-description]");
         const status = document.querySelector("[data-library-status]");
 
-        const initialVisible = 6;
-        const step = 6;
+        const initialVisible = 4;
+        const step = 4;
         const defaultDescription = "Explore every Octi Flow guide, ordered from newest to oldest.";
         let activeTopic = "all";
         let visibleLimit = initialVisible;
