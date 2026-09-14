@@ -33,7 +33,7 @@ export const topicSlug = (topic: string) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-+|-+$/g, "");
 
-export const topicUrl = (topic: string) => `/blog/#${topicSlug(topic)}`;
+export const topicUrl = (topic: string) => `/blog/?topic=${topicSlug(topic)}#guides`;
 
 export const formatDate = (date: Date) =>
   new Intl.DateTimeFormat("en", {

@@ -13,6 +13,7 @@ import {
 
 const posts = sortPosts((await getCollection("blog")).filter(isPublished));
 const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
+const featuredLabel = featuredPost?.data.featured ? "Featured guide" : "Latest guide";
 const canonical = "https://octiflow.app/blog/";
 
 const topicDescriptions: Record<(typeof BLOG_TOPICS)[number], string> = {
@@ -80,7 +81,7 @@ const structuredData = [
 
         {
           featuredPost && (
-            <a class="blog-feature" href={postUrl(featuredPost)} aria-label={`Start here: ${featuredPost.data.title}`}>
+            <a class="blog-feature" href={postUrl(featuredPost)} aria-label={`${featuredLabel}: ${featuredPost.data.title}`}>
               <div class="blog-feature__media">
                 {featuredPost.data.image ? (
                   <picture>
@@ -102,7 +103,7 @@ const structuredData = [
                 )}
               </div>
               <div class="blog-feature__content">
-                <p class="blog-feature__eyebrow">Start here</p>
+                <p class="blog-feature__eyebrow">{featuredLabel}</p>
                 <h2>{featuredPost.data.title}</h2>
                 <p>{featuredPost.data.description}</p>
                 <div class="blog-feature__footer">
@@ -116,42 +117,174 @@ const structuredData = [
       </div>
     </header>
 
-    <div class="blog-topic-nav-shell">
+    <div class="blog-topic-nav-shell" data-blog-controls hidden>
       <div class="container">
-        <nav class="blog-topic-nav" aria-label="Jump to a blog topic">
+        <nav class="blog-topic-nav" aria-label="Filter blog guides by topic">
           <span class="blog-topic-nav__label">Explore</span>
-          <div class="blog-topic-nav__links">
-            {BLOG_TOPICS.map((topic) => <a href={`#${topicSlug(topic)}`}>{topic}</a>)}
+          <div class="blog-topic-nav__links" role="group" aria-label="Blog topics">
+            <button
+              class="blog-topic-filter is-active"
+              type="button"
+              data-topic-filter="all"
+              aria-pressed="true"
+            >
+              <span>All guides</span>
+              <span class="blog-topic-filter__count">{posts.length}</span>
+            </button>
+            {
+              BLOG_TOPICS.map((topic) => {
+                const count = posts.filter((post) => post.data.category === topic).length;
+                return (
+                  <button
+                    class="blog-topic-filter"
+                    type="button"
+                    data-topic-filter={topicSlug(topic)}
+                    data-topic-label={topic}
+                    data-topic-description={topicDescriptions[topic]}
+                    aria-pressed="false"
+                  >
+                    <span>{topic}</span>
+                    <span class="blog-topic-filter__count">{count}</span>
+                  </button>
+                );
+              })
+            }
           </div>
         </nav>
       </div>
     </div>
 
-    <div class="container blog-editorial-library">
-      {BLOG_TOPICS.map((topic, topicIndex) => {
-        const topicPosts = posts.filter((post) => post.data.category === topic);
-        const slug = topicSlug(topic);
+    <section id="guides" class="container blog-filter-library" aria-labelledby="blog-library-title">
+      <header class="blog-filter-library__header">
+        <div>
+          <p class="eyebrow section-eyebrow">Browse the library</p>
+          <h2 id="blog-library-title" data-library-title>All guides</h2>
+          <p data-library-description>
+            Explore every Octi Flow guide, ordered from newest to oldest.
+          </p>
+        </div>
+        <p class="blog-filter-library__status" data-library-status aria-live="polite">
+          {posts.length} guides
+        </p>
+      </header>
 
-        return (
-          <section
-            id={slug}
-            class:list={["blog-resource-section", topicIndex % 2 === 1 && "blog-resource-section--tinted"]}
-            aria-labelledby={`${slug}-title`}
-          >
-            <header class="blog-resource-section__intro">
-              <p class="blog-resource-section__count">
-                {topicPosts.length} {topicPosts.length === 1 ? "guide" : "guides"}
-              </p>
-              <h2 id={`${slug}-title`}>{topic}</h2>
-              <p>{topicDescriptions[topic]}</p>
-            </header>
+      <div class="blog-filter-grid" data-blog-grid>
+        {posts.map((post) => <ArticleCard {post} variant="row" showTopic={true} />)}
+      </div>
 
-            <div class="blog-resource-list">
-              {topicPosts.map((post) => <ArticleCard {post} variant="row" showTopic={false} />)}
-            </div>
-          </section>
-        );
-      })}
-    </div>
+      <div class="blog-load-more-shell" data-load-more-shell hidden>
+        <button class="blog-load-more" type="button" data-load-more>
+          <span data-load-more-label>Show more guides</span>
+          <span aria-hidden="true">↓</span>
+        </button>
+      </div>
+    </section>
+
+    <script is:inline>
+      (() => {
+        const controls = document.querySelector("[data-blog-controls]");
+        const grid = document.querySelector("[data-blog-grid]");
+        if (!controls || !grid) return;
+
+        const cards = Array.from(grid.querySelectorAll(".article-card[data-topic]"));
+        const filters = Array.from(controls.querySelectorAll("[data-topic-filter]"));
+        const loadMoreShell = document.querySelector("[data-load-more-shell]");
+        const loadMore = document.querySelector("[data-load-more]");
+        const loadMoreLabel = document.querySelector("[data-load-more-label]");
+        const title = document.querySelector("[data-library-title]");
+        const description = document.querySelector("[data-library-description]");
+        const status = document.querySelector("[data-library-status]");
+
+        const initialVisible = 6;
+        const step = 6;
+        const defaultDescription = "Explore every Octi Flow guide, ordered from newest to oldest.";
+        let activeTopic = "all";
+        let visibleLimit = initialVisible;
+
+        controls.hidden = false;
+
+        const validTopics = new Set(filters.map((button) => button.dataset.topicFilter));
+
+        const updateUrl = (topic, replace = false) => {
+          const url = new URL(window.location.href);
+          if (topic === "all") {
+            url.searchParams.delete("topic");
+          } else {
+            url.searchParams.set("topic", topic);
+          }
+          url.hash = "guides";
+          const method = replace ? "replaceState" : "pushState";
+          window.history[method]({}, "", url);
+        };
+
+        const render = ({ updateHistory = false, replaceHistory = false } = {}) => {
+          const matching = cards.filter((card) => activeTopic === "all" || card.dataset.topic === activeTopic);
+          let shown = 0;
+
+          cards.forEach((card) => {
+            const matches = activeTopic === "all" || card.dataset.topic === activeTopic;
+            const shouldShow = matches && shown < visibleLimit;
+
+            if (shouldShow) shown += 1;
+            card.hidden = !shouldShow;
+          });
+
+          filters.forEach((button) => {
+            const selected = button.dataset.topicFilter === activeTopic;
+            button.classList.toggle("is-active", selected);
+            button.setAttribute("aria-pressed", String(selected));
+          });
+
+          const activeButton = filters.find((button) => button.dataset.topicFilter === activeTopic);
+          const topicLabel = activeButton?.dataset.topicLabel ?? "All guides";
+          const topicDescription = activeButton?.dataset.topicDescription ?? defaultDescription;
+
+          if (title) title.textContent = topicLabel;
+          if (description) description.textContent = topicDescription;
+          if (status) {
+            status.textContent = shown < matching.length
+              ? `Showing ${shown} of ${matching.length} guides`
+              : `${matching.length} ${matching.length === 1 ? "guide" : "guides"}`;
+          }
+
+          const remaining = Math.max(0, matching.length - shown);
+          if (loadMoreShell) loadMoreShell.hidden = remaining === 0;
+          if (loadMoreLabel && remaining > 0) {
+            loadMoreLabel.textContent = `Show ${Math.min(step, remaining)} more ${remaining === 1 ? "guide" : "guides"}`;
+          }
+
+          if (updateHistory) updateUrl(activeTopic, replaceHistory);
+        };
+
+        const selectTopic = (topic, { updateHistory = true, scroll = false } = {}) => {
+          activeTopic = validTopics.has(topic) ? topic : "all";
+          visibleLimit = initialVisible;
+          render({ updateHistory });
+          if (scroll) {
+            document.querySelector("#guides")?.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        };
+
+        filters.forEach((button) => {
+          button.addEventListener("click", () => {
+            selectTopic(button.dataset.topicFilter ?? "all", { updateHistory: true, scroll: true });
+          });
+        });
+
+        loadMore?.addEventListener("click", () => {
+          visibleLimit += step;
+          render();
+        });
+
+        window.addEventListener("popstate", () => {
+          const topic = new URL(window.location.href).searchParams.get("topic") ?? "all";
+          selectTopic(topic, { updateHistory: false, scroll: false });
+        });
+
+        const requestedTopic = new URL(window.location.href).searchParams.get("topic") ?? "all";
+        activeTopic = validTopics.has(requestedTopic) ? requestedTopic : "all";
+        render({ updateHistory: requestedTopic !== activeTopic, replaceHistory: true });
+      })();
+    </script>
   </main>
 </BaseLayout>
