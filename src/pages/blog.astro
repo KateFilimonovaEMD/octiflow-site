@@ -10,9 +10,15 @@ import {
 } from "../utils/blog";
 
 const posts = sortPosts((await getCollection("blog")).filter(isPublished));
-const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
-const remainingPosts = posts.filter((post) => post.id !== featuredPost?.id);
 const canonical = "https://octiflow.app/blog/";
+
+const topicDescriptions: Record<(typeof BLOG_TOPICS)[number], string> = {
+  "Hydration Basics": "Daily targets, what counts as fluid, and the fundamentals worth getting right.",
+  "Habits & Tracking": "Practical ways to build a routine without turning hydration into another chore.",
+  "Health & Safety": "Dehydration signs, headaches, illness and the situations where context matters most.",
+  "Exercise & Environment": "Hydration for workouts, heat and electrolytes, with the limits of one-size-fits-all advice made clear.",
+  "Sleep & Wellness": "What research can and cannot tell us about hydration, sleep and skin.",
+};
 
 const topicCounts = Object.fromEntries(
   BLOG_TOPICS.map((topic) => [
@@ -20,6 +26,27 @@ const topicCounts = Object.fromEntries(
     posts.filter((post) => post.data.category === topic).length,
   ]),
 );
+
+const startingPoints = [
+  {
+    eyebrow: "Daily target",
+    title: "How much water do I actually need?",
+    description: "Compare major guidance and understand why a single magic number does not fit everyone.",
+    href: "/blog/how-much-water-should-you-drink-a-day/",
+  },
+  {
+    eyebrow: "Hydration check",
+    title: "Could I be dehydrated?",
+    description: "Learn what thirst, urine colour and other signs can tell you, and what they cannot.",
+    href: "/blog/signs-of-dehydration/",
+  },
+  {
+    eyebrow: "Daily routine",
+    title: "How do I make drinking water easier to remember?",
+    description: "Use cues and repeatable routines instead of relying on motivation alone.",
+    href: "/blog/how-to-remember-to-drink-water/",
+  },
+];
 
 const structuredData = [
   {
@@ -54,190 +81,106 @@ const structuredData = [
 
 <BaseLayout
   title="Hydration, Health & Habit Guides | Octi Flow"
-  description="Evidence-based guides to hydration, exercise, sleep, everyday health and habit building, with careful sourcing and practical context."
+  description="Carefully sourced guides to hydration, exercise, sleep, everyday health and habit building, with evidence limits stated clearly."
   {canonical}
   imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
   {structuredData}
 >
-  <main class="blog-page-surface">
-    <header class="blog-hero">
-      <div class="container">
-        <p class="eyebrow section-eyebrow">Evidence-based guides</p>
-        <h1 class="blog-gradient-title">Hydration, health and habits, explained clearly.</h1>
-        <p>
-          Practical, carefully sourced guides for everyday hydration, health,
-          exercise, sleep and better habits.
-        </p>
+  <main class="blog-page-surface blog-hub">
+    <header class="blog-hub-hero">
+      <div class="container blog-hub-hero__grid">
+        <div class="blog-hub-hero__copy">
+          <p class="eyebrow section-eyebrow">Octi Flow knowledge hub</p>
+          <h1 class="blog-gradient-title">Clear answers for hydration, health and everyday habits.</h1>
+          <p class="blog-hub-hero__deck">
+            {posts.length} carefully sourced guides across {BLOG_TOPICS.length} topics.
+            Every article links to its sources and states important evidence limits plainly.
+          </p>
+
+          <div class="blog-hub-trust" aria-label="About this library">
+            <span>{posts.length} guides</span>
+            <span>{BLOG_TOPICS.length} topics</span>
+            <span>Sources in every guide</span>
+            <a href="/editorial-standards/">Editorial standards</a>
+          </div>
+        </div>
+
+        <aside class="blog-start-card" aria-labelledby="blog-start-title">
+          <div class="blog-start-card__heading">
+            <p class="eyebrow section-eyebrow">Start with a question</p>
+            <h2 id="blog-start-title">What do you need today?</h2>
+          </div>
+          <div class="blog-start-card__links">
+            {startingPoints.map((item) => (
+              <a class="blog-start-link" href={item.href}>
+                <span class="blog-start-link__copy">
+                  <span class="blog-start-link__eyebrow">{item.eyebrow}</span>
+                  <strong>{item.title}</strong>
+                  <span>{item.description}</span>
+                </span>
+                <span class="blog-start-link__arrow" aria-hidden="true">→</span>
+              </a>
+            ))}
+          </div>
+        </aside>
       </div>
     </header>
 
-    <div class="container blog-content">
-      {
-        featuredPost ? (
-          <>
-            <section
-              aria-labelledby="start-here-title"
-              data-featured-section
-              data-topic={topicSlug(featuredPost.data.category)}
-            >
-              <div class="section-heading section-heading--blog">
-                <p class="eyebrow section-eyebrow">Start here</p>
-                <h2 id="start-here-title" class="visually-hidden">Start here</h2>
-              </div>
-              <ArticleCard post={featuredPost} featured />
-            </section>
+    <div class="blog-topic-nav-shell">
+      <div class="container">
+        <nav class="blog-topic-nav" aria-label="Browse blog topics">
+          <span class="blog-topic-nav__label">Browse by topic</span>
+          <div class="blog-topic-nav__links">
+            {BLOG_TOPICS.map((topic) => (
+              <a href={`#${topicSlug(topic)}`}>
+                <span>{topic}</span>
+                <span class="blog-topic-nav__count">{topicCounts[topic]}</span>
+              </a>
+            ))}
+          </div>
+        </nav>
+      </div>
+    </div>
 
-            <section class="blog-browser" aria-labelledby="browse-title">
-              <div class="section-heading blog-browser__heading">
-                <p class="eyebrow section-eyebrow">{posts.length} guides across 5 topics</p>
-                <h2 id="browse-title">Browse the library</h2>
-                <p class="blog-browser__intro">
-                  Pick a topic or browse everything. Each guide links directly to its sources.
-                </p>
-              </div>
+    <div class="container blog-hub-content">
 
-              <div
-                class="blog-topic-filters"
-                data-blog-filters
-                aria-label="Filter articles by topic"
-                hidden
-              >
-                <button
-                  class="blog-topic-filter is-active"
-                  type="button"
-                  data-topic-filter="all"
-                  aria-pressed="true"
-                >
-                  <span class="blog-topic-filter__label">All topics</span>
-                  <span class="blog-topic-filter__count">{posts.length}</span>
-                </button>
-                {BLOG_TOPICS.map((topic) => (
-                  <button
-                    id={topicSlug(topic)}
-                    class="blog-topic-filter"
-                    type="button"
-                    data-topic-filter={topicSlug(topic)}
-                    aria-pressed="false"
-                  >
-                    <span class="blog-topic-filter__label">{topic}</span>
-                    <span class="blog-topic-filter__count">{topicCounts[topic]}</span>
-                  </button>
-                ))}
-              </div>
+      <section class="blog-library" aria-labelledby="library-title">
+        <div class="blog-section-heading">
+          <div>
+            <p class="eyebrow section-eyebrow">All guides</p>
+            <h2 id="library-title">Explore the library</h2>
+          </div>
+          <p>
+            Choose a topic and scan the guides below. The full library stays on one page,
+            making related questions easy to discover.
+          </p>
+        </div>
 
-              <p class="visually-hidden" data-filter-status aria-live="polite">
-                {posts.length} articles
-              </p>
+        <div class="blog-topic-sections">
+          {BLOG_TOPICS.map((topic) => {
+            const topicPosts = posts.filter((post) => post.data.category === topic);
+            const slug = topicSlug(topic);
 
-              <div class="article-grid" id="blog-article-grid" data-article-grid>
-                {remainingPosts.map((post) => (
-                  <div
-                    class="article-grid__item"
-                    data-article-item
-                    data-topic={topicSlug(post.data.category)}
-                  >
-                    <ArticleCard {post} />
+            return (
+              <section id={slug} class="blog-topic-section" aria-labelledby={`${slug}-title`}>
+                <header class="blog-topic-section__header">
+                  <div>
+                    <p class="blog-topic-section__count">
+                      {topicPosts.length} {topicPosts.length === 1 ? "guide" : "guides"}
+                    </p>
+                    <h2 id={`${slug}-title`}>{topic}</h2>
                   </div>
-                ))}
-              </div>
+                  <p>{topicDescriptions[topic]}</p>
+                </header>
 
-              <p class="blog-no-results" data-no-results hidden>
-                No articles are available in this topic yet.
-              </p>
-            </section>
-
-            <script is:inline>
-              (() => {
-                const filters = document.querySelector("[data-blog-filters]");
-                const buttons = Array.from(
-                  document.querySelectorAll("[data-topic-filter]"),
-                );
-                const items = Array.from(
-                  document.querySelectorAll("[data-article-item]"),
-                );
-                const featured = document.querySelector("[data-featured-section]");
-                const grid = document.querySelector("[data-article-grid]");
-                const status = document.querySelector("[data-filter-status]");
-                const empty = document.querySelector("[data-no-results]");
-
-                if (!filters || buttons.length === 0) return;
-                filters.hidden = false;
-
-                const validTopics = new Set(
-                  buttons.map((button) => button.dataset.topicFilter),
-                );
-
-                const applyFilter = (requestedTopic, updateUrl = false) => {
-                  const topic = validTopics.has(requestedTopic)
-                    ? requestedTopic
-                    : "all";
-
-                  let visibleCount = 0;
-
-                  if (featured) {
-                    const showFeatured =
-                      topic === "all" || featured.dataset.topic === topic;
-                    featured.hidden = !showFeatured;
-                    if (showFeatured) visibleCount += 1;
-                  }
-
-                  items.forEach((item) => {
-                    const show = topic === "all" || item.dataset.topic === topic;
-                    item.hidden = !show;
-                    if (show) visibleCount += 1;
-                  });
-
-                  buttons.forEach((button) => {
-                    const active = button.dataset.topicFilter === topic;
-                    button.classList.toggle("is-active", active);
-                    button.setAttribute("aria-pressed", String(active));
-                  });
-
-                  if (status) {
-                    status.textContent = `${visibleCount} ${visibleCount === 1 ? "article" : "articles"}`;
-                  }
-                  if (grid) {
-                    const visibleGridItems = items.filter((item) => !item.hidden).length;
-                    grid.dataset.visibleCount = String(visibleGridItems);
-                  }
-                  if (empty) empty.hidden = visibleCount !== 0;
-
-                  if (updateUrl) {
-                    const url = new URL(window.location.href);
-                    url.hash = topic === "all" ? "" : topic;
-                    history.replaceState(null, "", `${url.pathname}${url.search}${url.hash}`);
-                  }
-                };
-
-                const topicFromHash = () =>
-                  window.location.hash ? window.location.hash.slice(1) : "all";
-
-                buttons.forEach((button) => {
-                  button.addEventListener("click", () => {
-                    applyFilter(button.dataset.topicFilter || "all", true);
-                  });
-                });
-
-                window.addEventListener("hashchange", () => {
-                  applyFilter(topicFromHash());
-                });
-
-                applyFilter(topicFromHash());
-              })();
-            </script>
-          </>
-        ) : (
-          <section class="blog-empty">
-            <p class="eyebrow section-eyebrow">Coming soon</p>
-            <h2>Thoughtful hydration guides are on the way</h2>
-            <p>
-              We are preparing practical articles about hydration, health and
-              everyday habits.
-            </p>
-            <a class="button button--inverse button-link" href="/">Explore Octi Flow</a>
-          </section>
-        )
-      }
+                <div class="article-grid">
+                  {topicPosts.map((post) => <ArticleCard {post} showTopic={false} />)}
+                </div>
+              </section>
+            );
+          })}
+        </div>
+      </section>
     </div>
   </main>
 </BaseLayout>

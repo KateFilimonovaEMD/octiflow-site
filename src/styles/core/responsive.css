@@ -127,11 +127,6 @@
     padding-bottom: var(--s4);
   }
 
-  .blog-content {
-    gap: var(--s4);
-    padding-top: var(--s4);
-    padding-bottom: var(--s4);
-  }
 
   .toc {
     position: static;
