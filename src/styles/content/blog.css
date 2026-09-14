@@ -395,8 +395,8 @@
 
 .article-card--row .article-card__link {
   display: grid;
-  grid-template-columns: minmax(300px, 36%) minmax(0, 1fr);
-  min-height: 248px;
+  grid-template-columns: minmax(360px, 42%) minmax(0, 1fr);
+  min-height: 292px;
   height: 100%;
   overflow: hidden;
   border: 1px solid rgb(7 48 128 / 9%);
@@ -904,7 +904,7 @@
   }
 
   .article-card--row .article-card__link {
-    grid-template-columns: minmax(260px, 34%) minmax(0, 1fr);
+    grid-template-columns: minmax(300px, 39%) minmax(0, 1fr);
   }
 
   .article-grid,
