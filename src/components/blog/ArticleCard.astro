@@ -1,64 +1,60 @@
 ---
 import type { BlogPost } from "../../utils/blog";
-import { postUrl, readingTime, topicSlug, topicUrl } from "../../utils/blog";
+import { postUrl, readingTime, topicSlug } from "../../utils/blog";
 
 interface Props {
   post: BlogPost;
   showTopic?: boolean;
+  variant?: "tile" | "row";
 }
 
-const { post, showTopic = true } = Astro.props;
+const { post, showTopic = true, variant = "tile" } = Astro.props;
 const categorySlug = topicSlug(post.data.category);
+const url = postUrl(post);
+const hasImage = Boolean(post.data.image);
+const baseClass = "article-card";
+const variantClass = variant === "row" ? "article-card--row" : "article-card--tile";
 ---
 
-<article class="article-card" data-topic={categorySlug}>
-  <div class="article-card__topline">
-    <span class="article-card__icon" aria-hidden="true">
+<article class={`${baseClass} ${variantClass}`} data-topic={categorySlug}>
+  <a class="article-card__link" href={url}>
+    <div class="article-card__media">
       {
-        categorySlug === "habits-and-tracking" ? (
-          <svg viewBox="0 0 64 64">
-            <path d="M32 10a22 22 0 1 0 18.2 9.65l-5.8 4.36A15 15 0 1 1 32 17v7l15-10-15-10v6Z" />
-          </svg>
-        ) : categorySlug === "health-and-safety" ? (
-          <svg viewBox="0 0 64 64">
-            <path d="M26 8h12v18h18v12H38v18H26V38H8V26h18V8Z" />
-          </svg>
-        ) : categorySlug === "exercise-and-environment" ? (
-          <svg viewBox="0 0 64 64">
-            <path d="M32 15a17 17 0 1 0 0 34 17 17 0 0 0 0-34Zm0-11h4v7h-4V4Zm0 49h4v7h-4v-7ZM4 30h7v4H4v-4Zm49 0h7v4h-7v-4ZM11.2 9.8l5 5-2.8 2.8-5-5 2.8-2.8Zm37.4 37.4 5 5-2.8 2.8-5-5 2.8-2.8Zm2.2-37.4 2.8 2.8-5 5-2.8-2.8 5-5ZM13.4 46.4l2.8 2.8-5 5-2.8-2.8 5-5Z" />
-          </svg>
-        ) : categorySlug === "sleep-and-wellness" ? (
-          <svg viewBox="0 0 64 64">
-            <path d="M46.5 43.5A22 22 0 0 1 24 17a22 22 0 1 0 22.5 26.5Z" />
-          </svg>
+        hasImage ? (
+          <picture>
+            {post.data.imageAvif && <source srcset={post.data.imageAvif} type="image/avif" />}
+            {post.data.imageWebp && <source srcset={post.data.imageWebp} type="image/webp" />}
+            <img
+              src={post.data.image}
+              alt={post.data.imageAlt ?? ""}
+              width={post.data.imageWidth}
+              height={post.data.imageHeight}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         ) : (
-          <svg viewBox="0 0 64 64">
-            <path d="M32 5C25 17 15 28 15 40a17 17 0 0 0 34 0C49 28 39 17 32 5Z" />
-          </svg>
+          <span class="article-cover-placeholder" aria-hidden="true">
+            <span>Cover image coming soon</span>
+          </span>
         )
       }
-    </span>
-
-    <div class="article-card__meta">
-      {
-        showTopic && (
-          <a class="article-card__topic" href={topicUrl(post.data.category)}>
-            {post.data.category}
-          </a>
-        )
-      }
-      <span>{readingTime(post.body)} min read</span>
     </div>
-  </div>
 
-  <h3 class="article-card__title">
-    <a href={postUrl(post)}>{post.data.title}</a>
-  </h3>
+    <div class="article-card__body">
+      <div class="article-card__meta">
+        {showTopic && <span>{post.data.category}</span>}
+        <span>{readingTime(post.body)} min read</span>
+        <span>Sources linked</span>
+      </div>
 
-  <p class="article-card__description">{post.data.description}</p>
+      <h3 class="article-card__title">{post.data.title}</h3>
+      <p class="article-card__description">{post.data.description}</p>
 
-  <a class="article-card__cta" href={postUrl(post)}>
-    Read guide
-    <span aria-hidden="true">→</span>
+      <span class="article-card__cta">
+        Read guide
+        <span aria-hidden="true">→</span>
+      </span>
+    </div>
   </a>
 </article>

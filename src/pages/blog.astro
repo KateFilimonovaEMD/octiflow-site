@@ -5,48 +5,23 @@ import ArticleCard from "../components/blog/ArticleCard.astro";
 import {
   BLOG_TOPICS,
   isPublished,
+  postUrl,
+  readingTime,
   sortPosts,
   topicSlug,
 } from "../utils/blog";
 
 const posts = sortPosts((await getCollection("blog")).filter(isPublished));
+const featuredPost = posts.find((post) => post.data.featured) ?? posts[0];
 const canonical = "https://octiflow.app/blog/";
 
 const topicDescriptions: Record<(typeof BLOG_TOPICS)[number], string> = {
-  "Hydration Basics": "Daily targets, what counts as fluid, and the fundamentals worth getting right.",
-  "Habits & Tracking": "Practical ways to build a routine without turning hydration into another chore.",
-  "Health & Safety": "Dehydration signs, headaches, illness and the situations where context matters most.",
-  "Exercise & Environment": "Hydration for workouts, heat and electrolytes, with the limits of one-size-fits-all advice made clear.",
-  "Sleep & Wellness": "What research can and cannot tell us about hydration, sleep and skin.",
+  "Hydration Basics": "Daily intake, what counts as fluid, and the fundamentals worth getting right.",
+  "Habits & Tracking": "Simple ways to build a drinking routine that fits an ordinary day.",
+  "Health & Safety": "Dehydration signs, headaches, illness, and situations where context matters.",
+  "Exercise & Environment": "Hydration for workouts, heat, sweat loss, and electrolytes.",
+  "Sleep & Wellness": "What research can and cannot tell us about hydration, sleep, and skin.",
 };
-
-const topicCounts = Object.fromEntries(
-  BLOG_TOPICS.map((topic) => [
-    topic,
-    posts.filter((post) => post.data.category === topic).length,
-  ]),
-);
-
-const startingPoints = [
-  {
-    eyebrow: "Daily target",
-    title: "How much water do I actually need?",
-    description: "Compare major guidance and understand why a single magic number does not fit everyone.",
-    href: "/blog/how-much-water-should-you-drink-a-day/",
-  },
-  {
-    eyebrow: "Hydration check",
-    title: "Could I be dehydrated?",
-    description: "Learn what thirst, urine colour and other signs can tell you, and what they cannot.",
-    href: "/blog/signs-of-dehydration/",
-  },
-  {
-    eyebrow: "Daily routine",
-    title: "How do I make drinking water easier to remember?",
-    description: "Use cues and repeatable routines instead of relying on motivation alone.",
-    href: "/blog/how-to-remember-to-drink-water/",
-  },
-];
 
 const structuredData = [
   {
@@ -86,101 +61,97 @@ const structuredData = [
   imageAlt="Octi, the animated companion from the Octi Flow hydration tracker app"
   {structuredData}
 >
-  <main class="blog-page-surface blog-hub">
-    <header class="blog-hub-hero">
-      <div class="container blog-hub-hero__grid">
-        <div class="blog-hub-hero__copy">
-          <p class="eyebrow section-eyebrow">Octi Flow knowledge hub</p>
-          <h1 class="blog-gradient-title">Clear answers for hydration, health and everyday habits.</h1>
-          <p class="blog-hub-hero__deck">
-            {posts.length} carefully sourced guides across {BLOG_TOPICS.length} topics.
-            Every article links to its sources and states important evidence limits plainly.
+  <main class="blog-page-surface blog-index">
+    <header class="blog-editorial-hero">
+      <div class="container blog-editorial-hero__layout">
+        <div class="blog-editorial-hero__copy">
+          <p class="eyebrow section-eyebrow">Evidence-based guides</p>
+          <h1>Hydration guidance you can actually use.</h1>
+          <p class="blog-editorial-hero__deck">
+            Practical guides on daily intake, dehydration, exercise, sleep and habits.
+            Sources are linked in every article, with important limits stated clearly.
           </p>
-
-          <div class="blog-hub-trust" aria-label="About this library">
+          <div class="blog-editorial-hero__trust" aria-label="About the Octi Flow blog">
             <span>{posts.length} guides</span>
             <span>{BLOG_TOPICS.length} topics</span>
-            <span>Sources in every guide</span>
             <a href="/editorial-standards/">Editorial standards</a>
           </div>
         </div>
 
-        <aside class="blog-start-card" aria-labelledby="blog-start-title">
-          <div class="blog-start-card__heading">
-            <p class="eyebrow section-eyebrow">Start with a question</p>
-            <h2 id="blog-start-title">What do you need today?</h2>
-          </div>
-          <div class="blog-start-card__links">
-            {startingPoints.map((item) => (
-              <a class="blog-start-link" href={item.href}>
-                <span class="blog-start-link__copy">
-                  <span class="blog-start-link__eyebrow">{item.eyebrow}</span>
-                  <strong>{item.title}</strong>
-                  <span>{item.description}</span>
-                </span>
-                <span class="blog-start-link__arrow" aria-hidden="true">→</span>
-              </a>
-            ))}
-          </div>
-        </aside>
+        {
+          featuredPost && (
+            <a class="blog-feature" href={postUrl(featuredPost)} aria-label={`Start here: ${featuredPost.data.title}`}>
+              <div class="blog-feature__media">
+                {featuredPost.data.image ? (
+                  <picture>
+                    {featuredPost.data.imageAvif && <source srcset={featuredPost.data.imageAvif} type="image/avif" />}
+                    {featuredPost.data.imageWebp && <source srcset={featuredPost.data.imageWebp} type="image/webp" />}
+                    <img
+                      src={featuredPost.data.image}
+                      alt={featuredPost.data.imageAlt ?? ""}
+                      width={featuredPost.data.imageWidth}
+                      height={featuredPost.data.imageHeight}
+                      loading="eager"
+                      fetchpriority="high"
+                    />
+                  </picture>
+                ) : (
+                  <span class="article-cover-placeholder" aria-hidden="true">
+                    <span>Cover image coming soon</span>
+                  </span>
+                )}
+              </div>
+              <div class="blog-feature__content">
+                <p class="blog-feature__eyebrow">Start here</p>
+                <h2>{featuredPost.data.title}</h2>
+                <p>{featuredPost.data.description}</p>
+                <div class="blog-feature__footer">
+                  <span>{readingTime(featuredPost.body)} min read</span>
+                  <span class="blog-feature__arrow" aria-hidden="true">→</span>
+                </div>
+              </div>
+            </a>
+          )
+        }
       </div>
     </header>
 
     <div class="blog-topic-nav-shell">
       <div class="container">
-        <nav class="blog-topic-nav" aria-label="Browse blog topics">
-          <span class="blog-topic-nav__label">Browse by topic</span>
+        <nav class="blog-topic-nav" aria-label="Jump to a blog topic">
+          <span class="blog-topic-nav__label">Explore</span>
           <div class="blog-topic-nav__links">
-            {BLOG_TOPICS.map((topic) => (
-              <a href={`#${topicSlug(topic)}`}>
-                <span>{topic}</span>
-                <span class="blog-topic-nav__count">{topicCounts[topic]}</span>
-              </a>
-            ))}
+            {BLOG_TOPICS.map((topic) => <a href={`#${topicSlug(topic)}`}>{topic}</a>)}
           </div>
         </nav>
       </div>
     </div>
 
-    <div class="container blog-hub-content">
+    <div class="container blog-editorial-library">
+      {BLOG_TOPICS.map((topic, topicIndex) => {
+        const topicPosts = posts.filter((post) => post.data.category === topic);
+        const slug = topicSlug(topic);
 
-      <section class="blog-library" aria-labelledby="library-title">
-        <div class="blog-section-heading">
-          <div>
-            <p class="eyebrow section-eyebrow">All guides</p>
-            <h2 id="library-title">Explore the library</h2>
-          </div>
-          <p>
-            Choose a topic and scan the guides below. The full library stays on one page,
-            making related questions easy to discover.
-          </p>
-        </div>
+        return (
+          <section
+            id={slug}
+            class:list={["blog-resource-section", topicIndex % 2 === 1 && "blog-resource-section--tinted"]}
+            aria-labelledby={`${slug}-title`}
+          >
+            <header class="blog-resource-section__intro">
+              <p class="blog-resource-section__count">
+                {topicPosts.length} {topicPosts.length === 1 ? "guide" : "guides"}
+              </p>
+              <h2 id={`${slug}-title`}>{topic}</h2>
+              <p>{topicDescriptions[topic]}</p>
+            </header>
 
-        <div class="blog-topic-sections">
-          {BLOG_TOPICS.map((topic) => {
-            const topicPosts = posts.filter((post) => post.data.category === topic);
-            const slug = topicSlug(topic);
-
-            return (
-              <section id={slug} class="blog-topic-section" aria-labelledby={`${slug}-title`}>
-                <header class="blog-topic-section__header">
-                  <div>
-                    <p class="blog-topic-section__count">
-                      {topicPosts.length} {topicPosts.length === 1 ? "guide" : "guides"}
-                    </p>
-                    <h2 id={`${slug}-title`}>{topic}</h2>
-                  </div>
-                  <p>{topicDescriptions[topic]}</p>
-                </header>
-
-                <div class="article-grid">
-                  {topicPosts.map((post) => <ArticleCard {post} showTopic={false} />)}
-                </div>
-              </section>
-            );
-          })}
-        </div>
-      </section>
+            <div class="blog-resource-list">
+              {topicPosts.map((post) => <ArticleCard {post} variant="row" showTopic={false} />)}
+            </div>
+          </section>
+        );
+      })}
     </div>
   </main>
 </BaseLayout>
