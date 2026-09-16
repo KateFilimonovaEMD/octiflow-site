@@ -116,13 +116,21 @@
   isolation: isolate;
   border: 0;
   border-radius: 20px;
-  background: rgb(255 255 255 / 46%);
-  background-clip: padding-box;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: transparent;
   text-align: center;
   transform: translateX(-50%);
 }
+
+.blog-feature__media-overlay::before {
+  position: absolute;
+  inset: -22px;
+  z-index: -1;
+  background: rgb(255 255 255 / 44%);
+  content: "";
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
+
 
 
 
@@ -460,15 +468,29 @@
   isolation: isolate;
   border: 0;
   border-radius: 18px;
-  background: rgb(255 255 255 / 46%);
-  background-clip: padding-box;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
+  background: transparent;
   text-align: center;
   transform: translateX(-50%);
 }
 
+.article-card__media-overlay::before {
+  position: absolute;
+  inset: -20px;
+  z-index: -1;
+  background: rgb(255 255 255 / 44%);
+  content: "";
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+}
 
+
+
+
+.blog-feature__media-overlay > *,
+.article-card__media-overlay > * {
+  position: relative;
+  z-index: 1;
+}
 
 .article-card__title--overlay {
   margin: 0;
@@ -591,7 +613,13 @@
   text-wrap: balance;
 }
 
-.article-card__title.article-card__title--overlay {
+.article-card__title.blog-feature__media-overlay > *,
+.article-card__media-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.article-card__title--overlay {
   margin: 0;
   color: var(--color-brand-strong);
   text-shadow: none;
@@ -724,7 +752,13 @@
     grid-template-columns: minmax(0, 62%) minmax(0, 38%);
   }
 
-  .article-card__title--overlay {
+  .blog-feature__media-overlay > *,
+.article-card__media-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.article-card__title--overlay {
     font-size: clamp(1.4rem, 2vw, 1.85rem);
   }
 }
@@ -1255,7 +1289,13 @@
     transform: translateX(-50%);
   }
 
-  .article-card__title.article-card__title--overlay {
+  .article-card__title.blog-feature__media-overlay > *,
+.article-card__media-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.article-card__title--overlay {
     max-width: 100%;
     font-size: clamp(1.55rem, 7vw, 1.92rem);
     line-height: 1.06;
@@ -1342,7 +1382,13 @@
   }
 
   .blog-feature__media-overlay > h2,
-  .article-card__title.article-card__title--overlay {
+  .article-card__title.blog-feature__media-overlay > *,
+.article-card__media-overlay > * {
+  position: relative;
+  z-index: 1;
+}
+
+.article-card__title--overlay {
     max-width: 94%;
     font-size: clamp(1.45rem, 7.5vw, 1.82rem);
   }
