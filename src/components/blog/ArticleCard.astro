@@ -4,11 +4,10 @@ import { postUrl, readingTime, topicSlug } from "../../utils/blog";
 
 interface Props {
   post: BlogPost;
-  showTopic?: boolean;
   variant?: "tile" | "row";
 }
 
-const { post, showTopic = true, variant = "tile" } = Astro.props;
+const { post, variant = "tile" } = Astro.props;
 const categorySlug = topicSlug(post.data.category);
 const url = postUrl(post);
 const hasImage = Boolean(post.data.image);
@@ -47,8 +46,8 @@ const variantClass = variant === "row" ? "article-card--row" : "article-card--ti
     </div>
 
     <div class="article-card__body">
-      <div class="article-card__content">
-        <div class="article-card__meta">{showTopic && <span>{post.data.category}</span>}</div>
+      <div>
+        <div class="article-card__meta"><span>{post.data.category}</span></div>
 
         {variant !== "row" && <h3 class="article-card__title">{post.data.title}</h3>}
         <p class="article-card__description">{post.data.description}</p>

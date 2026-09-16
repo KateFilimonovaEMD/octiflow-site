@@ -10,7 +10,6 @@ export const BLOG_TOPICS = [
   "Sleep & Wellness",
 ] as const;
 
-export type BlogTopic = (typeof BLOG_TOPICS)[number];
 
 export const isPublished = (post: BlogPost) =>
   !post.data.draft && post.data.publishDate <= new Date();
