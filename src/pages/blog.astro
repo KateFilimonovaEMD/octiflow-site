@@ -93,7 +93,6 @@ const structuredData = [
                       />
                     </picture>
                     <div class="blog-feature__media-overlay">
-                      <p class="blog-feature__eyebrow">{featuredLabel}</p>
                       <h2>{featuredPost.data.title}</h2>
                     </div>
                   </>
@@ -104,12 +103,8 @@ const structuredData = [
                 )}
               </div>
               <div class="blog-feature__content">
-                {!featuredPost.data.image && (
-                  <>
-                    <p class="blog-feature__eyebrow">{featuredLabel}</p>
-                    <h2>{featuredPost.data.title}</h2>
-                  </>
-                )}
+                <p class="blog-feature__eyebrow">{featuredLabel}</p>
+                {!featuredPost.data.image && <h2>{featuredPost.data.title}</h2>}
                 <p>{featuredPost.data.description}</p>
                 <div class="blog-feature__footer">
                   <span>{readingTime(featuredPost.body)} min read</span>
