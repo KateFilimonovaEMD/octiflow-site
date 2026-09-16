@@ -118,6 +118,7 @@
   box-shadow: 0 14px 26px -20px rgb(7 48 128 / 42%);
   -webkit-backdrop-filter: blur(22px) saturate(118%);
   backdrop-filter: blur(22px) saturate(118%);
+  text-align: center;
   transform: translateX(-50%);
 }
 
@@ -459,6 +460,7 @@
   box-shadow: 0 14px 26px -20px rgb(7 48 128 / 40%);
   -webkit-backdrop-filter: blur(22px) saturate(118%);
   backdrop-filter: blur(22px) saturate(118%);
+  text-align: center;
   transform: translateX(-50%);
 }
 
@@ -470,7 +472,7 @@
   font-size: clamp(1.7rem, 2.35vw, 2.28rem);
   line-height: 1.06;
   letter-spacing: -0.022em;
-  max-width: 84%;
+  max-width: 100%;
   text-wrap: balance;
   text-shadow: 0 10px 28px rgb(0 0 0 / 42%);
 }
@@ -516,7 +518,7 @@
   min-width: 0;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(30px, 3vw, 38px) clamp(28px, 3vw, 36px) clamp(82px, 6vw, 92px);
+  padding: clamp(30px, 3vw, 38px) clamp(28px, 3vw, 36px);
 }
 
 .article-card__meta {
@@ -526,6 +528,10 @@
   color: var(--color-text-muted);
   font-size: 12px;
   font-weight: 720;
+}
+
+.article-card__meta:empty {
+  display: none;
 }
 
 .article-card__meta span:first-child {
@@ -555,6 +561,20 @@
 
 .article-card--row .article-card__description {
   max-width: 30ch;
+}
+
+.article-card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.article-card__reading-time {
+  color: var(--color-text-muted);
+  font-size: 12px;
+  font-weight: 720;
 }
 
 .article-card__title {
@@ -590,11 +610,6 @@
   color: var(--color-brand);
 }
 
-.article-card--row .article-card__cta {
-  position: absolute;
-  right: clamp(26px, 2.8vw, 34px);
-  bottom: clamp(24px, 2.6vw, 30px);
-}
 
 .article-card__arrow,
 .blog-feature__arrow,
@@ -1348,7 +1363,8 @@
   }
 
   .article-card--row .article-card__meta,
-  .blog-feature__footer {
+  .blog-feature__footer,
+  .article-card__reading-time {
     font-size: 11px;
   }
 }

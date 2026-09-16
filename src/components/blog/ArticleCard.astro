@@ -21,47 +21,45 @@ const variantClass = variant === "row" ? "article-card--row" : "article-card--ti
     <div class="article-card__media">
       {
         hasImage ? (
-          <>
-            <picture>
-              {post.data.imageAvif && <source srcset={post.data.imageAvif} type="image/avif" />}
-              {post.data.imageWebp && <source srcset={post.data.imageWebp} type="image/webp" />}
-              <img
-                src={post.data.image}
-                alt={post.data.imageAlt ?? ""}
-                width={post.data.imageWidth}
-                height={post.data.imageHeight}
-                loading="lazy"
-                decoding="async"
-              />
-            </picture>
-            {variant === "row" && (
-              <div class="article-card__media-overlay">
-                <h3 class="article-card__title article-card__title--overlay">{post.data.title}</h3>
-              </div>
-            )}
-          </>
+          <picture>
+            {post.data.imageAvif && <source srcset={post.data.imageAvif} type="image/avif" />}
+            {post.data.imageWebp && <source srcset={post.data.imageWebp} type="image/webp" />}
+            <img
+              src={post.data.image}
+              alt={post.data.imageAlt ?? ""}
+              width={post.data.imageWidth}
+              height={post.data.imageHeight}
+              loading="lazy"
+              decoding="async"
+            />
+          </picture>
         ) : (
           <span class="article-cover-placeholder" aria-hidden="true">
             <span>Cover image coming soon</span>
           </span>
         )
       }
+      {variant === "row" && (
+        <div class="article-card__media-overlay">
+          <h3 class="article-card__title article-card__title--overlay">{post.data.title}</h3>
+        </div>
+      )}
     </div>
 
     <div class="article-card__body">
       <div class="article-card__content">
-        <div class="article-card__meta">
-          {showTopic && <span>{post.data.category}</span>}
-          <span>{readingTime(post.body)} min read</span>
-        </div>
+        <div class="article-card__meta">{showTopic && <span>{post.data.category}</span>}</div>
 
-        {!(variant === "row" && hasImage) && <h3 class="article-card__title">{post.data.title}</h3>}
+        {variant !== "row" && <h3 class="article-card__title">{post.data.title}</h3>}
         <p class="article-card__description">{post.data.description}</p>
       </div>
 
-      <span class="article-card__cta" aria-hidden="true">
-        <span class="article-card__arrow"></span>
-      </span>
+      <div class="article-card__footer">
+        <span class="article-card__reading-time">{readingTime(post.body)} min read</span>
+        <span class="article-card__cta" aria-hidden="true">
+          <span class="article-card__arrow"></span>
+        </span>
+      </div>
     </div>
   </a>
 </article>
