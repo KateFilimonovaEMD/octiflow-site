@@ -517,7 +517,7 @@
   display: flex;
   min-width: 0;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   padding: clamp(30px, 3vw, 38px) clamp(28px, 3vw, 36px);
 }
 
@@ -568,7 +568,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 18px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 
 .article-card__reading-time {
