@@ -49,13 +49,15 @@ const variantClass = variant === "row" ? "article-card--row" : "article-card--ti
     </div>
 
     <div class="article-card__body">
-      <div class="article-card__meta">
-        {showTopic && <span>{post.data.category}</span>}
-        <span>{readingTime(post.body)} min read</span>
-      </div>
+      <div class="article-card__content">
+        <div class="article-card__meta">
+          {showTopic && <span>{post.data.category}</span>}
+          <span>{readingTime(post.body)} min read</span>
+        </div>
 
-      {!(variant === "row" && hasImage) && <h3 class="article-card__title">{post.data.title}</h3>}
-      <p class="article-card__description">{post.data.description}</p>
+        {!(variant === "row" && hasImage) && <h3 class="article-card__title">{post.data.title}</h3>}
+        <p class="article-card__description">{post.data.description}</p>
+      </div>
 
       <span class="article-card__cta" aria-hidden="true">
         <span class="article-card__arrow"></span>
