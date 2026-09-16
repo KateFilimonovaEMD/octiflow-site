@@ -79,18 +79,24 @@ const structuredData = [
             <a class="blog-feature" href={postUrl(featuredPost)} aria-label={`${featuredLabel}: ${featuredPost.data.title}`}>
               <div class="blog-feature__media">
                 {featuredPost.data.image ? (
-                  <picture>
-                    {featuredPost.data.imageAvif && <source srcset={featuredPost.data.imageAvif} type="image/avif" />}
-                    {featuredPost.data.imageWebp && <source srcset={featuredPost.data.imageWebp} type="image/webp" />}
-                    <img
-                      src={featuredPost.data.image}
-                      alt={featuredPost.data.imageAlt ?? ""}
-                      width={featuredPost.data.imageWidth}
-                      height={featuredPost.data.imageHeight}
-                      loading="eager"
-                      fetchpriority="high"
-                    />
-                  </picture>
+                  <>
+                    <picture>
+                      {featuredPost.data.imageAvif && <source srcset={featuredPost.data.imageAvif} type="image/avif" />}
+                      {featuredPost.data.imageWebp && <source srcset={featuredPost.data.imageWebp} type="image/webp" />}
+                      <img
+                        src={featuredPost.data.image}
+                        alt={featuredPost.data.imageAlt ?? ""}
+                        width={featuredPost.data.imageWidth}
+                        height={featuredPost.data.imageHeight}
+                        loading="eager"
+                        fetchpriority="high"
+                      />
+                    </picture>
+                    <div class="blog-feature__media-overlay">
+                      <p class="blog-feature__eyebrow">{featuredLabel}</p>
+                      <h2>{featuredPost.data.title}</h2>
+                    </div>
+                  </>
                 ) : (
                   <span class="article-cover-placeholder" aria-hidden="true">
                     <span>Cover image coming soon</span>
@@ -98,8 +104,12 @@ const structuredData = [
                 )}
               </div>
               <div class="blog-feature__content">
-                <p class="blog-feature__eyebrow">{featuredLabel}</p>
-                <h2>{featuredPost.data.title}</h2>
+                {!featuredPost.data.image && (
+                  <>
+                    <p class="blog-feature__eyebrow">{featuredLabel}</p>
+                    <h2>{featuredPost.data.title}</h2>
+                  </>
+                )}
                 <p>{featuredPost.data.description}</p>
                 <div class="blog-feature__footer">
                   <span>{readingTime(featuredPost.body)} min read</span>
