@@ -93,6 +93,7 @@ const structuredData = [
                       />
                     </picture>
                     <div class="blog-feature__media-overlay">
+                      <p class="blog-feature__eyebrow">{featuredLabel}</p>
                       <h2>{featuredPost.data.title}</h2>
                     </div>
                   </>
@@ -103,8 +104,12 @@ const structuredData = [
                 )}
               </div>
               <div class="blog-feature__content">
-                <p class="blog-feature__eyebrow">{featuredLabel}</p>
-                {!featuredPost.data.image && <h2>{featuredPost.data.title}</h2>}
+                {!featuredPost.data.image && (
+                  <>
+                    <p class="blog-feature__eyebrow">{featuredLabel}</p>
+                    <h2>{featuredPost.data.title}</h2>
+                  </>
+                )}
                 <p>{featuredPost.data.description}</p>
                 <div class="blog-feature__footer">
                   <span>{readingTime(featuredPost.body)} min read</span>
@@ -212,7 +217,7 @@ const structuredData = [
           } else {
             url.searchParams.set("topic", topic);
           }
-          url.hash = "guides";
+          url.hash = "";
           const method = replace ? "replaceState" : "pushState";
           window.history[method]({}, "", url);
         };
@@ -256,18 +261,20 @@ const structuredData = [
           if (updateHistory) updateUrl(activeTopic, replaceHistory);
         };
 
-        const selectTopic = (topic, { updateHistory = true, scroll = false } = {}) => {
+        const selectTopic = (topic, { updateHistory = true } = {}) => {
+          const scrollY = window.scrollY;
           activeTopic = validTopics.has(topic) ? topic : "all";
           visibleLimit = initialVisible;
           render({ updateHistory });
-          if (scroll) {
-            document.querySelector("#guides")?.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
+
+          requestAnimationFrame(() => {
+            window.scrollTo({ top: scrollY, left: 0, behavior: "auto" });
+          });
         };
 
         filters.forEach((button) => {
           button.addEventListener("click", () => {
-            selectTopic(button.dataset.topicFilter ?? "all", { updateHistory: true, scroll: true });
+            selectTopic(button.dataset.topicFilter ?? "all", { updateHistory: true });
           });
         });
 
@@ -278,7 +285,7 @@ const structuredData = [
 
         window.addEventListener("popstate", () => {
           const topic = new URL(window.location.href).searchParams.get("topic") ?? "all";
-          selectTopic(topic, { updateHistory: false, scroll: false });
+          selectTopic(topic, { updateHistory: false });
         });
 
         const requestedTopic = new URL(window.location.href).searchParams.get("topic") ?? "all";
