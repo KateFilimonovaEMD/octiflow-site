@@ -150,7 +150,7 @@ const structuredData = [
             {data.imageWebp && <source srcset={data.imageWebp} type="image/webp" />}
             <img
               src={data.image}
-              alt={data.imageAlt}
+              alt={data.imageAlt ?? ""}
               width={data.imageWidth ?? 1200}
               height={data.imageHeight ?? 800}
               loading="eager"
