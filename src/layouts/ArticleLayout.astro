@@ -116,51 +116,54 @@ const structuredData = [
         </p>
         <h1 class="blog-gradient-title">{data.title}</h1>
         <p class="article-deck">{data.description}</p>
-        <div class="article-meta" aria-label="Article details">
-          <span class="article-meta__author">
-            By <a href="/about/" rel="author">{data.author}</a>
-          </span>
-          <span class="article-meta__separator" aria-hidden="true">·</span>
-          <span class="article-meta__item">
-            <span class="article-meta__label">Published</span>
-            <time datetime={data.publishDate.toISOString()}>{formatDate(data.publishDate)}</time>
-          </span>
-          {
-            data.updatedDate && (
-              <>
-                <span class="article-meta__separator" aria-hidden="true">·</span>
-                <span class="article-meta__item">
-                  <span class="article-meta__label">Updated</span>
-                  <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
-                </span>
-              </>
-            )
-          }
-          <span class="article-meta__separator" aria-hidden="true">·</span>
-          <span class="article-meta__reading-time">{readingTime(post.body)} min read</span>
-        </div>
       </div>
     </header>
 
-    {
-      data.image && (
-        <figure class="container article-cover">
-          <picture>
-            {data.imageAvif && <source srcset={data.imageAvif} type="image/avif" />}
-            {data.imageWebp && <source srcset={data.imageWebp} type="image/webp" />}
-            <img
-              src={data.image}
-              alt={data.imageAlt ?? ""}
-              width={data.imageWidth ?? 1200}
-              height={data.imageHeight ?? 800}
-              loading="eager"
-              fetchpriority="high"
-              decoding="async"
-            />
-          </picture>
-        </figure>
-      )
-    }
+    <div class="container article-media-meta">
+      {
+        data.image && (
+          <figure class="article-cover">
+            <picture>
+              {data.imageAvif && <source srcset={data.imageAvif} type="image/avif" />}
+              {data.imageWebp && <source srcset={data.imageWebp} type="image/webp" />}
+              <img
+                src={data.image}
+                alt={data.imageAlt ?? ""}
+                width={data.imageWidth ?? 1200}
+                height={data.imageHeight ?? 800}
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </figure>
+        )
+      }
+
+      <div class="article-meta" aria-label="Article details">
+        <span class="article-meta__author">
+          By <a href="/about/" rel="author">{data.author}</a>
+        </span>
+        <span class="article-meta__separator" aria-hidden="true">·</span>
+        <span class="article-meta__item">
+          <span class="article-meta__label">Published</span>
+          <time datetime={data.publishDate.toISOString()}>{formatDate(data.publishDate)}</time>
+        </span>
+        {
+          data.updatedDate && (
+            <>
+              <span class="article-meta__separator" aria-hidden="true">·</span>
+              <span class="article-meta__item">
+                <span class="article-meta__label">Updated</span>
+                <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
+              </span>
+            </>
+          )
+        }
+        <span class="article-meta__separator" aria-hidden="true">·</span>
+        <span class="article-meta__reading-time">{readingTime(post.body)} min read</span>
+      </div>
+    </div>
 
     <div class="container article-layout">
       {
