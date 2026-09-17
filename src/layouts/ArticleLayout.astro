@@ -117,24 +117,22 @@ const structuredData = [
         <h1 class="blog-gradient-title">{data.title}</h1>
         <p class="article-deck">{data.description}</p>
         <div class="article-meta" aria-label="Article details">
-          <p class="article-meta__author">
+          <span class="article-meta__item article-meta__author">
             By <a href="/about/" rel="author">{data.author}</a>
-          </p>
-          <div class="article-meta__details">
+          </span>
+          <span class="article-meta__item">
+            <span class="article-meta__label">Published</span>
             <time datetime={data.publishDate.toISOString()}>{formatDate(data.publishDate)}</time>
-            {
-              data.updatedDate && (
-                <>
-                  <span class="article-meta__separator" aria-hidden="true">·</span>
-                  <span>
-                    Updated <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
-                  </span>
-                </>
-              )
-            }
-            <span class="article-meta__separator" aria-hidden="true">·</span>
-            <span>{readingTime(post.body)} min read</span>
-          </div>
+          </span>
+          {
+            data.updatedDate && (
+              <span class="article-meta__item">
+                <span class="article-meta__label">Updated</span>
+                <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
+              </span>
+            )
+          }
+          <span class="article-meta__item article-meta__reading-time">{readingTime(post.body)} min read</span>
         </div>
       </div>
     </header>
@@ -222,23 +220,37 @@ const structuredData = [
 <style>
   .article-meta {
     display: flex;
-    max-width: 860px;
-    flex-direction: column;
-    gap: 5px;
+    max-width: 920px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 0;
     margin: 24px 0 0;
     color: var(--color-text-muted);
     font-size: 14px;
-    line-height: 1.45;
+    line-height: 1.4;
+  }
+
+  .article-meta__item {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 5px;
+    white-space: nowrap;
+  }
+
+  .article-meta__item + .article-meta__item {
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid rgb(101 112 128 / 24%);
   }
 
   .article-meta__author {
-    margin: 0;
     color: var(--color-text-body);
     font-weight: 650;
   }
 
   .article-meta__author a {
     color: var(--color-brand-strong);
+    font-weight: 750;
     text-decoration: none;
   }
 
@@ -248,26 +260,38 @@ const structuredData = [
     text-underline-offset: 0.18em;
   }
 
-  .article-meta__details {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 4px 8px;
+  .article-meta__label {
+    color: rgb(101 112 128 / 82%);
+    font-size: 12px;
+    font-weight: 750;
+    letter-spacing: 0.025em;
   }
 
-  .article-meta__separator {
-    color: rgb(101 112 128 / 52%);
+  .article-meta__reading-time {
+    color: var(--color-brand-strong);
+    font-weight: 750;
   }
 
   @media (max-width: 720px) {
     .article-meta {
       margin-top: 20px;
+      gap: 8px 0;
       font-size: 13.5px;
     }
 
-    .article-meta__details {
-      gap: 3px 7px;
+    .article-meta__item + .article-meta__item {
+      margin-left: 12px;
+      padding-left: 12px;
     }
   }
 
+  @media (max-width: 480px) {
+    .article-meta {
+      align-items: flex-start;
+    }
+
+    .article-meta__item {
+      white-space: normal;
+    }
+  }
 </style>
