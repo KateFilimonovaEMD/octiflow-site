@@ -116,23 +116,32 @@ const structuredData = [
         </p>
         <h1 class="blog-gradient-title">{data.title}</h1>
         <p class="article-deck">{data.description}</p>
-        <div class="article-byline">
-          <span>By <a href="/about/" rel="author">{data.author}</a></span>
-          <span aria-hidden="true">·</span>
-          <time datetime={data.publishDate.toISOString()}>
-            {formatDate(data.publishDate)}
-          </time>
+        <dl class="article-meta" aria-label="Article details">
+          <div class="article-meta__item">
+            <dt>Author</dt>
+            <dd><a href="/about/" rel="author">{data.author}</a></dd>
+          </div>
+          <div class="article-meta__item">
+            <dt>Published</dt>
+            <dd>
+              <time datetime={data.publishDate.toISOString()}>{formatDate(data.publishDate)}</time>
+            </dd>
+          </div>
           {
             data.updatedDate && (
-              <>
-                <span aria-hidden="true">·</span>
-                <span>Updated {formatDate(data.updatedDate)}</span>
-              </>
+              <div class="article-meta__item">
+                <dt>Updated</dt>
+                <dd>
+                  <time datetime={data.updatedDate.toISOString()}>{formatDate(data.updatedDate)}</time>
+                </dd>
+              </div>
             )
           }
-          <span aria-hidden="true">·</span>
-          <span>{readingTime(post.body)} min read</span>
-        </div>
+          <div class="article-meta__item">
+            <dt>Reading time</dt>
+            <dd>{readingTime(post.body)} min</dd>
+          </div>
+        </dl>
       </div>
     </header>
 
@@ -215,3 +224,76 @@ const structuredData = [
     </script>
   </main>
 </BaseLayout>
+
+<style>
+  .article-meta {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 780px;
+    margin: 30px 0 0;
+    padding: 0;
+    border-top: 1px solid rgb(7 48 128 / 10%);
+    border-bottom: 1px solid rgb(7 48 128 / 10%);
+  }
+
+  .article-meta__item {
+    min-width: 0;
+    padding: 16px 18px 17px 0;
+  }
+
+  .article-meta__item + .article-meta__item {
+    padding-left: 18px;
+    border-left: 1px solid rgb(7 48 128 / 8%);
+  }
+
+  .article-meta dt {
+    margin: 0 0 5px;
+    color: var(--color-text-muted);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .article-meta dd {
+    margin: 0;
+    color: var(--color-text-body);
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.4;
+  }
+
+  .article-meta a {
+    color: var(--color-brand-strong);
+    text-decoration: none;
+  }
+
+  .article-meta a:hover {
+    color: var(--color-brand);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  @media (max-width: 720px) {
+    .article-meta {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      margin-top: 24px;
+    }
+
+    .article-meta__item,
+    .article-meta__item + .article-meta__item {
+      padding: 13px 14px 14px 0;
+      border-left: 0;
+    }
+
+    .article-meta__item:nth-child(even) {
+      padding-left: 14px;
+      border-left: 1px solid rgb(7 48 128 / 8%);
+    }
+
+    .article-meta__item:nth-child(n + 3) {
+      border-top: 1px solid rgb(7 48 128 / 8%);
+    }
+  }
+</style>
