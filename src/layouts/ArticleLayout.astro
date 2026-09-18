@@ -221,13 +221,24 @@ const structuredData = [
         }
 
         document.querySelectorAll(".article-prose table").forEach((table) => {
-          if (table.parentElement?.classList.contains("article-table-scroll")) return;
+          if (table.parentElement?.classList.contains("article-table-wrap")) return;
+
+          const headers = Array.from(table.querySelectorAll("thead th")).map((cell) =>
+            cell.textContent?.trim() ?? ""
+          );
+
+          table.querySelectorAll("tbody tr").forEach((row) => {
+            Array.from(row.children).forEach((cell, index) => {
+              if (cell instanceof HTMLElement && headers[index]) {
+                cell.dataset.label = headers[index];
+              }
+            });
+          });
+
+          table.classList.add("article-table--responsive");
 
           const wrapper = document.createElement("div");
-          wrapper.className = "article-table-scroll";
-          wrapper.setAttribute("role", "region");
-          wrapper.setAttribute("aria-label", "Scrollable table");
-          wrapper.tabIndex = 0;
+          wrapper.className = "article-table-wrap";
           table.parentNode?.insertBefore(wrapper, table);
           wrapper.appendChild(table);
         });
