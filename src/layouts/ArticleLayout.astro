@@ -216,10 +216,21 @@ const structuredData = [
     <script is:inline>
       (() => {
         const details = document.querySelector("[data-article-toc-details]");
-        if (!details) return;
-        if (window.matchMedia("(min-width: 921px)").matches) {
+        if (details && window.matchMedia("(min-width: 921px)").matches) {
           details.open = true;
         }
+
+        document.querySelectorAll(".article-prose table").forEach((table) => {
+          if (table.parentElement?.classList.contains("article-table-scroll")) return;
+
+          const wrapper = document.createElement("div");
+          wrapper.className = "article-table-scroll";
+          wrapper.setAttribute("role", "region");
+          wrapper.setAttribute("aria-label", "Scrollable table");
+          wrapper.tabIndex = 0;
+          table.parentNode?.insertBefore(wrapper, table);
+          wrapper.appendChild(table);
+        });
       })();
     </script>
   </main>
